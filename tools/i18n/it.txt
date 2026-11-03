@@ -1,0 +1,631 @@
+1|{s} è salito al livello {n}.
+2|Partita salvata
+3|Impossibile salvare. Usa il codice partita nel menu di pausa.
+4|Esplora, raccogli merce e torna all'emporio prima delle 20:00.
+5|Il paese è a sud lungo la strada: case e negozi da frugare mobile per mobile.
+6|V alterna tra prima persona e visuale dall'alto.
+7|Sparare fa rumore e attira tutto ciò che si aggira nei dintorni.
+8|Ottenuto: {w}. Tasto {n}.
+9|{w} in condizioni migliori: l'hai sostituito.
+10|Serve falegnameria {n}.
+11|Ti serve un martello.
+12|Ti mancano materiali.
+13|Punte
+14|Il raptor è a terra, indebolito. Con della carne nello zaino puoi addomesticarlo (tieni premuto E).
+15|Torretta
+16|Raptor
+17|Pick-up
+18|Il Rex Putrido è caduto! Raccogli l'ambra.
+19|testa
+20|Hanno sfondato un tratto della palizzata!
+21|Una difesa è stata distrutta.
+22|Stanno saccheggiando il tuo emporio!
+23|Ferita: {w}. Bendala con H.
+24|Stai sanguinando e non hai bende, kit medico né stoffa.
+25|Bendato: {w}.
+26|Nessuna ferita aperta e salute al massimo.
+27|Non hai bende né kit medico nello zaino.
+28|Usato: {i}.
+29|Indossato: {i}.
+30|Nessuna ferita da disinfettare.
+31|Hai disinfettato le ferite.
+32|Hai preso antidolorifici. Il dolore cala per qualche ora.
+33|Gli antibiotici hanno fermato l'infezione.
+34|Hai preso antibiotici, ma non eri infetto.
+35|La torcia ha già le pile cariche.
+36|Hai cambiato le pile della torcia.
+37|Era marcio. Ti ha fatto stare male.
+38|La carne cruda ti ha fatto stare male. Meglio cuocerla sul falò.
+39|Bevuto: {i}.
+40|Mangiato: {i}.
+41|Non hai né fame né sete.
+42|Non hai cibo né bevande nello zaino.
+43|Ferita rimarginata: {w}.
+44|{n} è gravemente ferita ed è scappata. Tornerà all'emporio all'alba.
+45|Hai addomesticato un raptor! Si chiama Scintilla. T per farti seguire o farle sorvegliare l'emporio.
+46|Il tempo cambia: {w}.
+47|Si fa buio. Torna all'emporio prima delle 20:00.
+48|Notte {d}: la nebbia porta {n} putridi.
+49|Qualcosa di enorme si muove nel deserto.
+50|Il Rex Putrido sta arrivando all'emporio!
+51|L'ordine di {who} è scaduto. La tua reputazione cala.
+52|Albeggia. La nebbia si ritira e {n} putridi crollano.
+53|{n} è tornata all'emporio.
+54|Giorno {d}. Ieri hai venduto per ${m}. Oggi cercano: {i}.
+55|Sono marciti {n} alimenti.
+56|La nebbia non ti lascia dormire di notte.
+57|Non hai sonno.
+58|C'è pericolo vicino: non puoi dormire.
+59|Stai sanguinando: prima bendati.
+60|È troppo tardi per dormire.
+61|Hai dormito {h} ore.
+62|Nel frattempo hai venduto per ${m}.
+63|Niente {a}. Usa un'arma da mischia o comprane all'emporio.
+64|Si è rotto: {w}!
+65|Riparato: {w}.
+66|Giorno {d}
+67|L'infezione ha avuto la meglio. I carovanieri ti hanno trovato e curato a metà.
+68|Hai perso ciò che portavi: {l}.
+69|Lo zaino era vuoto.
+70|Mentre eri svenuto ti hanno rubato ${m}.
+71|W accelerare · S frenare o retromarcia · A/D sterzare · E scendere
+72|Non c'è spazio per scendere qui.
+73|Niente benzina. Fai rifornimento con G o dall'officina.
+74|Un cliente se n'è andato a mani vuote: gli scaffali sono vuoti.
+75|Un cliente ha visto cibo marcio sullo scaffale e se n'è andato arrabbiato.
+76|Venduto {i} ×{q} a ${p} l'uno (totale ${t}).
+77|Vendita all'emporio: +${t}
+78|Gli è sembrato caro: {i} a ${p}. Se n'è andato senza comprare.
+79|Fame
+80|Sete
+81|Sanguinamento
+82|Dolore
+83|Infetto
+84|Intossicato
+85|Panico
+86|Bagnato
+87|Sovraccarico
+88|L'Ultimo Emporio
+89|Partita salvata.
+90|Impossibile salvare. Copia il codice qui sotto.
+91|Codice copiato.
+92|Codice selezionato: copialo con Ctrl+C.
+93|Questo codice non è valido. Controlla che sia completo.
+94|PAESE
+95|EMPORIO
+96|Bianco: tu · Rosso: pick-up · Punti chiari: fossili · M o Esc per chiudere
+97|Livello {n}
+98|Hai già {n}
+99|Nuovo
+100|Senza zaino
+101|Indossalo
+102|Prendi
+103|Mangia
+104|Usa
+105|deperibile
+106|Butta
+107|Lo zaino è vuoto.
+108|Armi
+109|in mano
+110|Equipaggia
+111|Ripara col nastro
+112|Munizioni
+113|Salute
+114|Stanchezza
+115|Ferite
+116|Bendata
+117|Non sanguina più
+118|Disinfettata
+119|Nessuna ferita.
+120|Infezione della nebbia: {n}%. Solo gli antibiotici la fermano. Al 100% ti ucciderà lentamente.
+121|Sei intossicato per aver mangiato qualcosa di guasto. Passa da solo col tempo.
+122|Benda o cura (H)
+123|Talenti scelti
+124|Ancora nessuno. Sali di livello per sceglierne uno.
+125|Deposita
+126|Tutto
+127|Vuoto.
+128|Non ci sta più: porti troppo peso.
+129|Scaricato dallo zaino: {l}.
+130|Dal pick-up: {l}.
+131|notte
+132|Soldi
+133|Reputazione
+134|Oggi
+135|Ordini
+136|Prendi 1
+137|Lascia 1
+138|addosso
+139|depositata
+140|Prendi
+141|Entrando, i materiali e gli oggetti di valore dello zaino si scaricano da soli, così come il cassone del pick-up se è parcheggiato vicino. Cibo, bevande, medicine e attrezzi restano addosso.
+142|Zaino: {a} di {b} kg.
+143|Prodotto
+144|Magazzino
+145|Zaino
+146|Il magazzino è vuoto. Esci a cercare merce.
+147|Probabilità di vendita: {n}%
+148|Vuoto
+149|Scaffale {n}
+150|il più richiesto oggi
+151|Prezzo
+152|Lo pagano bene fino a ~${n}
+153|{n} in magazzino
+154|Scegli un prodotto dal magazzino da mettere in vendita.
+155|Richiesto oggi: {i}. I clienti vengono dalle 7:00 alle 19:00 anche se sei fuori e comprano quello che c'è sugli scaffali. Prezzo alto: più soldi per vendita, ma più gente se ne va senza comprare e la reputazione cala.
+156|Gli ordini pagano molto più dello scaffale e aumentano la reputazione. Si consegnano con ciò che hai in magazzino. Se scadono, la reputazione cala.
+157|Vuole: {i} ×{q}.
+158|Consegnato.
+159|Scade oggi alle 19:00.
+160|Scade domani alle 19:00.
+161|Paga ${r} · ne hai {n}
+162|Fatto
+163|Consegna
+164|Nessun ordine per ora. Domani ne arrivano di nuovi.
+165|Richiede: {u} (in Migliorie).
+166|Richiede: {t}.
+167|Usa:
+168|Va alle tue munizioni
+169|Va alle tue armi
+170|Va in magazzino
+171|Fabbrica
+172|Palizzata al {n}%
+173|Ci sono {n} tratti rotti da cui possono entrare.
+174|Ogni rottame o asse ripara 100 punti.
+175|Costo: {n} · hai {h}
+176|Ripara
+177|Serbatoio del pick-up
+178|Ha il {n}% di benzina. Ogni tanica riempie il 30%.
+179|Il pick-up deve essere parcheggiato vicino all'emporio.
+180|Carburante in magazzino: {n}
+181|Rifornisci
+182|Pieno
+183|Compra ${p}
+184|Lo compri dai carovanieri che passano sulla strada. Costa più che fabbricarlo, ma è subito.
+185|Hai {n}
+186|Nello zaino: {n}
+187|In magazzino: {n}
+188|È già tua
+189|Arriva il giorno {d}
+190|Premio ${r}
+191|Completata
+192|In sospeso
+193|La tua storia
+194|Ultimi movimenti al bancone
+195|Non è ancora passato nessun cliente.
+196|Non entra nello zaino.
+197|Fabbricato: {r}
+198|Palizzata riparata con {n} materiali.
+199|Serbatoio al {n}%.
+200|{who} ti ha pagato ${r}.
+201|Comprato: {u}.
+202|Non entrava nello zaino: è rimasto in magazzino.
+203|Giorno {d} · ${m}
+204|Generazione del mondo…
+205|Qualcosa è andato storto nel caricamento. Ricarica la pagina.
+206|Personalizzata
+207|Scegli ogni opzione a tuo piacere.
+208|Sì
+209|No
+210|Schermo intero
+211|Esci dallo schermo intero
+212|Qualità
+213|Alta (ombre)
+214|Media
+215|Bassa (più fluida)
+216|Scala di risoluzione
+217|Campo visivo
+218|Luminosità
+219|Grana della pellicola
+220|Filtro colore crudo
+221|Visuale all'avvio
+222|Prima persona
+223|Visuale dall'alto
+224|Volume generale
+225|Effetti
+226|Ambiente (pioggia, vento)
+227|Sensibilità del mouse
+228|Sensibilità in mira
+229|Inverti asse verticale
+230|Muoviti
+231|Corri
+232|Accovacciati (meno rumore)
+233|Spazio
+234|Salta · frena il pick-up
+235|Clic
+236|Spara o colpisci
+237|Clic destro
+238|Mira
+239|Ricarica · ruota costruzione
+240|Armi · arma precedente
+241|Usa, apri, fruga · rifornisci
+242|Inventario, salute e abilità
+243|Mappa
+244|Mangia o bevi
+245|Benda e cura
+246|Costruisci
+247|Torcia
+248|Ordini al tuo raptor
+249|Cambia visuale
+250|Pausa
+251|Tasti
+252|Lingua
+253|Mostra suggerimenti
+254|Alcuni cartelli del mondo cambiano lingua solo ricaricando la partita.
+255|Impossibile generare il mondo: 
+256|Visuale dall'alto: mira col mouse. Rotella per lo zoom.
+257|Accovacciato: fai meno rumore.
+258|In piedi.
+259|Costruito: {b}.
+260|Non si può costruire qui.
+261|La torcia non ha pile.
+262|Torcia accesa
+263|Torcia spenta
+264|{n} ti segue.
+265|{n} resta a sorvegliare l'emporio.
+266|Le pile della torcia sono scariche. Con L le cambi se hai ricambi.
+267|nel cassone
+268|Il cassone del pick-up è pieno.
+269|Porti troppo peso. Lascia qualcosa o caricalo sul pick-up.
+270|Obiettivo raggiunto: {g}. Premio ${r}.
+271|E · Scendi
+272|E · Gestisci l'emporio
+273|E · Dormi
+274|Stanchezza {n}%
+275|E · Scaffale {n}
+276|E · Sali sul pick-up
+277|Benzina {n}%
+278|G · Versa 1 tanica
+279|Rifornimento: +30%.
+280|Tieni E · Cuoci {n} carne
+281|Hai cucinato {n} carne arrosto.
+282|Falò
+283|Porta carne cruda da cuocere
+284|Raptor indebolito
+285|Hai già un raptor
+286|Tieni E · Addomestica il raptor
+287|Gli dai 1 carne
+288|Ti serve carne nello zaino per addomesticarlo
+289|E · Fruga: {c}
+290|Già frugato
+291|Tieni E · Scava fossili
+292|Ne restano {n}
+293|Qualcosa si è mosso sotto la sabbia…
+294|Paese
+295|Cassone {a}/{b} kg
+296|NOTTE · NEBBIA
+297|TRAMONTO
+298|ALBA
+299|GIORNO
+300|Pile {n}%
+301|{i} ×{q} per {who} · ${r}
+302|oggi 19:00
+303|ferita
+304|Stato
+305|Mani nude
+306|R ruota
+307|Clic costruisci · B esci
+308|Scatoletta
+309|Pane
+310|Frutta
+311|Latte
+312|Biscotti
+313|Cioccolato
+314|Carne cruda
+315|Carne arrosto
+316|Cibo marcio
+317|Bottiglia d'acqua
+318|Bibita
+319|Benda
+320|Disinfettante
+321|Antidolorifici
+322|Antibiotici
+323|Kit medico
+324|Legna
+325|Assi
+326|Chiodi
+327|Lamiera
+328|Rottami
+329|Nastro adesivo
+330|Corda
+331|Stoffa
+332|Polvere da sparo
+333|Carburante
+334|Pile
+335|Accendino
+336|Sega
+337|Cassetta degli attrezzi
+338|Cuoio
+339|Osso fossile
+340|Zanna
+341|Gioielli
+342|Ambra
+343|Marsupio
+344|Zaino scolastico
+345|Zaino da campeggio
+346|Borsone militare
+347|Pistola 9 mm
+348|Revolver
+349|Fucile a pompa
+350|Fucile da caccia
+351|Fucile d'assalto
+352|Coltello
+353|Padella
+354|Mazza da baseball
+355|Martello
+356|Piede di porco
+357|Machete
+358|Ascia
+359|Lancia
+360|Vagante
+361|Corridore
+362|Bruto
+363|Raptor putrido
+364|Cornuto
+365|Rex Putrido
+366|Frigorifero
+367|Credenza
+368|Armadio
+369|Armadietto del bagno
+370|Scrivania
+371|Banco da lavoro
+372|Scaffale del market
+373|Scaffale della farmacia
+374|Scaffale della ferramenta
+375|Rastrelliera
+376|Bancone
+377|Bagagliaio
+378|Bidone della spazzatura
+379|Pompa di benzina
+380|Cassa
+381|Scaffale extra
+382|Un prodotto in più in vendita contemporaneamente.
+383|Muri rinforzati
+384|Tutta la palizzata regge più colpi.
+385|Torretta automatica
+386|Spara da sola a ciò che si avvicina. Va in un angolo del cortile.
+387|Fornello
+388|Permette di cuocere carne arrosto in officina.
+389|Banco di ricarica
+390|Permette di fabbricare munizioni con la polvere da sparo.
+391|Frigo a benzina
+392|Il cibo in magazzino marcisce molto più lentamente.
+393|Zaino ricucito
+394|+4 kg di capacità per qualsiasi zaino.
+395|Cassone di carico
+396|+40 kg nel cassone del pick-up.
+397|Torcia potente
+398|Il fascio arriva molto più lontano e consuma meno pile.
+399|Insegna luminosa
+400|Attira più clienti durante il giorno.
+401|Barricata
+402|Rallenta i putridi. La sfondano a colpi.
+403|Feriscono e rallentano ciò che ci passa sopra.
+404|Fa luce di notte. Con E cuoci la carne cruda.
+405|Muro di assi
+406|Molto più robusto della barricata. Richiede martello e falegnameria 2.
+407|Muro di lamiera
+408|Il più resistente che puoi costruire. Falegnameria 4.
+409|Mira
+410|Meno dispersione e ricarica più rapida.
+411|Mischia
+412|Più danni e meno usura delle armi.
+413|Falegnameria
+414|Difese più robuste e nuovi muri.
+415|Sopravvivenza
+416|Meno fame e sete, abbatti alberi più in fretta.
+417|Primo soccorso
+418|Le cure rendono di più e le ferite si chiudono prima.
+419|Atletica
+420|Più resistenza e velocità nella corsa.
+421|Popolazione di putridi
+422|Bassa
+423|Normale
+424|Alta
+425|Estrema
+426|Dinosauri
+427|Pochi
+428|Normali
+429|Molti
+430|Bottino
+431|Scarso
+432|Abbondante
+433|Durata del giorno
+434|12 min
+435|24 min
+436|36 min
+437|48 min
+438|Fame e sete
+439|Lente
+440|Rapide
+441|Orde notturne
+442|Leggere
+443|Brutali
+444|Infezione della nebbia
+445|Disattivata
+446|Attivata
+447|Il cibo marcisce
+448|Apprendista
+449|Pochi putridi, tanto bottino e giornate lunghe. Per conoscere il mondo.
+450|Sopravvissuto
+451|L'esperienza pensata: dura ma giusta.
+452|Apocalisse
+453|Il paese è pieno, il bottino scarseggia e le notti sono brutali.
+454|Assi ×3
+455|Bende ×2
+456|Bende ×3
+457|Proiettili 9 mm ×10
+458|Proiettili .38 ×6
+459|Cartucce ×4
+460|Proiettili da fucile ×5
+461|Proiettili 5.56 ×15
+462|Polso fermo
+463|+15% di danni con le armi da fuoco.
+464|Pelle dura
+465|+25 di salute massima.
+466|Gambe lunghe
+467|+8% di velocità.
+468|Mani veloci
+469|Ricarichi il 20% più in fretta.
+470|Mulo da soma
+471|+5 kg nello zaino.
+472|Parlantina
+473|I clienti accettano prezzi più alti dell'8%.
+474|Macellaio
+475|Gli animali lasciano 1 carne in più.
+476|Spazzino
+477|Trovi più roba in mobili, casse e auto.
+478|Filo tagliente
+479|+30% di danni in mischia e le armi si consumano meno.
+480|Secondo fiato
+481|Recuperi salute se passano 5 s senza essere colpito.
+482|Occhio di falco
+483|I colpi alla testa fanno il 30% in più.
+484|Polmoni
+485|+30% di resistenza nella corsa.
+486|Stomaco di ferro
+487|Fame e sete calano il 30% più lentamente.
+488|Domatore
+489|Il tuo raptor colpisce il 50% più forte.
+490|Pilota
+491|Il pick-up consuma meno benzina e investe più forte.
+492|Sangue denso
+493|I morsi non si infettano quasi mai.
+494|Sopravvivi a 3 notti
+495|Vendi 50 prodotti
+496|Completa 5 ordini
+497|Addomestica un raptor
+498|Fruga 30 mobili del paese
+499|Fai 50 colpi alla testa
+500|Costruisci 5 difese
+501|Investi 20 bestie col pick-up
+502|Porta un'abilità al livello 5
+503|Guadagna $3.000 in vendite
+504|Caccia il Rex Putrido
+505|Sopravvivi a 10 notti
+506|Otto pallini per colpo. Brutale da vicino.
+507|Sei colpi pesanti che ne trapassano due.
+508|Clic destro per guardare nel mirino. Trapassa fino a tre nemici.
+509|Automatico: tieni premuto il clic. Consuma munizioni in fretta.
+510|Colpisce fortissimo e abbatte un albero in due colpi.
+511|Proiettili 9 mm ×20
+512|Per la pistola.
+513|Proiettili .38 ×12
+514|Per il revolver.
+515|Cartucce ×8
+516|Per il fucile a pompa.
+517|Proiettili da fucile ×10
+518|Per il fucile da caccia.
+519|Proiettili 5.56 ×30
+520|Per il fucile d'assalto.
+521|Contro il sanguinamento. Va nello zaino.
+522|Cura molto, disinfetta e ferma il sanguinamento.
+523|Curano l'infezione della nebbia.
+524|Acqua
+525|Contro la sete. Va nello zaino.
+526|Per la torcia.
+527|Chiodi ×20
+528|Per i muri. Va in magazzino.
+529|Per il pick-up. Va in magazzino.
+530|Cibo
+531|Bevanda
+532|Medicina
+533|Materiale
+534|Attrezzo
+535|Prezioso
+536|Proiettili 9 mm
+537|Proiettili .38
+538|Cartucce
+539|Proiettili da fucile
+540|Proiettili 5.56
+541|Supermercato
+542|Farmacia
+543|Ferramenta
+544|Armeria
+545|Stazione di servizio
+546|Casa
+547|Graffio
+548|Taglio profondo
+549|Morso
+550|Sereno
+551|Nuvoloso
+552|Pioggia
+553|Temporale
+554|Nebbia
+555|Market
+556|Officina
+557|Distributore
+558|Notti sopravvissute
+559|Nemici abbattuti
+560|Colpi alla testa
+561|Mobili frugati
+562|Prodotti venduti
+563|Ordini completati
+564|Investiti
+565|Rex Putridi cacciati
+566|N
+567|NE
+568|E
+569|SE
+570|S
+571|SO
+572|O
+573|NO
+574|Caricamento del mondo…
+575|Resistenza
+576|E scendi · Spazio frena
+577|Clicca per continuare
+578|Il mouse serve per guardarti intorno. Esc mette in pausa.
+579|Anno 3 della Nebbia · Strada 40, chilometro 1.112
+580|L'Ultimo
+581|Emporio
+582|Continua
+583|Nuova partita
+584|Scegli la difficoltà e le regole del mondo
+585|Opzioni
+586|Grafica, audio, comandi e lingua
+587|Esci
+588|Tre inverni fa cadde la Pietra Verde. La sua nebbia rialzò i morti: le persone, ma anche le ossa che dormivano sotto terra. Tu hai l'unica cosa aperta nel raggio di cento chilometri: un emporio con una palizzata, un vecchio pick-up e una pistola. A sud, lungo la strada, c'è un intero paese da saccheggiare. Di notte, la nebbia porta i putridi fino alla tua porta.
+589|Non si può giocare su schermi touch: aprilo dal PC.
+590|Accesso anticipato
+591|Scegli la tua apocalisse
+592|Regole del mondo
+593|Seme della mappa (facoltativo)
+594|Hai già una partita salvata: iniziarne una nuova la sostituisce.
+595|Inizia
+596|Indietro
+597|Impostazioni
+598|Schermo
+599|Audio
+600|Comandi
+601|Gioco e lingua
+602|Il tuo emporio
+603|Indietro · E
+604|Scaffali
+605|Migliorie
+606|Carovanieri
+607|Obiettivi
+608|Personaggio
+609|Chiudi · Tab
+610|Inventario
+611|Salute
+612|Abilità
+613|Prendi tutto
+614|Chiudi · E
+615|Il tuo zaino
+616|Dentro
+617|Sei salito di livello
+618|Scegli un talento. Si sommano se lo ripeti.
+619|Riprendi fiato
+620|Continua a giocare
+621|Salva ora
+622|Menu principale
+623|Esci dal gioco
+624|Codice partita
+625|Copia questo codice per avere un backup o portare la partita su un altro PC. Incollane uno e premi Carica per recuperarla.
+626|Copia codice
+627|Carica codice
+628|Ti hanno preso
+629|Svegliati all'emporio
+630|Stanco
+631|Esausto

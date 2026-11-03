@@ -1,0 +1,631 @@
+1|{s} seviye {n} oldu.
+2|Oyun kaydedildi
+3|Kaydedilemedi. Duraklatma menüsündeki oyun kodunu kullan.
+4|Keşfet, mal topla ve saat 20:00'den önce dükkâna dön.
+5|Kasaba yolun güneyinde: eşya eşya aranacak evler ve dükkânlar.
+6|V birinci şahıs ile yukarıdan görünüm arasında geçiş yapar.
+7|Ateş etmek ses çıkarır ve yakındaki her şeyi çeker.
+8|Elde edildi: {w}. Tuş {n}.
+9|{w} daha iyi durumda: değiştirdin.
+10|Marangozluk {n} gerekli.
+11|Çekiç lazım.
+12|Malzemen eksik.
+13|Dikenler
+14|Raptor bitkin hâlde yerde. Çantanda et varsa onu evcilleştirebilirsin (E'yi basılı tut).
+15|Taret
+16|Raptor
+17|Kamyonet
+18|Çürük Rex düştü! Kehribarı topla.
+19|kafa
+20|Çitin bir bölümü yıkıldı!
+21|Bir savunma yıkıldı.
+22|Dükkânını yağmalıyorlar!
+23|Yara: {w}. H ile sar.
+24|Kanıyorsun ama sargı, ilk yardım çantası ya da bez yok.
+25|Sarıldı: {w}.
+26|Açık yaran yok ve canın tam.
+27|Çantanda sargı ya da ilk yardım çantası yok.
+28|Kullanıldı: {i}.
+29|Kuşanıldı: {i}.
+30|Dezenfekte edilecek yara yok.
+31|Yaraları dezenfekte ettin.
+32|Ağrı kesici aldın. Ağrı birkaç saat azalır.
+33|Antibiyotikler enfeksiyonu durdurdu.
+34|Antibiyotik aldın ama enfekte değildin.
+35|Fenerin pilleri zaten dolu.
+36|Fenerin pillerini değiştirdin.
+37|O bozulmuştu. Midene dokundu.
+38|Çiğ et midene dokundu. Kamp ateşinde pişirsen iyi olur.
+39|İçildi: {i}.
+40|Yendi: {i}.
+41|Ne açsın ne susuz.
+42|Çantanda yiyecek ya da içecek yok.
+43|Yara kapandı: {w}.
+44|{n} ağır yaralandı ve kaçtı. Şafakta dükkâna döner.
+45|Bir raptor evcilleştirdin! Adı Kıvılcım. T ile seni takip eder ya da dükkânı korur.
+46|Hava değişiyor: {w}.
+47|Hava kararıyor. Saat 20:00'den önce dükkâna dön.
+48|Gece {d}: sis {n} çürük getiriyor.
+49|Çölde devasa bir şey hareket ediyor.
+50|Çürük Rex dükkâna doğru geliyor!
+51|{who} siparişinin süresi doldu. İtibarın düştü.
+52|Şafak söküyor. Sis çekiliyor ve {n} çürük yere yığılıyor.
+53|{n} dükkâna döndü.
+54|Gün {d}. Dün ${m} satış yaptın. Bugün aranan: {i}.
+55|{n} yiyecek çürüdü.
+56|Sis gece uyumana izin vermiyor.
+57|Uykun yok.
+58|Yakında tehlike var: uyuyamazsın.
+59|Kanıyorsun: önce yaranı sar.
+60|Uyumak için çok geç.
+61|{h} saat uyudun.
+62|Bu arada ${m} satış yaptın.
+63|{a} yok. Yakın dövüş silahı kullan ya da dükkândan satın al.
+64|Kırıldı: {w}!
+65|Tamir edildi: {w}.
+66|Gün {d}
+67|Enfeksiyon seni yendi. Kervancılar seni buldu ve yarım yamalak iyileştirdi.
+68|Taşıdıklarını kaybettin: {l}.
+69|Çantan boştu.
+70|Baygınken senden ${m} çaldılar.
+71|W gaz · S fren veya geri · A/D direksiyon · E in
+72|Burada inecek yer yok.
+73|Benzin yok. G ile ya da atölyeden yakıt doldur.
+74|Bir müşteri eli boş gitti: raflar boş.
+75|Bir müşteri rafta çürük yiyecek gördü ve kızgın çıktı.
+76|{i} ×{q} tanesi ${p}'dan satıldı (toplam ${t}).
+77|Dükkân satışı: +${t}
+78|Pahalı buldu: {i} ${p}. Almadan gitti.
+79|Açlık
+80|Susuzluk
+81|Kanama
+82|Ağrı
+83|Enfekte
+84|Zehirlenmiş
+85|Panik
+86|Islak
+87|Aşırı yük
+88|Son Dükkân
+89|Oyun kaydedildi.
+90|Kaydedilemedi. Aşağıdaki kodu kopyala.
+91|Kod kopyalandı.
+92|Kod seçildi: Ctrl+C ile kopyala.
+93|Bu kod geçersiz. Eksiksiz olduğunu kontrol et.
+94|KASABA
+95|DÜKKÂN
+96|Beyaz: sen · Kırmızı: kamyonet · Açık noktalar: fosiller · Kapatmak için M veya Esc
+97|Seviye {n}
+98|Zaten {n} var
+99|Yeni
+100|Çanta yok
+101|Tak
+102|Al
+103|Ye
+104|Kullan
+105|bozulabilir
+106|At
+107|Çanta boş.
+108|Silahlar
+109|elde
+110|Kuşan
+111|Bantla tamir et
+112|Mühimmat
+113|Can
+114|Yorgunluk
+115|Yaralar
+116|Sarıldı
+117|Kanama durdu
+118|Dezenfekte
+119|Yara yok.
+120|Sis enfeksiyonu: %{n}. Onu sadece antibiyotikler durdurur. %100'e ulaşınca seni yavaş yavaş öldürür.
+121|Bozuk bir şey yediğin için zehirlendin. Zamanla kendiliğinden geçer.
+122|Sar veya tedavi et (H)
+123|Seçilen yetenekler
+124|Henüz yok. Seçmek için seviye atla.
+125|Depola
+126|Hepsi
+127|Boş.
+128|Daha fazla sığmaz: çok fazla ağırlık taşıyorsun.
+129|Çantadan boşaltıldı: {l}.
+130|Kamyonetten: {l}.
+131|gece
+132|Para
+133|İtibar
+134|Bugün
+135|Siparişler
+136|1 al
+137|1 bırak
+138|üstünde
+139|depoda
+140|Al
+141|İçeri girince çantadaki malzemeler ve değerli eşyalar kendiliğinden boşaltılır; kamyonet yakında park ettiyse kasası da. Yiyecek, içecek, ilaç ve aletler üstünde kalır.
+142|Çanta: {a} / {b} kg.
+143|Ürün
+144|Depo
+145|Çanta
+146|Depo boş. Mal aramaya çık.
+147|Satılma şansı: %{n}
+148|Boş
+149|Raf {n}
+150|bugün en çok aranan
+151|Fiyat
+152|~${n}'a kadar iyi öderler
+153|Depoda {n}
+154|Satmak için depodan bir ürün seç.
+155|Bugün aranan: {i}. Müşteriler sen dışarıdayken bile 7:00–19:00 arası gelir ve raflarda ne varsa alır. Yüksek fiyat: satış başına daha çok para, ama daha çok kişi almadan gider ve itibarın düşer.
+156|Siparişler raftan çok daha fazla öder ve itibarını artırır. Depoda olanla teslim edilir. Süresi dolarsa itibar düşer.
+157|İstiyor: {i} ×{q}.
+158|Teslim edildi.
+159|Bugün 19:00'da sona eriyor.
+160|Yarın 19:00'da sona eriyor.
+161|Ödeme ${r} · sende {n}
+162|Hazır
+163|Teslim et
+164|Şimdilik sipariş yok. Yarın yenileri gelir.
+165|Gerekli: {u} (Geliştirmeler'de).
+166|Gerekli: {t}.
+167|Kullanır:
+168|Mühimmatına eklenir
+169|Silahlarına eklenir
+170|Depoya gider
+171|Üret
+172|Çit %{n}
+173|İçeri girebilecekleri {n} kırık bölüm var.
+174|Her hurda ya da tahta 100 puan onarır.
+175|Maliyet: {n} · sende {h}
+176|Onar
+177|Kamyonet deposu
+178|%{n} benzin var. Her bidon %30 doldurur.
+179|Kamyonet dükkânın yakınına park edilmiş olmalı.
+180|Depodaki yakıt: {n}
+181|Doldur
+182|Dolu
+183|Satın al ${p}
+184|Yoldan geçen kervancılardan alırsın. Üretmekten pahalı ama hemen.
+185|Sende {n}
+186|Çantada: {n}
+187|Depoda: {n}
+188|Zaten senin
+189|{d}. gün gelir
+190|Ödül ${r}
+191|Tamamlandı
+192|Bekliyor
+193|Hikâyen
+194|Tezgâhtaki son hareketler
+195|Henüz hiç müşteri gelmedi.
+196|Çantaya sığmıyor.
+197|Üretildi: {r}
+198|Çit {n} malzemeyle onarıldı.
+199|Depo %{n}.
+200|{who} sana ${r} ödedi.
+201|Satın alındı: {u}.
+202|Çantaya sığmadı: depoda kaldı.
+203|Gün {d} · ${m}
+204|Dünya oluşturuluyor…
+205|Yüklenirken bir şey ters gitti. Sayfayı yenile.
+206|Özel
+207|Her seçeneği zevkine göre ayarla.
+208|Evet
+209|Hayır
+210|Tam ekran
+211|Tam ekrandan çık
+212|Kalite
+213|Yüksek (gölgeler)
+214|Orta
+215|Düşük (daha akıcı)
+216|Çözünürlük ölçeği
+217|Görüş alanı
+218|Parlaklık
+219|Film greni
+220|Ham renk filtresi
+221|Başlangıç kamerası
+222|Birinci şahıs
+223|Yukarıdan görünüm
+224|Genel ses
+225|Efektler
+226|Ortam (yağmur, rüzgâr)
+227|Fare hassasiyeti
+228|Nişan hassasiyeti
+229|Dikey ekseni ters çevir
+230|Hareket
+231|Koş
+232|Çömel (daha az ses)
+233|Boşluk
+234|Zıpla · kamyoneti frenle
+235|Tık
+236|Ateş et veya vur
+237|Sağ tık
+238|Nişan al
+239|Yeniden doldur · yapıyı döndür
+240|Silahlar · önceki silah
+241|Kullan, aç, ara · yakıt doldur
+242|Envanter, sağlık ve yetenekler
+243|Harita
+244|Ye veya iç
+245|Sar ve tedavi et
+246|İnşa et
+247|El feneri
+248|Raptoruna emirler
+249|Kamerayı değiştir
+250|Duraklat
+251|Tuşlar
+252|Dil
+253|İpuçlarını göster
+254|Dünyadaki bazı tabelalar oyunu yeniden yükleyince dil değiştirir.
+255|Dünya oluşturulamadı: 
+256|Yukarıdan görünüm: fareyle nişan al. Yakınlaştırmak için tekerlek.
+257|Çömeldin: daha az ses çıkarıyorsun.
+258|Ayaktasın.
+259|İnşa edildi: {b}.
+260|Buraya inşa edilemez.
+261|Fenerin pili yok.
+262|Fener açık
+263|Fener kapalı
+264|{n} seni takip ediyor.
+265|{n} dükkânı korumak için kalıyor.
+266|Fenerin pilleri bitti. Yedeğin varsa L ile değiştir.
+267|kasaya
+268|Kamyonetin kasası dolu.
+269|Çok fazla ağırlık taşıyorsun. Bir şeyler bırak ya da kamyonete yükle.
+270|Hedef tamamlandı: {g}. Ödül ${r}.
+271|E · İn
+272|E · Dükkânı yönet
+273|E · Uyu
+274|Yorgunluk %{n}
+275|E · Raf {n}
+276|E · Kamyonete bin
+277|Benzin %{n}
+278|G · 1 bidon doldur
+279|Yakıt dolduruldu: +%30.
+280|E'yi basılı tut · {n} et pişir
+281|{n} kızarmış et pişirdin.
+282|Kamp ateşi
+283|Pişirmek için çiğ et getir
+284|Bitkin raptor
+285|Zaten bir raptorun var
+286|E'yi basılı tut · Raptoru evcilleştir
+287|Ona 1 et veriyorsun
+288|Evcilleştirmek için çantanda et lazım
+289|E · Ara: {c}
+290|Zaten arandı
+291|E'yi basılı tut · Fosil kaz
+292|{n} kaldı
+293|Kumun altında bir şey kıpırdadı…
+294|Kasaba
+295|Kasa {a}/{b} kg
+296|GECE · SİS
+297|ALACAKARANLIK
+298|ŞAFAK
+299|GÜNDÜZ
+300|Pil %{n}
+301|{who} için {i} ×{q} · ${r}
+302|bugün 19:00
+303|yara
+304|Durum
+305|Boş eller
+306|R döndür
+307|Tık inşa et · B çık
+308|Konserve
+309|Ekmek
+310|Meyve
+311|Süt
+312|Bisküvi
+313|Çikolata
+314|Çiğ et
+315|Kızarmış et
+316|Çürük yiyecek
+317|Su şişesi
+318|Gazoz
+319|Sargı bezi
+320|Dezenfektan
+321|Ağrı kesici
+322|Antibiyotik
+323|İlk yardım çantası
+324|Odun
+325|Tahtalar
+326|Çiviler
+327|Sac
+328|Hurda
+329|Koli bandı
+330|Halat
+331|Bez
+332|Barut
+333|Yakıt
+334|Piller
+335|Çakmak
+336|Testere
+337|Alet çantası
+338|Deri
+339|Fosil kemik
+340|Diş
+341|Mücevher
+342|Kehribar
+343|Bel çantası
+344|Okul çantası
+345|Kamp çantası
+346|Askerî çanta
+347|9 mm tabanca
+348|Toplu tabanca
+349|Pompalı tüfek
+350|Av tüfeği
+351|Saldırı tüfeği
+352|Bıçak
+353|Tava
+354|Beyzbol sopası
+355|Çekiç
+356|Levye
+357|Pala
+358|Balta
+359|Mızrak
+360|Gezgin
+361|Koşucu
+362|Kaba
+363|Çürük raptor
+364|Boynuzlu
+365|Çürük Rex
+366|Buzdolabı
+367|Kiler dolabı
+368|Gardırop
+369|Banyo dolabı
+370|Çalışma masası
+371|Tezgâh
+372|Market rafı
+373|Eczane rafı
+374|Hırdavat rafı
+375|Silah dolabı
+376|Tezgâh
+377|Araba bagajı
+378|Çöp kutusu
+379|Benzin pompası
+380|Sandık
+381|Ek raf
+382|Aynı anda bir ürün daha satışta.
+383|Güçlendirilmiş duvarlar
+384|Tüm çit daha çok darbeye dayanır.
+385|Otomatik taret
+386|Yaklaşan her şeye kendiliğinden ateş eder. Avlunun bir köşesine kurulur.
+387|Ocak
+388|Atölyede kızarmış et pişirmeyi sağlar.
+389|Dolum tezgâhı
+390|Barutla mühimmat üretmeyi sağlar.
+391|Benzinli buzdolabı
+392|Depodaki yiyecekler çok daha yavaş çürür.
+393|Dikilmiş çanta
+394|Her çantaya +4 kg kapasite.
+395|Yük kasası
+396|Kamyonet kasasına +40 kg.
+397|Güçlü fener
+398|Işık çok daha uzağa ulaşır ve daha az pil harcar.
+399|Işıklı tabela
+400|Gün içinde daha çok müşteri çeker.
+401|Barikat
+402|Çürükleri yavaşlatır. Vura vura kırarlar.
+403|Üstünden geçenleri yaralar ve yavaşlatır.
+404|Gece aydınlatır. E ile çiğ eti pişirirsin.
+405|Tahta duvar
+406|Barikattan çok daha sağlam. Çekiç ve marangozluk 2 gerekir.
+407|Sac duvar
+408|Kurabileceğin en sağlam şey. Marangozluk 4.
+409|Nişancılık
+410|Daha az sekme ve daha hızlı doldurma.
+411|Yakın dövüş
+412|Daha çok hasar ve silahlarda daha az aşınma.
+413|Marangozluk
+414|Daha sağlam savunmalar ve yeni duvarlar.
+415|Hayatta kalma
+416|Daha az açlık ve susuzluk, daha hızlı ağaç kesme.
+417|İlk yardım
+418|Tedaviler daha etkili, yaralar daha çabuk kapanır.
+419|Atletizm
+420|Koşarken daha çok dayanıklılık ve hız.
+421|Çürük nüfusu
+422|Düşük
+423|Normal
+424|Yüksek
+425|Aşırı
+426|Dinozorlar
+427|Az
+428|Normal
+429|Çok
+430|Ganimet
+431|Kıt
+432|Bol
+433|Gün uzunluğu
+434|12 dk
+435|24 dk
+436|36 dk
+437|48 dk
+438|Açlık ve susuzluk
+439|Yavaş
+440|Hızlı
+441|Gece sürüleri
+442|Hafif
+443|Acımasız
+444|Sis enfeksiyonu
+445|Kapalı
+446|Açık
+447|Yiyecekler çürür
+448|Çırak
+449|Az çürük, bol ganimet ve uzun günler. Dünyayı tanımak için.
+450|Hayatta kalan
+451|Tasarlanan deneyim: zor ama adil.
+452|Kıyamet
+453|Kasaba dolup taşıyor, ganimet kıt ve geceler acımasız.
+454|Tahtalar ×3
+455|Sargı ×2
+456|Sargı ×3
+457|9 mm mermi ×10
+458|.38 mermi ×6
+459|Fişek ×4
+460|Tüfek mermisi ×5
+461|5.56 mermi ×15
+462|Sağlam el
+463|Ateşli silahlarla +%15 hasar.
+464|Kalın deri
+465|+25 azami can.
+466|Uzun bacaklar
+467|+%8 hız.
+468|Hızlı eller
+469|%20 daha hızlı doldurursun.
+470|Yük katırı
+471|Çantada +5 kg.
+472|Dil döken
+473|Müşteriler %8 daha yüksek fiyatları kabul eder.
+474|Kasap
+475|Hayvanlar 1 fazla et bırakır.
+476|Leş toplayıcı
+477|Mobilyalarda, sandıklarda ve arabalarda daha çok şey bulursun.
+478|Keskin
+479|+%30 yakın dövüş hasarı ve silahlar daha az aşınır.
+480|İkinci nefes
+481|5 sn vurulmazsan canın kendiliğinden dolar.
+482|Şahin gözü
+483|Kafa atışları %30 daha fazla vurur.
+484|Ciğerler
+485|Koşu için +%30 dayanıklılık.
+486|Demir mide
+487|Açlık ve susuzluk %30 daha yavaş artar.
+488|Terbiyeci
+489|Raptorun %50 daha sert vurur.
+490|Sürücü
+491|Kamyonet daha az benzin yakar ve daha sert çarpar.
+492|Koyu kan
+493|Isırıklar neredeyse hiç enfekte olmaz.
+494|3 gece hayatta kal
+495|50 ürün sat
+496|5 sipariş tamamla
+497|Bir raptor evcilleştir
+498|Kasabada 30 mobilya ara
+499|50 kafa atışı yap
+500|5 savunma inşa et
+501|Kamyonetle 20 yaratık ez
+502|Bir yeteneği seviye 5'e çıkar
+503|Satışlardan $3.000 kazan
+504|Çürük Rex'i avla
+505|10 gece hayatta kal
+506|Atış başına sekiz saçma. Yakından acımasız.
+507|İkisini delip geçen altı ağır atış.
+508|Dürbünden bakmak için sağ tık. Üç düşmana kadar delip geçer.
+509|Otomatik: tıkı basılı tut. Mühimmatı hızlı tüketir.
+510|Çok sert vurur ve ağacı iki darbede keser.
+511|9 mm mermi ×20
+512|Tabanca için.
+513|.38 mermi ×12
+514|Toplu tabanca için.
+515|Fişek ×8
+516|Pompalı için.
+517|Tüfek mermisi ×10
+518|Av tüfeği için.
+519|5.56 mermi ×30
+520|Saldırı tüfeği için.
+521|Kanamaya karşı. Çantaya gider.
+522|Çok iyileştirir, dezenfekte eder ve kanamayı durdurur.
+523|Sis enfeksiyonunu tedavi eder.
+524|Su
+525|Susuzluğa karşı. Çantaya gider.
+526|El feneri için.
+527|Çiviler ×20
+528|Duvarlar için. Depoya gider.
+529|Kamyonet için. Depoya gider.
+530|Yiyecek
+531|İçecek
+532|İlaç
+533|Malzeme
+534|Alet
+535|Değerli
+536|9 mm mermi
+537|.38 mermi
+538|Fişek
+539|Tüfek mermisi
+540|5.56 mermi
+541|Süpermarket
+542|Eczane
+543|Hırdavatçı
+544|Silah dükkânı
+545|Benzin istasyonu
+546|Ev
+547|Sıyrık
+548|Derin kesik
+549|Isırık
+550|Açık
+551|Bulutlu
+552|Yağmur
+553|Fırtına
+554|Sis
+555|Market
+556|Atölye
+557|Benzinlik
+558|Atlatılan geceler
+559|Öldürülen düşmanlar
+560|Kafa atışları
+561|Aranan mobilyalar
+562|Satılan ürünler
+563|Tamamlanan siparişler
+564|Ezilenler
+565|Avlanan Çürük Rex'ler
+566|K
+567|KD
+568|D
+569|GD
+570|G
+571|GB
+572|B
+573|KB
+574|Dünya yükleniyor…
+575|Dayanıklılık
+576|E in · Boşluk fren
+577|Devam etmek için tıkla
+578|Fare etrafa bakmak için. Esc duraklatır.
+579|Sis'in 3. Yılı · Yol 40, kilometre 1.112
+580|Son
+581|Dükkân
+582|Devam et
+583|Yeni oyun
+584|Zorluğu ve dünyanın kurallarını seç
+585|Seçenekler
+586|Grafik, ses, kontroller ve dil
+587|Çık
+588|Üç kış önce Yeşil Taş düştü. Sisi ölüleri kaldırdı: insanları ve toprağın altında uyuyan kemikleri de. Yüz kilometre içinde açık olan tek yer sende: çitli bir dükkân, eski bir kamyonet ve bir tabanca. Güneyde, yol boyunca yağmalanmayı bekleyen koca bir kasaba var. Geceleri sis çürükleri kapına kadar getirir.
+589|Dokunmatik ekranlarda oynanamaz: bilgisayarda aç.
+590|Erken erişim
+591|Kıyametini seç
+592|Dünyanın kuralları
+593|Harita tohumu (isteğe bağlı)
+594|Zaten kayıtlı bir oyunun var: yeni oyun onun yerine geçer.
+595|Başla
+596|Geri
+597|Ayarlar
+598|Ekran
+599|Ses
+600|Kontroller
+601|Oyun ve dil
+602|Dükkânın
+603|Geri · E
+604|Raflar
+605|Geliştirmeler
+606|Kervancılar
+607|Hedefler
+608|Karakter
+609|Kapat · Tab
+610|Envanter
+611|Sağlık
+612|Yetenekler
+613|Hepsini al
+614|Kapat · E
+615|Çantan
+616|İçeride
+617|Seviye atladın
+618|Bir yetenek seç. Tekrar seçersen birikir.
+619|Biraz nefes al
+620|Oynamaya devam et
+621|Şimdi kaydet
+622|Ana menü
+623|Oyundan çık
+624|Oyun kodu
+625|Yedek almak ya da oyununu başka bir bilgisayara taşımak için bu kodu kopyala. Bir kod yapıştır ve geri yüklemek için Yükle'ye bas.
+626|Kodu kopyala
+627|Kodu yükle
+628|Seni yakaladılar
+629|Dükkânda uyan
+630|Yorgun
+631|Bitkin

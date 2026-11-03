@@ -1,5 +1,6 @@
 // Ventana de escritorio de El Último Almacén (Electron).
-const { app, BrowserWindow, globalShortcut } = require('electron');
+const { app, BrowserWindow, globalShortcut, Menu } = require('electron');
+Menu.setApplicationMenu(null);
 const path = require('path');
 
 function createWindow() {

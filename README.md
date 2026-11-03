@@ -1,8 +1,21 @@
 # El Último Almacén
 
-Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear ruinas, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
+Supervivencia en primera persona o con vista de arriba. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.1.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.2.0.
+
+## Novedades de la 0.2
+
+- Pueblo al sur con supermercado, farmacia, ferretería, armería, estación de servicio y casas. Cada heladera, alacena, armario o baúl de auto se revisa por separado.
+- Salud por heridas (rasguño, corte, mordida), sangrado, infección de la bruma, intoxicación, cansancio, pánico y mojarse con la lluvia.
+- Peso en kilos, mochilas que se encuentran, comida que se pudre, clima cambiante y cama para dormir.
+- 13 armas (8 cuerpo a cuerpo con desgaste y 5 de fuego) y 6 habilidades que suben con el uso.
+- Menú principal, nueva partida con dificultades y reglas del mundo a medida, y opciones de pantalla, sonido, controles e idioma.
+- 12 idiomas: español, inglés, portugués, francés, alemán, italiano, ruso, polaco, turco, chino, japonés y coreano.
+
+## Controles
+
+WASD moverse · Shift correr · C agacharse · Espacio saltar · Clic disparar o pegar · Clic derecho apuntar · R recargar · 1-9 armas (Q la anterior) · E usar o revisar · G cargar nafta · Tab inventario, salud y habilidades · M mapa · X comer o tomar · H vendar · B construir · L linterna · T órdenes al raptor · **V cambiar entre primera persona y vista de arriba** · F11 pantalla completa · Esc pausa.
 
 ## Qué hay en este repositorio
 
@@ -48,6 +61,6 @@ npm start
 
 - Jugarlo varias semanas y ajustar la dificultad y el ritmo.
 - Mejorar modelos, animaciones y sonidos (hoy son provisorios).
-- Menú de opciones completo (gráficos, controles, volumen) y soporte de joystick.
+- Soporte de joystick y teclas configurables.
 - Integración con Steam (logros, guardado en la nube) usando steamworks.js.
 - Ícono y cápsulas definitivas.

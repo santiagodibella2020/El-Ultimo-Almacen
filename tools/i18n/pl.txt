@@ -1,0 +1,631 @@
+1|{s} osiąga poziom {n}.
+2|Gra zapisana
+3|Nie udało się zapisać. Użyj kodu gry w menu pauzy.
+4|Eksploruj, zbieraj towar i wróć do sklepu przed 20:00.
+5|Miasteczko jest na południe wzdłuż drogi: domy i sklepy do przeszukania mebel po meblu.
+6|V przełącza między widokiem z pierwszej osoby a widokiem z góry.
+7|Strzały robią hałas i przyciągają wszystko w pobliżu.
+8|Zdobyto: {w}. Klawisz {n}.
+9|{w} w lepszym stanie: wymieniono.
+10|Wymagana stolarka {n}.
+11|Potrzebujesz młotka.
+12|Brakuje materiałów.
+13|Kolce
+14|Raptor leży osłabiony. Z mięsem w plecaku możesz go oswoić (przytrzymaj E).
+15|Wieżyczka
+16|Raptor
+17|Pikap
+18|Zgniły Rex padł! Zbierz bursztyn.
+19|głowa
+20|Przebili fragment palisady!
+21|Zniszczono umocnienie.
+22|Plądrują twój sklep!
+23|Rana: {w}. Opatrz ją klawiszem H.
+24|Krwawisz, a nie masz bandaży, apteczki ani materiału.
+25|Opatrzono: {w}.
+26|Brak otwartych ran, zdrowie pełne.
+27|Nie masz bandaży ani apteczki w plecaku.
+28|Użyto: {i}.
+29|Założono: {i}.
+30|Brak ran do zdezynfekowania.
+31|Zdezynfekowano rany.
+32|Wziąłeś środki przeciwbólowe. Ból zelżeje na kilka godzin.
+33|Antybiotyki zatrzymały infekcję.
+34|Wziąłeś antybiotyki, ale nie byłeś zarażony.
+35|Latarka ma już naładowane baterie.
+36|Wymieniono baterie w latarce.
+37|To było zepsute. Zrobiło ci się niedobrze.
+38|Surowe mięso ci zaszkodziło. Lepiej upiec je na ognisku.
+39|Wypito: {i}.
+40|Zjedzono: {i}.
+41|Nie jesteś głodny ani spragniony.
+42|Nie masz jedzenia ani picia w plecaku.
+43|Rana się zagoiła: {w}.
+44|{n} jest ciężko ranna i uciekła. Wróci do sklepu o świcie.
+45|Oswoiłeś raptora! Nazywa się Iskra. T, by szła za tobą lub pilnowała sklepu.
+46|Pogoda się zmienia: {w}.
+47|Zmierzcha. Wróć do sklepu przed 20:00.
+48|Noc {d}: mgła sprowadza {n} zgniłych.
+49|Coś ogromnego porusza się na pustyni.
+50|Zgniły Rex idzie na sklep!
+51|Zamówienie {who} przepadło. Spadła twoja reputacja.
+52|Świta. Mgła się cofa, a {n} zgniłych pada na ziemię.
+53|{n} wróciła do sklepu.
+54|Dzień {d}. Wczoraj sprzedano za ${m}. Dziś szukają: {i}.
+55|Zepsuło się {n} produktów.
+56|Mgła nie pozwala spać w nocy.
+57|Nie chce ci się spać.
+58|W pobliżu jest niebezpieczeństwo: nie możesz spać.
+59|Krwawisz: najpierw się opatrz.
+60|Jest już za późno na sen.
+61|Spałeś {h} godz.
+62|W międzyczasie sprzedano za ${m}.
+63|Brak: {a}. Użyj broni białej albo kup w sklepie.
+64|Zepsuło się: {w}!
+65|Naprawiono: {w}.
+66|Dzień {d}
+67|Infekcja cię pokonała. Karawaniarze znaleźli cię i połatali.
+68|Straciłeś to, co niosłeś: {l}.
+69|Plecak był pusty.
+70|Gdy byłeś nieprzytomny, ukradziono ci ${m}.
+71|W gaz · S hamulec lub wsteczny · A/D skręt · E wysiądź
+72|Nie ma tu miejsca, by wysiąść.
+73|Brak benzyny. Zatankuj klawiszem G lub w warsztacie.
+74|Klient odszedł z niczym: półki są puste.
+75|Klient zobaczył zgniłe jedzenie na półce i wyszedł wściekły.
+76|Sprzedano {i} ×{q} po ${p} (razem ${t}).
+77|Sprzedaż w sklepie: +${t}
+78|Za drogo: {i} za ${p}. Wyszedł bez zakupu.
+79|Głód
+80|Pragnienie
+81|Krwawienie
+82|Ból
+83|Zakażony
+84|Zatruty
+85|Panika
+86|Przemoczony
+87|Przeciążenie
+88|Ostatni Sklep
+89|Gra zapisana.
+90|Nie udało się zapisać. Skopiuj kod poniżej.
+91|Kod skopiowany.
+92|Zaznaczono kod: skopiuj go Ctrl+C.
+93|Ten kod jest nieprawidłowy. Sprawdź, czy jest kompletny.
+94|MIASTECZKO
+95|SKLEP
+96|Biały: ty · Czerwony: pikap · Jasne punkty: skamieniałości · M lub Esc, by zamknąć
+97|Poziom {n}
+98|Masz już {n}
+99|Nowy
+100|Bez plecaka
+101|Załóż
+102|Weź
+103|Zjedz
+104|Użyj
+105|łatwo psujące się
+106|Wyrzuć
+107|Plecak jest pusty.
+108|Broń
+109|w ręku
+110|Wyposaż
+111|Napraw taśmą
+112|Amunicja
+113|Zdrowie
+114|Zmęczenie
+115|Rany
+116|Opatrzona
+117|Przestała krwawić
+118|Zdezynfekowana
+119|Brak ran.
+120|Infekcja mgły: {n}%. Zatrzymają ją tylko antybiotyki. Przy 100% będzie cię powoli zabijać.
+121|Zatrułeś się czymś zepsutym. Przejdzie z czasem.
+122|Opatrz lub lecz (H)
+123|Wybrane atuty
+124|Jeszcze żadnych. Awansuj, by wybrać.
+125|Odłóż
+126|Wszystko
+127|Pusto.
+128|Nic więcej się nie zmieści: niesiesz za duży ciężar.
+129|Rozładowano z plecaka: {l}.
+130|Z pikapa: {l}.
+131|noc
+132|Pieniądze
+133|Reputacja
+134|Dziś
+135|Zamówienia
+136|Weź 1
+137|Odłóż 1
+138|przy sobie
+139|w magazynie
+140|Weź
+141|Po wejściu materiały i kosztowności z plecaka rozładowują się same, tak samo paka pikapa, jeśli stoi w pobliżu. Jedzenie, napoje, leki i narzędzia zostają przy tobie.
+142|Plecak: {a} z {b} kg.
+143|Produkt
+144|Magazyn
+145|Plecak
+146|Magazyn jest pusty. Wyjdź poszukać towaru.
+147|Szansa sprzedaży: {n}%
+148|Pusto
+149|Półka {n}
+150|dziś najbardziej poszukiwane
+151|Cena
+152|Dobrze płacą do ~${n}
+153|{n} w magazynie
+154|Wybierz produkt z magazynu do sprzedaży.
+155|Dziś popyt na: {i}. Klienci przychodzą od 7:00 do 19:00, nawet gdy cię nie ma, i kupują to, co jest na półkach. Wysoka cena: więcej pieniędzy za sprzedaż, ale więcej osób wychodzi bez zakupu i spada reputacja.
+156|Zamówienia płacą dużo więcej niż półka i podnoszą reputację. Realizuje się je z tego, co jest w magazynie. Jeśli przepadną, reputacja spada.
+157|Chce: {i} ×{q}.
+158|Dostarczono.
+159|Wygasa dziś o 19:00.
+160|Wygasa jutro o 19:00.
+161|Płaci ${r} · masz {n}
+162|Gotowe
+163|Dostarcz
+164|Na razie brak zamówień. Jutro przyjdą nowe.
+165|Wymagane: {u} (w Ulepszeniach).
+166|Wymagane: {t}.
+167|Zużywa:
+168|Trafia do amunicji
+169|Trafia do broni
+170|Trafia do magazynu
+171|Wytwórz
+172|Palisada: {n}%
+173|Jest {n} wyrw, którymi mogą wejść.
+174|Każdy złom lub deska naprawia 100 punktów.
+175|Koszt: {n} · masz {h}
+176|Napraw
+177|Bak pikapa
+178|Benzyny: {n}%. Każdy kanister wlewa 30%.
+179|Pikap musi stać w pobliżu sklepu.
+180|Paliwo w magazynie: {n}
+181|Zatankuj
+182|Pełny
+183|Kup ${p}
+184|Kupujesz od karawaniarzy na drodze. Drożej niż wytworzyć, ale od ręki.
+185|Masz {n}
+186|W plecaku: {n}
+187|W magazynie: {n}
+188|Już twoje
+189|Przybędzie w dniu {d}
+190|Nagroda ${r}
+191|Zaliczone
+192|W toku
+193|Twoja historia
+194|Ostatnie ruchy przy ladzie
+195|Nie było jeszcze żadnego klienta.
+196|Nie mieści się w plecaku.
+197|Wytworzono: {r}
+198|Naprawiono palisadę, zużyto materiałów: {n}.
+199|Bak: {n}%.
+200|{who} zapłacił ci ${r}.
+201|Kupiono: {u}.
+202|Nie zmieściło się w plecaku: zostało w magazynie.
+203|Dzień {d} · ${m}
+204|Generowanie świata…
+205|Coś poszło nie tak przy ładowaniu. Odśwież stronę.
+206|Własne
+207|Ustaw każdą opcję według uznania.
+208|Tak
+209|Nie
+210|Pełny ekran
+211|Wyjdź z pełnego ekranu
+212|Jakość
+213|Wysoka (cienie)
+214|Średnia
+215|Niska (płynniej)
+216|Skala rozdzielczości
+217|Pole widzenia
+218|Jasność
+219|Ziarno filmowe
+220|Surowy filtr kolorów
+221|Kamera na starcie
+222|Pierwsza osoba
+223|Widok z góry
+224|Głośność ogólna
+225|Efekty
+226|Otoczenie (deszcz, wiatr)
+227|Czułość myszy
+228|Czułość przy celowaniu
+229|Odwróć oś pionową
+230|Ruch
+231|Bieg
+232|Kucnij (mniej hałasu)
+233|Spacja
+234|Skok · hamulec pikapa
+235|LPM
+236|Strzelaj lub uderz
+237|PPM
+238|Celuj
+239|Przeładuj · obróć budowlę
+240|Broń · poprzednia broń
+241|Użyj, otwórz, przeszukaj · zatankuj
+242|Ekwipunek, zdrowie i umiejętności
+243|Mapa
+244|Jedz lub pij
+245|Opatrz i lecz
+246|Buduj
+247|Latarka
+248|Rozkazy dla raptora
+249|Zmień kamerę
+250|Pauza
+251|Klawisze
+252|Język
+253|Pokazuj wskazówki
+254|Niektóre napisy w świecie zmienią język dopiero po ponownym wczytaniu gry.
+255|Nie udało się wygenerować świata: 
+256|Widok z góry: celujesz myszą. Kółko przybliża.
+257|Kucasz: robisz mniej hałasu.
+258|Wstajesz.
+259|Zbudowano: {b}.
+260|Nie można tu budować.
+261|Latarka nie ma baterii.
+262|Latarka włączona
+263|Latarka wyłączona
+264|{n} idzie za tobą.
+265|{n} zostaje pilnować sklepu.
+266|Baterie latarki się wyczerpały. Klawiszem L wymienisz, jeśli masz zapas.
+267|na pakę
+268|Paka pikapa jest pełna.
+269|Niesiesz za duży ciężar. Upuść coś albo załaduj do pikapa.
+270|Cel osiągnięty: {g}. Nagroda ${r}.
+271|E · Wysiądź
+272|E · Prowadź sklep
+273|E · Śpij
+274|Zmęczenie {n}%
+275|E · Półka {n}
+276|E · Wsiądź do pikapa
+277|Benzyna {n}%
+278|G · Wlej 1 kanister
+279|Zatankowano: +30%.
+280|Przytrzymaj E · Upiecz mięso: {n}
+281|Upieczono mięsa: {n}.
+282|Ognisko
+283|Przynieś surowe mięso do upieczenia
+284|Osłabiony raptor
+285|Masz już raptora
+286|Przytrzymaj E · Oswój raptora
+287|Dajesz mu 1 mięso
+288|Do oswojenia potrzebujesz mięsa w plecaku
+289|E · Przeszukaj: {c}
+290|Już przeszukane
+291|Przytrzymaj E · Wykop skamieniałości
+292|Zostało {n}
+293|Coś poruszyło się pod piaskiem…
+294|Miasteczko
+295|Paka {a}/{b} kg
+296|NOC · MGŁA
+297|ZMIERZCH
+298|ŚWIT
+299|DZIEŃ
+300|Baterie {n}%
+301|{i} ×{q} dla {who} · ${r}
+302|dziś 19:00
+303|rana
+304|Stan
+305|Puste ręce
+306|R obróć
+307|LPM buduj · B wyjdź
+308|Konserwa
+309|Chleb
+310|Owoce
+311|Mleko
+312|Ciastka
+313|Czekolada
+314|Surowe mięso
+315|Pieczone mięso
+316|Zgniłe jedzenie
+317|Butelka wody
+318|Napój gazowany
+319|Bandaż
+320|Środek dezynfekujący
+321|Środki przeciwbólowe
+322|Antybiotyki
+323|Apteczka
+324|Drewno
+325|Deski
+326|Gwoździe
+327|Blacha
+328|Złom
+329|Taśma klejąca
+330|Lina
+331|Materiał
+332|Proch
+333|Paliwo
+334|Baterie
+335|Zapalniczka
+336|Piła
+337|Skrzynka z narzędziami
+338|Skóra
+339|Skamieniała kość
+340|Kieł
+341|Biżuteria
+342|Bursztyn
+343|Saszetka biodrowa
+344|Plecak szkolny
+345|Plecak turystyczny
+346|Torba wojskowa
+347|Pistolet 9 mm
+348|Rewolwer
+349|Strzelba
+350|Karabin myśliwski
+351|Karabin szturmowy
+352|Nóż
+353|Patelnia
+354|Kij bejsbolowy
+355|Młotek
+356|Łom
+357|Maczeta
+358|Siekiera
+359|Włócznia
+360|Włóczęga
+361|Biegacz
+362|Osiłek
+363|Zgniły raptor
+364|Rogacz
+365|Zgniły Rex
+366|Lodówka
+367|Kredens
+368|Szafa
+369|Szafka łazienkowa
+370|Biurko
+371|Stół warsztatowy
+372|Regał sklepowy
+373|Półka apteczna
+374|Regał z narzędziami
+375|Szafa na broń
+376|Lada
+377|Bagażnik
+378|Kosz na śmieci
+379|Dystrybutor
+380|Skrzynia
+381|Dodatkowa półka
+382|Jeszcze jeden produkt w sprzedaży jednocześnie.
+383|Wzmocnione mury
+384|Cała palisada wytrzymuje więcej ciosów.
+385|Automatyczna wieżyczka
+386|Sama strzela do wszystkiego, co się zbliża. Stoi w rogu podwórza.
+387|Palenisko
+388|Pozwala piec mięso w warsztacie.
+389|Prasa do amunicji
+390|Pozwala wytwarzać amunicję z prochu.
+391|Lodówka na benzynę
+392|Jedzenie w magazynie psuje się dużo wolniej.
+393|Wzmocniony plecak
+394|+4 kg pojemności dowolnego plecaka.
+395|Skrzynie ładunkowe
+396|+40 kg na pace pikapa.
+397|Mocna latarka
+398|Snop sięga dużo dalej i zużywa mniej baterii.
+399|Podświetlany szyld
+400|Przyciąga więcej klientów w ciągu dnia.
+401|Barykada
+402|Zatrzymuje zgniłych. Rozbijają ją ciosami.
+403|Ranią i spowalniają wszystko, co po nich przejdzie.
+404|Świeci w nocy. Klawiszem E pieczesz surowe mięso.
+405|Ściana z desek
+406|Dużo mocniejsza niż barykada. Wymaga młotka i stolarki 2.
+407|Ściana z blachy
+408|Najmocniejsze, co możesz zbudować. Stolarka 4.
+409|Celność
+410|Mniejszy rozrzut i szybsze przeładowanie.
+411|Walka wręcz
+412|Więcej obrażeń i mniejsze zużycie broni.
+413|Stolarka
+414|Mocniejsze umocnienia i nowe ściany.
+415|Przetrwanie
+416|Mniej głodu i pragnienia, szybsza wycinka.
+417|Pierwsza pomoc
+418|Leczenie działa lepiej, a rany goją się szybciej.
+419|Lekkoatletyka
+420|Więcej kondycji i szybszy bieg.
+421|Liczba zgniłych
+422|Niska
+423|Normalna
+424|Wysoka
+425|Ekstremalna
+426|Dinozaury
+427|Mało
+428|Normalnie
+429|Dużo
+430|Łupy
+431|Skąpe
+432|Obfite
+433|Długość dnia
+434|12 min
+435|24 min
+436|36 min
+437|48 min
+438|Głód i pragnienie
+439|Wolne
+440|Szybkie
+441|Nocne hordy
+442|Łagodne
+443|Brutalne
+444|Infekcja mgły
+445|Wyłączona
+446|Włączona
+447|Jedzenie się psuje
+448|Nowicjusz
+449|Mało zgniłych, dużo łupów i długie dni. By poznać świat.
+450|Ocalały
+451|Zamierzone doświadczenie: trudne, ale uczciwe.
+452|Apokalipsa
+453|Miasteczko się roi, łupów brakuje, a noce są brutalne.
+454|Deski ×3
+455|Bandaże ×2
+456|Bandaże ×3
+457|Naboje 9 mm ×10
+458|Naboje .38 ×6
+459|Śrut ×4
+460|Naboje karabinowe ×5
+461|Naboje 5.56 ×15
+462|Pewna ręka
+463|+15% obrażeń bronią palną.
+464|Twarda skóra
+465|+25 maksymalnego zdrowia.
+466|Długie nogi
+467|+8% szybkości.
+468|Szybkie ręce
+469|Przeładowujesz o 20% szybciej.
+470|Juczny muł
+471|+5 kg w plecaku.
+472|Gadane
+473|Klienci akceptują ceny wyższe o 8%.
+474|Rzeźnik
+475|Zwierzęta zostawiają 1 mięso więcej.
+476|Padlinożerca
+477|Znajdujesz więcej w meblach, skrzyniach i autach.
+478|Ostrze
+479|+30% obrażeń wręcz, a broń zużywa się wolniej.
+480|Drugi oddech
+481|Odzyskujesz zdrowie, gdy przez 5 s nikt cię nie trafi.
+482|Sokole oko
+483|Strzały w głowę zadają 30% więcej.
+484|Płuca
+485|+30% kondycji do biegu.
+486|Żelazny żołądek
+487|Głód i pragnienie rosną o 30% wolniej.
+488|Treser
+489|Twój raptor bije o 50% mocniej.
+490|Kierowca
+491|Pikap pali mniej benzyny i mocniej taranuje.
+492|Gęsta krew
+493|Ugryzienia prawie nigdy się nie zakażają.
+494|Przetrwaj 3 noce
+495|Sprzedaj 50 produktów
+496|Zrealizuj 5 zamówień
+497|Oswój raptora
+498|Przeszukaj 30 mebli w miasteczku
+499|Oddaj 50 strzałów w głowę
+500|Zbuduj 5 umocnień
+501|Rozjedź pikapem 20 bestii
+502|Podnieś umiejętność do poziomu 5
+503|Zarób $3000 na sprzedaży
+504|Upoluj Zgniłego Rexa
+505|Przetrwaj 10 nocy
+506|Osiem śrucin na strzał. Brutalna z bliska.
+507|Sześć ciężkich strzałów, które przebijają dwóch.
+508|PPM, by patrzeć przez lunetę. Przebija do trzech wrogów.
+509|Automat: przytrzymaj przycisk. Szybko zużywa amunicję.
+510|Bije bardzo mocno i ścina drzewo w dwa ciosy.
+511|Naboje 9 mm ×20
+512|Do pistoletu.
+513|Naboje .38 ×12
+514|Do rewolweru.
+515|Śrut ×8
+516|Do strzelby.
+517|Naboje karabinowe ×10
+518|Do karabinu.
+519|Naboje 5.56 ×30
+520|Do karabinu szturmowego.
+521|Na krwawienie. Trafia do plecaka.
+522|Dużo leczy, dezynfekuje i tamuje krwawienie.
+523|Leczą infekcję mgły.
+524|Woda
+525|Na pragnienie. Trafia do plecaka.
+526|Do latarki.
+527|Gwoździe ×20
+528|Do ścian. Trafiają do magazynu.
+529|Do pikapa. Trafia do magazynu.
+530|Jedzenie
+531|Napój
+532|Leki
+533|Materiał
+534|Narzędzie
+535|Cenne
+536|Naboje 9 mm
+537|Naboje .38
+538|Śrut
+539|Naboje karabinowe
+540|Naboje 5.56
+541|Supermarket
+542|Apteka
+543|Sklep żelazny
+544|Sklep z bronią
+545|Stacja benzynowa
+546|Dom
+547|Zadrapanie
+548|Głębokie cięcie
+549|Ugryzienie
+550|Pogodnie
+551|Pochmurno
+552|Deszcz
+553|Burza
+554|Mgła
+555|Sklep
+556|Warsztat
+557|Stacja paliw
+558|Przetrwane noce
+559|Zabici wrogowie
+560|Strzały w głowę
+561|Przeszukane meble
+562|Sprzedane produkty
+563|Zrealizowane zamówienia
+564|Rozjechani
+565|Upolowane Zgniłe Rexy
+566|N
+567|NE
+568|E
+569|SE
+570|S
+571|SW
+572|W
+573|NW
+574|Wczytywanie świata…
+575|Kondycja
+576|E wysiądź · Spacja hamuj
+577|Kliknij, by kontynuować
+578|Myszą się rozglądasz. Esc pauzuje.
+579|Rok 3 Mgły · Droga 40, kilometr 1112
+580|Ostatni
+581|Sklep
+582|Kontynuuj
+583|Nowa gra
+584|Wybierz poziom trudności i zasady świata
+585|Opcje
+586|Grafika, dźwięk, sterowanie i język
+587|Wyjdź
+588|Trzy zimy temu spadł Zielony Kamień. Jego mgła podniosła umarłych: ludzi, ale też kości, które spały pod ziemią. Masz jedyne otwarte miejsce w promieniu stu kilometrów: sklep z palisadą, stary pikap i pistolet. Na południe, wzdłuż drogi, zostało całe miasteczko do splądrowania. Nocą mgła przyprowadza zgniłych pod twoje drzwi.
+589|Na ekranach dotykowych nie da się grać: otwórz na PC.
+590|Wczesny dostęp
+591|Wybierz swoją apokalipsę
+592|Zasady świata
+593|Ziarno mapy (opcjonalnie)
+594|Masz już zapisaną grę: nowa gra ją zastąpi.
+595|Start
+596|Wróć
+597|Ustawienia
+598|Obraz
+599|Dźwięk
+600|Sterowanie
+601|Gra i język
+602|Twój sklep
+603|Wróć · E
+604|Półki
+605|Ulepszenia
+606|Karawaniarze
+607|Cele
+608|Postać
+609|Zamknij · Tab
+610|Ekwipunek
+611|Zdrowie
+612|Umiejętności
+613|Weź wszystko
+614|Zamknij · E
+615|Twój plecak
+616|W środku
+617|Awansowałeś
+618|Wybierz atut. Powtórzenia się kumulują.
+619|Odetchnij chwilę
+620|Graj dalej
+621|Zapisz teraz
+622|Menu główne
+623|Wyjdź z gry
+624|Kod gry
+625|Skopiuj ten kod jako kopię zapasową lub by przenieść grę na inny komputer. Wklej kod i kliknij Wczytaj, by ją odzyskać.
+626|Kopiuj kod
+627|Wczytaj kod
+628|Dopadli cię
+629|Obudź się w sklepie
+630|Zmęczony
+631|Wyczerpany

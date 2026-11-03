@@ -1,0 +1,631 @@
+1|{s} subiu para o nível {n}.
+2|Jogo salvo
+3|Não foi possível salvar. Use o código de jogo no menu de pausa.
+4|Explore, junte mercadoria e volte ao armazém antes das 20:00.
+5|A cidade fica ao sul pela estrada: casas e lojas para vasculhar móvel por móvel.
+6|V alterna entre primeira pessoa e visão de cima.
+7|Atirar faz barulho e atrai tudo o que estiver por perto.
+8|Você conseguiu: {w}. Tecla {n}.
+9|{w} em melhor estado: você trocou.
+10|Você precisa de carpintaria {n}.
+11|Você precisa de um martelo.
+12|Faltam materiais.
+13|Estacas
+14|O raptor caiu e está fraco. Com carne na mochila você pode domesticá-lo (segure E).
+15|Torreta
+16|Raptor
+17|Caminhonete
+18|O Rex Podre caiu! Pegue o âmbar.
+19|cabeça
+20|Quebraram um trecho da paliçada!
+21|Quebraram uma defesa.
+22|Estão saqueando seu armazém!
+23|Ferida: {w}. Enfaixe com H.
+24|Você está sangrando e não tem ataduras, kit de primeiros socorros nem pano.
+25|Você enfaixou: {w}.
+26|Nenhuma ferida aberta e vida cheia.
+27|Sem ataduras nem kit de primeiros socorros na mochila.
+28|Você usou: {i}.
+29|Você vestiu: {i}.
+30|Você não tem feridas para desinfetar.
+31|Você desinfetou as feridas.
+32|Você tomou analgésicos. A dor diminui por algumas horas.
+33|Os antibióticos frearam a infecção.
+34|Você tomou antibióticos, mas não estava infectado.
+35|A lanterna já está com pilhas carregadas.
+36|Você trocou as pilhas da lanterna.
+37|Isso estava podre. Te fez mal.
+38|A carne crua te fez mal. Melhor cozinhá-la numa fogueira.
+39|Você bebeu: {i}.
+40|Você comeu: {i}.
+41|Você não está com fome nem com sede.
+42|Sem comida nem bebida na mochila.
+43|Uma ferida fechou: {w}.
+44|{n} ficou muito ferida e fugiu. Ela volta ao armazém ao amanhecer.
+45|Você domesticou um raptor! O nome dela é Chispa. T para ela te seguir ou vigiar o armazém.
+46|O tempo muda: {w}.
+47|Está escurecendo. Volte ao armazém antes das 20:00.
+48|Noite {d}: a névoa traz {n} podres.
+49|Algo enorme se move no deserto.
+50|O Rex Podre está vindo para o armazém!
+51|A encomenda de {who} venceu. Sua reputação caiu.
+52|Amanhece. A névoa recua e {n} podres desabam.
+53|{n} voltou ao armazém.
+54|Dia {d}. Ontem você vendeu ${m}. Hoje procuram: {i}.
+55|{n} alimentos estragaram.
+56|A névoa não deixa você dormir à noite.
+57|Você não está com sono.
+58|Perigo por perto: você não pode dormir.
+59|Você está sangrando: faça um curativo primeiro.
+60|Já é tarde para dormir.
+61|Você dormiu {h} horas.
+62|Enquanto isso você vendeu ${m}.
+63|Sem {a}. Use uma arma corpo a corpo ou compre no armazém.
+64|Quebrou: {w}!
+65|Você consertou: {w}.
+66|Dia {d}
+67|A infecção te venceu. Os caravaneiros te encontraram e te curaram como puderam.
+68|Você perdeu o que carregava: {l}.
+69|Sua mochila estava vazia.
+70|Enquanto você estava desacordado roubaram ${m}.
+71|W acelerar · S frear ou ré · A/D virar · E descer
+72|Não há espaço para descer aqui.
+73|Sem gasolina. Abasteça com G ou na oficina.
+74|Um cliente foi embora sem nada: as prateleiras estão vazias.
+75|Um cliente viu comida podre na prateleira e foi embora irritado.
+76|Você vendeu {i} ×{q} a ${p} cada (total ${t}).
+77|Venda no armazém: +${t}
+78|Achou caro: {i} a ${p}. Foi embora sem comprar.
+79|Fome
+80|Sede
+81|Sangrando
+82|Dor
+83|Infectado
+84|Intoxicado
+85|Pânico
+86|Molhado
+87|Sobrecarga
+88|O Último Armazém
+89|Jogo salvo.
+90|Não foi possível salvar. Copie o código abaixo.
+91|Código copiado.
+92|Código selecionado: copie com Ctrl+C.
+93|Esse código não é válido. Verifique se está completo.
+94|CIDADE
+95|ARMAZÉM
+96|Branco: você · Vermelho: caminhonete · Pontos claros: fósseis · M ou Esc para fechar
+97|Nível {n}
+98|Você tem {n}
+99|Nova
+100|Sem mochila
+101|Vestir
+102|Beber
+103|Comer
+104|Usar
+105|perecível
+106|Largar
+107|A mochila está vazia.
+108|Armas
+109|na mão
+110|Equipar
+111|Consertar com fita
+112|Munição
+113|Vida
+114|Cansaço
+115|Ferimentos
+116|Enfaixada
+117|Parou de sangrar
+118|Desinfetada
+119|Sem ferimentos.
+120|Infecção da névoa: {n}%. Só os antibióticos a freiam. Ao chegar a 100% ela vai te matar aos poucos.
+121|Você está intoxicado por comer algo estragado. Passa sozinho com o tempo.
+122|Enfaixar ou curar (H)
+123|Vantagens escolhidas
+124|Nenhuma ainda. Suba de nível para escolher.
+125|Guardar
+126|Tudo
+127|Vazio.
+128|Não cabe mais: você está carregando peso demais.
+129|Você descarregou da mochila: {l}.
+130|Da caminhonete: {l}.
+131|noite
+132|Dinheiro
+133|Reputação
+134|Hoje
+135|Encomendas
+136|Levar 1
+137|Deixar 1
+138|com você
+139|guardada
+140|Levar
+141|Ao entrar, os materiais e objetos de valor da mochila são descarregados sozinhos, e a caçamba da caminhonete também se estiver estacionada perto. Comida, bebida, remédios e ferramentas ficam com você.
+142|Mochila: {a} de {b} kg.
+143|Produto
+144|Depósito
+145|Mochila
+146|O depósito está vazio. Saia para buscar mercadoria.
+147|Chance de comprarem: {n}%
+148|Vazio
+149|Prateleira {n}
+150|o mais procurado hoje
+151|Preço
+152|Pagam bem até ~${n}
+153|{n} no depósito
+154|Escolha um produto do depósito para vendê-lo.
+155|Em demanda hoje: {i}. Os clientes vêm das 7:00 às 19:00 mesmo com você fora e compram o que houver nas prateleiras. Preço alto: mais dinheiro por venda, mas mais gente vai embora sem comprar e sua reputação cai.
+156|As encomendas pagam muito mais que a prateleira e aumentam sua reputação. São entregues com o que você tiver no depósito. Se vencerem, a reputação cai.
+157|Quer: {i} ×{q}.
+158|Entregue.
+159|Vence hoje às 19:00.
+160|Vence amanhã às 19:00.
+161|Paga ${r} · você tem {n}
+162|Pronto
+163|Entregar
+164|Nenhuma encomenda por enquanto. Amanhã chegam novas.
+165|Você precisa de: {u} (em Melhorias).
+166|Você precisa de: {t}.
+167|Usa:
+168|Vai para sua munição
+169|Vai para suas armas
+170|Vai para o depósito
+171|Fabricar
+172|Paliçada em {n}%
+173|Há {n} trechos quebrados por onde podem entrar.
+174|Cada sucata ou tábua conserta 100 pontos.
+175|Custo: {n} · você tem {h}
+176|Consertar
+177|Tanque da caminhonete
+178|Tem {n}% de gasolina. Cada combustível enche 30%.
+179|A caminhonete precisa estar estacionada perto do armazém.
+180|Combustível no depósito: {n}
+181|Abastecer
+182|Completo
+183|Comprar ${p}
+184|Você compra dos caravaneiros que passam pela estrada. Mais caro que fabricar, mas na hora.
+185|Você tem {n}
+186|Na mochila: {n}
+187|No depósito: {n}
+188|Já é sua
+189|Chega no dia {d}
+190|Prêmio ${r}
+191|Cumprida
+192|Pendente
+193|Sua história
+194|Últimos movimentos do balcão
+195|Nenhum cliente passou ainda.
+196|Não cabe na mochila.
+197|Você fabricou: {r}
+198|Você consertou a paliçada com {n} materiais.
+199|Tanque em {n}%.
+200|{who} te pagou ${r}.
+201|Você comprou: {u}.
+202|Não cabia na mochila: ficou no depósito.
+203|Dia {d} · ${m}
+204|Gerando o mundo…
+205|Algo deu errado ao carregar. Recarregue a página.
+206|Personalizada
+207|Escolha cada opção do seu jeito.
+208|Sim
+209|Não
+210|Tela cheia
+211|Sair da tela cheia
+212|Qualidade
+213|Alta (sombras)
+214|Média
+215|Baixa (mais fluido)
+216|Escala de resolução
+217|Campo de visão
+218|Brilho
+219|Granulação de filme
+220|Filtro de cor cru
+221|Câmera ao começar
+222|Primeira pessoa
+223|Visão de cima
+224|Volume geral
+225|Efeitos
+226|Ambiente (chuva, vento)
+227|Sensibilidade do mouse
+228|Sensibilidade ao mirar
+229|Inverter eixo vertical
+230|Mover-se
+231|Correr
+232|Agachar (menos barulho)
+233|Espaço
+234|Pular · frear a caminhonete
+235|Clique
+236|Atirar ou golpear
+237|Clique dir.
+238|Mirar
+239|Recarregar · girar construção
+240|Armas · arma anterior
+241|Usar, abrir, vasculhar · abastecer
+242|Inventário, saúde e habilidades
+243|Mapa
+244|Comer ou beber
+245|Enfaixar e curar
+246|Construir
+247|Lanterna
+248|Ordens para seu raptor
+249|Trocar câmera
+250|Pausa
+251|Teclas
+252|Idioma
+253|Mostrar dicas
+254|Algumas placas do mundo mudam de idioma ao recarregar o jogo.
+255|Não foi possível gerar o mundo:
+256|Visão de cima: mire com o mouse. Roda para aproximar.
+257|Agachado: você faz menos barulho.
+258|De pé.
+259|Você construiu: {b}.
+260|Não dá para construir aí.
+261|A lanterna está sem pilhas.
+262|Lanterna ligada
+263|Lanterna desligada
+264|{n} te segue.
+265|{n} fica vigiando o armazém.
+266|As pilhas da lanterna acabaram. Com L você troca se tiver reserva.
+267|para a caçamba
+268|A caçamba da caminhonete está cheia.
+269|Você está carregando peso demais. Largue coisas ou leve-as na caminhonete.
+270|Meta cumprida: {g}. Prêmio ${r}.
+271|E · Descer
+272|E · Atender o armazém
+273|E · Dormir
+274|Cansaço {n}%
+275|E · Prateleira {n}
+276|E · Subir na caminhonete
+277|Gasolina {n}%
+278|G · Pôr 1 combustível
+279|Você abasteceu: +30%.
+280|Segure E · Cozinhar {n} carne
+281|Você cozinhou {n} carne assada.
+282|Fogueira
+283|Traga carne crua para cozinhar
+284|Raptor enfraquecido
+285|Você já tem um raptor
+286|Segure E · Domesticar raptor
+287|Você dá 1 carne
+288|Você precisa de carne na mochila para domesticá-lo
+289|E · Vasculhar: {c}
+290|Já vasculhado
+291|Segure E · Escavar fósseis
+292|Restam {n}
+293|Algo se mexeu debaixo da areia…
+294|Cidade
+295|Caçamba {a}/{b} kg
+296|NOITE · NÉVOA
+297|ENTARDECER
+298|AMANHECER
+299|DIA
+300|Pilhas {n}%
+301|{i} ×{q} para {who} · ${r}
+302|hoje 19:00
+303|ferida
+304|Estado
+305|Mãos vazias
+306|R girar
+307|Clique constrói · B sai
+308|Lata de comida
+309|Pão
+310|Fruta
+311|Leite
+312|Biscoitos
+313|Chocolate
+314|Carne crua
+315|Carne assada
+316|Comida podre
+317|Garrafa de água
+318|Refrigerante
+319|Atadura
+320|Desinfetante
+321|Analgésicos
+322|Antibióticos
+323|Kit de primeiros socorros
+324|Madeira
+325|Tábuas
+326|Pregos
+327|Chapa
+328|Sucata
+329|Fita adesiva
+330|Corda
+331|Pano
+332|Pólvora
+333|Combustível
+334|Pilhas
+335|Isqueiro
+336|Serrote
+337|Caixa de ferramentas
+338|Couro
+339|Osso fóssil
+340|Presa
+341|Joias
+342|Âmbar
+343|Pochete
+344|Mochila escolar
+345|Mochila de acampamento
+346|Bolsa militar
+347|Pistola 9 mm
+348|Revólver
+349|Espingarda
+350|Rifle de caça
+351|Fuzil de assalto
+352|Faca
+353|Frigideira
+354|Taco de beisebol
+355|Martelo
+356|Pé de cabra
+357|Facão
+358|Machado
+359|Lança
+360|Andarilho
+361|Corredor
+362|Brutamontes
+363|Raptor podre
+364|Chifrudo
+365|Rex Podre
+366|Geladeira
+367|Armário de cozinha
+368|Guarda-roupa
+369|Armário de banheiro
+370|Escrivaninha
+371|Bancada de ferramentas
+372|Gôndola
+373|Prateleira de farmácia
+374|Prateleira de ferragens
+375|Armeiro
+376|Balcão
+377|Porta-malas
+378|Lixeira
+379|Bomba de gasolina
+380|Caixa
+381|Prateleira extra
+382|Um produto a mais à venda ao mesmo tempo.
+383|Muros reforçados
+384|Toda a paliçada aguenta mais golpes.
+385|Torreta automática
+386|Atira sozinha no que se aproximar. Fica num canto do pátio.
+387|Fogão
+388|Permite cozinhar carne assada na oficina.
+389|Bancada de recarga
+390|Permite fabricar munição com pólvora.
+391|Geladeira a gasolina
+392|A comida do depósito apodrece muito mais devagar.
+393|Costura da mochila
+394|+4 kg de capacidade em qualquer mochila.
+395|Caixa de carga
+396|+40 kg na caçamba da caminhonete.
+397|Lanterna potente
+398|O feixe vai muito mais longe e gasta menos pilhas.
+399|Letreiro luminoso
+400|Atrai mais clientes durante o dia.
+401|Barricada
+402|Segura os podres. Eles a quebram a golpes.
+403|Machuca e freia o que passar por cima.
+404|Ilumina à noite. Com E você cozinha a carne crua.
+405|Muro de tábuas
+406|Muito mais forte que a barricada. Precisa de martelo e carpintaria 2.
+407|Muro de chapa
+408|O mais duro que você pode levantar. Carpintaria 4.
+409|Pontaria
+410|Menos dispersão e recarga mais rápida.
+411|Corpo a corpo
+412|Mais dano e menos desgaste das armas.
+413|Carpintaria
+414|Defesas mais fortes e novos muros.
+415|Sobrevivência
+416|Menos fome e sede, corta árvores mais rápido.
+417|Primeiros socorros
+418|As curas rendem mais e as feridas fecham antes.
+419|Atletismo
+420|Mais fôlego e velocidade ao correr.
+421|População de podres
+422|Baixa
+423|Normal
+424|Alta
+425|Extrema
+426|Dinossauros
+427|Poucos
+428|Normais
+429|Muitos
+430|Saque
+431|Escasso
+432|Abundante
+433|Duração do dia
+434|12 min
+435|24 min
+436|36 min
+437|48 min
+438|Fome e sede
+439|Lentas
+440|Rápidas
+441|Hordas noturnas
+442|Leves
+443|Brutais
+444|Infecção da névoa
+445|Desativada
+446|Ativada
+447|A comida apodrece
+448|Aprendiz
+449|Poucos podres, muito saque e dias longos. Para conhecer o mundo.
+450|Sobrevivente
+451|A experiência pensada: dura mas justa.
+452|Apocalipse
+453|A cidade está lotada, o saque é escasso e as noites são brutais.
+454|Tábuas ×3
+455|Ataduras ×2
+456|Ataduras ×3
+457|Balas 9 mm ×10
+458|Balas .38 ×6
+459|Cartuchos ×4
+460|Balas de rifle ×5
+461|Balas 5.56 ×15
+462|Mão firme
+463|+15% de dano com armas de fogo.
+464|Pele grossa
+465|+25 de vida máxima.
+466|Pernas longas
+467|+8% de velocidade.
+468|Mãos rápidas
+469|Você recarrega 20% mais rápido.
+470|Mula de carga
+471|+5 kg na mochila.
+472|Lábia
+473|Os clientes aceitam preços 8% mais altos.
+474|Açougueiro
+475|Os animais soltam 1 carne extra.
+476|Catador
+477|Você encontra mais coisas em móveis, caixas e carros.
+478|Fio
+479|+30% de dano corpo a corpo e as armas se desgastam menos.
+480|Segundo fôlego
+481|Você recupera vida se passarem 5 s sem levar golpe.
+482|Olho de falcão
+483|Tiros na cabeça causam 30% a mais.
+484|Pulmões
+485|+30% de fôlego para correr.
+486|Estômago de ferro
+487|A fome e a sede caem 30% mais devagar.
+488|Domador
+489|Seu raptor bate 50% mais forte.
+490|Motorista
+491|A caminhonete gasta menos gasolina e atropela com mais força.
+492|Sangue grosso
+493|As mordidas quase nunca infeccionam.
+494|Sobreviva 3 noites
+495|Venda 50 produtos
+496|Complete 5 encomendas
+497|Domestique um raptor
+498|Vasculhe 30 móveis da cidade
+499|Acerte 50 tiros na cabeça
+500|Construa 5 defesas
+501|Atropele 20 bichos com a caminhonete
+502|Leve uma habilidade ao nível 5
+503|Ganhe $3.000 em vendas
+504|Cace o Rex Podre
+505|Sobreviva 10 noites
+506|Oito chumbos por disparo. Brutal de perto.
+507|Seis tiros pesados que atravessam dois.
+508|Clique direito para olhar pela luneta. Atravessa até três inimigos.
+509|Automático: segure o clique. Gasta munição rápido.
+510|Bate muito forte e derruba uma árvore em dois golpes.
+511|Balas 9 mm ×20
+512|Para a pistola.
+513|Balas .38 ×12
+514|Para o revólver.
+515|Cartuchos ×8
+516|Para a espingarda.
+517|Balas de rifle ×10
+518|Para o rifle.
+519|Balas 5.56 ×30
+520|Para o fuzil.
+521|Para sangramentos. Vai para a mochila.
+522|Cura muito, desinfeta e estanca o sangramento.
+523|Curam a infecção da névoa.
+524|Água
+525|Para a sede. Vai para a mochila.
+526|Para a lanterna.
+527|Pregos ×20
+528|Para os muros. Vai para o depósito.
+529|Para a caminhonete. Vai para o depósito.
+530|Comida
+531|Bebida
+532|Remédio
+533|Material
+534|Ferramenta
+535|Valioso
+536|Balas 9 mm
+537|Balas .38
+538|Cartuchos
+539|Balas de rifle
+540|Balas 5.56
+541|Supermercado
+542|Farmácia
+543|Loja de ferragens
+544|Loja de armas
+545|Posto de gasolina
+546|Casa
+547|Arranhão
+548|Corte profundo
+549|Mordida
+550|Limpo
+551|Nublado
+552|Chuva
+553|Tempestade
+554|Neblina
+555|Mercado
+556|Oficina
+557|Posto
+558|Noites sobrevividas
+559|Inimigos abatidos
+560|Tiros na cabeça
+561|Móveis vasculhados
+562|Produtos vendidos
+563|Encomendas cumpridas
+564|Atropelados
+565|Rex Podres caçados
+566|N
+567|NE
+568|L
+569|SE
+570|S
+571|SO
+572|O
+573|NO
+574|Carregando o mundo…
+575|Fôlego
+576|E descer · Espaço frear
+577|Clique para continuar
+578|O mouse é usado para olhar. Esc pausa.
+579|Ano 3 da Névoa · Rota 40, quilômetro 1.112
+580|O Último
+581|Armazém
+582|Continuar
+583|Novo jogo
+584|Escolha a dificuldade e as regras do mundo
+585|Opções
+586|Gráficos, som, controles e idioma
+587|Sair
+588|Há três invernos caiu a Pedra Verde. Sua névoa levantou os mortos: as pessoas, e também os ossos que dormiam sob a terra. Você tem o único lugar aberto num raio de cem quilômetros: um armazém com paliçada, uma caminhonete velha e uma pistola. Ao sul, pela estrada, ficou uma cidade inteira para saquear. À noite, a névoa traz os podres até a sua porta.
+589|Telas sensíveis ao toque não são suportadas: abra no PC.
+590|Acesso antecipado
+591|Escolha seu apocalipse
+592|Regras do mundo
+593|Semente do mapa (opcional)
+594|Você já tem um jogo salvo: começar um novo o substitui.
+595|Começar
+596|Voltar
+597|Configurações
+598|Tela
+599|Som
+600|Controles
+601|Jogo e idioma
+602|Seu armazém
+603|Voltar · E
+604|Prateleiras
+605|Melhorias
+606|Caravaneiros
+607|Metas
+608|Personagem
+609|Fechar · Tab
+610|Inventário
+611|Saúde
+612|Habilidades
+613|Pegar tudo
+614|Fechar · E
+615|Sua mochila
+616|Dentro
+617|Você subiu de nível
+618|Escolha uma vantagem. Elas se acumulam se você repetir.
+619|Respire um pouco
+620|Continuar jogando
+621|Salvar agora
+622|Menu principal
+623|Sair do jogo
+624|Código de jogo
+625|Copie este código para ter um backup ou levar seu jogo para outro computador. Cole um e toque em Carregar para recuperá-lo.
+626|Copiar código
+627|Carregar código
+628|Te pegaram
+629|Acordar no armazém
+630|Cansado
+631|Exausto

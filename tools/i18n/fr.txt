@@ -1,0 +1,631 @@
+1|{s} passe au niveau {n}.
+2|Partie sauvegardée
+3|Impossible de sauvegarder. Utilisez le code de partie dans la pause.
+4|Explorez, ramassez de la marchandise et rentrez au magasin avant 20:00.
+5|Le village est au sud par la route : maisons et commerces à fouiller meuble par meuble.
+6|V alterne entre la première personne et la vue du dessus.
+7|Tirer fait du bruit et attire tout ce qui rôde autour.
+8|Obtenu : {w}. Touche {n}.
+9|{w} en meilleur état : vous l'avez échangé.
+10|Il faut menuiserie {n}.
+11|Il vous faut un marteau.
+12|Il vous manque des matériaux.
+13|Piques
+14|Le raptor est à terre, affaibli. Avec de la viande dans le sac, vous pouvez l'apprivoiser (maintenez E).
+15|Tourelle
+16|Raptor
+17|Pick-up
+18|Le Rex Pourri est tombé ! Ramassez l'ambre.
+19|tête
+20|Une section de la palissade a cédé !
+21|Une défense a été détruite.
+22|Ils pillent votre magasin !
+23|Blessure : {w}. Bandez-la avec H.
+24|Vous saignez et vous n'avez ni bandage, ni trousse, ni tissu.
+25|Bandé : {w}.
+26|Aucune blessure ouverte et la santé est au maximum.
+27|Vous n'avez ni bandage ni trousse dans le sac.
+28|Utilisé : {i}.
+29|Équipé : {i}.
+30|Aucune blessure à désinfecter.
+31|Vous avez désinfecté vos blessures.
+32|Vous avez pris des antidouleurs. La douleur baisse pendant quelques heures.
+33|Les antibiotiques ont stoppé l'infection.
+34|Vous avez pris des antibiotiques, mais vous n'étiez pas infecté.
+35|La lampe a déjà des piles chargées.
+36|Vous avez changé les piles de la lampe.
+37|C'était pourri. Ça vous a rendu malade.
+38|La viande crue vous a rendu malade. Mieux vaut la cuire sur un feu de camp.
+39|Bu : {i}.
+40|Mangé : {i}.
+41|Vous n'avez ni faim ni soif.
+42|Vous n'avez ni nourriture ni boisson dans le sac.
+43|Blessure refermée : {w}.
+44|{n} est gravement blessée et s'est enfuie. Elle reviendra au magasin à l'aube.
+45|Vous avez apprivoisé un raptor ! Elle s'appelle Étincelle. T pour qu'elle vous suive ou garde le magasin.
+46|Le temps change : {w}.
+47|La nuit tombe. Rentrez au magasin avant 20:00.
+48|Nuit {d} : la brume amène {n} pourris.
+49|Quelque chose d'énorme bouge dans le désert.
+50|Le Rex Pourri fonce vers le magasin !
+51|La commande de {who} a expiré. Votre réputation baisse.
+52|L'aube se lève. La brume se retire et {n} pourris s'effondrent.
+53|{n} est revenue au magasin.
+54|Jour {d}. Hier vous avez vendu pour ${m}. Aujourd'hui on cherche : {i}.
+55|{n} aliments ont pourri.
+56|La brume vous empêche de dormir la nuit.
+57|Vous n'avez pas sommeil.
+58|Danger à proximité : impossible de dormir.
+59|Vous saignez : bandez-vous d'abord.
+60|Il est trop tard pour dormir.
+61|Vous avez dormi {h} heures.
+62|Entre-temps, vous avez vendu pour ${m}.
+63|Plus de {a}. Utilisez une arme de mêlée ou achetez-en au magasin.
+64|Cassé : {w} !
+65|Réparé : {w}.
+66|Jour {d}
+67|L'infection a eu raison de vous. Les caravaniers vous ont trouvé et à moitié soigné.
+68|Vous avez perdu ce que vous portiez : {l}.
+69|Votre sac était vide.
+70|Pendant que vous étiez inconscient, on vous a volé ${m}.
+71|W accélérer · S freiner ou reculer · A/D tourner · E descendre
+72|Pas de place pour descendre ici.
+73|Plus d'essence. Faites le plein avec G ou depuis l'atelier.
+74|Un client est reparti sans rien : les étagères sont vides.
+75|Un client a vu de la nourriture pourrie sur l'étagère et est parti furieux.
+76|Vendu {i} ×{q} à ${p} l'unité (total ${t}).
+77|Vente au magasin : +${t}
+78|Trop cher à son goût : {i} à ${p}. Parti sans acheter.
+79|Faim
+80|Soif
+81|Saignement
+82|Douleur
+83|Infecté
+84|Intoxiqué
+85|Panique
+86|Mouillé
+87|Surcharge
+88|Le Dernier Magasin
+89|Partie sauvegardée.
+90|Impossible de sauvegarder. Copiez le code ci-dessous.
+91|Code copié.
+92|Code sélectionné : copiez-le avec Ctrl+C.
+93|Ce code n'est pas valide. Vérifiez qu'il est complet.
+94|VILLAGE
+95|MAGASIN
+96|Blanc : vous · Rouge : pick-up · Points clairs : fossiles · M ou Échap pour fermer
+97|Niveau {n}
+98|Vous avez déjà {n}
+99|Nouveau
+100|Sans sac
+101|L'enfiler
+102|Prendre
+103|Manger
+104|Utiliser
+105|périssable
+106|Jeter
+107|Le sac est vide.
+108|Armes
+109|en main
+110|Équiper
+111|Réparer au ruban
+112|Munitions
+113|Santé
+114|Fatigue
+115|Blessures
+116|Bandée
+117|Ne saigne plus
+118|Désinfectée
+119|Aucune blessure.
+120|Infection de la brume : {n}%. Seuls les antibiotiques la freinent. À 100 %, elle vous tuera à petit feu.
+121|Vous êtes intoxiqué pour avoir mangé quelque chose d'avarié. Ça passe avec le temps.
+122|Bander ou soigner (H)
+123|Atouts choisis
+124|Aucun pour l'instant. Montez de niveau pour en choisir.
+125|Ranger
+126|Tout
+127|Vide.
+128|Plus de place : vous portez trop de poids.
+129|Déchargé du sac : {l}.
+130|Du pick-up : {l}.
+131|nuit
+132|Argent
+133|Réputation
+134|Aujourd'hui
+135|Commandes
+136|Prendre 1
+137|Déposer 1
+138|sur vous
+139|rangé
+140|Prendre
+141|En entrant, les matériaux et objets de valeur du sac se déchargent tout seuls, ainsi que la benne du pick-up s'il est garé près. Nourriture, boissons, médicaments et outils restent sur vous.
+142|Sac : {a} sur {b} kg.
+143|Produit
+144|Réserve
+145|Sac
+146|La réserve est vide. Sortez chercher de la marchandise.
+147|Chance de vente : {n}%
+148|Vide
+149|Étagère {n}
+150|le plus demandé aujourd'hui
+151|Prix
+152|Bien payé jusqu'à ~${n}
+153|{n} en réserve
+154|Choisissez un produit de la réserve à mettre en vente.
+155|Demandé aujourd'hui : {i}. Les clients viennent de 7:00 à 19:00 même si vous êtes dehors et achètent ce qu'il y a sur les étagères. Prix élevé : plus d'argent par vente, mais plus de gens partent sans acheter et votre réputation baisse.
+156|Les commandes paient bien plus que l'étagère et augmentent votre réputation. Elles se livrent avec ce que vous avez en réserve. Si elles expirent, la réputation baisse.
+157|Veut : {i} ×{q}.
+158|Livré.
+159|Expire aujourd'hui à 19:00.
+160|Expire demain à 19:00.
+161|Paie ${r} · vous en avez {n}
+162|Prêt
+163|Livrer
+164|Aucune commande pour l'instant. De nouvelles arrivent demain.
+165|Requis : {u} (dans Améliorations).
+166|Requis : {t}.
+167|Utilise :
+168|Va dans vos munitions
+169|Va dans vos armes
+170|Va dans la réserve
+171|Fabriquer
+172|Palissade à {n}%
+173|Il y a {n} sections cassées par où ils peuvent entrer.
+174|Chaque ferraille ou planche répare 100 points.
+175|Coût : {n} · vous avez {h}
+176|Réparer
+177|Réservoir du pick-up
+178|Il reste {n}% d'essence. Chaque bidon remplit 30 %.
+179|Le pick-up doit être garé près du magasin.
+180|Carburant en réserve : {n}
+181|Remplir
+182|Plein
+183|Acheter ${p}
+184|Acheté aux caravaniers qui passent sur la route. Plus cher que de le fabriquer, mais immédiat.
+185|Vous avez {n}
+186|Dans le sac : {n}
+187|En réserve : {n}
+188|Déjà à vous
+189|Arrive le jour {d}
+190|Prime ${r}
+191|Accompli
+192|En cours
+193|Votre histoire
+194|Derniers mouvements du comptoir
+195|Aucun client n'est encore passé.
+196|Ça ne rentre pas dans le sac.
+197|Fabriqué : {r}
+198|Palissade réparée avec {n} matériaux.
+199|Réservoir à {n}%.
+200|{who} vous a payé ${r}.
+201|Acheté : {u}.
+202|Ça ne rentrait pas dans le sac : laissé dans la réserve.
+203|Jour {d} · ${m}
+204|Génération du monde…
+205|Le chargement a échoué. Rechargez la page.
+206|Personnalisée
+207|Réglez chaque option à votre goût.
+208|Oui
+209|Non
+210|Plein écran
+211|Quitter le plein écran
+212|Qualité
+213|Haute (ombres)
+214|Moyenne
+215|Basse (plus fluide)
+216|Échelle de résolution
+217|Champ de vision
+218|Luminosité
+219|Grain de pellicule
+220|Filtre de couleur brut
+221|Caméra au démarrage
+222|Première personne
+223|Vue du dessus
+224|Volume général
+225|Effets
+226|Ambiance (pluie, vent)
+227|Sensibilité de la souris
+228|Sensibilité en visée
+229|Inverser l'axe vertical
+230|Se déplacer
+231|Courir
+232|S'accroupir (moins de bruit)
+233|Espace
+234|Sauter · freiner le pick-up
+235|Clic
+236|Tirer ou frapper
+237|Clic droit
+238|Viser
+239|Recharger · pivoter la construction
+240|Armes · arme précédente
+241|Utiliser, ouvrir, fouiller · faire le plein
+242|Inventaire, santé et compétences
+243|Carte
+244|Manger ou boire
+245|Bander et soigner
+246|Construire
+247|Lampe torche
+248|Ordres à votre raptor
+249|Changer de caméra
+250|Pause
+251|Touches
+252|Langue
+253|Afficher les conseils
+254|Certains panneaux du monde changent de langue en rechargeant la partie.
+255|Impossible de générer le monde : 
+256|Vue du dessus : visez avec la souris. Molette pour zoomer.
+257|Accroupi : vous faites moins de bruit.
+258|Debout.
+259|Construit : {b}.
+260|Impossible de construire ici.
+261|La lampe n'a plus de piles.
+262|Lampe allumée
+263|Lampe éteinte
+264|{n} vous suit.
+265|{n} reste garder le magasin.
+266|Les piles de la lampe sont vides. Avec L vous les changez si vous en avez.
+267|dans la benne
+268|La benne du pick-up est pleine.
+269|Vous portez trop de poids. Lâchez des objets ou chargez-les dans le pick-up.
+270|Objectif atteint : {g}. Prime ${r}.
+271|E · Descendre
+272|E · Tenir le magasin
+273|E · Dormir
+274|Fatigue {n}%
+275|E · Étagère {n}
+276|E · Monter dans le pick-up
+277|Essence {n}%
+278|G · Verser 1 bidon
+279|Plein fait : +30 %.
+280|Maintenez E · Cuire {n} viande
+281|Vous avez cuit {n} viande grillée.
+282|Feu de camp
+283|Apportez de la viande crue pour la cuire
+284|Raptor affaibli
+285|Vous avez déjà un raptor
+286|Maintenez E · Apprivoiser le raptor
+287|Vous lui donnez 1 viande
+288|Il faut de la viande dans le sac pour l'apprivoiser
+289|E · Fouiller : {c}
+290|Déjà fouillé
+291|Maintenez E · Déterrer des fossiles
+292|Il en reste {n}
+293|Quelque chose a bougé sous le sable…
+294|Village
+295|Benne {a}/{b} kg
+296|NUIT · BRUME
+297|CRÉPUSCULE
+298|AUBE
+299|JOUR
+300|Piles {n}%
+301|{i} ×{q} pour {who} · ${r}
+302|aujourd'hui 19:00
+303|blessure
+304|État
+305|Mains nues
+306|R pivoter
+307|Clic construire · B quitter
+308|Boîte de conserve
+309|Pain
+310|Fruit
+311|Lait
+312|Biscuits
+313|Chocolat
+314|Viande crue
+315|Viande grillée
+316|Nourriture pourrie
+317|Bouteille d'eau
+318|Soda
+319|Bandage
+320|Désinfectant
+321|Antidouleurs
+322|Antibiotiques
+323|Trousse de secours
+324|Bois
+325|Planches
+326|Clous
+327|Tôle
+328|Ferraille
+329|Ruban adhésif
+330|Corde
+331|Tissu
+332|Poudre
+333|Carburant
+334|Piles
+335|Briquet
+336|Scie
+337|Boîte à outils
+338|Cuir
+339|Os fossile
+340|Croc
+341|Bijoux
+342|Ambre
+343|Banane
+344|Sac d'école
+345|Sac de randonnée
+346|Sac militaire
+347|Pistolet 9 mm
+348|Revolver
+349|Fusil à pompe
+350|Fusil de chasse
+351|Fusil d'assaut
+352|Couteau
+353|Poêle
+354|Batte de baseball
+355|Marteau
+356|Pied-de-biche
+357|Machette
+358|Hache
+359|Lance
+360|Errant
+361|Coureur
+362|Brute
+363|Raptor pourri
+364|Cornu
+365|Rex Pourri
+366|Frigo
+367|Placard
+368|Armoire
+369|Armoire à pharmacie
+370|Bureau
+371|Établi
+372|Gondole
+373|Rayon de pharmacie
+374|Rayon de quincaillerie
+375|Râtelier d'armes
+376|Comptoir
+377|Coffre de voiture
+378|Poubelle
+379|Pompe à essence
+380|Caisse
+381|Étagère en plus
+382|Un produit de plus en vente en même temps.
+383|Murs renforcés
+384|Toute la palissade encaisse plus de coups.
+385|Tourelle automatique
+386|Tire toute seule sur ce qui approche. Se place dans un coin de la cour.
+387|Fourneau
+388|Permet de cuire de la viande grillée à l'atelier.
+389|Banc de rechargement
+390|Permet de fabriquer des munitions avec de la poudre.
+391|Frigo à essence
+392|La nourriture de la réserve pourrit beaucoup plus lentement.
+393|Sac recousu
+394|+4 kg de capacité pour n'importe quel sac.
+395|Benne de chargement
+396|+40 kg dans la benne du pick-up.
+397|Lampe puissante
+398|Le faisceau porte bien plus loin et use moins les piles.
+399|Enseigne lumineuse
+400|Attire plus de clients pendant la journée.
+401|Barricade
+402|Ralentit les pourris. Ils la cassent à coups.
+403|Blessent et ralentissent ce qui passe dessus.
+404|Éclaire la nuit. Avec E vous cuisez la viande crue.
+405|Mur de planches
+406|Bien plus solide que la barricade. Exige un marteau et menuiserie 2.
+407|Mur de tôle
+408|Le plus solide que vous puissiez construire. Menuiserie 4.
+409|Tir
+410|Moins de dispersion et rechargement plus rapide.
+411|Mêlée
+412|Plus de dégâts et moins d'usure des armes.
+413|Menuiserie
+414|Défenses plus solides et nouveaux murs.
+415|Survie
+416|Moins de faim et de soif, abattage plus rapide.
+417|Premiers secours
+418|Les soins sont plus efficaces et les blessures guérissent plus vite.
+419|Athlétisme
+420|Plus d'endurance et de vitesse en courant.
+421|Population de pourris
+422|Basse
+423|Normale
+424|Haute
+425|Extrême
+426|Dinosaures
+427|Peu
+428|Normaux
+429|Beaucoup
+430|Butin
+431|Rare
+432|Abondant
+433|Durée du jour
+434|12 min
+435|24 min
+436|36 min
+437|48 min
+438|Faim et soif
+439|Lentes
+440|Rapides
+441|Hordes nocturnes
+442|Douces
+443|Brutales
+444|Infection de la brume
+445|Désactivée
+446|Activée
+447|La nourriture pourrit
+448|Apprenti
+449|Peu de pourris, beaucoup de butin et des jours longs. Pour découvrir le monde.
+450|Survivant
+451|L'expérience prévue : dure mais juste.
+452|Apocalypse
+453|Le village grouille, le butin se fait rare et les nuits sont brutales.
+454|Planches ×3
+455|Bandages ×2
+456|Bandages ×3
+457|Balles 9 mm ×10
+458|Balles .38 ×6
+459|Cartouches ×4
+460|Balles de fusil ×5
+461|Balles 5.56 ×15
+462|Main sûre
+463|+15 % de dégâts avec les armes à feu.
+464|Peau dure
+465|+25 de santé max.
+466|Grandes jambes
+467|+8 % de vitesse.
+468|Mains rapides
+469|Vous rechargez 20 % plus vite.
+470|Mule de bât
+471|+5 kg dans le sac.
+472|Bagout
+473|Les clients acceptent des prix 8 % plus élevés.
+474|Boucher
+475|Les animaux donnent 1 viande en plus.
+476|Charognard
+477|Vous trouvez plus de choses dans les meubles, caisses et voitures.
+478|Tranchant
+479|+30 % de dégâts en mêlée et les armes s'usent moins.
+480|Second souffle
+481|Vous récupérez de la santé après 5 s sans être touché.
+482|Œil de faucon
+483|Les tirs à la tête font 30 % de plus.
+484|Poumons
+485|+30 % d'endurance pour courir.
+486|Estomac d'acier
+487|La faim et la soif baissent 30 % plus lentement.
+488|Dompteur
+489|Votre raptor frappe 50 % plus fort.
+490|Conducteur
+491|Le pick-up consomme moins d'essence et percute plus fort.
+492|Sang épais
+493|Les morsures ne s'infectent presque jamais.
+494|Survivre 3 nuits
+495|Vendre 50 produits
+496|Remplir 5 commandes
+497|Apprivoiser un raptor
+498|Fouiller 30 meubles du village
+499|Réussir 50 tirs à la tête
+500|Construire 5 défenses
+501|Écraser 20 bestioles avec le pick-up
+502|Monter une compétence au niveau 5
+503|Gagner 3 000 $ en ventes
+504|Chasser le Rex Pourri
+505|Survivre 10 nuits
+506|Huit plombs par tir. Brutal à bout portant.
+507|Six tirs lourds qui en traversent deux.
+508|Clic droit pour regarder dans la lunette. Traverse jusqu'à trois ennemis.
+509|Automatique : maintenez le clic. Consomme vite les munitions.
+510|Frappe très fort et abat un arbre en deux coups.
+511|Balles 9 mm ×20
+512|Pour le pistolet.
+513|Balles .38 ×12
+514|Pour le revolver.
+515|Cartouches ×8
+516|Pour le fusil à pompe.
+517|Balles de fusil ×10
+518|Pour le fusil de chasse.
+519|Balles 5.56 ×30
+520|Pour le fusil d'assaut.
+521|Contre le saignement. Va dans le sac.
+522|Soigne beaucoup, désinfecte et arrête le saignement.
+523|Soignent l'infection de la brume.
+524|Eau
+525|Contre la soif. Va dans le sac.
+526|Pour la lampe torche.
+527|Clous ×20
+528|Pour les murs. Va dans la réserve.
+529|Pour le pick-up. Va dans la réserve.
+530|Nourriture
+531|Boisson
+532|Médecine
+533|Matériau
+534|Outil
+535|Précieux
+536|Balles 9 mm
+537|Balles .38
+538|Cartouches
+539|Balles de fusil
+540|Balles 5.56
+541|Supermarché
+542|Pharmacie
+543|Quincaillerie
+544|Armurerie
+545|Station-service
+546|Maison
+547|Égratignure
+548|Coupure profonde
+549|Morsure
+550|Dégagé
+551|Nuageux
+552|Pluie
+553|Orage
+554|Brouillard
+555|Marché
+556|Atelier
+557|Station-service
+558|Nuits survécues
+559|Ennemis abattus
+560|Tirs à la tête
+561|Meubles fouillés
+562|Produits vendus
+563|Commandes remplies
+564|Écrasés
+565|Rex Pourris chassés
+566|N
+567|NE
+568|E
+569|SE
+570|S
+571|SO
+572|O
+573|NO
+574|Chargement du monde…
+575|Endurance
+576|E descendre · Espace freiner
+577|Cliquez pour continuer
+578|La souris sert à regarder. Échap met en pause.
+579|An 3 de la Brume · Route 40, kilomètre 1 112
+580|Le Dernier
+581|Magasin
+582|Continuer
+583|Nouvelle partie
+584|Choisissez la difficulté et les règles du monde
+585|Options
+586|Graphismes, son, commandes et langue
+587|Quitter
+588|Il y a trois hivers, la Pierre Verte est tombée. Sa brume a relevé les morts : les gens, mais aussi les os qui dormaient sous terre. Vous tenez le seul endroit ouvert à cent kilomètres : un magasin avec une palissade, un vieux pick-up et un pistolet. Au sud, par la route, il reste un village entier à piller. La nuit, la brume amène les pourris jusqu'à votre porte.
+589|Impossible de jouer sur écran tactile : ouvrez-le sur PC.
+590|Accès anticipé
+591|Choisissez votre apocalypse
+592|Règles du monde
+593|Graine de la carte (facultatif)
+594|Vous avez déjà une partie sauvegardée : en commencer une nouvelle la remplace.
+595|Commencer
+596|Retour
+597|Configuration
+598|Affichage
+599|Son
+600|Commandes
+601|Jeu et langue
+602|Votre magasin
+603|Retour · E
+604|Étagères
+605|Améliorations
+606|Caravaniers
+607|Objectifs
+608|Personnage
+609|Fermer · Tab
+610|Inventaire
+611|Santé
+612|Compétences
+613|Tout prendre
+614|Fermer · E
+615|Votre sac
+616|Dedans
+617|Niveau supérieur
+618|Choisissez un atout. Ils se cumulent si vous les reprenez.
+619|Respirez un peu
+620|Reprendre
+621|Sauvegarder
+622|Menu principal
+623|Quitter le jeu
+624|Code de partie
+625|Copiez ce code pour avoir une sauvegarde ou transférer votre partie sur un autre PC. Collez-en un et cliquez sur Charger pour la récupérer.
+626|Copier le code
+627|Charger le code
+628|Ils vous ont eu
+629|Se réveiller au magasin
+630|Fatigué
+631|Épuisé

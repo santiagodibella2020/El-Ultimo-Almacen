@@ -1,0 +1,631 @@
+1|{s} ist auf Stufe {n} gestiegen.
+2|Spiel gespeichert
+3|Speichern fehlgeschlagen. Nutze den Spielcode im Pausenmenü.
+4|Erkunde, sammle Waren und sei vor 20:00 zurück im Laden.
+5|Die Stadt liegt im Süden an der Straße: Häuser und Geschäfte, Möbelstück für Möbelstück zu durchsuchen.
+6|V wechselt zwischen Ego-Perspektive und Ansicht von oben.
+7|Schießen macht Lärm und lockt alles in der Nähe an.
+8|Erhalten: {w}. Taste {n}.
+9|{w} in besserem Zustand: ausgetauscht.
+10|Du brauchst Zimmerei {n}.
+11|Du brauchst einen Hammer.
+12|Dir fehlen Materialien.
+13|Stacheln
+14|Der Raptor liegt geschwächt am Boden. Mit Fleisch im Rucksack kannst du ihn zähmen (E halten).
+15|Geschützturm
+16|Raptor
+17|Pick-up
+18|Der Faule Rex ist gefallen! Sammle den Bernstein ein.
+19|Kopf
+20|Ein Abschnitt des Palisadenzauns ist durchbrochen!
+21|Eine Verteidigung wurde zerstört.
+22|Sie plündern deinen Laden!
+23|Wunde: {w}. Verbinde sie mit H.
+24|Du blutest und hast weder Verband, Erste-Hilfe-Kasten noch Stoff.
+25|Verbunden: {w}.
+26|Keine offenen Wunden und volle Gesundheit.
+27|Du hast weder Verband noch Erste-Hilfe-Kasten im Rucksack.
+28|Benutzt: {i}.
+29|Angelegt: {i}.
+30|Keine Wunden zum Desinfizieren.
+31|Du hast deine Wunden desinfiziert.
+32|Du hast Schmerzmittel genommen. Der Schmerz lässt für ein paar Stunden nach.
+33|Die Antibiotika haben die Infektion gestoppt.
+34|Du hast Antibiotika genommen, warst aber nicht infiziert.
+35|Die Taschenlampe hat schon volle Batterien.
+36|Du hast die Batterien der Taschenlampe gewechselt.
+37|Das war verdorben. Dir ist schlecht geworden.
+38|Das rohe Fleisch ist dir nicht bekommen. Brate es lieber am Lagerfeuer.
+39|Getrunken: {i}.
+40|Gegessen: {i}.
+41|Du hast weder Hunger noch Durst.
+42|Du hast weder Essen noch Getränke im Rucksack.
+43|Wunde verheilt: {w}.
+44|{n} wurde schwer verletzt und ist geflohen. Sie kehrt im Morgengrauen zum Laden zurück.
+45|Du hast einen Raptor gezähmt! Sie heißt Funke. T, damit sie dir folgt oder den Laden bewacht.
+46|Das Wetter ändert sich: {w}.
+47|Es wird dunkel. Sei vor 20:00 zurück im Laden.
+48|Nacht {d}: Der Nebel bringt {n} Faulige.
+49|Etwas Riesiges bewegt sich in der Wüste.
+50|Der Faule Rex kommt auf den Laden zu!
+51|Der Auftrag von {who} ist abgelaufen. Dein Ruf sinkt.
+52|Es dämmert. Der Nebel zieht ab und {n} Faulige brechen zusammen.
+53|{n} ist zum Laden zurückgekehrt.
+54|Tag {d}. Gestern hast du für ${m} verkauft. Heute gesucht: {i}.
+55|{n} Lebensmittel sind verdorben.
+56|Der Nebel lässt dich nachts nicht schlafen.
+57|Du bist nicht müde.
+58|Gefahr in der Nähe: Du kannst nicht schlafen.
+59|Du blutest: Verbinde dich zuerst.
+60|Es ist zu spät zum Schlafen.
+61|Du hast {h} Stunden geschlafen.
+62|In der Zwischenzeit hast du für ${m} verkauft.
+63|Keine {a}. Nimm eine Nahkampfwaffe oder kauf welche im Laden.
+64|Kaputt: {w}!
+65|Repariert: {w}.
+66|Tag {d}
+67|Die Infektion hat dich besiegt. Die Karawanenhändler haben dich gefunden und halbwegs geheilt.
+68|Du hast verloren, was du dabeihattest: {l}.
+69|Dein Rucksack war leer.
+70|Während du bewusstlos warst, wurden dir ${m} gestohlen.
+71|W Gas · S bremsen oder rückwärts · A/D lenken · E aussteigen
+72|Hier ist kein Platz zum Aussteigen.
+73|Kein Benzin. Tanke mit G oder in der Werkstatt.
+74|Ein Kunde ging leer aus: Die Regale sind leer.
+75|Ein Kunde sah verdorbenes Essen im Regal und ging wütend.
+76|{i} ×{q} für je ${p} verkauft (gesamt ${t}).
+77|Verkauf im Laden: +${t}
+78|Zu teuer: {i} für ${p}. Ging ohne zu kaufen.
+79|Hunger
+80|Durst
+81|Blutung
+82|Schmerz
+83|Infiziert
+84|Vergiftet
+85|Panik
+86|Nass
+87|Überladen
+88|Der Letzte Laden
+89|Spiel gespeichert.
+90|Speichern fehlgeschlagen. Kopiere den Code unten.
+91|Code kopiert.
+92|Code markiert: Kopiere ihn mit Strg+C.
+93|Dieser Code ist ungültig. Prüfe, ob er vollständig ist.
+94|STADT
+95|LADEN
+96|Weiß: du · Rot: Pick-up · Helle Punkte: Fossilien · M oder Esc zum Schließen
+97|Stufe {n}
+98|Du hast schon {n}
+99|Neu
+100|Kein Rucksack
+101|Anlegen
+102|Nehmen
+103|Essen
+104|Benutzen
+105|verderblich
+106|Wegwerfen
+107|Der Rucksack ist leer.
+108|Waffen
+109|in der Hand
+110|Ausrüsten
+111|Mit Klebeband reparieren
+112|Munition
+113|Gesundheit
+114|Müdigkeit
+115|Wunden
+116|Verbunden
+117|Blutet nicht mehr
+118|Desinfiziert
+119|Keine Wunden.
+120|Nebel-Infektion: {n}%. Nur Antibiotika halten sie auf. Bei 100 % tötet sie dich langsam.
+121|Du hast eine Lebensmittelvergiftung von etwas Verdorbenem. Sie vergeht mit der Zeit.
+122|Verbinden oder heilen (H)
+123|Gewählte Vorteile
+124|Noch keine. Steig eine Stufe auf, um einen zu wählen.
+125|Einlagern
+126|Alles
+127|Leer.
+128|Passt nicht mehr: Du trägst zu viel Gewicht.
+129|Aus dem Rucksack abgeladen: {l}.
+130|Vom Pick-up: {l}.
+131|Nacht
+132|Geld
+133|Ruf
+134|Heute
+135|Aufträge
+136|1 nehmen
+137|1 ablegen
+138|dabei
+139|eingelagert
+140|Nehmen
+141|Beim Betreten werden Materialien und Wertsachen aus dem Rucksack automatisch abgeladen, ebenso die Ladefläche des Pick-ups, wenn er in der Nähe parkt. Essen, Getränke, Medizin und Werkzeuge bleiben bei dir.
+142|Rucksack: {a} von {b} kg.
+143|Produkt
+144|Lager
+145|Rucksack
+146|Das Lager ist leer. Geh raus und such Waren.
+147|Verkaufschance: {n}%
+148|Leer
+149|Regal {n}
+150|heute am gefragtesten
+151|Preis
+152|Gut bezahlt bis ~${n}
+153|{n} im Lager
+154|Wähle ein Produkt aus dem Lager zum Verkaufen.
+155|Heute gefragt: {i}. Kunden kommen von 7:00 bis 19:00, auch wenn du unterwegs bist, und kaufen, was in den Regalen liegt. Hoher Preis: mehr Geld pro Verkauf, aber mehr Leute gehen ohne zu kaufen und dein Ruf sinkt.
+156|Aufträge zahlen viel mehr als das Regal und steigern deinen Ruf. Sie werden mit dem erfüllt, was im Lager ist. Laufen sie ab, sinkt der Ruf.
+157|Will: {i} ×{q}.
+158|Geliefert.
+159|Läuft heute um 19:00 ab.
+160|Läuft morgen um 19:00 ab.
+161|Zahlt ${r} · du hast {n}
+162|Fertig
+163|Liefern
+164|Gerade keine Aufträge. Morgen kommen neue.
+165|Benötigt: {u} (unter Verbesserungen).
+166|Benötigt: {t}.
+167|Verbraucht:
+168|Kommt zu deiner Munition
+169|Kommt zu deinen Waffen
+170|Kommt ins Lager
+171|Herstellen
+172|Palisade bei {n}%
+173|Es gibt {n} kaputte Abschnitte, durch die sie eindringen können.
+174|Jeder Schrott oder jedes Brett repariert 100 Punkte.
+175|Kosten: {n} · du hast {h}
+176|Reparieren
+177|Tank des Pick-ups
+178|Noch {n}% Benzin. Jeder Kanister füllt 30 %.
+179|Der Pick-up muss in der Nähe des Ladens parken.
+180|Treibstoff im Lager: {n}
+181|Tanken
+182|Voll
+183|Kaufen ${p}
+184|Gekauft bei Karawanenhändlern auf der Straße. Teurer als selbst herstellen, aber sofort.
+185|Du hast {n}
+186|Im Rucksack: {n}
+187|Im Lager: {n}
+188|Gehört schon dir
+189|Kommt an Tag {d}
+190|Belohnung ${r}
+191|Erfüllt
+192|Offen
+193|Deine Geschichte
+194|Letzte Bewegungen an der Theke
+195|Noch kein Kunde war da.
+196|Passt nicht in den Rucksack.
+197|Hergestellt: {r}
+198|Palisade mit {n} Materialien repariert.
+199|Tank bei {n}%.
+200|{who} hat dir ${r} gezahlt.
+201|Gekauft: {u}.
+202|Passte nicht in den Rucksack: liegt im Lager.
+203|Tag {d} · ${m}
+204|Welt wird erzeugt…
+205|Beim Laden ist etwas schiefgelaufen. Lade die Seite neu.
+206|Benutzerdefiniert
+207|Stelle jede Option nach deinem Geschmack ein.
+208|Ja
+209|Nein
+210|Vollbild
+211|Vollbild beenden
+212|Qualität
+213|Hoch (Schatten)
+214|Mittel
+215|Niedrig (flüssiger)
+216|Auflösungsskalierung
+217|Sichtfeld
+218|Helligkeit
+219|Filmkörnung
+220|Raue Farbfilterung
+221|Kamera beim Start
+222|Ego-Perspektive
+223|Ansicht von oben
+224|Gesamtlautstärke
+225|Effekte
+226|Umgebung (Regen, Wind)
+227|Mausempfindlichkeit
+228|Empfindlichkeit beim Zielen
+229|Vertikale Achse umkehren
+230|Bewegen
+231|Rennen
+232|Ducken (weniger Lärm)
+233|Leertaste
+234|Springen · Pick-up bremsen
+235|Klick
+236|Schießen oder zuschlagen
+237|Rechtsklick
+238|Zielen
+239|Nachladen · Bauteil drehen
+240|Waffen · vorherige Waffe
+241|Benutzen, öffnen, durchsuchen · tanken
+242|Inventar, Gesundheit und Fähigkeiten
+243|Karte
+244|Essen oder trinken
+245|Verbinden und heilen
+246|Bauen
+247|Taschenlampe
+248|Befehle an deinen Raptor
+249|Kamera wechseln
+250|Pause
+251|Tasten
+252|Sprache
+253|Tipps anzeigen
+254|Manche Schilder in der Welt wechseln die Sprache erst nach Neuladen des Spiels.
+255|Die Welt konnte nicht erzeugt werden: 
+256|Ansicht von oben: Zielen mit der Maus. Mausrad zum Zoomen.
+257|Geduckt: Du machst weniger Lärm.
+258|Aufrecht.
+259|Gebaut: {b}.
+260|Hier kann nicht gebaut werden.
+261|Die Taschenlampe hat keine Batterien.
+262|Taschenlampe an
+263|Taschenlampe aus
+264|{n} folgt dir.
+265|{n} bleibt und bewacht den Laden.
+266|Die Batterien der Taschenlampe sind leer. Mit L wechselst du sie, wenn du Ersatz hast.
+267|auf die Ladefläche
+268|Die Ladefläche des Pick-ups ist voll.
+269|Du trägst zu viel Gewicht. Lass Dinge fallen oder lade sie in den Pick-up.
+270|Ziel erreicht: {g}. Belohnung ${r}.
+271|E · Aussteigen
+272|E · Laden führen
+273|E · Schlafen
+274|Müdigkeit {n}%
+275|E · Regal {n}
+276|E · In den Pick-up steigen
+277|Benzin {n}%
+278|G · 1 Kanister tanken
+279|Getankt: +30 %.
+280|E halten · {n} Fleisch braten
+281|Du hast {n} gebratenes Fleisch zubereitet.
+282|Lagerfeuer
+283|Bring rohes Fleisch zum Braten
+284|Geschwächter Raptor
+285|Du hast schon einen Raptor
+286|E halten · Raptor zähmen
+287|Du gibst ihm 1 Fleisch
+288|Du brauchst Fleisch im Rucksack, um ihn zu zähmen
+289|E · Durchsuchen: {c}
+290|Schon durchsucht
+291|E halten · Fossilien ausgraben
+292|Noch {n}
+293|Etwas hat sich unter dem Sand bewegt…
+294|Stadt
+295|Ladefläche {a}/{b} kg
+296|NACHT · NEBEL
+297|ABENDDÄMMERUNG
+298|MORGENGRAUEN
+299|TAG
+300|Batterien {n}%
+301|{i} ×{q} für {who} · ${r}
+302|heute 19:00
+303|Wunde
+304|Zustand
+305|Leere Hände
+306|R drehen
+307|Klick bauen · B beenden
+308|Konservendose
+309|Brot
+310|Obst
+311|Milch
+312|Kekse
+313|Schokolade
+314|Rohes Fleisch
+315|Gebratenes Fleisch
+316|Verdorbenes Essen
+317|Wasserflasche
+318|Limonade
+319|Verband
+320|Desinfektionsmittel
+321|Schmerzmittel
+322|Antibiotika
+323|Erste-Hilfe-Kasten
+324|Holz
+325|Bretter
+326|Nägel
+327|Blech
+328|Schrott
+329|Klebeband
+330|Seil
+331|Stoff
+332|Schießpulver
+333|Treibstoff
+334|Batterien
+335|Feuerzeug
+336|Säge
+337|Werkzeugkasten
+338|Leder
+339|Fossiler Knochen
+340|Reißzahn
+341|Schmuck
+342|Bernstein
+343|Gürteltasche
+344|Schulrucksack
+345|Wanderrucksack
+346|Militärtasche
+347|9-mm-Pistole
+348|Revolver
+349|Schrotflinte
+350|Jagdgewehr
+351|Sturmgewehr
+352|Messer
+353|Bratpfanne
+354|Baseballschläger
+355|Hammer
+356|Brecheisen
+357|Machete
+358|Axt
+359|Speer
+360|Wanderer
+361|Läufer
+362|Brocken
+363|Fauler Raptor
+364|Gehörnter
+365|Fauler Rex
+366|Kühlschrank
+367|Küchenschrank
+368|Kleiderschrank
+369|Badezimmerschrank
+370|Schreibtisch
+371|Werkbank
+372|Verkaufsregal
+373|Apothekenregal
+374|Baumarktregal
+375|Waffenschrank
+376|Theke
+377|Kofferraum
+378|Mülltonne
+379|Zapfsäule
+380|Kiste
+381|Zusätzliches Regal
+382|Ein Produkt mehr gleichzeitig im Verkauf.
+383|Verstärkte Mauern
+384|Die ganze Palisade hält mehr Schläge aus.
+385|Automatischer Geschützturm
+386|Schießt von selbst auf alles, was näher kommt. Steht in einer Ecke des Hofs.
+387|Herd
+388|Erlaubt das Braten von Fleisch in der Werkstatt.
+389|Nachladebank
+390|Erlaubt die Herstellung von Munition aus Schießpulver.
+391|Benzin-Kühlschrank
+392|Essen im Lager verdirbt viel langsamer.
+393|Genähter Rucksack
+394|+4 kg Kapazität für jeden Rucksack.
+395|Ladeboxen
+396|+40 kg auf der Ladefläche des Pick-ups.
+397|Starke Taschenlampe
+398|Der Strahl reicht viel weiter und verbraucht weniger Batterie.
+399|Leuchtschild
+400|Lockt tagsüber mehr Kunden an.
+401|Barrikade
+402|Bremst die Fauligen. Sie schlagen sie kaputt.
+403|Verletzen und bremsen alles, was darüberläuft.
+404|Leuchtet nachts. Mit E brätst du rohes Fleisch.
+405|Bretterwand
+406|Viel stärker als die Barrikade. Braucht Hammer und Zimmerei 2.
+407|Blechwand
+408|Das Stärkste, was du bauen kannst. Zimmerei 4.
+409|Zielen
+410|Weniger Streuung und schnelleres Nachladen.
+411|Nahkampf
+412|Mehr Schaden und weniger Waffenverschleiß.
+413|Zimmerei
+414|Stärkere Verteidigung und neue Wände.
+415|Überleben
+416|Weniger Hunger und Durst, schnelleres Fällen.
+417|Erste Hilfe
+418|Heilung wirkt besser und Wunden schließen sich schneller.
+419|Athletik
+420|Mehr Ausdauer und Tempo beim Rennen.
+421|Faulige-Bevölkerung
+422|Niedrig
+423|Normal
+424|Hoch
+425|Extrem
+426|Dinosaurier
+427|Wenige
+428|Normal
+429|Viele
+430|Beute
+431|Knapp
+432|Reichlich
+433|Tageslänge
+434|12 Min.
+435|24 Min.
+436|36 Min.
+437|48 Min.
+438|Hunger und Durst
+439|Langsam
+440|Schnell
+441|Nächtliche Horden
+442|Mild
+443|Brutal
+444|Nebel-Infektion
+445|Aus
+446|An
+447|Essen verdirbt
+448|Lehrling
+449|Wenige Faulige, viel Beute und lange Tage. Um die Welt kennenzulernen.
+450|Überlebender
+451|Das vorgesehene Erlebnis: hart, aber fair.
+452|Apokalypse
+453|Die Stadt ist voll, Beute ist knapp und die Nächte sind brutal.
+454|Bretter ×3
+455|Verbände ×2
+456|Verbände ×3
+457|9-mm-Patronen ×10
+458|.38-Patronen ×6
+459|Schrotpatronen ×4
+460|Gewehrpatronen ×5
+461|5.56-Patronen ×15
+462|Ruhige Hand
+463|+15 % Schaden mit Schusswaffen.
+464|Dicke Haut
+465|+25 maximale Gesundheit.
+466|Lange Beine
+467|+8 % Tempo.
+468|Flinke Hände
+469|Du lädst 20 % schneller nach.
+470|Packesel
+471|+5 kg im Rucksack.
+472|Redegewandt
+473|Kunden akzeptieren 8 % höhere Preise.
+474|Metzger
+475|Tiere lassen 1 Fleisch mehr fallen.
+476|Aasfresser
+477|Du findest mehr in Möbeln, Kisten und Autos.
+478|Scharfe Klinge
+479|+30 % Nahkampfschaden und Waffen nutzen sich weniger ab.
+480|Zweiter Atem
+481|Du regenerierst Gesundheit, wenn du 5 s nicht getroffen wirst.
+482|Falkenauge
+483|Kopftreffer machen 30 % mehr Schaden.
+484|Lunge
+485|+30 % Ausdauer beim Rennen.
+486|Eisenmagen
+487|Hunger und Durst sinken 30 % langsamer.
+488|Bändiger
+489|Dein Raptor schlägt 50 % härter zu.
+490|Fahrer
+491|Der Pick-up verbraucht weniger Benzin und rammt härter.
+492|Dickes Blut
+493|Bisse entzünden sich fast nie.
+494|Überlebe 3 Nächte
+495|Verkaufe 50 Produkte
+496|Erfülle 5 Aufträge
+497|Zähme einen Raptor
+498|Durchsuche 30 Möbel in der Stadt
+499|Erziele 50 Kopftreffer
+500|Baue 5 Verteidigungen
+501|Überfahre 20 Biester mit dem Pick-up
+502|Bringe eine Fähigkeit auf Stufe 5
+503|Verdiene $3.000 mit Verkäufen
+504|Erlege den Faulen Rex
+505|Überlebe 10 Nächte
+506|Acht Schrotkugeln pro Schuss. Brutal aus der Nähe.
+507|Sechs schwere Schüsse, die zwei durchschlagen.
+508|Rechtsklick, um durchs Zielfernrohr zu schauen. Durchschlägt bis zu drei Gegner.
+509|Automatik: Klick halten. Verbraucht schnell Munition.
+510|Schlägt sehr hart und fällt Bäume mit zwei Hieben.
+511|9-mm-Patronen ×20
+512|Für die Pistole.
+513|.38-Patronen ×12
+514|Für den Revolver.
+515|Schrotpatronen ×8
+516|Für die Schrotflinte.
+517|Gewehrpatronen ×10
+518|Für das Jagdgewehr.
+519|5.56-Patronen ×30
+520|Für das Sturmgewehr.
+521|Gegen Blutungen. Kommt in den Rucksack.
+522|Heilt viel, desinfiziert und stoppt Blutungen.
+523|Heilen die Nebel-Infektion.
+524|Wasser
+525|Gegen Durst. Kommt in den Rucksack.
+526|Für die Taschenlampe.
+527|Nägel ×20
+528|Für Wände. Kommt ins Lager.
+529|Für den Pick-up. Kommt ins Lager.
+530|Essen
+531|Getränk
+532|Medizin
+533|Material
+534|Werkzeug
+535|Wertvoll
+536|9-mm-Patronen
+537|.38-Patronen
+538|Schrotpatronen
+539|Gewehrpatronen
+540|5.56-Patronen
+541|Supermarkt
+542|Apotheke
+543|Baumarkt
+544|Waffenladen
+545|Tankstelle
+546|Haus
+547|Kratzer
+548|Tiefer Schnitt
+549|Biss
+550|Klar
+551|Bewölkt
+552|Regen
+553|Gewitter
+554|Nebel
+555|Markt
+556|Werkstatt
+557|Tankstelle
+558|Überlebte Nächte
+559|Besiegte Gegner
+560|Kopftreffer
+561|Durchsuchte Möbel
+562|Verkaufte Produkte
+563|Erfüllte Aufträge
+564|Überfahren
+565|Erlegte Faule Rex
+566|N
+567|NO
+568|O
+569|SO
+570|S
+571|SW
+572|W
+573|NW
+574|Welt wird geladen…
+575|Ausdauer
+576|E aussteigen · Leertaste bremsen
+577|Klicke, um fortzufahren
+578|Mit der Maus schaust du dich um. Esc pausiert.
+579|Jahr 3 des Nebels · Route 40, Kilometer 1.112
+580|Der Letzte
+581|Laden
+582|Fortsetzen
+583|Neues Spiel
+584|Wähle die Schwierigkeit und die Regeln der Welt
+585|Optionen
+586|Grafik, Ton, Steuerung und Sprache
+587|Beenden
+588|Vor drei Wintern fiel der Grüne Stein. Sein Nebel erweckte die Toten: die Menschen, aber auch die Knochen, die unter der Erde schliefen. Du hast das einzige, was im Umkreis von hundert Kilometern noch offen ist: einen Laden mit Palisade, einen alten Pick-up und eine Pistole. Im Süden, die Straße hinunter, wartet eine ganze Stadt darauf, geplündert zu werden. Nachts treibt der Nebel die Fauligen bis vor deine Tür.
+589|Auf Touchscreens nicht spielbar: Öffne es am PC.
+590|Early Access
+591|Wähle deine Apokalypse
+592|Regeln der Welt
+593|Karten-Seed (optional)
+594|Du hast schon einen Spielstand: Ein neues Spiel ersetzt ihn.
+595|Starten
+596|Zurück
+597|Einstellungen
+598|Anzeige
+599|Ton
+600|Steuerung
+601|Spiel und Sprache
+602|Dein Laden
+603|Zurück · E
+604|Regale
+605|Verbesserungen
+606|Karawanenhändler
+607|Ziele
+608|Charakter
+609|Schließen · Tab
+610|Inventar
+611|Gesundheit
+612|Fähigkeiten
+613|Alles nehmen
+614|Schließen · E
+615|Dein Rucksack
+616|Darin
+617|Stufe aufgestiegen
+618|Wähle einen Vorteil. Wiederholungen stapeln sich.
+619|Atme kurz durch
+620|Weiterspielen
+621|Jetzt speichern
+622|Hauptmenü
+623|Spiel beenden
+624|Spielcode
+625|Kopiere diesen Code als Sicherung oder um deinen Spielstand auf einen anderen PC zu bringen. Füge einen ein und klicke auf Laden, um ihn wiederherzustellen.
+626|Code kopieren
+627|Code laden
+628|Sie haben dich erwischt
+629|Im Laden aufwachen
+630|Müde
+631|Erschöpft
