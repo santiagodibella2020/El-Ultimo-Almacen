@@ -319,5 +319,9 @@
  "Charlar": "話す",
  "Vender": "売る",
  "Diario": "日記",
- "Cerrar · J": "閉じる · J"
+ "Cerrar · J": "閉じる · J",
+ "V · cambiar vista (tercera persona / interior)": "V · 視点切替（三人称 / 車内）",
+ "Vista: tercera persona": "視点：三人称",
+ "Vista: interior": "視点：車内",
+ "Cambiar la vista dentro del auto": "車内で視点を切り替える"
 }

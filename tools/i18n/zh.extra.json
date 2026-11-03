@@ -319,5 +319,9 @@
  "Charlar": "交谈",
  "Vender": "出售",
  "Diario": "日记",
- "Cerrar · J": "关闭 · J"
+ "Cerrar · J": "关闭 · J",
+ "V · cambiar vista (tercera persona / interior)": "V · 切换视角（第三人称 / 车内）",
+ "Vista: tercera persona": "视角：第三人称",
+ "Vista: interior": "视角：车内",
+ "Cambiar la vista dentro del auto": "在车内切换视角"
 }

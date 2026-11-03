@@ -319,5 +319,9 @@
  "Charlar": "대화",
  "Vender": "판매",
  "Diario": "일지",
- "Cerrar · J": "닫기 · J"
+ "Cerrar · J": "닫기 · J",
+ "V · cambiar vista (tercera persona / interior)": "V · 시점 전환 (3인칭 / 실내)",
+ "Vista: tercera persona": "시점: 3인칭",
+ "Vista: interior": "시점: 실내",
+ "Cambiar la vista dentro del auto": "차량 안에서 시점 전환"
 }

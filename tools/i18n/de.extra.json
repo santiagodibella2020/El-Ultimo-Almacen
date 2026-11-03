@@ -319,5 +319,9 @@
  "Charlar": "Reden",
  "Vender": "Verkaufen",
  "Diario": "Tagebuch",
- "Cerrar · J": "Schließen · J"
+ "Cerrar · J": "Schließen · J",
+ "V · cambiar vista (tercera persona / interior)": "V · Ansicht wechseln (dritte Person / Innenraum)",
+ "Vista: tercera persona": "Ansicht: dritte Person",
+ "Vista: interior": "Ansicht: Innenraum",
+ "Cambiar la vista dentro del auto": "Ansicht im Auto wechseln"
 }

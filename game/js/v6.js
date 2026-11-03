@@ -341,7 +341,7 @@ function buildVehicle6(k,x,z,yaw){
     bx(d.wid,.55,d.len,'#d8d6cc',0,.95,0,body);cab=bx(d.wid-.1,1.05,1.9,d.col,0,1.75,cz,body);wsh=bx(d.wid-.2,.7,.08,glass,0,1.95,cz+.96,body);
     const bedL=d.len-2.1,bedZ=cz-.95-bedL/2;bx(d.wid,2.1,bedL,d.col,0,2.25,bedZ,body);
     for(const sd of [-1,1]){bx(.04,.3,bedL,'#b02a22',sd*(W2+.01),1.9,bedZ,body);bx(.05,.9,.3,'#b02a22',sd*(W2+.02),2.6,bedZ,body);bx(.05,.3,.9,'#b02a22',sd*(W2+.02),2.6,bedZ,body)}
-    bx(1.2,.18,.35,new T3.MeshBasicMaterial({color:0xc02020}),-.35,2.36,cz+.6,body);bx(.6,.18,.35,new T3.MeshBasicMaterial({color:0x2050c0}),.45,2.36,cz+.6,body);
+    bx(1.2,.18,.35,new T3.MeshBasicMaterial({color:0xc02020}),-.35,2.36,cz-.6,body);bx(.6,.18,.35,new T3.MeshBasicMaterial({color:0x2050c0}),.45,2.36,cz-.6,body);
     bx(d.wid-.2,.3,.25,dark,0,.85,L2+.05,body);bx(.35,.18,.05,hl,-W2+.35,1.05,L2+.02,body);bx(.35,.18,.05,hl,W2-.35,1.05,L2+.02,body);
     bx(.25,.25,.04,tl,-W2+.2,1.4,-L2-.01,body);bx(.25,.25,.04,tl,W2-.2,1.4,-L2-.01,body);
     dash=bx(d.wid-.2,.25,.5,dark,0,1.35,cz+.75,body)}
@@ -386,8 +386,8 @@ function openCargo6(v){cargoV6=v;gstate='loot';unlock();sfx('door');$('lootPutAl
 function renderCargo6(){const v=cargoV6,c=v.st.cargo;
   $('lootName').textContent=L('Carga: {v}',{v:vName(v)});
   $('lootKg').textContent=`${L('Mochila')} ${kg(invKg())} / ${capKg()} kg · ${L('Caja {a}/{b} kg',{a:kg(kgOf(c)),b:vehCap(v)})}`;
-  const mine=IK.filter(k=>S.inv[k]>0).map(k=>row(`<div>${dot(ITEMS[k].c)}${esc(nm(k))}</div><div class="num">×${S.inv[k]} · ${kg(ITEMS[k].w*S.inv[k])} kg</div><div class="acts">${btn('→','cput1',`data-k="${k}" aria-label="${esc(L('Guardar'))}"`)}${S.inv[k]>1?btn(L('Todo'),'cputk',`data-k="${k}"`):''}</div>`,'r3')).join('');
-  const theirs=IK.filter(k=>c[k]>0).map(k=>row(`<div>${dot(ITEMS[k].c)}${esc(nm(k))}</div><div class="num">×${c[k]} · ${kg(ITEMS[k].w*c[k])} kg</div><div class="acts">${btn('←','ctake1',`data-k="${k}"`)}${c[k]>1?btn(L('Todo'),'ctakek',`data-k="${k}"`):''}</div>`,'r3')).join('');
+  const mine=IK.filter(k=>S.inv[k]>0).map(k=>row(`<div>${ico(k)}${esc(nm(k))}</div><div class="num">×${S.inv[k]} · ${kg(ITEMS[k].w*S.inv[k])} kg</div><div class="acts">${btn('→','cput1',`data-k="${k}" aria-label="${esc(L('Guardar'))}"`)}${S.inv[k]>1?btn(L('Todo'),'cputk',`data-k="${k}"`):''}</div>`,'r3')).join('');
+  const theirs=IK.filter(k=>c[k]>0).map(k=>row(`<div>${ico(k)}${esc(nm(k))}</div><div class="num">×${c[k]} · ${kg(ITEMS[k].w*c[k])} kg</div><div class="acts">${btn('←','ctake1',`data-k="${k}"`)}${c[k]>1?btn(L('Todo'),'ctakek',`data-k="${k}"`):''}</div>`,'r3')).join('');
   $('lootMine').innerHTML=mine||`<p class="note">${esc(L('La mochila está vacía.'))}</p>`;
   $('lootTheirs').innerHTML=theirs||`<p class="note">${esc(L('Vacío.'))}</p>`;
   $('lootMsg').textContent=lootMsg||L('Las armas y la munición van siempre con vos.');lootMsg=''}
@@ -475,8 +475,8 @@ function renderNpc6(){const n=npcCur6,d=NPC6[n.id],st=npcSt6(n.id);
   let h='';const msg=npcMsg6?`<div class="banner">${esc(npcMsg6)}</div>`:'';
   if(npcTab6==='charla'){h=`<div class="item"><p class="say6">${esc(npcLine6)}</p></div><div class="btns6">${btn(L('Seguir charlando'),'talk','','primary')}</div>${msg}`}
   else if(npcTab6==='comprar'){h=msg+`<div class="list">${d.sell.map(([key,p],i)=>{const own=key.startsWith('w:')&&ownsW(key.slice(2));return `<div class="item ${own?'done':''}"><h3>${esc(offerName6(key))}</h3><p>${esc(offerDesc6(key))}</p><div class="meta"><span>$${fmt(p)}</span>${own?esc(L('Ya la tenés')):btn(L('Comprar'),'buy',`data-i="${i}" ${S.money<p?'disabled':''}`)}</div></div>`}).join('')}</div>`}
-  else if(npcTab6==='vender'){const ks=Object.keys(d.buy).filter(k=>ITEMS[k]);h=msg+`<p class="note">${esc(L('Compra de tu mochila y de los vehículos estacionados cerca.'))}</p><div class="rows">${ks.map(k=>{const q=have6(n,k),pr=Math.max(1,Math.round(ITEMS[k].v*d.buy[k]));return row(`<div>${dot(ITEMS[k].c)}${esc(nm(k))}</div><div class="num">$${fmt(pr)} · ${esc(L('tenés {n}',{n:q}))}</div><div class="acts">${q?btn(L('Vender 1'),'sell1',`data-k="${k}"`)+(q>1?btn(L('Todo'),'sellall',`data-k="${k}"`):''):''}</div>`,'r3')}).join('')}</div>`}
-  else{h=msg+(fav?`<div class="item"><p class="say6">${esc(L(fav.ask))}</p><div class="rows">${Object.entries(fav.need).map(([k,q])=>{const hv=have6(n,k);return row(`<div>${dot(ITEMS[k].c)}${esc(nm(k))}</div><div class="num" style="color:${hv>=q?'#8fbb62':'#cc7a5a'}">${Math.min(hv,q)} / ${q}</div><div></div>`,'r3')}).join('')}</div>
+  else if(npcTab6==='vender'){const ks=Object.keys(d.buy).filter(k=>ITEMS[k]);h=msg+`<p class="note">${esc(L('Compra de tu mochila y de los vehículos estacionados cerca.'))}</p><div class="rows">${ks.map(k=>{const q=have6(n,k),pr=Math.max(1,Math.round(ITEMS[k].v*d.buy[k]));return row(`<div>${ico(k)}${esc(nm(k))}</div><div class="num">$${fmt(pr)} · ${esc(L('tenés {n}',{n:q}))}</div><div class="acts">${q?btn(L('Vender 1'),'sell1',`data-k="${k}"`)+(q>1?btn(L('Todo'),'sellall',`data-k="${k}"`):''):''}</div>`,'r3')}).join('')}</div>`}
+  else{h=msg+(fav?`<div class="item"><p class="say6">${esc(L(fav.ask))}</p><div class="rows">${Object.entries(fav.need).map(([k,q])=>{const hv=have6(n,k);return row(`<div>${ico(k)}${esc(nm(k))}</div><div class="num" style="color:${hv>=q?'#8fbb62':'#cc7a5a'}">${Math.min(hv,q)} / ${q}</div><div></div>`,'r3')}).join('')}</div>
       <div class="meta"><span>${esc(L('Te da'))}: ${fav.pay?'$'+fmt(fav.pay):''}${fav.item?(fav.pay?' + ':'')+Object.entries(fav.item).map(([k,q])=>nm(k)+' ×'+q).join(', '):''}${fav.frag?' + '+esc(L('un relato')):''}</span>${btn(L('Entregar'),'favor','',Object.entries(fav.need).every(([k,q])=>have6(n,k)>=q)?'primary':'small')}</div></div>`
     :`<div class="item"><p class="say6">${esc(L('No necesito nada más. Gracias por todo.'))}</p></div>`)}
   $('npcBody').innerHTML=h;npcMsg6=''}

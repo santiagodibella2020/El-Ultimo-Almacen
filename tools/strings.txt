@@ -245,6 +245,7 @@ Usar, abrir, revisar · cargar nafta
 Inventario, salud y habilidades
 Mapa
 Diario: relatos y lugares
+Cambiar la vista dentro del auto
 Comer o tomar
 Vendar y curar
 Construir
@@ -384,6 +385,9 @@ Visitado
 Marcado en el mapa
 Sin descubrir
 Hay gente viva en la zona. Buscá pueblos, hablá con ellos (E) y armá la historia en tu diario (J).
+V · cambiar vista (tercera persona / interior)
+Vista: tercera persona
+Vista: interior
 Lata de comida
 Pan
 Fruta

@@ -319,5 +319,9 @@
  "Charlar": "Konuş",
  "Vender": "Sat",
  "Diario": "Günlük",
- "Cerrar · J": "Kapat · J"
+ "Cerrar · J": "Kapat · J",
+ "V · cambiar vista (tercera persona / interior)": "V · görünümü değiştir (üçüncü şahıs / iç)",
+ "Vista: tercera persona": "Görünüm: üçüncü şahıs",
+ "Vista: interior": "Görünüm: iç",
+ "Cambiar la vista dentro del auto": "Araç içinde görünümü değiştir"
 }

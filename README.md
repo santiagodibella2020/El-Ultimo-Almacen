@@ -2,7 +2,14 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.6.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.7.0.
+
+## Novedades de la 0.7
+
+- Física de los vehículos: suspensión que rebota, el auto se inclina al acelerar, frenar y doblar, despega en las lomas empinadas y cae con golpe, polvo y sacudón. Las ruedas siguen el terreno una por una, las cuestas lo frenan o lo aceleran y las barrancas muy empinadas lo frenan en seco.
+- Manejo más cómodo: la dirección se endurece con la velocidad, las gomas pierden agarre en curvas muy cerradas y el freno de mano (Espacio) deja doblar derrapando.
+- Dos vistas al manejar, con V para cambiar: tercera persona (por defecto, con cámara que sigue y se abre con la velocidad) e interior, con tablero, volante que gira, velocímetro, medidor de nafta, pilares, techo, espejo y asientos.
+- Íconos pixelados para todo: 76 dibujos en 16×16 para materiales, comida, medicinas, mochilas, trofeos, armas y munición. Se ven en el inventario, el depósito, el botín, el comercio, la barra de armas, los estantes del almacén y en los objetos que quedan tirados en el suelo.
 
 ## Novedades de la 0.6
 
@@ -50,7 +57,7 @@ Estado: **acceso anticipado (prototipo)**, versión 0.6.0.
 
 ## Controles
 
-WASD moverse · Shift correr · C agacharse · Espacio saltar · Clic disparar o pegar · Clic derecho apuntar · R recargar · 1-9 o rueda del mouse armas (Q la anterior) · E usar, revisar o reparar · G cargar nafta · Tab inventario, salud y habilidades · M mapa · J diario · X comer o tomar · H vendar · B construir · L linterna · T órdenes al raptor · F11 pantalla completa · Esc pausa.
+WASD moverse · Shift correr · C agacharse · Espacio saltar · Clic disparar o pegar · Clic derecho apuntar · R recargar · 1-9 o rueda del mouse armas (Q la anterior) · E usar, revisar o reparar · G cargar nafta · Tab inventario, salud y habilidades · M mapa · J diario · V vista del auto · X comer o tomar · H vendar · B construir · L linterna · T órdenes al raptor · F11 pantalla completa · Esc pausa.
 
 ## Qué hay en este repositorio
 
