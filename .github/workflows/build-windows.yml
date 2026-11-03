@@ -34,10 +34,18 @@ jobs:
             dist/*.exe
             dist/*.zip
 
-      - name: Publicar versión (solo con tags v*)
-        if: startsWith(github.ref, 'refs/tags/v')
+      - name: Leer la versión
+        id: ver
+        shell: bash
+        run: echo "v=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Publicar la versión para descargar
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: v${{ steps.ver.outputs.v }}
+          name: El Último Almacén ${{ steps.ver.outputs.v }}
+          target_commitish: ${{ github.sha }}
+          make_latest: true
           files: |
             dist/*.exe
             dist/*.zip
