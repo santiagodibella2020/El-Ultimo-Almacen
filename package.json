@@ -32,13 +32,11 @@
       "target": [
         "portable",
         "zip"
-      ]
+      ],
+      "artifactName": "ElUltimoAlmacen-${version}-steam.${ext}"
     },
     "portable": {
       "artifactName": "ElUltimoAlmacen-${version}-portable.exe"
-    },
-    "zip": {
-      "artifactName": "ElUltimoAlmacen-${version}-steam.zip"
     }
   }
 }
