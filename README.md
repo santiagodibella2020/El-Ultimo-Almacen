@@ -2,7 +2,16 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.7.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
+
+## Novedades de la 0.8
+
+- Salto gráfico de gama media: el juego ahora se dibuja con posprocesado (suavizado de bordes 4x en calidad alta, brillo suave en luces y cielo, curva de contraste de cine, sombras frías y luces cálidas, viñeta y colores más vivos).
+- Iluminación nueva: cielo azul con degradé, sol que se pone naranja al atardecer, luz de luna azulada de noche y mejor luz ambiente.
+- Terreno liso, con variación de color por manchones y roca en las pendientes empinadas.
+- Agua animada con olas, reflejo del cielo y brillo del sol.
+- Pinos armados por pisos, árboles de copa más densa, troncos finos hacia arriba, rocas irregulares y color distinto en cada árbol.
+- En calidad media se apaga el suavizado y en baja se apaga todo el posprocesado.
 
 ## Novedades de la 0.7
 
