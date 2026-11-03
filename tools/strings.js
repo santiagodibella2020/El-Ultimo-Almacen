@@ -20,6 +20,8 @@ for(const t of [D.VEH,D.LAIRS,D.SUMMONS,D.SEASONS])for(const v of Object.values(
 const world=fs.readFileSync(path.join(G,'js','world.js'),'utf8'),game=fs.readFileSync(path.join(G,'js','game.js'),'utf8'),menus=fs.readFileSync(path.join(G,'js','menus.js'),'utf8'),ui=fs.readFileSync(path.join(G,'js','ui.js'),'utf8');
 for(const m of world.matchAll(/\bn:'([^']+)'/g))add(m[1]);
 for(const m of game.matchAll(/\bn:'([^']+)'/g))add(m[1]);
+const v6=fs.readFileSync(path.join(G,'js','v6.js'),'utf8');
+for(const m of v6.matchAll(/\b(?:n|d|role|hi|txt|ask|thanks|tx|hint|label):'((?:[^'\\]|\\.)*)'/g))add(m[1].replace(/\\'/g,"'"));
 for(const m of world.matchAll(/const types=\[([^\]]+)\]/g))m[1].match(/'([^']+)'/g).forEach(s=>add(s.slice(1,-1)));
 for(const m of menus.matchAll(/\['([A-ZÁÉÍÓÚÑa-záéíóúñ ][^']+)',st\./g))add(m[1]);
 for(const m of ui.matchAll(/const DIRS=\{([^}]+)\}/g))m[1].match(/'([^']+)'/g).forEach(s=>add(s.slice(1,-1)));

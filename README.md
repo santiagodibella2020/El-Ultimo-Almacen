@@ -2,7 +2,17 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.5.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.6.0.
+
+## Novedades de la 0.6
+
+- Historia tranquila y no lineal: cuatro relatos (los Ibarra, la Piedra Verde, la caravana y la voz de la radio) que se arman solos según dónde vayas y con quién hables. Se leen en el Diario (J).
+- Nueve lugares nuevos en el mapa: dos pueblos (Paso del Sauce y Colonia Esperanza), la estación de tren, la estancia La Paloma, la antena del Cerro Chato, el campamento del arroyo, la terminal de ómnibus, el mirador y el cementerio de la loma. Los pueblos son zonas seguras.
+- Siete personajes con los que hablar, comprarles y venderles cosas especiales, pedir servicios (curarte, arreglar un auto, llenar el tanque, marcar lugares en el mapa) y hacerles favores.
+- Cuatro vehículos nuevos: auto familiar, todoterreno 4x4, ambulancia y un colectivo roto que se puede arreglar con un kit de motor.
+- La carga de los vehículos ahora se abre: acercate por atrás y apretá E para guardar o sacar cosas.
+- Animaciones nuevas: los podridos arrastran los pies, corren moviendo los brazos y se preparan antes de pegar; los dinosaurios mueven la cola y la cabeza y el rex hace temblar el piso; los enemigos caen distinto al morir. En primera persona el arma se balancea, se recarga por pasos y los golpes tienen impulso.
+- Radio portátil: a las 23 se escucha la transmisión desde la costa.
 
 ## Novedades de la 0.5
 
@@ -40,7 +50,7 @@ Estado: **acceso anticipado (prototipo)**, versión 0.5.0.
 
 ## Controles
 
-WASD moverse · Shift correr · C agacharse · Espacio saltar · Clic disparar o pegar · Clic derecho apuntar · R recargar · 1-9 o rueda del mouse armas (Q la anterior) · E usar, revisar o reparar · G cargar nafta · Tab inventario, salud y habilidades · M mapa · X comer o tomar · H vendar · B construir · L linterna · T órdenes al raptor · F11 pantalla completa · Esc pausa.
+WASD moverse · Shift correr · C agacharse · Espacio saltar · Clic disparar o pegar · Clic derecho apuntar · R recargar · 1-9 o rueda del mouse armas (Q la anterior) · E usar, revisar o reparar · G cargar nafta · Tab inventario, salud y habilidades · M mapa · J diario · X comer o tomar · H vendar · B construir · L linterna · T órdenes al raptor · F11 pantalla completa · Esc pausa.
 
 ## Qué hay en este repositorio
 

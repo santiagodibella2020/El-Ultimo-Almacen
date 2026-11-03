@@ -3,7 +3,6 @@ Partida guardada
 No se pudo guardar. Usá el código de partida de la pausa.
 Explorá, juntá mercadería y volvé al almacén antes de las 20:00.
 El pueblo está al sur por la ruta: casas y negocios para revisar mueble por mueble.
-V cambia entre primera persona y vista de arriba.
 Disparar hace ruido y atrae a todo lo que ande cerca.
 Conseguiste: {w}. Tecla {n}.
 {w} en mejor estado: lo cambiaste.
@@ -16,6 +15,8 @@ Torreta
 Raptor
 Camioneta
 ¡Cayó el Rex Podrido! Juntá el ámbar.
+Derrotaste a {n}. Su zona queda tranquila unos días.
+¡Cayó el Coloso de la Bruma!
 cabeza
 ¡Rompieron un tramo de la empalizada!
 Rompieron una defensa.
@@ -84,6 +85,8 @@ Infectado
 Intoxicado
 Pánico
 Mojado
+Frío
+Calor
 Sobrecarga
 El Último Almacén
 Partida guardada.
@@ -93,6 +96,7 @@ Seleccioné el código: copialo con Ctrl+C.
 Ese código no es válido. Revisá que esté completo.
 PUEBLO
 ALMACÉN
+Marrón: otros vehículos · Rojo oscuro: zonas peligrosas · Verde: Piedra Verde
 Blanco: vos · Rojo: camioneta · Puntos claros: fósiles · M o Esc para cerrar
 Nivel {n}
 Ya tenés {n}
@@ -127,7 +131,7 @@ Todo
 Vacío.
 No te entra más: llevás demasiado peso.
 Descargaste de la mochila: {l}.
-De la camioneta: {l}.
+De los vehículos: {l}.
 noche
 Plata
 Reputación
@@ -138,11 +142,12 @@ Dejar 1
 encima
 guardada
 Llevar
-Al entrar se descargan solos los materiales y objetos de valor de la mochila, y la caja de la camioneta si está estacionada cerca. Comida, bebida, medicina y herramientas quedan encima.
+Al entrar se descargan solos los materiales y objetos de valor de la mochila, y la carga de todos los vehículos estacionados cerca. Comida, bebida, medicina y herramientas quedan encima.
 Mochila: {a} de {b} kg.
 Producto
 Depósito
 Mochila
+Vehículos
 El depósito está vacío. Salí a buscar mercadería.
 Chance de que lo compren: {n}%
 Vacío
@@ -174,9 +179,10 @@ Hay {n} tramos rotos por donde pueden entrar.
 Cada chatarra o tabla repara 100 puntos.
 Costo: {n} · tenés {h}
 Reparar
+Tanque: {v}
 Tanque de la camioneta
 Tiene {n}% de nafta. Cada combustible carga 30%.
-La camioneta tiene que estar estacionada cerca del almacén.
+El vehículo tiene que estar estacionado cerca del almacén.
 Combustible en depósito: {n}
 Cargar
 Completo
@@ -218,9 +224,6 @@ Campo de visión
 Brillo
 Grano de película
 Filtro de color crudo
-Cámara al empezar
-Primera persona
-Vista de arriba
 Volumen general
 Efectos
 Ambiente (lluvia, viento)
@@ -241,12 +244,12 @@ Armas · arma anterior
 Usar, abrir, revisar · cargar nafta
 Inventario, salud y habilidades
 Mapa
+Diario: relatos y lugares
 Comer o tomar
 Vendar y curar
 Construir
 Linterna
 Órdenes a tu raptor
-Cambiar cámara
 Pausa
 Teclas
 Idioma
@@ -273,10 +276,6 @@ E · Atender el almacén
 E · Dormir
 Cansancio {n}%
 E · Estante {n}
-E · Subir a la camioneta
-Nafta {n}%
-G · Cargar 1 combustible
-Cargaste nafta: +30%.
 Mantené E · Cocinar {n} carne
 Cocinaste {n} carne asada.
 Fogata
@@ -292,6 +291,7 @@ Mantené E · Excavar fósiles
 Quedan {n}
 Algo se movió bajo la arena…
 Pueblo
+Nafta {n}%
 Caja {a}/{b} kg
 NOCHE · BRUMA
 ATARDECER
@@ -305,6 +305,85 @@ Estado
 Manos vacías
 R girar
 Clic construir · B salir
+{d} de {m}
+Arreglaste: {v}. Ya podés manejarlo.
+Mantené E · Reparar: {v}
+Usa 4 chatarra
+Roto
+Para arreglarlo llevá una caja de herramientas y 4 chatarra en la mochila.
+E · Subir: {v}
+Carga {n} kg
+G · Cargar 1 combustible
+Cargaste nafta: +30%.
+Explosión
+¡{n} despertó!
+Zona peligrosa: {z}. Acá vive {n}.
+{n} volvió a dormir bajo la Piedra Verde. El tributo se perdió.
+Los trofeos de los minijefes y lo que sueltan los enemigos comunes despiertan a los jefes. Tienen que estar en tu mochila o en un vehículo estacionado cerca de la piedra.
+Ya está despierto.
+Invocar
+La Piedra Verde brilla. Algo despierta bajo la tierra…
+E · Piedra Verde
+Hay un jefe despierto.
+Invocá a un jefe con trofeos
+tranquila
+Piedra Verde
+Terminal
+Puerto Escondido
+Carga: {v}
+Las armas y la munición van siempre con vos.
+La caja está llena.
+Nuevo relato en tu diario: {t}
+Apretá J para leerlo.
+Completaste el relato «{t}». Recompensa: ${m}.
+Te dejaron algo en el depósito.
+Conocés toda la historia. Leé el final en tu diario (J).
+Descubriste: {p}
+E · Hablar con {n}
+E · Leer: {t}
+Ya está en tu diario
+Mantené E · Subir al mirador
+Ya subiste
+Desde arriba se ve todo el valle
+E · Abrir carga: {v}
+Mantené E · Reparar con el kit: {v}
+Usa 1 kit de motor
+Por atrás: abrir carga
+Desde arriba ves todo el valle.
+Marcaste {n} lugares nuevos en el mapa.
+Arma
+Te marcó {n} lugares en el mapa.
+No hay ningún vehículo roto cerca.
+No hay ningún vehículo cerca para cargar.
+Tanque lleno: {v}.
+No tenés nada para curar.
+Te curaron las heridas.
+No te alcanza la plata.
+No hace falta ahora.
+Ya tenés esa arma.
+Compraste: {i}.
+Vendiste {q} × {i} por ${m}.
+Todavía te falta algo.
+Favor cumplido.
+(Nuevo relato en tu diario.)
+Te marcó en el mapa: {p}.
+Favores
+Seguir charlando
+Ya la tenés
+Comprar
+Compra de tu mochila y de los vehículos estacionados cerca.
+tenés {n}
+Vender 1
+Te da
+un relato
+No necesito nada más. Gracias por todo.
+{a} de {b} relatos
+Todavía no sabés nada. Hablá con la gente de los pueblos y revisá los lugares de la zona: la historia se arma sola, en el orden que quieras.
+Lugares
+Visitado
+Marcado en el mapa
+Sin descubrir
+Hay gente viva en la zona. Buscá pueblos, hablá con ellos (E) y armá la historia en tu diario (J).
 Lata de comida
 Pan
 Fruta
@@ -344,6 +423,14 @@ Riñonera
 Mochila escolar
 Mochila de campamento
 Bolso militar
+Campera de abrigo
+Núcleo de bruma
+Placa del Sargento
+Cuchilla del Matarife
+Muestra del Paciente Cero
+Garra del Alfa
+Cuerno del Viejo
+Glándula de la Reina
 Pistola 9 mm
 Revólver
 Escopeta
@@ -357,12 +444,32 @@ Palanca
 Machete
 Hacha
 Lanza
+Ballesta
+Escopeta de combate
+Rifle de francotirador
+Ametralladora
+Lanzagranadas
+Katana
+Mazo
 Caminante
 Corredor
 Bruto
 Raptor podrido
 Cornudo
 Rex Podrido
+Gritón
+Hinchado
+Soldado podrido
+Saltador
+Escupidor
+Acorazado podrido
+Sargento Podrido
+El Matarife
+Paciente Cero
+Alfa Colmillo Negro
+Cornudo Viejo
+Reina Escupidora
+El Coloso de la Bruma
 Heladera
 Alacena
 Armario
@@ -459,6 +566,9 @@ Balas .38 ×6
 Cartuchos ×4
 Balas de rifle ×5
 Balas 5.56 ×15
+Virotes ×6
+Balas .50 ×5
+Granadas ×2
 Pulso firme
 +15% de daño con armas de fuego.
 Piel dura
@@ -502,12 +612,20 @@ Atropellá 20 bichos con la camioneta
 Llevá una habilidad a nivel 5
 Ganá $3.000 en ventas
 Cazá al Rex Podrido
+Derrotá a 3 minijefes
+Derrotá al Coloso de la Bruma
 Sobreviví 10 noches
 Ocho perdigones por disparo. Brutal de cerca.
 Seis tiros pesados que atraviesan a dos.
 Clic derecho para mirar por la mira. Atraviesa hasta tres enemigos.
 Automático: mantené el clic. Gasta munición rápido.
 Pega muy fuerte y tala en dos golpes.
+Casi no hace ruido. Un virote por vez, pero pega fuerte.
+Rápida y filosa. Corta cabezas con facilidad.
+Lento y pesado. Rompe cualquier armadura y voltea a los grandes.
+Semiautomática: ocho cartuchos sin bombear.
+Calibre .50. Atraviesa armaduras y hasta cinco enemigos.
+Cien tiros sin recargar. Pesa diez kilos.
 Balas 9 mm ×20
 Para la pistola.
 Balas .38 ×12
@@ -527,6 +645,13 @@ Para la linterna.
 Clavos ×20
 Para los muros. Va al depósito.
 Para la camioneta. Va al depósito.
+Virotes ×10
+Para la ballesta.
+Balas .50 ×10
+Para el rifle de francotirador.
+Granadas ×4
+Para el lanzagranadas.
+Abriga en invierno. Va a la mochila.
 Comida
 Bebida
 Medicina
@@ -538,6 +663,40 @@ Balas .38
 Cartuchos
 Balas de rifle
 Balas 5.56
+Virotes
+Balas .50
+Granadas
+Furgón
+Camión de carga
+Tractor con acoplado
+Puesto militar
+Frigorífico abandonado
+Hospital en ruinas
+Cañadón de los raptores
+Salina
+Laguna podrida
+Una montaña de podridos cosidos por la bruma. Golpea el suelo y llama a los muertos.
+El rey de los huesos. Ya no viene solo de noche: lo despertás vos.
+Primavera
+Llegó la primavera.
+Verano
+Llegó el verano.
+Otoño
+Llegó el otoño.
+Invierno
+Llegó el invierno.
+enero
+febrero
+marzo
+abril
+mayo
+junio
+julio
+agosto
+septiembre
+octubre
+noviembre
+diciembre
 Supermercado
 Farmacia
 Ferretería
@@ -552,6 +711,149 @@ Nublado
 Lluvia
 Tormenta
 Niebla
+Nieve
+Té de yuyos
+Charqui
+Mochila táctica
+Kit de motor
+Radio portátil
+Auto familiar
+Todoterreno 4x4
+Ambulancia
+Colectivo
+Estación
+Paso del Sauce
+Colonia Esperanza
+La Estación
+Estancia La Paloma
+Antena del Cerro Chato
+Campamento del Arroyo
+Terminal de ómnibus
+Mirador
+Cementerio de la loma
+Los Ibarra
+La familia que tenía el almacén antes que vos.
+La Piedra Verde
+De dónde salieron la bruma y los dinosaurios.
+La caravana
+Los que se fueron por la ruta.
+La voz de la radio
+Alguien transmite cada noche desde la costa.
+Doña Elvira: «El almacén era de los Ibarra. Don Julio abría a las siete aunque lloviera a cántaros. Cuando llegó la bruma se quedó solo, cuidando el mostrador.»
+Alguien en Paso del Sauce conoció a los dueños del almacén.
+Una tumba nueva, hecha a mano: «Julio Ibarra. Cuidó el almacén hasta el final.» Alguien dejó flores secas y una cinta de nena atada a la cruz.
+Hay una tumba nueva en el cementerio de la loma.
+Doña Elvira te da una foto vieja: una nena sentada en el mostrador de tu almacén. Atrás dice: «Sofía, ocho años. Se fue con la caravana.»
+Doña Elvira guarda algo. Tal vez si la ayudás…
+Hermana Inés: «Sofía Ibarra pasó un invierno con nosotras. Antes de irse a la costa me pidió una sola cosa: que si alguien abría el almacén, lo cuidáramos.»
+En Colonia Esperanza alguien conoció a la hija de los Ibarra.
+Rufino: «Los bichos no salieron de ningún laboratorio. Los vi salir de la tierra, cerca del cráter, la misma noche que la piedra empezó a brillar.»
+Un cazador del campamento vio algo la primera noche.
+Libreta de un geólogo, junto a la piedra: «Muestra 14: no es ningún mineral conocido. Late. Los huesos fósiles que la rodean están tibios.»
+Alguien estudió la Piedra Verde antes que vos. Buscá cerca del cráter.
+Hermana Inés, mirando los núcleos: «La bruma baja de noche porque la piedra respira. Cuando cae uno de los grandes, la bruma se calma unos días. Están atados a ella.»
+La hermana Inés estudia la bruma. Le faltan muestras.
+Radio, con interferencia: «…la piedra no es de acá. Cayó hace millones de años y se los llevó. Ahora los está devolviendo, de a uno…»
+De noche, la radio dice cosas que nadie más sabe.
+Tano: «Salimos treinta en la caravana: dos colectivos, un camión y mi chata. En la terminal nos agarró la bruma. Yo me quedé a arreglar lo que quedó.»
+El mecánico de la estación viajaba con la caravana.
+Lista pegada en la boletería. Muchos nombres tachados y uno subrayado: «S. Ibarra, asiento 12». Abajo, con otra letra: «Destino: Puerto Escondido».
+En la terminal de ómnibus quedó la lista de pasajeros.
+Tano despliega un mapa engrasado: «El camino a la costa sale por la estación. Si algún día el colectivo vuelve a andar, ese es el rumbo.»
+Tano necesita repuestos. Él sabe adónde fue la caravana.
+Pizarrón de la estación, escrito con tiza: «Caravana 2 pasó el día 14. Todos bien. Seguimos a la costa. No esperen el tren».
+La estación de tren tiene un pizarrón con mensajes.
+Lucho: «Todas las noches, a las once, alguien transmite desde la costa. Siempre lo mismo: el clima, los nombres de los que llegaron y una canción.»
+En la antena del cerro alguien escucha la radio.
+Con las pilas nuevas la antena llega más lejos. Lucho anota un nombre que repite la radio: «Sofía Ibarra, llegó bien. Manda saludos al almacén».
+Lucho necesita pilas para la antena.
+Grabado en la baranda del mirador: «Desde acá, los días claros, se ve el humo del puerto. No estamos solos».
+Desde el mirador se ve lejos. Alguien dejó un mensaje arriba.
+Radio: «Puerto Escondido, aquí. Tenemos agua, semillas y una escuela. Si tienen un almacén abierto, no lo cierren: la ruta los necesita».
+Con una radio portátil vas a escuchar la transmisión de las once.
+Ya sabés por qué este almacén importa. Don Julio lo cuidó, Sofía llegó a la costa y la ruta sigue viva. No hace falta irse a ningún lado: alcanza con seguir abierto.
+Radio: «Buenas noches a los que quedan. En la costa llovió y la cosecha viene bien.»
+Radio: «Mensaje para la ruta: si ven humo blanco, es gente amiga. Si ven bruma, cierren la puerta.»
+Radio: «Hoy llegaron dos familias del norte. Bienvenidas. Mañana sale el sol.»
+Marcar lugares en el mapa
+Te marca todos los lugares de la zona.
+Arreglar un vehículo cercano
+Arregla el vehículo roto más cercano (hasta 60 m).
+Llenar el tanque
+Llena la nafta del vehículo más cercano (hasta 60 m).
+Curar heridas
+Venda y desinfecta tus heridas y cura la infección.
+Doña Elvira
+Pulpera
+Pasá, pasá. Acá no se pelea nadie, salvo con el precio de la yerba.
+Si vas para la loma, fijate en el cementerio. Alguien anduvo arreglando una tumba.
+Los del campamento cazan bichos grandes. Pagan bien los colmillos.
+Se me acabó la mercadería para los que pasan. ¿Me traés pan y unas latas?
+Dios te lo pague. Tomá, esto era de los Ibarra. Te corresponde.
+El techo del puesto se llueve. Con unas tablas y clavos lo arreglo.
+Ahora sí, que llueva lo que quiera.
+Hermana Inés
+Monja
+Bienvenido a la colonia. Si venís en paz, hay lugar en la mesa.
+Acá le damos de comer al que llega. Nadie pregunta de dónde viene.
+Desde el mirador se ve casi todo el valle. Subí alguna vez.
+Necesito núcleos de bruma para entender qué nos pasa. Los sueltan los podridos.
+Gracias. Ahora entiendo un poco más. Escuchá…
+Llegaron chicos nuevos. Si me traés latas y agua, comen toda la semana.
+Los chicos te mandan saludos.
+Tano
+Mecánico
+¿Qué traés? Si tiene motor, lo arreglo. Si no tiene, también.
+En la terminal quedó un colectivo. Le falta poco para andar.
+Un auto chico gasta poco. Un camión lleva todo, pero toma nafta como loco.
+Para dejar andando la chata me falta chatarra y cinta. ¿Me das una mano?
+Gracias, che. Mirá esto, nunca se lo mostré a nadie.
+Sin nafta no pruebo nada. Traeme unos bidones.
+Eso suena a motor contento.
+Lucho
+Radioaficionado
+Shh… perdón. Estaba escuchando. ¿Necesitás algo?
+Con una radio portátil podés escuchar la transmisión de las once desde tu almacén.
+Allá abajo hay una colonia. La hermana Inés cuida a todos.
+La antena anda con lo justo. Con seis pilas llego más lejos.
+¡Ahí está! ¿Escuchaste ese nombre?
+El viento me dobló un tramo de la antena. Traeme chatarra y cinta.
+Listo. Ahora se escucha hasta el mar.
+Rufino
+Cazador
+Despacio. Los bichos huelen el apuro.
+Al sur hay una estación de tren. El Tano arregla cualquier cosa con motor.
+Los raptores cazan en manada. Si ves uno, hay tres más mirándote.
+La cacería viene flaca. Traeme carne cruda y te pago bien.
+Esto alcanza para una semana. Gracias.
+Si me conseguís colmillos y cuero, te doy una mochila de verdad.
+Tomá. Aguanta lo que le pongas.
+Don Benito
+Estanciero
+Buen día. El campo no para, ni con bruma.
+El molino todavía anda. Mientras gire, hay agua.
+En Paso del Sauce está Doña Elvira. Conoció a todo el mundo.
+Del otro lado del monte hay un campamento de cazadores.
+El corral se viene abajo. Con madera y clavos lo levanto.
+Ya está. Gracias, de verdad.
+Se me rompieron las herramientas. Sin eso el campo no se trabaja.
+Tomá, carne asada de la buena. Y la plata.
+Marta, la Gringa
+Comerciante
+Compro, vendo y no pregunto. ¿Qué buscás?
+Lo que no tengo, lo consigo. Lo que tengo, lo cobro.
+La caravana salió de esta terminal. Fijate en la boletería, todavía está la lista.
+En el cerro hay una antena. El que vive ahí no duerme nunca.
+Tengo un comprador para ámbar. Dos piezas y te pago como nadie.
+Un placer hacer negocios.
+Joyas. Las que encuentres. Yo sé dónde venderlas.
+Brillan lindo. Tomá lo tuyo.
+Visitá todos los lugares de la zona
+Descubrí toda la historia
+Pizarrón
+Lista de pasajeros
+Tumba nueva
+Libreta del geólogo
 Mercado
 Taller
 Gasolinera
@@ -563,6 +865,8 @@ Productos vendidos
 Encargos cumplidos
 Atropellados
 Rex Podridos cazados
+Minijefes derrotados
+Colosos derrotados
 N
 NE
 E
@@ -590,7 +894,7 @@ En pantallas táctiles no se puede jugar: abrilo desde la PC.
 Acceso anticipado
 Elegí tu apocalipsis
 Reglas del mundo
-Semilla del mapa (opcional)
+Mapa distinto (opcional)
 Ya tenés una partida guardada: empezar una nueva la reemplaza.
 Empezar
 Volver
@@ -610,10 +914,16 @@ Cerrar · Tab
 Inventario
 Salud
 Habilidades
+Guardar todo
 Tomar todo
 Cerrar · E
 Tu mochila
 Adentro
+Charlar
+Vender
+Diario
+Cerrar · J
+Cráter
 Subiste de nivel
 Elegí una mejora. Se acumulan si repetís.
 Respirá un poco
@@ -627,5 +937,6 @@ Copiar código
 Cargar código
 Te agarraron
 Despertar en el almacén
+Vacío: el mapa de siempre. Escribí una palabra para otro mapa.
 Cansado
 Agotado

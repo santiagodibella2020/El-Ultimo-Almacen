@@ -208,6 +208,15 @@ input[type=text]{font:500 14px var(--f-body);background:var(--bg);color:var(--fg
 .row .xpbar{display:block;width:100%;flex:none}
 .setting button{justify-self:start}
 @media (max-width:760px){.loot2{grid-template-columns:1fr}.mm{padding:28px 20px}}
+.say6{font-size:17px!important;line-height:1.5!important;color:var(--fg)!important;font-style:italic}
+.btns6{display:flex;gap:8px;margin:10px 0}
+.frag6{border-left:2px solid var(--amber);padding-left:10px}
+.hint6{color:var(--muted)!important;font-style:italic}
+.hint6::before{content:'? ';color:var(--amber)}
+.cnt6{font:600 13px var(--f-mono);color:var(--muted);vertical-align:3px}
+.item.done6{outline:1px solid var(--amber)}
+.h6{margin:18px 0 6px}
+#npcMoney{font:600 14px var(--f-mono);color:var(--muted)}
 </style>
 </head>
 <body>
@@ -323,11 +332,26 @@ input[type=text]{font:500 14px var(--f-body);background:var(--bg);color:var(--fg
 
 <div id="loot" class="overlay clear" hidden>
   <div class="card wide">
-    <header class="phead"><div><div class="eyebrow" id="lootKg"></div><h2 id="lootName"></h2></div><div class="btns"><button class="primary" data-a="takeall" data-t>Tomar todo</button><button data-a="lootclose" data-t>Cerrar · E</button></div></header>
+    <header class="phead"><div><div class="eyebrow" id="lootKg"></div><h2 id="lootName"></h2></div><div class="btns"><button data-a="putall" id="lootPutAll" hidden data-t>Guardar todo</button><button class="primary" data-a="takeall" data-t>Tomar todo</button><button data-a="lootclose" data-t>Cerrar · E</button></div></header>
     <div class="pbody">
       <div class="loot2"><div class="col"><h4 data-t>Tu mochila</h4><div class="rows" id="lootMine"></div></div><div class="col"><h4 data-t>Adentro</h4><div class="rows" id="lootTheirs"></div></div></div>
       <p class="note" id="lootMsg"></p>
     </div>
+  </div>
+</div>
+
+<div id="npc" class="overlay clear" hidden>
+  <div class="card wide">
+    <header class="phead"><div><div class="eyebrow" id="npcRole"></div><h2 id="npcName"></h2></div><div class="btns"><span id="npcMoney"></span><button data-a="npcclose" data-t>Cerrar · E</button></div></header>
+    <nav class="tabs" id="npcTabs"><button data-tab="charla" data-t>Charlar</button><button data-tab="comprar" data-t>Comprar</button><button data-tab="vender" data-t>Vender</button><button data-tab="favores" data-t>Favores</button></nav>
+    <div class="pbody" id="npcBody"></div>
+  </div>
+</div>
+
+<div id="diario" class="overlay clear" hidden>
+  <div class="card wide">
+    <header class="phead"><div><div class="eyebrow" id="diarioCount"></div><h2 data-t>Diario</h2></div><div class="btns"><button data-a="diarioclose" data-t>Cerrar · J</button></div></header>
+    <div class="pbody" id="diarioBody"></div>
   </div>
 </div>
 
@@ -390,5 +414,7 @@ input[type=text]{font:500 14px var(--f-body);background:var(--bg);color:var(--fg
 <script src="js/menus.js"></script>
 <script src="js/v4.js"></script>
 <script src="js/v5.js"></script>
+<script src="js/v6.js"></script>
+<script src="js/v6anim.js"></script>
 </body>
 </html>
