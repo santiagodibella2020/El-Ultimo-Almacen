@@ -6,9 +6,9 @@ addEventListener('keydown',e=>{
   const k=e.key.toLowerCase();if(typing(e)&&k!=='escape')return;
   if(k===' '||k==='tab'||k==='/'||k==="'"||(k==='f'&&e.ctrlKey))e.preventDefault();
   if(!keys[k])pressed[k]=true;keys[k]=true;
-  if(k==='escape'){if(gstate==='panel')closePanel();else if(['inv','map','loot'].includes(gstate))resume();else if(gstate==='pause')resume();else if(gstate==='options')closeOptions();else if(gstate==='newgame')toMenu();else if(gstate==='play'&&noLock())openPause()}
+  if(k==='escape'){if(gstate==='panel')closePanel();else if(['inv','map','loot','altar'].includes(gstate))resume();else if(gstate==='pause')resume();else if(gstate==='options')closeOptions();else if(gstate==='newgame')toMenu();else if(gstate==='play'&&noLock())openPause()}
   else if(k==='e'&&gstate==='panel'){closePanel();pressed={}}
-  else if(k==='e'&&gstate==='loot'){resume();pressed={}}
+  else if(k==='e'&&(gstate==='loot'||gstate==='altar')){resume();pressed={}}
   else if(k==='tab'){if(gstate==='play')openInv('items');else if(gstate==='inv'||gstate==='loot')resume()}
   else if(k==='m'){if(gstate==='play')openMap();else if(gstate==='map')resume()}
   else if(k==='v'&&gstate==='play')toggleCam();
@@ -85,7 +85,7 @@ function update(dt){
     if(d<reach&&p.age>.4){
       if(p.item.startsWith('ammo:')){const a=p.item.slice(5);S.ammo[a]+=p.qty;toast(`+${p.qty} ${an(a)}`,'#d9c38a',1.6);sfx('pickup');scene.remove(p.mesh);pickups.splice(i,1)}
       else if(p.item.startsWith('w:')){giveWeapon(p.item.slice(2));sfx('pickup');scene.remove(p.mesh);pickups.splice(i,1)}
-      else{const left=P.inTruck?addTo(S.truck.cargo,truckCap(),p.item,p.qty):addInv(p.item,p.qty);const got=p.qty-left;if(got>0){toast(`+${got} ${nm(p.item)}${P.inTruck?' ('+L('a la caja')+')':''}`,ITEMS[p.item].c,1.6);sfx('pickup')}
+      else{const left=P.inTruck?addTo(truck.st.cargo,vehCap(truck),p.item,p.qty):addInv(p.item,p.qty);const got=p.qty-left;if(got>0){toast(`+${got} ${nm(p.item)}${P.inTruck?' ('+L('a la caja')+')':''}`,ITEMS[p.item].c,1.6);sfx('pickup')}
         if(left>0){p.qty=left;p.blocked=true;if(fullMsgT<=0){toast(P.inTruck?L('La caja de la camioneta está llena.'):L('Llevás demasiado peso. Dejá cosas o cargalas en la camioneta.'),'#e3a33b');fullMsgT=4}}else{scene.remove(p.mesh);pickups.splice(i,1)}}
     }else if(d>=5)p.blocked=false;
     if(p.age>300){scene.remove(p.mesh);pickups.splice(i,1)}}
@@ -96,6 +96,7 @@ function update(dt){
   for(let i=0;i<enemies.length;i++){const a=enemies[i];if(a.dying||a.dead)continue;for(let j=i+1;j<enemies.length;j++){const b=enemies[j];if(b.dying||b.dead)continue;const dx=b.x-a.x,dz=b.z-a.z,rr=a.r+b.r;if(Math.abs(dx)>rr||Math.abs(dz)>rr)continue;const d=Math.hypot(dx,dz)||1;if(d<rr){const push=(rr-d)/2,nx=dx/d,nz=dz/d;moveCircle(a,-nx*push,-nz*push,a.r,'e');moveCircle(b,nx*push,nz*push,b.r,'e')}}}
   for(let i=enemies.length-1;i>=0;i--){const e=enemies[i];if(e.dead){enemies.splice(i,1);continue}if(!e.horde&&!e.aggro&&!e.angry&&!e.dying&&Math.hypot(e.x-P.x,e.z-P.z)>260){scene.remove(e.mesh);enemies.splice(i,1)}}
   groanT-=dt;if(groanT<=0){groanT=2+R()*4;const near=enemies.filter(e=>!e.dying&&EDEF[e.type].kind!=='d'&&Math.hypot(e.x-P.x,e.z-P.z)<45);if(near.length){const e=near[R()*near.length|0];sfx(e.type.startsWith('raptor')?'shriek':e.type==='rex'?'roar':'groan',e.x,e.z)}}
+  updateProjectiles(dt);updateLairs(dt);
   updatePet(dt);
   for(let i=0;i<S.upg.torreta;i++){const tu=turrets[i];tu.cd-=dt;let best=null,bd=40;for(const e of enemies){if(e.dying||e.dead||(EDEF[e.type].neutral&&!e.angry)||e.stun>0)continue;const d=Math.hypot(e.x-tu.x,e.z-tu.z);if(d<bd){bd=d;best=e}}
     if(best){const a=Math.atan2(best.x-tu.x,best.z-tu.z);tu.yaw+=clamp(angDiff(tu.yaw,a),-6*dt,6*dt);tu.head.rotation.y=tu.yaw;if(tu.cd<=0&&Math.abs(angDiff(tu.yaw,a))<.15){tu.cd=.55;hurtEnemy(best,14+S.day*1.5,false,'t');tracer(new T3.Vector3(tu.x+Math.sin(tu.yaw)*1.1,tu.y,tu.z+Math.cos(tu.yaw)*1.1),new T3.Vector3(best.x,best.y+1,best.z));sfx('turret',tu.x,tu.z)}}}
@@ -121,7 +122,7 @@ let interact=null;
 function handleInteract(dt){
   interact=findInteract();const pr=$('prompt'),hb=$('holdbar');
   if(interact){pr.hidden=false;pr.innerHTML=esc(interact.label)+(interact.sub?`<span class="p2">${esc(interact.sub)}</span>`:'')}else pr.hidden=true;
-  if(interact&&interact.hold){if(keys['e']){if(holdKey!==interact.key){holdKey=interact.key;holdT=0}holdT+=dt;if(R()<dt*5)sfx(interact.type==='fossil'?'dig':'eat');hb.hidden=false;hb.firstChild.style.width=(holdT/interact.hold*100)+'%';if(holdT>=interact.hold){interact.act();holdT=0;holdKey=null}}else{holdT=0;holdKey=null;hb.hidden=true}}else{hb.hidden=true;holdKey=null}
+  if(interact&&interact.hold){if(keys['e']){if(holdKey!==interact.key){holdKey=interact.key;holdT=0}holdT+=dt;if(R()<dt*5)sfx(interact.type==='fossil'||interact.type==='fix'?'dig':'eat');hb.hidden=false;hb.firstChild.style.width=(holdT/interact.hold*100)+'%';if(holdT>=interact.hold){interact.act();holdT=0;holdKey=null}}else{holdT=0;holdKey=null;hb.hidden=true}}else{hb.hidden=true;holdKey=null}
   if(interact&&!interact.hold&&pressed['e'])interact.act();
   if(interact&&interact.alt&&pressed['g'])interact.alt();
 }
@@ -133,7 +134,8 @@ function findInteract(){
   if(look(COUNTER.x,COUNTER.z,2.6))return{label:L('E · Atender el almacén'),act:()=>openPanel('deposito')};
   if(look(BED.x,BED.z,2))return{label:L('E · Dormir'),sub:sleepReason()||L('Cansancio {n}%',{n:Math.round(S.fat)}),act:sleep};
   for(let i=0;i<S.shelves.length;i++){const u=shelfUnits[i];if(look(u.x,u.z+.6,2.2)){const sh=S.shelves[i];return{label:L('E · Estante {n}',{n:i+1}),sub:sh.item?`${nm(sh.item)} · $${Math.max(1,Math.round(ITEMS[sh.item].v*sh.mult))} · ${L('{n} en depósito',{n:S.stash[sh.item]||0})}`:L('Vacío'),act:()=>openPanel('estantes')}}}
-  if(look(truck.x,truck.z,3.6)){const hasFuel=(S.inv.combustible||0)>0;return{label:L('E · Subir a la camioneta'),sub:L('Nafta {n}%',{n:Math.round(S.truck.fuel)})+(hasFuel&&S.truck.fuel<99?' · '+L('G · Cargar 1 combustible'):''),act:enterTruck,alt:hasFuel?()=>{S.inv.combustible--;S.truck.fuel=Math.min(100,S.truck.fuel+30);toast(L('Cargaste nafta: +30%.'),'#c98b2b',2)}:null}}
+  {const vi=vehInteract(look);if(vi)return vi}
+  {const ai=altarInteract(look);if(ai)return ai}
   for(const b of builds){if(b.t==='fogata'&&look(b.x,b.z,2.4)){const raw=S.inv.carne||0;return raw?{label:L('Mantené E · Cocinar {n} carne',{n:raw}),hold:2.5,key:'cook',type:'cook',act:()=>{const n=S.inv.carne;S.inv.carne=0;S.inv.asada=(S.inv.asada||0)+n;addSk('supervivencia',3*n);toast(L('Cocinaste {n} carne asada.',{n}),'#c9a24a');sfx('pickup')}}:{label:L('Fogata'),sub:L('Traé carne cruda para cocinarla')}}}
   for(const e of enemies){if(e.type==='raptor'&&e.stun>0&&look(e.x,e.z,3)){if(S.pet)return{label:L('Raptor debilitado'),sub:L('Ya tenés un raptor')};const food=(S.inv.carne||0)+(S.inv.asada||0);return food?{label:L('Mantené E · Domesticar raptor'),sub:L('Le das 1 carne'),hold:3,key:'tame',type:'tame',act:()=>tame(e)}:{label:L('Raptor debilitado'),sub:L('Necesitás carne en la mochila para domesticarlo')}}}
   let bc=null,bd=1e9;for(const c of conts){const dx=c.x-px,dz=c.z-pz;if(Math.abs(dx)>2.6||Math.abs(dz)>2.6||Math.abs(c.y-P.y)>2)continue;if(!look(c.x,c.z,2.3))continue;const d=dx*dx+dz*dz;if(d<bd){bd=d;bc=c}}
@@ -212,9 +214,8 @@ function drawCompass(){const w=cc.width,h=cc.height;cx2.clearRect(0,0,w,h);cx2.f
   const mark=(x,z,color,label)=>{const b=Math.atan2(x-P.x,-(z-P.z))*180/Math.PI;let d=((b-head+540)%360)-180;if(Math.abs(d)>60){d=Math.sign(d)*60}const X=w/2+d*ppd;cx2.fillStyle=color;cx2.beginPath();cx2.moveTo(X,16);cx2.lineTo(X-9,4);cx2.lineTo(X+9,4);cx2.fill();if(label){cx2.font='600 18px "IBM Plex Mono",monospace';cx2.fillText(label,X,76)}};
   const dA=Math.hypot(P.x,P.z);if(dA>20)mark(0,-8,'#e3a33b',Math.round(dA)+' m');
   const dT=Math.hypot(roadX(TOWN_Z)-P.x,TOWN_Z-P.z);if(dT>90)mark(roadX(TOWN_Z),TOWN_Z,'#9fb0aa',L('Pueblo'));
-  if(!P.inTruck&&Math.hypot(truck.x-P.x,truck.z-P.z)>15)mark(truck.x,truck.z,'#c9614a');
   if(pet&&Math.hypot(pet.x-P.x,pet.z-P.z)>15)mark(pet.x,pet.z,'#8fbb62');
-  for(const e of enemies)if(e.type==='rex'&&!e.dying)mark(e.x,e.z,'#ff4a2a','REX');
+  compassExtras(mark);
   cx2.fillStyle='#e3a33b';cx2.fillRect(w/2-1,14,2,8)}
 function updateHUD(dt){
   hudT-=dt;
@@ -231,17 +232,18 @@ function updateHUD(dt){
   toastEls=toastEls.filter(t=>{t.life-=dt;if(t.life<=0){t.el.remove();return false}if(t.life<.5)t.el.style.opacity=t.life*2;return true});
   feedEls=feedEls.filter(t=>{t.life-=dt;if(t.life<=0){t.el.remove();return false}return true});
   drawCompass();
-  $('truckHud').hidden=!P.inTruck;if(P.inTruck){$('tSpeed').textContent=Math.round(Math.abs(truck.speed)*3.6);$('tFuel').textContent=L('Nafta {n}%',{n:Math.round(S.truck.fuel)});$('tFuel').style.color=S.truck.fuel<15?'#cc4b30':'';$('tCargo').textContent=L('Caja {a}/{b} kg',{a:kg(kgOf(S.truck.cargo)),b:truckCap()})}
+  $('truckHud').hidden=!P.inTruck;if(P.inTruck){$('tSpeed').textContent=Math.round(Math.abs(truck.speed)*3.6);$('tFuel').textContent=L('Nafta {n}%',{n:Math.round(truck.st.fuel)});$('tFuel').style.color=truck.st.fuel<15?'#cc4b30':'';$('tCargo').textContent=L('Caja {a}/{b} kg',{a:kg(kgOf(truck.st.cargo)),b:vehCap(truck)})}
+  updateBossBar();
   if(hudT>0)return;hudT=.15;
   const h=hourOf(S.t),night=isNight();
   $('hTL').classList.toggle('night',night);$('hDay').textContent=L('Día {d}',{d:S.day});$('hTime').textContent=`${pad(Math.floor(h))}:${pad(Math.floor(h%1*6)*10)}`;$('hPhase').textContent=night?L('NOCHE · BRUMA'):h>=18?L('ATARDECER'):h<7?L('AMANECER'):L('DÍA');
   $('hMoney').textContent='$'+fmt(S.money);$('hRep').textContent=L('Reputación')+' '+stars();$('hLvl').textContent=L('Nivel {n}',{n:S.level});$('hXp').style.width=clamp(S.xp/xpNeed()*100,0,100)+'%';
-  $('hWeather').textContent=L(WEATHERS[S.weather.k].n)+(darkness()>.3?' · '+L('Pilas {n}%',{n:Math.round(S.battery)}):'');
+  $('hWeather').textContent=weatherLine()+(darkness()>.3?' · '+L('Pilas {n}%',{n:Math.round(S.battery)}):'');
   const ac=S.contracts.filter(c=>!c.done&&!c.failed);$('hContract').innerHTML=ac.length?ac.slice(0,2).map(c=>'▸ '+esc(L('{i} ×{q} para {who} · ${r}',{i:nm(c.item),q:c.qty,who:c.who,r:c.reward}))+(c.dl===S.day?' · '+esc(L('hoy 19:00')):'')).join('<br>'):'';
   const ow=overW();$('hBag').textContent=`${S.bag?nm(S.bag):L('Sin mochila')} ${kg(invKg())}/${capKg()} kg`+(S.pet?` · ${S.pet.name} ${S.pet.down?L('herida'):pet?Math.round(pet.hp)+'/120':''}`:'');$('hBag').style.color=ow?'#e09a5a':'';
   if(w){$('wName').textContent=wn(S.cur);$('wAmmo').innerHTML=w.melee?`<small>${esc(L('Estado'))} ${Math.round(S.dur[S.cur]/w.dur*100)}%</small>`:`${S.mags[S.cur]||0} <small>/ ${S.ammo[w.ammo]}</small>`;$('wAmmo').style.color=!w.melee&&!(S.mags[S.cur]>0)?'#cc4b30':''}
   else{$('wName').textContent=L('Manos vacías');$('wAmmo').innerHTML=''}
-  $('wSlots').innerHTML=hotbar().map((k,i)=>`<span class="${k===S.cur?'on':'own'}">${i+1} ${esc(wn(k))}</span>`).join('');
+  $('wSlots').innerHTML=hotbar().map((k,i)=>`<span class="${k===S.cur?'on':'own'}">${i<9?(i+1)+' ':''}${esc(wn(k))}</span>`).join('');
   $('moods').innerHTML=statuses().map(s=>`<div style="--c:${s.c}"><b>${esc(L(s.n))}</b><span>${'●'.repeat(s.lv)}${'○'.repeat(3-s.lv)}</span></div>`).join('');
 }
 function renderBuildBar(){$('buildBar').innerHTML=BORDER.map((k,i)=>{const b=BUILDS[k];const r=buildBlockReason(k);return `<div class="${i===buildSel?'on':''} ${r?'no':''}"><b>${i+1} ${esc(L(b.n))}</b>${Object.entries(b.cost).map(([kk,q])=>`${q} ${esc(nm(kk))}`).join(' + ')}</div>`}).join('')+`<div><b>${esc(L('R girar'))}</b>${esc(L('Clic construir · B salir'))}</div>`}

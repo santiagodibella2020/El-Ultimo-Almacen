@@ -1,6 +1,7 @@
 'use strict';
 // ================= WORLD =================
 let S=null; // saved state
+let vehicles=[],lairs=[],altar=null,pineMat,broadMat;
 let nH,nM,nD,heights,terrainMesh,water,ruins,conts,fossils,trees,rocks,aabbs,aabbGrid,treeGrid,ruinGrid,walls,shelfUnits,turrets,truck,mapImg,explored,pickups,enemies,customers,builds,pet,buildings,roofs;
 let world=null; // THREE.Group holding all generated content
 const roadX=z=>30*Math.sin(z*.006)+8*Math.sin(z*.021);
@@ -87,7 +88,7 @@ function genWorld(seed){
   const cand=[];for(let gx=-470;gx<470;gx+=5)for(let gz=-470;gz<470;gz+=5){const x=gx+rng()*4,z=gz+rng()*4;const m=moist(x,z),y=terrainY(x,z);if(y<WATER_Y+.6||y>28)continue;if(Math.max(Math.abs(x),Math.abs(z))<45)continue;if(Math.abs(x-roadX(z))<6)continue;if(townW(x,z)>.05)continue;if(ruins.some(r=>x>r.x0-3&&x<r.x1+3&&z>r.z0-3&&z<r.z1+3))continue;
     const r=rng();if(m>.56&&r<.5)cand.push({x,z,y,type:0});else if(m>.42&&m<=.56&&r<.05)cand.push({x,z,y,type:1});else if(m<=.42&&r<.012)cand.push({x,z,y,type:1});else if(r>.985)rocks.push({x,z,y,s:.6+rng()*1.4})}
   const pines=cand.filter(t=>t.type===0),broads=cand.filter(t=>t.type===1);
-  const trunkM=new T3.InstancedMesh(CYL,mat('#4a3523'),cand.length),pineM=new T3.InstancedMesh(new T3.ConeGeometry(1,1,7),mat('#2a3a24'),pines.length),broadM=new T3.InstancedMesh(new T3.IcosahedronGeometry(1,0),mat('#3a4f2e'),broads.length);
+  const trunkM=new T3.InstancedMesh(CYL,mat('#4a3523'),cand.length),pineM=new T3.InstancedMesh(new T3.ConeGeometry(1,1,7),pineMat=new T3.MeshLambertMaterial({color:0x2a3a24}),pines.length),broadM=new T3.InstancedMesh(new T3.IcosahedronGeometry(1,0),broadMat=new T3.MeshLambertMaterial({color:0x3a4f2e}),broads.length);
   [trunkM,pineM,broadM].forEach(m=>{m.castShadow=true;m.receiveShadow=true;world.add(m)});
   const dm=new T3.Object3D();let ti=0,pi=0,bi=0;
   for(const t of cand){const s=.8+rng()*.6;t.s=s;t.r=.35*s;t.alive=true;t.hp=4;t.h=t.type?5*s:9*s;
@@ -98,6 +99,7 @@ function genWorld(seed){
   t3trunk=trunkM;
   const rockM=new T3.InstancedMesh(new T3.DodecahedronGeometry(1,0),mat('#6d6a62'),rocks.length);rockM.castShadow=true;rockM.receiveShadow=true;world.add(rockM);
   rocks.forEach((r,i)=>{dm.position.set(r.x,r.y+r.s*.3,r.z);dm.scale.set(r.s,r.s*.75,r.s*1.1);dm.rotation.set(rng(),rng()*3,0);dm.updateMatrix();rockM.setMatrixAt(i,dm.matrix);addTreeObj({x:r.x,z:r.z,y:r.y,r:r.s*.85,h:r.s*1.2,alive:true,rock:true})});
+  buildAltar(rng);buildLairs(rng);buildVehicles(rng);
   // Map image
   mapImg=document.createElement('canvas');mapImg.width=W;mapImg.height=W;const mc=mapImg.getContext('2d'),id=mc.createImageData(W,W);
   for(let iz=0;iz<W;iz++)for(let ix=0;ix<W;ix++){const i=iz*W+ix,j=(iz*W+ix)*3,h=heights[i];let r,g,b;if(h<WATER_Y){r=40;g=70;b=82}else{r=cols[j]*255;g=cols[j+1]*255;b=cols[j+2]*255;const sh=clamp((h+10)/40,0,1)*.4+.8;r*=sh;g*=sh;b*=sh}id.data[i*4]=r;id.data[i*4+1]=g;id.data[i*4+2]=b;id.data[i*4+3]=255}
@@ -225,20 +227,61 @@ function buildOutpost(rng){
   fogonLight=new T3.PointLight(0xff8a30,0,14,2);fogonLight.position.set(-9,Y+1,-4);g.add(fogonLight);
   bancoG=grp(9,Y,-4,g);bx(2,.9,.9,'#5e4a33',0,.45,0,bancoG);bx(.4,.25,.3,'#8d918f',-.5,1,0,bancoG);bx(.6,.15,.3,'#8d918f',.4,.97,.1,bancoG);bancoG.visible=false;
   heladeraG=grp(-5.3,Y,-13.5,g);bx(.8,1.9,.8,'#cfd6d6',0,.95,0,heladeraG);heladeraG.visible=false;
-  buildTruck();
 }
-function buildTruck(){
-  const g=grp(0,0,0,world);
-  const body=grp(0,0,0,g);
-  bx(2.1,.55,4.8,'#6b2f22',0,.95,0,body);const cab=bx(2,1.05,1.9,'#7a3527',0,1.75,1.15,body);const wsh=bx(1.9,.7,.08,new T3.MeshLambertMaterial({color:0x2a3a40,transparent:true,opacity:.7}),0,1.95,2.11,body);const dash=bx(1.9,.25,.5,'#2a2a2a',0,1.35,1.9,body);dash.visible=false;
-  bx(2.1,.5,.12,'#5a2a20',0,1.45,-2.35,body);bx(.12,.5,2.7,'#5a2a20',-1,1.45,-1,body);bx(.12,.5,2.7,'#5a2a20',1,1.45,-1,body);
-  bx(1.9,.3,.25,'#2a2a2a',0,.85,2.45,body);const hl=new T3.MeshBasicMaterial({color:0xfff1c0});bx(.35,.18,.05,hl,-.7,1.05,2.42,body);bx(.35,.18,.05,hl,.7,1.05,2.42,body);
-  const wheels=[];[[-1.05,1.5],[1.05,1.5],[-1.05,-1.5],[1.05,-1.5]].forEach(([x,z])=>{const wg=grp(x,.45,z,g);const w=bx(.9,.36,.9,'#161616',0,0,0,wg,CYL);w.rotation.z=Math.PI/2;wheels.push(wg)});
-  const cargo=grp(0,1.25,-1,body);const cargoBoxes=[];for(let i=0;i<6;i++){const m=bx(.55,.45,.55,'#7b5a34',-.5+(i%3)*.5,0,(i<3?-.5:.4),cargo);m.visible=false;cargoBoxes.push(m)}
-  truckLight=new T3.SpotLight(0xfff1c0,0,60,.5,.5,1.2);truckLight.position.set(0,1.2,2.5);const tt=new T3.Object3D();tt.position.set(0,0,20);g.add(tt);truckLight.target=tt;g.add(truckLight);
-  truck={cabin:[cab,wsh],dash,group:g,body,wheels,cargoBoxes,x:TRUCK_HOME.x,z:TRUCK_HOME.z,yaw:Math.PI,speed:0,steer:0,y:2}
-}
-
+// Cargo vehicles: one builder for every kind (pickup, van, box truck, tractor with trailer).
+function buildVehicle(k,x,z,yaw){
+  const d=VEH[k],L2=d.len/2,W2=d.wid/2,g=grp(0,0,0,world),body=grp(0,0,0,g);
+  const glass=new T3.MeshLambertMaterial({color:0x2a3a40,transparent:true,opacity:.7}),dark='#2a2a2a';
+  const cz=d.cabZ;let cab,wsh,dash;
+  if(d.bed==='trailer'){ // tractor in front, open trailer behind
+    bx(1.4,.9,2.6,d.col,0,1.2,L2-1.4,body);cab=bx(1.5,1.4,1.3,d.col,0,2.3,cz-.4,body);wsh=bx(1.4,.9,.06,glass,0,2.45,cz+.27,body);bx(.25,.8,.25,dark,.4,2.1,L2-.4,body,CYL);
+    bx(d.wid,.35,4.2,'#6a5a3a',0,1.05,-L2+2.3,body);bx(.1,.6,4.2,'#5a4a2a',-W2,1.5,-L2+2.3,body);bx(.1,.6,4.2,'#5a4a2a',W2,1.5,-L2+2.3,body);bx(d.wid,.6,.1,'#5a4a2a',0,1.5,-L2+.2,body);
+  }else{
+    bx(d.wid,.55,d.len,d.col,0,.95,0,body);cab=bx(d.wid-.1,1.05,1.9,d.col,0,1.75,cz,body);wsh=bx(d.wid-.2,.7,.08,glass,0,1.95,cz+.96,body);
+    bx(d.wid-.2,.3,.25,dark,0,.85,L2+.05,body);const hl=new T3.MeshBasicMaterial({color:0xfff1c0});bx(.35,.18,.05,hl,-W2+.35,1.05,L2+.02,body);bx(.35,.18,.05,hl,W2-.35,1.05,L2+.02,body);
+    const bedL=d.len-2.1,bedZ=cz-.95-bedL/2;
+    if(d.bed==='open'){bx(d.wid,.5,.12,'#5a2a20',0,1.45,bedZ-bedL/2,body);bx(.12,.5,bedL,'#5a2a20',-W2+.05,1.45,bedZ,body);bx(.12,.5,bedL,'#5a2a20',W2-.05,1.45,bedZ,body)}
+    else{const h=k==='camion'?2.6:1.9;bx(d.wid,h,bedL,k==='camion'?'#c8c4b8':d.col,0,1.2+h/2,bedZ,body);if(k==='camion')bx(d.wid-.3,.6,.05,'#8a2a22',0,1.2+h*.7,bedZ-bedL/2-.03,body)}
+  }
+  dash=bx(d.wid-.2,.25,.5,dark,0,(d.bed==='trailer'?1.95:1.35),cz+.75,body);dash.visible=false;
+  const wheels=[];const wz=d.len*.31,big=d.bed==='trailer';
+  [[-W2-.05,wz],[W2+.05,wz],[-W2-.05,-wz],[W2+.05,-wz]].forEach(([wx,wzz],i)=>{const r=big&&i>=2?1.2:.9;const wg=grp(wx,r/2,wzz,g);const w=bx(r,.4,r,'#161616',0,0,0,wg,CYL);w.rotation.z=Math.PI/2;wheels.push(wg)});
+  if(d.len>6)[[-W2-.05,-wz+1.2],[W2+.05,-wz+1.2]].forEach(([wx,wzz])=>{const wg=grp(wx,.45,wzz,g);const w=bx(.9,.4,.9,'#161616',0,0,0,wg,CYL);w.rotation.z=Math.PI/2});
+  const cargo=grp(0,1.25,0,body);const cargoBoxes=[];const bl=d.bed==='trailer'?4:d.len-2.4,bz=d.bed==='trailer'?-L2+2.3:cz-.95-(d.len-2.1)/2;const n=d.bed==='open'||d.bed==='trailer'?6:0;
+  for(let i=0;i<n;i++){const m=bx(.55,.45,.55,'#7b5a34',-.5+(i%3)*.5,0,bz+(i<3?-bl/4:bl/4),cargo);m.visible=false;cargoBoxes.push(m)}
+  return{k,def:d,cabin:[cab,wsh],dash,group:g,body,wheels,cargoBoxes,x,z,yaw,speed:0,steer:0,y:2,lookYaw:0,lookPitch:0}}
+function buildVehicles(rng){
+  truckLight=new T3.SpotLight(0xfff1c0,0,60,.5,.5,1.2);truckLight.position.set(0,1.2,2.5);const tt=new T3.Object3D();tt.position.set(0,0,20);truckLight.add(tt);truckLight.target=tt;
+  const spots={pickup:[TRUCK_HOME.x,TRUCK_HOME.z,Math.PI]};
+  const onRoad=(z0,z1)=>{for(let k=0;k<60;k++){const z=z0+rng()*(z1-z0);const x=roadX(z)+(rng()<.5?-1:1)*7;if(terrainY(x,z)>WATER_Y+.6&&!circleBlocked(x,z,3,'t'))return[x,z,(rng()<.5?0:Math.PI)+Math.atan(roadX(z+1)-roadX(z))]}return[roadX(z0)+8,z0,0]};
+  spots.furgon=onRoad(TOWN_Z-40,TOWN_Z+40);spots.camion=onRoad(-420,-220);
+  const farm=ruins.filter(r=>r.type==='Casa'&&Math.hypot(r.cx,r.cz)>150);const fr=farm[(rng()*farm.length)|0];spots.tractor=fr?[fr.x1+4,fr.cz,rng()*6.28]:onRoad(250,420);
+  vehicles=Object.keys(VEH).map(k=>buildVehicle(k,...spots[k]));vehicles.forEach(v=>v.spot=spots[v.k]);truck=vehicles[0];truck.group.add(truckLight)}
+// Miniboss zones and the Green Stone crater where the bosses are summoned.
+function buildLairs(rng){
+  lairs=[];const kinds=Object.keys(LAIRS);
+  for(const k of kinds){let site=null;for(let a=0;a<400&&!site;a++){const ang=rng()*6.283,rad=170+rng()*280;const x=Math.cos(ang)*rad,z=Math.sin(ang)*rad;if(Math.abs(x)>440||Math.abs(z)>440)continue;
+      const y=terrainY(x,z);if(y<WATER_Y+1.5||y>14)continue;if(Math.hypot(x-roadX(TOWN_Z),z-TOWN_Z)<130)continue;if(lairs.some(l=>Math.hypot(l.x-x,l.z-z)<140))continue;if(Math.hypot(x-altar.x,z-altar.z)<120)continue;
+      const m=moist(x,z);if(k==='laguna'&&m<.45)continue;if(k==='salina'&&m>.42)continue;if(k==='canadon'&&m<.5)continue;site={x,z,y}}
+    if(!site){const ang=kinds.indexOf(k)/kinds.length*6.283;site={x:Math.cos(ang)*300,z:Math.sin(ang)*300};site.y=terrainY(site.x,site.z)}
+    const g=grp(site.x,site.y,site.z,world);const l={k,x:site.x,z:site.z,y:site.y,g};
+    if(k==='militar'){for(let i=0;i<10;i++){const a=i/10*6.283;bx(2.2,.9,.9,'#8a7a55',Math.cos(a)*11,.45,Math.sin(a)*11,g).rotation.y=-a}for(let i=0;i<2;i++){const t=bx(5,3,4,'#4a5236',-4+i*8,1.5,-3,g,CONE);t.rotation.y=Math.PI/4}bx(.12,6,.12,'#555',0,3,0,g,CYL);bx(1.4,.9,.05,'#4a5236',.7,5.4,0,g)}
+    else if(k==='frigorifico'||k==='hospital'){const w=16,d=12,c=k==='hospital'?'#d8d4c8':'#9a9a92';bx(w,4,.4,c,0,2,-d/2,g);bx(.4,4,d,c,-w/2,2,0,g);bx(.4,4,d,c,w/2,2,0,g);bx(w/2-2,4,.4,c,-w/4-1,2,d/2,g);bx(w/2-2,4,.4,c,w/4+1,2,d/2,g);
+      [[0,-d/2,w,.4],[-w/2,0,.4,d],[w/2,0,.4,d],[-w/4-1,d/2,w/2-2,.4],[w/4+1,d/2,w/2-2,.4]].forEach(([ox,oz,ww,dd])=>addAABB({x0:site.x+ox-ww/2,x1:site.x+ox+ww/2,z0:site.z+oz-dd/2,z1:site.z+oz+dd/2,y0:site.y-1,y1:site.y+4,kind:'solid'}));
+      if(k==='hospital'){bx(1.6,.5,.06,'#b02a22',0,3.4,d/2+.25,g);bx(.5,1.6,.06,'#b02a22',0,3.4,d/2+.26,g)}else for(let i=0;i<5;i++)bx(.05,1.2,.05,'#888',-5+i*2.5,3.4,0,g)}
+    else if(k==='canadon'){for(let i=0;i<14;i++){const a=i/14*6.283,r=12+rng()*4;const rk=bx(3+rng()*3,3+rng()*5,3+rng()*3,'#6d6a62',Math.cos(a)*r,1.5,Math.sin(a)*r,g,new T3.DodecahedronGeometry(.6,0));rk.rotation.y=rng()*3}for(let i=0;i<8;i++){const b=bx(.12,1.2,.12,'#e4dcc4',(rng()-.5)*10,.2,(rng()-.5)*10,g,CYL);b.rotation.z=1.4}}
+    else if(k==='salina'){const p=new T3.Mesh(new T3.CircleGeometry(22,24).rotateX(-Math.PI/2),mat('#d8d4c4'));p.position.y=.08;g.add(p);for(let i=0;i<5;i++){const h=bx(.3,2,.3,'#e8dcc0',(rng()-.5)*20,.5,(rng()-.5)*20,g,CONE);h.rotation.z=1}}
+    else if(k==='laguna'){const p=new T3.Mesh(new T3.CircleGeometry(16,20).rotateX(-Math.PI/2),new T3.MeshLambertMaterial({color:0x4a6a2a,emissive:0x1a3a0a}));p.position.y=.12;g.add(p);for(let i=0;i<6;i++){const a=rng()*6.28;const t=bx(.4,6,.4,'#3a3020',Math.cos(a)*19,3,Math.sin(a)*19,g,CYL);t.rotation.z=(rng()-.5)*.4}}
+    lairs.push(l)}}
+function buildAltar(rng){
+  let x=0,z=0;for(let a=0;a<300;a++){const ang=rng()*6.283,rad=300+rng()*120;x=Math.cos(ang)*rad;z=Math.sin(ang)*rad;if(Math.abs(x)>430||Math.abs(z)>430)continue;const y=terrainY(x,z);if(y>WATER_Y+1.5&&y<12&&Math.hypot(x-roadX(TOWN_Z),z-TOWN_Z)>150)break}
+  const y=terrainY(x,z);const g=grp(x,y,z,world);
+  const crater=new T3.Mesh(new T3.CircleGeometry(26,28).rotateX(-Math.PI/2),mat('#2a2a24'));crater.position.y=.1;g.add(crater);
+  const stoneMat=new T3.MeshLambertMaterial({color:0x4aa83a,emissive:0x2a8a1a});const st=bx(2.2,7,2.2,stoneMat,0,3.2,0,g,new T3.DodecahedronGeometry(.6,0));st.rotation.set(.3,.5,.2);
+  for(let i=0;i<8;i++){const a=i/8*6.283;bx(1,3+rng()*2,1,'#5a5850',Math.cos(a)*9,1.5,Math.sin(a)*9,g)}
+  const light=new T3.PointLight(0x7aff5a,1.6,40,2);light.position.y=5;g.add(light);
+  addAABB({x0:x-1.5,x1:x+1.5,z0:z-1.5,z1:z+1.5,y0:y-1,y1:y+7,kind:'solid'});
+  altar={x,z,y,g,stone:st}}
 // ================= SKY & WEATHER =================
 let starPts,mistPts,rainLines,rainPos;
 const RAIN_N=1400;

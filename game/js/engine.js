@@ -121,6 +121,12 @@ function sfx(k,x,z){if(!AC)return;let v=1;if(x!==undefined){const d=Math.hypot(x
   case 'tame':[523,784,1046,1318].forEach((f,i)=>tn(f,f,.2,'sine',.12,i*.1));break;
   case 'thunder':nz(2.2,180,.6);nz(1.2,700,.3,.1);break;
   case 'click':tn(1200,1200,.02,'square',.04);break;
+  case 'ballesta':nz(.08,2200,.3*v,0,'highpass');tn(420,180,.07,'triangle',.12*v);break;
+  case 'lanzagranadas':nz(.12,500,.6*v);tn(110,60,.1,'sine',.3*v);break;
+  case 'boom':nz(1.1,260,1*v);tn(70,30,.8,'sine',.6*v);nz(.5,1400,.4*v);break;
+  case 'scream':tn(500,1100,.6,'sawtooth',.16*v);tn(900,400,.7,'square',.08*v,.2);break;
+  case 'fuse':tn(1400,1600,.08,'square',.05*v);break;
+  case 'spit':nz(.18,1300,.3*v);tn(300,160,.1,'triangle',.08*v);break;
   }}catch(e){}
 }
 function engineSound(on,speed){if(!AC)return;if(on&&!engine){const o=AC.createOscillator();o.type='sawtooth';const f=AC.createBiquadFilter();f.type='lowpass';f.frequency.value=380;const g=AC.createGain();g.gain.value=.05;o.connect(f);f.connect(g);g.connect(SFXG);o.start();engine={o,g}}

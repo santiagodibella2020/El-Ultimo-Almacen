@@ -104,6 +104,10 @@ kbd{font:600 12px var(--f-mono);background:var(--panel2);border:1px solid var(--
 #scope::before{content:"";position:absolute;left:50%;top:18vh;bottom:18vh;width:1px;background:#000}
 #scope::after{content:"";position:absolute;top:50%;left:calc(50% - 32vh);right:calc(50% - 32vh);height:1px;background:#000}
 #vign{position:absolute;inset:0;opacity:0;background:radial-gradient(ellipse at center,rgba(120,0,0,0) 45%,rgba(150,10,0,.8))}
+#bossBar{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);width:min(460px,80vw);text-align:center;font:700 15px var(--f-head,sans-serif);letter-spacing:.12em;text-transform:uppercase;color:#e9c9a0;text-shadow:0 1px 3px #000}
+#bossBar .t{display:block;height:8px;margin-top:4px;background:rgba(10,14,12,.8);border:1px solid #6a3a2a}
+#bossBar i{display:block;height:100%;background:#b8572e;transition:width .15s}
+#bossBar.boss{color:#ff9c7a}#bossBar.boss i{background:#cc2f20}#bossBar.boss .t{height:11px;border-color:#a02a1a}
 #truckHud{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);background:rgba(10,14,12,.8);padding:8px 16px;display:flex;gap:22px;font:600 14px var(--f-mono);align-items:center}
 #truckHud b{font:800 30px var(--f-display);color:var(--amber)}
 #wait{position:fixed;inset:0;z-index:15;display:flex;align-items:center;justify-content:center;background:rgba(5,8,6,.45);cursor:pointer}
@@ -245,6 +249,7 @@ input[type=text]{font:500 14px var(--f-body);background:var(--bg);color:var(--fg
   <div id="buildBar" hidden></div>
   <div id="scope" hidden></div>
   <div id="vign"></div>
+  <div id="bossBar" hidden><b></b><span class="t"><i></i></span></div>
   <div id="truckHud" hidden><span><b id="tSpeed">0</b> km/h</span><span id="tFuel"></span><span id="tCargo"></span><span style="color:var(--muted)" data-t>E bajar · Espacio frenar</span></div>
 </div>
 
@@ -326,6 +331,13 @@ input[type=text]{font:500 14px var(--f-body);background:var(--bg);color:var(--fg
   </div>
 </div>
 
+<div id="altar" class="overlay clear" hidden>
+  <div class="card wide">
+    <header class="phead"><div><div class="eyebrow" data-t>Cráter</div><h2 data-t>Piedra Verde</h2></div><div class="btns"><button data-a="altarclose" data-t>Cerrar · E</button></div></header>
+    <div class="pbody" id="altarBody"></div>
+  </div>
+</div>
+
 <div id="levelup" class="overlay" hidden>
   <div class="card lv">
     <div><div class="eyebrow" id="lvEyebrow"></div><h2 data-t>Subiste de nivel</h2></div>
@@ -373,6 +385,7 @@ input[type=text]{font:500 14px var(--f-body);background:var(--bg);color:var(--fg
 <script src="js/world.js"></script>
 <script src="js/models.js"></script>
 <script src="js/game.js"></script>
+<script src="js/v3.js"></script>
 <script src="js/ui.js"></script>
 <script src="js/menus.js"></script>
 </body>

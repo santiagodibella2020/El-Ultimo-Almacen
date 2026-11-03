@@ -11,11 +11,12 @@ for(const f of fs.readdirSync(path.join(G,'js'))){const src=fs.readFileSync(path
 }
 // 2. data tables
 const ctx={S:null,skLv:()=>0,console};vm.createContext(ctx);
-vm.runInContext(fs.readFileSync(path.join(G,'js','data.js'),'utf8').replace(/^'use strict';/,'')+';this.D={ITEMS,CATS,WEAP,AMMO_N,EDEF,CONT,UPG,RECIPES,BUILDS,PERKS,SKILLS,GOALS,SHOP,SANDBOX,PRESETS};',ctx);
+vm.runInContext(fs.readFileSync(path.join(G,'js','data.js'),'utf8').replace(/^'use strict';/,'')+';this.D={ITEMS,CATS,WEAP,AMMO_N,EDEF,CONT,UPG,RECIPES,BUILDS,PERKS,SKILLS,GOALS,SHOP,SANDBOX,PRESETS,VEH,LAIRS,SUMMONS,SEASONS,MONTHS};',ctx);
 const D=ctx.D;
 for(const t of [D.ITEMS,D.WEAP,D.EDEF,D.CONT,D.UPG,D.BUILDS,D.SKILLS,D.SANDBOX,D.PRESETS])for(const v of Object.values(t)){add(v.n);add(v.d);if(v.o)v.o.forEach(add)}
 for(const t of [D.RECIPES,D.PERKS,D.GOALS,D.SHOP])for(const v of t){add(v.n);add(v.d)}
 Object.values(D.CATS).forEach(add);Object.values(D.AMMO_N).forEach(add);
+for(const t of [D.VEH,D.LAIRS,D.SUMMONS,D.SEASONS])for(const v of Object.values(t)){add(v.n);add(v.d);add(v.msg)}D.MONTHS.forEach(add);
 const world=fs.readFileSync(path.join(G,'js','world.js'),'utf8'),game=fs.readFileSync(path.join(G,'js','game.js'),'utf8'),menus=fs.readFileSync(path.join(G,'js','menus.js'),'utf8'),ui=fs.readFileSync(path.join(G,'js','ui.js'),'utf8');
 for(const m of world.matchAll(/\bn:'([^']+)'/g))add(m[1]);
 for(const m of game.matchAll(/\bn:'([^']+)'/g))add(m[1]);

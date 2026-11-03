@@ -4,25 +4,29 @@ const SB=k=>SANDBOX[k].v[(S&&S.sb&&S.sb[k]!=null)?S.sb[k]:SANDBOX[k].d];
 const CYCLE=()=>SB('daylen');
 const nm=k=>L(ITEMS[k].n), wn=k=>L(WEAP[k].n), an=k=>L(AMMO_N[k]);
 function newState(seed,sb){return{v:SAVE_V,seed,sb:Object.assign({},PRESETS.normal.sb,sb||{}),day:1,t:0,money:100,rep:2,level:1,xp:0,perks:{},hp:100,food:90,water:85,fat:10,panic:0,infect:0,wet:0,sick:0,pk:0,wounds:[],sk:{},bag:'mochila_e',battery:100,
-  inv:{venda:2,lata:1,agua:1,encendedor:1},stash:{lata:4,agua:3,chatarra:4,madera:4,clavos:10},ammo:{balas:48,revolver:0,cartuchos:0,rifle:0,fusil:0},weapons:['pistola','cuchillo'],dur:{cuchillo:WEAP.cuchillo.dur},wstash:[],cur:'pistola',mags:{pistola:12},
+  inv:{venda:2,lata:1,agua:1,encendedor:1},stash:{lata:4,agua:3,chatarra:4,madera:4,clavos:10},ammo:{balas:48,revolver:0,cartuchos:0,rifle:0,fusil:0,virotes:0,p50:0,granadas:0},weapons:['pistola','cuchillo'],dur:{cuchillo:WEAP.cuchillo.dur},wstash:[],cur:'pistola',mags:{pistola:12},
   upg:{estante:0,muros:0,torreta:0,fogon:0,banco:0,heladera:0,mochila:0,caja:0,linterna:0,neon:0},
   shelves:[{item:'lata',mult:1},{item:'agua',mult:1},{item:null,mult:1}],demand:null,hot:null,
-  px:0,pz:4,yaw:0,stats:{kills:0,sold:0,earned:0,nights:0,rex:0,hs:0,built:0,runover:0,contracts:0,looted:0},walls:null,cont:{},fossils:'',explored:'',chopped:[],builds:[],
-  truck:{x:TRUCK_HOME.x,z:TRUCK_HOME.z,yaw:Math.PI,fuel:70,cargo:{}},pet:null,contracts:[],goals:[],log:[],today:0,yesterday:0,tutorial:0,weather:{k:'despejado',t:400}}}
+  px:0,pz:4,yaw:0,stats:{kills:0,sold:0,earned:0,nights:0,rex:0,hs:0,built:0,runover:0,contracts:0,looted:0,minis:0,coloso:0},walls:null,cont:{},fossils:'',explored:'',chopped:[],builds:[],
+  veh:{pickup:{x:TRUCK_HOME.x,z:TRUCK_HOME.z,yaw:Math.PI,fuel:70,cargo:{},broken:false}},drive:'pickup',lairs:{},cold:0,snow:0,boss:null,pet:null,contracts:[],goals:[],log:[],today:0,yesterday:0,tutorial:0,weather:{k:'despejado',t:400}}}
 function migrate(st){
   if(!st)return null;
   if(st.v===2){const fresh=newState(st.seed,PRESETS.normal.sb);
     for(const k of Object.keys(fresh))if(st[k]===undefined)st[k]=fresh[k];
     st.sb=Object.assign({},PRESETS.normal.sb,{daylen:0});st.cont={};st.v=SAVE_V;st.dur=st.dur||{};
     st.weapons.forEach(w=>{if(WEAP[w]&&WEAP[w].melee&&st.dur[w]==null)st.dur[w]=WEAP[w].dur});
-    Object.assign(st.upg,Object.assign({},fresh.upg,st.upg));Object.assign(st.ammo,Object.assign({},fresh.ammo,st.ammo));st.stats=Object.assign({},fresh.stats,st.stats)}
+    Object.assign(st.upg,Object.assign({},fresh.upg,st.upg));Object.assign(st.ammo,Object.assign({},fresh.ammo,st.ammo));st.stats=Object.assign({},fresh.stats,st.stats);st.v=3}
+  if(st.v===3){const fresh=newState(st.seed,st.sb);
+    st.veh={pickup:Object.assign({broken:false},st.truck||fresh.veh.pickup)};delete st.truck;
+    for(const k of ['drive','lairs','cold','snow','boss'])if(st[k]===undefined)st[k]=fresh[k];
+    st.ammo=Object.assign({},fresh.ammo,st.ammo);st.stats=Object.assign({},fresh.stats,st.stats);st.v=SAVE_V}
   return st.v===SAVE_V?st:null}
 const PK=k=>S.perks[k]||0;
 const skLv=k=>Math.min(10,Math.floor(Math.sqrt(((S&&S.sk[k])||0)/30)));
 const maxHp=()=>100+25*PK('piel');
 const bagCap=()=>S.bag?ITEMS[S.bag].cap:0;
 const capKg=()=>12+bagCap()+(S.bag?4*S.upg.mochila:0)+5*PK('mula');
-const truckCap=()=>40+40*S.upg.caja;
+const vehCap=(v=truck)=>v.k==='pickup'?40+40*S.upg.caja:VEH[v.k].cap;
 const kgOf=o=>{let s=0;for(const k in o)if(ITEMS[k])s+=(o[k]||0)*ITEMS[k].w;return s};
 const invKg=()=>kgOf(S.inv)+S.weapons.reduce((s,w)=>s+WEAP[w].w,0)+Object.keys(AMMO_W).reduce((s,a)=>s+S.ammo[a]*AMMO_W[a],0);
 const overW=()=>invKg()>capKg();
@@ -63,7 +67,7 @@ function serialize(){
   S.fossils=fossils.map(f=>f.uses).join('');
   const bytes=new Uint8Array(explored.length/8);for(let i=0;i<explored.length;i++)if(explored[i])bytes[i>>3]|=1<<(i&7);let s='';for(let i=0;i<bytes.length;i++)s+=String.fromCharCode(bytes[i]);S.explored=btoa(s);
   S.builds=builds.map(b=>({t:b.t,x:b.x,z:b.z,rot:b.rot,hp:b.hp}));
-  S.truck.x=truck.x;S.truck.z=truck.z;S.truck.yaw=truck.yaw;
+  vehicles.forEach(v=>{v.st.x=v.x;v.st.z=v.z;v.st.yaw=v.yaw});
   if(pet&&S.pet){S.pet.hp=pet.hp}
   return JSON.stringify(S)}
 function saveGame(quiet){const ok=lsSet(SAVE_KEY,serialize());if(!quiet)toast(ok?L('Partida guardada'):L('No se pudo guardar. Usá el código de partida de la pausa.'),ok?'#8fbb62':'#cc4b30');return ok}
@@ -82,12 +86,12 @@ function startGame(state){
   (S.chopped||[]).forEach(i=>{const t=trees[i];if(t&&t.alive){t.alive=false;setTreeVisible(t,false)}});
   (S.builds||[]).forEach(b=>placeBuild(b.t,b.x,b.z,b.rot,b.hp,true));
   if(!S.demand)rollDemand();if(!S.contracts||!S.contracts.length)genContracts();
-  truck.x=S.truck.x;truck.z=S.truck.z;truck.yaw=S.truck.yaw;truck.speed=0;
+  initVehicles();lairRT={};projs.forEach(p=>scene.remove(p.mesh));projs=[];S.boss=null;
   if(S.pet&&!S.pet.down)spawnPet(S.pet.hp);
   P.x=S.px;P.z=S.pz;P.y=groundY(P.x,P.z);P.yaw=S.yaw||0;P.pitch=0;P.vy=0;P.inTruck=false;
   if(!S.weapons.includes(S.cur))S.cur=S.weapons[0]||null;
   S.hp=Math.min(S.hp,maxHp());stamina=100;invuln=2;hordeLeft=0;rexPending=false;fireCd=0;reloadT=0;buildMode=false;
-  updateUpgradeVisuals();refreshShelves();
+  updateUpgradeVisuals();refreshShelves();applySeason(true);
   for(let i=0;i<14;i++)spawnDay(true);
   for(let i=0;i<Math.round(14*SB('zpop'));i++)spawnTown(true);
   equip();
@@ -153,60 +157,75 @@ function rayObstacle(o,d,maxT){
     t+=step}
   return maxT}
 function raySphere(o,d,cx,cy,cz,r){const ox=o.x-cx,oy=o.y-cy,oz=o.z-cz;const b=ox*d.x+oy*d.y+oz*d.z;const c=ox*ox+oy*oy+oz*oz-r*r;const h=b*b-c;if(h<0)return -1;const t=-b-Math.sqrt(h);return t>0?t:-1}
-function hitSpheres(e){const H=HIT[e.type],c=Math.cos(e.yaw),s=Math.sin(e.yaw),sc=e.scale||1;const tf=([lx,ly,lz,r])=>[e.x+(lx*c+lz*s)*sc,e.y+ly*sc,e.z+(-lx*s+lz*c)*sc,r*sc];
+function hitSpheres(e){const H=HIT[hitKey(e.type)],c=Math.cos(e.yaw),s=Math.sin(e.yaw),sc=e.scale||1;const tf=([lx,ly,lz,r])=>[e.x+(lx*c+lz*s)*sc,e.y+ly*sc,e.z+(-lx*s+lz*c)*sc,r*sc];
   if(e.dying||e.stun>0&&e.type==='raptor'){return{head:tf([0,.6,1.0,.3]),body:[tf([0,.4,0,.6])]}}
   return{head:tf(H.head),body:H.body.map(tf)}}
 
 // ================= ENEMIES =================
-function spawnEnemy(type,x,z,horde=false){const d=EDEF[type];const sc=1+(S.day-1)*.07;const mesh=makeEnemyMesh(type);const y=groundY(x,z);mesh.position.set(x,y,z);scene.add(mesh);
-  const e={type,x,z,y,r:d.r,hp:d.hp*sc,maxHp:d.hp*sc,speed:d.speed*(.88+R()*.24),dmg:d.dmg*(1+(S.day-1)*.04),atk:0,wallAtk:0,yaw:R()*6.28,wander:0,wdir:null,aggro:false,horde,flash:0,anim:R()*10,lunge:0,lungeCd:0,charge:0,chargeCd:0,angry:false,loot:1,dead:false,dying:0,mesh,stun:0,stuck:0,target:null};
+function spawnEnemy(type,x,z,horde=false){const d=EDEF[type];const sc=(d.mini||d.boss)?1+(S.day-1)*.02:1+(S.day-1)*.07;const mesh=makeEnemyMesh(type);const y=groundY(x,z);mesh.position.set(x,y,z);scene.add(mesh);
+  const e={type,x,z,y,r:d.r,hp:d.hp*sc,maxHp:d.hp*sc,speed:d.speed*(.88+R()*.24)*(season()==='invierno'&&d.kind!=='d'?.9:1),scale:d.scale||1,scrT:2+R()*3,spitCd:1+R()*2,slamCd:3,fuse:0,dmg:d.dmg*(1+(S.day-1)*.04),atk:0,wallAtk:0,yaw:R()*6.28,wander:0,wdir:null,aggro:false,horde,flash:0,anim:R()*10,lunge:0,lungeCd:0,charge:0,chargeCd:0,angry:false,loot:1,dead:false,dying:0,mesh,stun:0,stuck:0,target:null};
   enemies.push(e);return e}
 function findSpawn(cx,cz,minD,maxD,awayOutpost){for(let k=0;k<40;k++){const a=R()*6.283,d=minD+R()*(maxD-minD),x=cx+Math.cos(a)*d,z=cz+Math.sin(a)*d;if(Math.abs(x)>470||Math.abs(z)>470)continue;const y=terrainY(x,z);if(y<WATER_Y+.4||y>30)continue;if(awayOutpost&&Math.hypot(x,z)<awayOutpost)continue;if(Math.hypot(x-P.x,z-P.z)<minD*.8)continue;if(circleBlocked(x,z,1,'e'))continue;return{x,z,m:moist(x,z)}}return null}
 function spawnTown(initial){
   for(let k=0;k<30;k++){let x,z;if(R()<.35&&buildings.length){const b=buildings[R()*buildings.length|0];x=b.x0+1+R()*(b.w-2);z=b.z0+1+R()*(b.d-2)}else{z=TOWN_Z-70+R()*140;x=roadX(z)+(R()-.5)*90}
     if(Math.hypot(x-P.x,z-P.z)<(initial?40:28))continue;if(circleBlocked(x,z,.6,'e'))continue;
-    const n=R()<.3?rint(2,3):1;for(let i=0;i<n;i++)spawnEnemy(R()<.12&&S.day>1?'corredor':R()<.06&&S.day>2?'bruto':'caminante',x+(R()-.5)*1.5,z+(R()-.5)*1.5);return}}
+    const n=R()<.3?rint(2,3):1;for(let i=0;i<n;i++)spawnEnemy(townType(),x+(R()-.5)*1.5,z+(R()-.5)*1.5);return}}
+function townType(){const d=S.day,r=R();if(d>1&&r<.07)return 'griton';if(d>1&&r<.15)return 'hinchado';if(d>2&&r<.2)return 'soldado';if(d>1&&r<.32)return 'corredor';if(d>2&&r<.38)return 'bruto';return 'caminante'}
+function wildZ(){const d=S.day,r=R();if(d>2&&r<.06)return 'soldado';if(d>1&&r<.13)return 'hinchado';if(d>1&&r<.18)return 'griton';if(d>2&&r<.3)return 'bruto';if(d>1&&r<.5)return 'corredor';return 'caminante'}
 function spawnDay(initial){
-  const p=initial?findSpawn(0,0,90,380,80):findSpawn(P.x,P.z,95,170,80);if(!p)return;const r=R(),dn=SB('dinos');
-  if(p.m>.56){if(r<.5*dn){const n=rint(2,3+(S.day>3?1:0));for(let i=0;i<n;i++)spawnEnemy('raptor',p.x+(R()-.5)*5,p.z+(R()-.5)*5)}else spawnEnemy(R()<.2?'corredor':'caminante',p.x,p.z)}
-  else if(p.m<.4){if(r<.35*dn&&S.day>1)spawnEnemy('raptorp',p.x,p.z);else{const n=rint(1,2);for(let i=0;i<n;i++)spawnEnemy(R()<.35?'corredor':'caminante',p.x+i*2,p.z)}}
-  else{if(r<.28*dn){const n=rint(1,3);for(let i=0;i<n;i++)spawnEnemy('cornudo',p.x+i*5,p.z+(R()-.5)*6)}else{const n=rint(2,4);for(let i=0;i<n;i++)spawnEnemy(R()<.15&&S.day>2?'bruto':R()<.2&&S.day>1?'corredor':'caminante',p.x+(R()-.5)*6,p.z+(R()-.5)*6)}}
+  const p=initial?findSpawn(0,0,90,380,80):findSpawn(P.x,P.z,95,170,80);if(!p)return;const r=R(),dn=SB('dinos')*SEASON_FX[season()].dinos;const r2=R();
+  const pack=(t,a,b,sp)=>{const n=rint(a,b);for(let i=0;i<n;i++)spawnEnemy(t,p.x+(R()-.5)*sp,p.z+(R()-.5)*sp)};
+  if(p.m>.56){if(r<.5*dn){if(S.day>1&&r2<.4)pack('saltador',4,6,6);else pack('raptor',2,3+(S.day>3?1:0),5)}else spawnEnemy(wildZ(),p.x,p.z)}
+  else if(p.m<.4){if(r<.4*dn&&S.day>1){if(S.day>3&&r2<.2)spawnEnemy('acorazado',p.x,p.z);else if(S.day>2&&r2<.55)pack('escupidor',1,2,4);else spawnEnemy('raptorp',p.x,p.z)}else pack(wildZ(),1,2,3)}
+  else{if(r<.28*dn){if(S.day>1&&r2<.3)pack('saltador',3,5,6);else pack('cornudo',1,3,8)}else{const n=rint(2,4);for(let i=0;i<n;i++)spawnEnemy(wildZ(),p.x+(R()-.5)*6,p.z+(R()-.5)*6)}}
 }
-function hordeType(){const d=S.day,pool=[['caminante',5]];if(d>=2)pool.push(['corredor',3],['raptorp',1.5*SB('dinos')]);if(d>=3)pool.push(['bruto',1+d/5]);const tot=pool.reduce((s,p)=>s+p[1],0);let r=R()*tot;for(const [k,w] of pool)if((r-=w)<=0)return k;return 'caminante'}
+function hordeType(){const d=S.day,pool=[['caminante',5]];if(d>=2)pool.push(['corredor',3],['raptorp',1.5*SB('dinos')],['griton',.8]);if(d>=3)pool.push(['bruto',1+d/5],['hinchado',1.2]);if(d>=5)pool.push(['soldado',1+d/8]);if(d>=6)pool.push(['acorazado',.4+d/20]);const tot=pool.reduce((s,p)=>s+p[1],0);let r=R()*tot;for(const [k,w] of pool)if((r-=w)<=0)return k;return 'caminante'}
 function spawnHordeGroup(type){const p=findSpawn(0,0,120,150,0);if(!p)return;if(type){spawnEnemy(type,p.x,p.z,true);return}const n=Math.min(hordeLeft,rint(2,4));for(let i=0;i<n;i++)spawnEnemy(hordeType(),p.x+(R()-.5)*6,p.z+(R()-.5)*6,true);hordeLeft-=n}
 
 function updateEnemy(e,dt){
   const d=EDEF[e.type];
   if(e.dying>0){e.dying+=dt;const m=e.mesh;m.rotation.z=Math.min(1.5,e.dying*4)*(e.side||1);m.position.y=e.y-Math.max(0,e.dying-2)*.6;if(e.dying>3.2){scene.remove(m);e.dead=true}return}
-  e.atk-=dt;e.wallAtk-=dt;e.lungeCd-=dt;e.chargeCd-=dt;
+  e.atk-=dt;e.wallAtk-=dt;e.lungeCd-=dt;e.chargeCd-=dt;e.scrT-=dt;e.spitCd-=dt;e.slamCd-=dt;
   if(e.flash>0){e.flash-=dt;if(e.flash<=0)e.mesh.userData.meshes.forEach(o=>o.material=o.userData.base)}
   if(e.stun>0){e.stun-=dt;e.mesh.userData.root.rotation.z=1.3;e.mesh.position.set(e.x,e.y-.2,e.z);if(e.stun<=0){e.mesh.userData.root.rotation.z=0;e.aggro=false;e.wander=0;e.wdir=Math.atan2(e.x-P.x,e.z-P.z)}return}
   if(e.knock>0){e.knock-=dt;moveCircle(e,e.kx*dt,e.kz*dt,e.r,'e');e.y=groundY(e.x,e.z);animateEnemy(e,dt,0);return}
+  // swollen ones about to burst
+  if(e.fuse>0){e.fuse-=dt;e.mesh.scale.setScalar((e.scale||1)*(1+(.8-e.fuse)*.4));if(e.fuse<=0){killEnemy(e,L(d.n),false)}return}
   const tx0=P.inTruck?truck.x:P.x,tz0=P.inTruck?truck.z:P.z;
   const dx=tx0-e.x,dz=tz0-e.z,dP=Math.hypot(dx,dz),night=isNight();
   let dir=null,sp=e.speed,tgt=null;
   let petD=1e9;if(pet&&!d.neutral){petD=Math.hypot(pet.x-e.x,pet.z-e.z)}
-  if(d.neutral){
+  const charging=()=>{if(e.charge>0){e.charge-=dt;sp=e.speed*3.6;dir=e.yaw;return true}if(e.chargeCd<=0&&dP<28&&dP>4){e.charge=1.4;e.chargeCd=d.mini?2.4:3;e.yaw=Math.atan2(dx,dz);dir=e.yaw;sp=e.speed*3.6;sfx('bellow',e.x,e.z);return true}return false};
+  if(d.neutral&&!e.lair){
     if(e.angry&&dP>80)e.angry=false;
-    if(e.angry){if(e.charge>0){e.charge-=dt;sp=e.speed*3.6;dir=e.yaw}else if(e.chargeCd<=0&&dP<28){e.charge=1.4;e.chargeCd=3;e.yaw=Math.atan2(dx,dz);dir=e.yaw;sp=e.speed*3.6;sfx('bellow',e.x,e.z)}else{dir=Math.atan2(dx,dz);sp=e.speed*1.2}}
+    if(e.angry){if(!charging()){dir=Math.atan2(dx,dz);sp=e.speed*1.2}}
     else{dir=wander(e,dt);sp=e.speed*.5}
   }else{
-    const sneak=keys['control']&&!P.inTruck?.55:1;
-    const ar=d.aggro*(night?1.4:1)*(keys['shift']&&!P.inTruck?1.15:1)*sneak*(weatherFx().rain>.5?.8:1);
+    const sneak=(keys['control']||P.crouch)&&!P.inTruck?.55:1;
+    const ar=d.aggro*(night?1.4:1)*(keys['shift']&&!P.inTruck?1.15:1)*sneak*(weatherFx().rain>.5||weatherFx().snow>.5?.8:1);
     if(!e.aggro&&dP<ar&&gstate!=='dead')e.aggro=true;
     if(e.aggro&&dP>Math.max(ar*2.6,65))e.aggro=false;
-    if(petD<8&&petD<dP){tgt='pet';dir=Math.atan2(pet.x-e.x,pet.z-e.z)}
+    if(e.home){const hd=Math.hypot(e.home.x-e.x,e.home.z-e.z);if(hd>(d.boss?120:60)&&(e.aggro||e.angry)){e.aggro=false;e.angry=false;e.returning=true}if(e.returning&&hd<8)e.returning=false}
+    if(e.returning){dir=Math.atan2(e.home.x-e.x,e.home.z-e.z);sp=e.speed*1.3;e.hp=Math.min(e.maxHp,e.hp+e.maxHp*.02*dt)}
+    else if(petD<8&&petD<dP){tgt='pet';dir=Math.atan2(pet.x-e.x,pet.z-e.z)}
     else if(e.aggro){tgt='p';dir=Math.atan2(dx,dz);
-      if(e.type.startsWith('raptor')&&dP<11&&e.lungeCd<=0){e.lunge=.4;e.lungeCd=2;sfx('shriek',e.x,e.z)}
-      if(e.lunge>0){e.lunge-=dt;sp*=1.8}}
+      if(d.lunge&&dP<11&&e.lungeCd<=0){e.lunge=.4;e.lungeCd=2;sfx('shriek',e.x,e.z)}
+      if(e.lunge>0){e.lunge-=dt;sp*=1.8}
+      if(d.charger)charging();
+      if(d.scream&&e.scrT<=0){e.scrT=d.boss?12:d.mini?9:7;screamAt(e)}
+      if(d.spit&&dP>5&&dP<24){if(dP<15&&!d.mini)dir=null;if(e.spitCd<=0){e.spitCd=d.mini?2:2.8;spitAt(e)}}
+      if(d.explode&&dP<e.r+1.3){e.fuse=.8;sfx('fuse',e.x,e.z);return}
+      if(d.slam&&dP<7&&e.slamCd<=0){e.slamCd=4.5;e.slamT=.7}}
     else if(e.horde){const cdx=CUST_SPOT.x-e.x,cdz=CUST_SPOT.z+3-e.z,dc=Math.hypot(cdx,cdz);if(dc<3){dir=null;e.loot-=dt;if(e.loot<=0){e.loot=2.5;lootStash()}}else dir=Math.atan2(cdx,cdz)}
+    else if(e.home){const hd=Math.hypot(e.home.x-e.x,e.home.z-e.z);if(hd>14){dir=Math.atan2(e.home.x-e.x,e.home.z-e.z);sp=e.speed*.5}else{dir=wander(e,dt);sp=e.speed*.35}}
     else{dir=wander(e,dt);sp=e.speed*.4}
   }
+  if(e.slamT>0){e.slamT-=dt;dir=null;if(e.slamT<=0)slam(e)}
   if(dir!=null){
     if(e.stuck>0){e.stuck-=dt;dir+=e.stuckDir}
-    const turn=(d.neutral&&e.charge>0)?1.2:(e.aggro?8:3);e.yaw+=clamp(angDiff(e.yaw,dir),-turn*dt,turn*dt);
+    const turn=(e.charge>0)?1.2:(e.aggro?8:3);e.yaw+=clamp(angDiff(e.yaw,dir),-turn*dt,turn*dt);
     const hit=moveCircle(e,Math.sin(e.yaw)*sp*dt,Math.cos(e.yaw)*sp*dt,e.r,'e');
-    e.anim+=dt*sp*2.2;
+    e.anim+=dt*sp*2.2/(e.scale||1);
     if(hit){
       if((hit.kind==='wall'||hit.kind==='gate')&&(e.aggro||e.horde||e.angry)){if(e.wallAtk<=0){damageWall(hit.wi,d.wall*(1+(S.day-1)*.05),e);e.wallAtk=1}}
       else if(hit.kind==='barr'&&(e.aggro||e.horde||e.angry)){if(e.wallAtk<=0){damageBuild(hit.build,d.wall);e.wallAtk=1}}
@@ -217,10 +236,10 @@ function updateEnemy(e,dt){
   }else e.anim+=dt*.5;
   e.y=groundY(e.x,e.z);
   for(const b of builds){if(b.t!=='pinchos')continue;if(Math.abs(b.x-e.x)<1.1&&Math.abs(b.z-e.z)<1.1&&!d.neutral){e.hp-=18*dt;if(e.hp<=0){killEnemy(e,L('Pinchos'),false);return}e.x-=Math.sin(e.yaw)*sp*dt*.6;e.z-=Math.cos(e.yaw)*sp*dt*.6;if(R()<dt*4)burst(e.x,e.y+.5,e.z,'#55733a',2,1.5)}}
-  const hostile=!(d.neutral&&!e.angry);
+  const hostile=!(d.neutral&&!e.angry&&!e.lair)&&!e.returning;
   if(hostile&&gstate==='play'){
     if(tgt==='pet'&&petD<e.r+.8&&e.atk<=0){pet.hp-=e.dmg*.8;e.atk=.9;burst(pet.x,pet.y+.9,pet.z,'#8a2f24',4,2)}
-    else{const reach=e.r+(P.inTruck?2:.55)+(e.type==='rex'?1.8:0);if(dP<reach+.3&&e.atk<=0&&Math.abs((P.inTruck?truck.y:P.y)-e.y)<2.5){hurtPlayer(e.dmg*(e.charge>0?1.5:1)*(P.inTruck?.5:1),e);e.atk=d.neutral?1.3:.9;if(e.charge>0)e.charge=0}}
+    else{const reach=e.r+(P.inTruck?2:.55)+(e.type==='rex'?1.8:d.heavy?.6:0);if(dP<reach+.3&&e.atk<=0&&Math.abs((P.inTruck?truck.y:P.y)-e.y)<2.5+(e.scale||1)){hurtPlayer(e.dmg*(e.charge>0?1.5:1)*(P.inTruck?.5:1),e);e.atk=d.heavy?1.3:.9;if(e.charge>0)e.charge=0}}
   }
   animateEnemy(e,dt,sp)
 }
@@ -231,17 +250,22 @@ function animateEnemy(e,dt,sp){
   else if(u.type==='c'){u.legs.forEach((l,i)=>l.rotation.x=(i%2?s:-s)*.4);u.tail.rotation.y=Math.sin(e.anim*.4)*.25;u.head.rotation.x=e.charge>0?.3:0}
 }
 function wander(e,dt){e.wander-=dt;if(e.wander<=0){e.wander=2+R()*4;e.wdir=R()<.35?null:R()*6.283}return e.wdir}
-function hurtEnemy(e,dmg,head,src,by){
-  if(e.dead||e.dying)return;
-  e.hp-=dmg;e.flash=.08;e.mesh.userData.meshes.forEach(o=>o.material=WHITE);
-  if(!EDEF[e.type].neutral)e.aggro=true;else e.angry=true;
-  burst(e.x,e.y+(head?HIT[e.type].head[1]*(e.scale||1):1),e.z,EDEF[e.type].kind==='d'?'#8a2f24':'#4f6b33',head?8:4,2.5);
+function hurtEnemy(e,dmg,head,src,by,ap){
+  if(e.dead||e.dying)return;const ed=EDEF[e.type];
+  if(ed.armor&&!head&&!ap)dmg*=ed.armor;
+  e.hp-=dmg;if(e.fuse>0)e.fuse=Math.min(e.fuse,.15);e.flash=.08;e.mesh.userData.meshes.forEach(o=>o.material=WHITE);
+  if(!EDEF[e.type].neutral)e.aggro=true;else e.angry=true;e.returning=false;
+  burst(e.x,e.y+(head?HIT[hitKey(e.type)].head[1]*(e.scale||1):1),e.z,EDEF[e.type].kind==='d'?'#8a2f24':'#4f6b33',head?8:4,2.5);
   if(src==='p')hitmark(head);
   if(e.type==='raptor'&&e.hp>0&&e.hp<e.maxHp*.3&&!e.horde&&!S.pet&&R()<.45&&e.stun<=0){e.stun=18;e.aggro=false;toast(L('El raptor quedó tirado y débil. Con carne en la mochila podés domesticarlo (mantené E).'),'#8fbb62',6)}
   if(e.hp<=0)killEnemy(e,by||(src==='t'?L('Torreta'):src==='pet'?(S.pet?S.pet.name:L('Raptor')):src==='truck'?L('Camioneta'):L('Pinchos')),head);
 }
 function killEnemy(e,by,head){
   if(e.dying)return;e.dying=.01;e.side=R()<.5?1:-1;const d=EDEF[e.type];S.stats.kills++;if(e.type==='rex'){S.stats.rex++;toast(L('¡Cayó el Rex Podrido! Juntá el ámbar.'),'#e3a33b',6)}
+  if(d.explode){e.mesh.visible=false;e.dying=3;explode(e.x,e.y+1,e.z,4.5,40,'e',true)}
+  if(d.mini){S.stats.minis=(S.stats.minis||0)+1;if(e.lair)S.lairs[e.lair]=S.day;sfx('goal');toast(L('Derrotaste a {n}. Su zona queda tranquila unos días.',{n:L(d.n)}),'#e3a33b',7)}
+  if(e.type==='coloso'){S.stats.coloso=(S.stats.coloso||0)+1;toast(L('¡Cayó el Coloso de la Bruma!'),'#e3a33b',7)}
+  if(d.boss){S.boss=null;shake=Math.max(shake,.6)}
   e.mesh.userData.meshes.forEach(o=>o.material=o.userData.base);
   sfx('kill',e.x,e.z);
   for(const [k,ch,a,b] of DROPS[e.type]){if(R()<ch*(k.startsWith('w:')?1:SB('loot'))){let q=rint(a,b);if(k==='carne')q+=PK('carnicero');spawnPickup(e.x,e.z,k,q)}}
@@ -257,7 +281,7 @@ function lootStash(){const have=IK.filter(k=>S.stash[k]>0);if(!have.length)retur
 // ================= HEALTH =================
 const WOUND={rasguno:{n:'Rasguño',bleed:.1,heal:.5,pain:8,stop:40},corte:{n:'Corte profundo',bleed:.28,heal:1,pain:18},mordida:{n:'Mordida',bleed:.38,heal:1.5,pain:28}};
 function hurtPlayer(dmg,src){
-  if(invuln>0||gstate!=='play')return;S.hp-=dmg;lastHitT=0;hurtFx=1;shake=Math.max(shake,.35);sfx('hurt');
+  if(invuln>0||gstate!=='play')return;if(src&&src.type&&EDEF[src.type].infects&&SB('infect')&&!(S.infect>0))S.infect=.1;S.hp-=dmg;lastHitT=0;hurtFx=1;shake=Math.max(shake,.35);sfx('hurt');
   if(src&&src.type&&!P.inTruck&&R()<.5){const k=EDEF[src.type].kind;const r=R();const t=k==='z'?(r<.55?'rasguno':r<.8?'corte':'mordida'):k==='zd'?(r<.3?'rasguno':r<.7?'corte':'mordida'):(r<.35?'rasguno':'corte');
     S.wounds.push({t,band:false,dis:false,heal:0,age:0});
     toast(L('Herida: {w}. Vendala con H.',{w:L(WOUND[t].n)}),'#cc4b30',3.5);
@@ -296,7 +320,8 @@ function autoConsume(){const needW=100-S.water,needF=100-S.food;
   toast(needF<=10&&needW<=10?L('No tenés hambre ni sed.'):L('No tenés comida ni bebida en la mochila.'),'#e3a33b',2.5)}
 function updateBody(dt){
   const C=CYCLE(),drain=(PK('estomago')?.7:1)*SB('needs')*(1-.04*skLv('supervivencia'))*(S.infect>30?1.3:1)*(720/C);
-  S.food=Math.max(0,S.food-.065*drain*dt);S.water=Math.max(0,S.water-.095*drain*dt);
+  updateTemp(dt);
+  S.food=Math.max(0,S.food-.065*drain*dt*(S.cold>40?1.3:1));S.water=Math.max(0,S.water-.095*drain*dt*(heatOn?1.6:1));
   if(S.food<=0||S.water<=0)S.hp-=.6*dt;
   // wounds
   let bleed=0;for(const w of S.wounds){w.age+=dt;const def=WOUND[w.t];if(!w.band){if(!(w.t==='rasguno'&&w.age>def.stop))bleed+=def.bleed}else w.heal+=dt*(w.dis?2:1)*(1+.08*skLv('auxilios'))}
@@ -307,7 +332,7 @@ function updateBody(dt){
   if(S.sick>0){S.sick=Math.max(0,S.sick-dt*.4);if(S.sick>20)S.hp-=.12*dt}
   if(S.pk>0)S.pk-=dt;
   // fatigue
-  S.fat=Math.min(100,S.fat+dt*100/(C*1.6)*(S.wet>40?1.3:1)*(overW()?1.3:1));if(S.fat>=100)S.hp-=.15*dt;
+  S.fat=Math.min(100,S.fat+dt*100/(C*1.6)*(S.wet>40?1.3:1)*(S.cold>45?1.3:1)*(overW()?1.3:1));if(S.fat>=100)S.hp-=.15*dt;
   // panic from nearby hostiles
   let n=0;for(const e of enemies){if(e.dying||e.dead||(EDEF[e.type].neutral&&!e.angry)||e.stun>0)continue;if(Math.abs(e.x-P.x)<14&&Math.abs(e.z-P.z)<14)n+=EDEF[e.type].boss?5:1}
   const target=Math.min(100,n*16*Math.max(.3,1-S.level*.04));S.panic+=(target-S.panic)*Math.min(1,dt*(target>S.panic?1.2:.25));
@@ -328,6 +353,8 @@ function statuses(){ // status list for the HUD (Spanish source labels, translat
   if(S.sick>20)add('Intoxicado',S.sick>60?2:1,'#8a9a3a');
   if(S.panic>25)add('Pánico',S.panic>70?3:S.panic>45?2:1,'#e0a040');
   if(S.wet>40)add('Mojado',S.wet>80?2:1,'#6f9ac4');
+  if(S.cold>20)add('Frío',S.cold>70?3:S.cold>45?2:1,'#9ac4e0');
+  if(heatOn)add('Calor',1,'#e0884a');
   if(overW())add('Sobrecarga',invKg()>capKg()*1.25?2:1,'#b08a5a');
   return o}
 // Aim penalty from pain, panic, fatigue and skill
@@ -354,28 +381,28 @@ function tame(e){const k=(S.inv.asada||0)>0?'asada':'carne';S.inv[k]--;e.dead=tr
 // ================= TIME & WEATHER =================
 const hourOf=t=>(6+t/CYCLE()*24)%24;
 const isNight=()=>{const h=hourOf(S.t);return h>=20||h<5};
-const WEATHERS={despejado:{n:'Despejado',rain:0,fog:0,dim:0,w:.42},nublado:{n:'Nublado',rain:0,fog:.004,dim:.18,w:.25},lluvia:{n:'Lluvia',rain:.8,fog:.008,dim:.3,w:.18},tormenta:{n:'Tormenta',rain:1,fog:.012,dim:.45,w:.06},niebla:{n:'Niebla',rain:0,fog:.03,dim:.2,w:.09}};
-let wfx={rain:0,fog:0,dim:0};
+const WEATHERS={despejado:{n:'Despejado',rain:0,fog:0,dim:0,w:.42},nublado:{n:'Nublado',rain:0,fog:.004,dim:.18,w:.25},lluvia:{n:'Lluvia',rain:.8,fog:.008,dim:.3,w:.18},tormenta:{n:'Tormenta',rain:1,fog:.012,dim:.45,w:.06},niebla:{n:'Niebla',rain:0,fog:.03,dim:.2,w:.09},nieve:{n:'Nieve',rain:0,snow:1,fog:.014,dim:.28,w:0}};
+let wfx={rain:0,fog:0,dim:0,snow:0};
 const weatherFx=()=>wfx;
 function updateWeather(dt){
-  const w=S.weather;w.t-=dt;if(w.t<=0){let r=R(),k='despejado';for(const [kk,v] of Object.entries(WEATHERS)){if((r-=v.w)<=0){k=kk;break}}if(k!==w.k){w.k=k;if(k!=='despejado')toast(L('El tiempo cambia: {w}.',{w:L(WEATHERS[k].n)}),'#9fb0aa',3)}w.t=CYCLE()*(.12+R()*.25)}
-  const tg=WEATHERS[w.k];const f=Math.min(1,dt*.15);wfx.rain+=(tg.rain-wfx.rain)*f;wfx.fog+=(tg.fog-wfx.fog)*f;wfx.dim+=(tg.dim-wfx.dim)*f;
+  const w=S.weather;w.t-=dt;if(w.t<=0){const ws=Object.entries(WEATHERS).map(([kk,v])=>[kk,v.w*(SEASON_FX[season()].wx[kk]??1)]);let r=R()*ws.reduce((a,b)=>a+b[1],0),k='despejado';for(const [kk,v] of ws){if((r-=v)<=0){k=kk;break}}if(k==='lluvia'&&baseTemp()<1)k='nieve';if(k!==w.k){w.k=k;if(k!=='despejado')toast(L('El tiempo cambia: {w}.',{w:L(WEATHERS[k].n)}),'#9fb0aa',3)}w.t=CYCLE()*(.12+R()*.25)}
+  const tg=WEATHERS[w.k];const f=Math.min(1,dt*.15);wfx.rain+=(tg.rain-wfx.rain)*f;wfx.fog+=(tg.fog-wfx.fog)*f;wfx.dim+=(tg.dim-wfx.dim)*f;wfx.snow+=((tg.snow||0)-wfx.snow)*f;updateSnow(dt);
   if(w.k==='tormenta'){thunderT-=dt;if(thunderT<=0){thunderT=8+R()*20;lightning=1;setTimeout(()=>sfx('thunder'),400+R()*1500)}}
-  lightning=Math.max(0,lightning-dt*4);ambient(wfx.rain,.3+wfx.rain*.6)}
+  lightning=Math.max(0,lightning-dt*4);ambient(wfx.rain,.3+wfx.rain*.6+wfx.snow*.4)}
 function darkness(){const h=hourOf(S.t);if(h>=7&&h<18)return 0;if(h>=18&&h<20.5)return smooth(18,20.5,h)*.94;if(h>=20.5||h<4)return .94;return .94*(1-smooth(4,7,h))}
 function onHour(prev,now){
   const cross=v=>prev<v&&now>=v;
   if(cross(18.5)){toast(L('Está oscureciendo. Volvé al almacén antes de las 20:00.'),'#e3a33b',6)}
   if(cross(19)){customers.forEach(c=>c.state='out')}
-  if(cross(20)){hordeLeft=Math.round((6+S.day*4)*SB('horde'));hordeT=3;rexPending=S.day%5===0;sfx('night');toast(L('Noche {d}: la bruma trae {n} podridos.',{d:S.day,n:hordeLeft})+(rexPending?' '+L('Algo enorme se mueve en el desierto.'):''),'#cc4b30',7)}
+  if(cross(20)){hordeLeft=Math.round((6+S.day*4)*SB('horde'));hordeT=3;rexPending=false;sfx('night');toast(L('Noche {d}: la bruma trae {n} podridos.',{d:S.day,n:hordeLeft})+(rexPending?' '+L('Algo enorme se mueve en el desierto.'):''),'#cc4b30',7)}
   if(rexPending&&cross(23)){rexPending=false;spawnHordeGroup('rex');sfx('roar');shake=.6;toast(L('¡El Rex Podrido viene hacia el almacén!'),'#cc4b30',7)}
   if(cross(5)){dissolveHorde();hordeLeft=0}
   if(cross(19)){S.contracts.forEach(c=>{if(!c.done&&!c.failed&&c.dl<=S.day){c.failed=true;S.rep=Math.max(0,S.rep-.4);toast(L('Se venció el encargo de {who}. Bajó tu reputación.',{who:c.who}),'#cc4b30')}})}
 }
 function dissolveHorde(){let n=0;enemies.forEach(e=>{if(e.horde&&!e.dying&&!e.dead){e.dying=.01;e.side=1;n++;burst(e.x,e.y+1,e.z,'#8fbb62',8,2)}});if(n)toast(L('Amanece. La bruma se retira y {n} podridos se desploman.',{n}),'#8fbb62',6)}
-function spoil(){if(!SB('rot'))return 0;let n=0;const go=(o,mult)=>{for(const k of Object.keys(o)){const r=ITEMS[k]&&ITEMS[k].rot;if(!r||!(o[k]>0))continue;let q=0;for(let i=0;i<o[k];i++)if(R()<mult/r)q++;if(q){o[k]-=q;o.podrida=(o.podrida||0)+q;n+=q}}};go(S.inv,1);go(S.truck.cargo,1);go(S.stash,S.upg.heladera?.25:1);return n}
+function spoil(){if(!SB('rot'))return 0;let n=0;const sm=SEASON_FX[season()].rot;const go=(o,mult)=>{mult*=sm;for(const k of Object.keys(o)){const r=ITEMS[k]&&ITEMS[k].rot;if(!r||!(o[k]>0))continue;let q=0;for(let i=0;i<o[k];i++)if(R()<mult/r)q++;if(q){o[k]-=q;o.podrida=(o.podrida||0)+q;n+=q}}};go(S.inv,1);Object.values(S.veh).forEach(v=>go(v.cargo,1));go(S.stash,S.upg.heladera?.25:1);return n}
 function newDay(){
-  S.day++;S.stats.nights++;
+  const oldSeason=season();S.day++;S.stats.nights++;if(season()!==oldSeason){applySeason();sfx('goal');toast(L(SEASONS[season()].msg),'#9fd27a',7)}
   for(const c of conts){if(S.cont[c.i]&&R()<.08){delete S.cont[c.i];c.seen=false;if(c.mesh&&c.mesh.userData.orig)c.mesh.material=c.mesh.userData.orig}}
   fossils.forEach(f=>{if(f.uses<3&&R()<.3){f.uses++;f.mesh.visible=true}});
   rollDemand();genContracts();S.yesterday=S.today;S.today=0;
@@ -416,16 +443,17 @@ function shoot(){
   const {o,fwd}=aimRay();
   const up=Math.abs(fwd.y)>.99?new T3.Vector3(1,0,0):new T3.Vector3(0,1,0);const rt=new T3.Vector3().crossVectors(fwd,up).normalize();up.crossVectors(rt,fwd).normalize();
   const dm=(1+.15*PK('pulso'));
+  if(w.grenade){const d=fwd.clone().addScaledVector(rt,(R()-.5)*2*spread).addScaledVector(up,(R()-.5)*2*spread+.06).normalize();launchGrenade(o.clone().addScaledVector(fwd,.8),d,w.dmg*dm);recoil+=w.recoil;vmKick=1;muzzleLight.intensity=3;sfx(w.snd);for(const e of enemies){if(!EDEF[e.type].neutral&&!e.dying&&Math.hypot(e.x-P.x,e.z-P.z)<w.noise)e.aggro=true}if(S.mags[S.cur]===0&&S.ammo[w.ammo]>0)setTimeout(()=>{if(S&&S.mags[S.cur]===0)startReload()},250);return}
   for(let i=0;i<w.pellets;i++){
     const d=fwd.clone().addScaledVector(rt,(R()-.5)*2*spread).addScaledVector(up,(R()-.5)*2*spread).normalize();
     const wall=rayObstacle(o,d,w.range);
     const hits=[];for(const e of enemies){if(e.dead||e.dying)continue;if(Math.hypot(e.x-o.x,e.z-o.z)>w.range+5)continue;const hs=hitSpheres(e);let best=-1,head=false;const th=raySphere(o,d,...hs.head);if(th>0){best=th;head=true}for(const b of hs.body){const tb=raySphere(o,d,...b);if(tb>0&&(best<0||tb<best-.05)){best=tb;head=false}}if(best>0&&best<wall)hits.push({e,t:best,head})}
     hits.sort((a,b)=>a.t-b.t);let pierce=w.pierce,endT=wall;
-    for(const h of hits){let dmg=w.dmg*dm;if(h.head){dmg*=(S.cur==='rifle'?3:2.5)*(1+.3*PK('ojo'));S.stats.hs++;sfx('head');addSk('punteria',3)}else{sfx('hit',h.e.x,h.e.z);addSk('punteria',1.5)}if(S.cur==='escopeta'){dmg*=clamp(1.3-h.t/w.range,.35,1.3)}hurtEnemy(h.e,dmg,h.head,'p',wn(S.cur));if(--pierce<=0){endT=h.t;break}}
+    for(const h of hits){let dmg=w.dmg*dm;if(h.head){dmg*=(w.scope?3:2.5)*(1+.3*PK('ojo'));S.stats.hs++;sfx('head');addSk('punteria',3)}else{sfx('hit',h.e.x,h.e.z);addSk('punteria',1.5)}if(w.pellets>1){dmg*=clamp(1.3-h.t/w.range,.35,1.3)}hurtEnemy(h.e,dmg,h.head,'p',wn(S.cur),w.ap);if(--pierce<=0){endT=h.t;break}}
     const end=o.clone().addScaledVector(d,Math.min(endT,w.range));if(endT<w.range&&!hits.length)burst(end.x,end.y,end.z,'#b8ac8a',3,1.5,.06);
     const start=camMode==='fp'?o.clone().addScaledVector(fwd,.6).addScaledVector(rt,.18).addScaledVector(up,-.15):o.clone().addScaledVector(fwd,.7);if(i<3)tracer(start,end);if(i===0)muzzleLight.position.copy(start)}
   recoil+=w.recoil*(ads?.6:1);recoilYaw+=(R()-.5)*w.recoil*.6;vmKick=1;muzzleLight.intensity=3;vmFlash.material.opacity=1;
-  sfx(S.cur);
+  sfx(w.snd||S.cur);
   for(const e of enemies){if(!EDEF[e.type].neutral&&!e.dying&&Math.hypot(e.x-P.x,e.z-P.z)<w.noise)e.aggro=true}
   if(S.mags[S.cur]===0&&S.ammo[w.ammo]>0)setTimeout(()=>{if(S&&S.mags[S.cur]===0)startReload()},250);
 }
@@ -437,8 +465,8 @@ function swing(){
   const fx=-Math.sin(P.yaw),fz=-Math.cos(P.yaw);let hit=false;
   const dmg=w.dmg*(1+.3*PK('filo'))*(1+.06*skLv('melee'));
   for(const e of enemies){if(e.dead||e.dying)continue;const dx=e.x-P.x,dz=e.z-P.z,d=Math.hypot(dx,dz);if(d>w.reach+e.r)continue;if((dx*fx+dz*fz)/d<.45)continue;
-    const head=(camMode==='iso'||P.pitch>-.1)&&e.type!=='rex'&&e.type!=='cornudo'&&R()<.22+.02*skLv('melee');hurtEnemy(e,dmg*(head?1.6:1),head,'p',wn(k));if(head)S.stats.hs++;
-    if(w.knock&&!EDEF[e.type].boss&&e.type!=='cornudo'){e.knock=.25;e.kx=dx/d*w.knock*4;e.kz=dz/d*w.knock*4}else{e.x+=dx/d*.4;e.z+=dz/d*.4}
+    const head=(camMode==='iso'||P.pitch>-.1)&&!EDEF[e.type].heavy&&R()<.22+(w.head||0)+.02*skLv('melee');hurtEnemy(e,dmg*(head?1.6:1),head,'p',wn(k),w.ap);if(head)S.stats.hs++;
+    if(w.knock&&!EDEF[e.type].boss&&(!EDEF[e.type].heavy||w.ap)&&!EDEF[e.type].mini){e.knock=.25;e.kx=dx/d*w.knock*4;e.kz=dz/d*w.knock*4}else{e.x+=dx/d*.4;e.z+=dz/d*.4}
     sfx(w.knock?'blunt':'hit',e.x,e.z);hit=true;addSk('melee',2)}
   if(hit){wearWeapon(k,1);return}
   if(w.chop){const t=qTrees(P.x+fx*1.2,P.z+fz*1.2,t=>!t.rock&&Math.hypot(t.x-P.x,t.z-P.z)<2.6+t.r);if(t){t.hp-=w.chop*(1+.08*skLv('supervivencia'));sfx('chop');burst(t.x-fx*.3,P.y+1.2,t.z-fz*.3,'#8a6b45',5,2,.07);wearWeapon(k,.5);if(t.hp<=0){t.alive=false;setTreeVisible(t,false);S.chopped.push(trees.indexOf(t));sfx('tree');spawnPickup(t.x,t.z,'madera',rint(2,4));gainXp(3);addSk('supervivencia',4)}}}
@@ -455,37 +483,42 @@ function respawn(){S.hp=Math.round(maxHp()*.6);S.food=Math.max(S.food,40);S.wate
   enemies.forEach(e=>{if(!e.horde&&Math.hypot(e.x,e.z)<120){e.dead=true;scene.remove(e.mesh)}});
   enemies.forEach(e=>{if(e.horde&&Math.hypot(e.x,e.z)<30){e.x*=3;e.z*=3}});resume()}
 
-// ================= TRUCK =================
-function enterTruck(){P.inTruck=true;truck.cabin.forEach(m=>m.visible=camMode==='iso');truck.dash.visible=camMode==='fp';truck.lookYaw=0;truck.lookPitch=-.05;engineSound(true,0);toast(L('W acelerar · S frenar o reversa · A/D doblar · E bajar'),'#dedcc9',4)}
-function exitTruck(force){
-  const side=[[-2.4,0],[2.4,0],[0,-3.6],[0,3.6]];for(const [lx,lz] of side){const c=Math.cos(truck.yaw),s=Math.sin(truck.yaw);const x=truck.x+lx*c+lz*s,z=truck.z-lx*s+lz*c;if(force||!circleBlocked(x,z,.4,'p')){P.x=x;P.z=z;P.y=groundY(x,z);P.inTruck=false;truck.cabin.forEach(m=>m.visible=true);truck.dash.visible=false;P.yaw=truck.yaw+Math.PI;engineSound(false);truck.speed=0;return}}
+// ================= VEHICLES =================
+function enterTruck(v){if(v)truck=v;S.drive=truck.k;P.inTruck=true;truck.cabin.forEach(m=>m.visible=camMode==='iso');truck.dash.visible=camMode==='fp';truck.lookYaw=0;truck.lookPitch=-.05;truck.group.add(truckLight);engineSound(true,0);toast(L('W acelerar · S frenar o reversa · A/D doblar · E bajar'),'#dedcc9',4)}
+function exitTruck(force){truckLight.intensity=0;
+  const hw=truck.def.wid/2+1.2,hl=truck.def.len/2+1.2;
+  const side=[[-hw,truck.def.cabZ-.6],[hw,truck.def.cabZ-.6],[0,-hl],[0,hl]];for(const [lx,lz] of side){const c=Math.cos(truck.yaw),s=Math.sin(truck.yaw);const x=truck.x+lx*c+lz*s,z=truck.z-lx*s+lz*c;if(force||!circleBlocked(x,z,.4,'p')){P.x=x;P.z=z;P.y=groundY(x,z);P.inTruck=false;truck.cabin.forEach(m=>m.visible=true);truck.dash.visible=false;P.yaw=truck.yaw+Math.PI;engineSound(false);truck.speed=0;return}}
   toast(L('No hay lugar para bajar acá.'),'#e3a33b')}
-function updateTruck(dt){
-  const tr=truck;
-  if(P.inTruck){
+// Long vehicles collide with a circle at the front and one at the back.
+function vehBlocked(v,x,z,yaw){const r=v.def.wid*.62,off=Math.max(0,v.def.len/2-r);const s=Math.sin(yaw),c=Math.cos(yaw);return circleBlocked(x+s*off,z+c*off,r,'t')||(off>.3&&circleBlocked(x-s*off,z-c*off,r,'t'))}
+function updateTruck(dt){for(const v of vehicles)updateVehicle(v,dt)}
+function updateVehicle(tr,dt){
+  const def=tr.def,st=tr.st,driven=P.inTruck&&tr===truck;
+  if(driven){
     const thr=(keys['w']?1:0)-(keys['s']?1:0),brake=keys[' '];
-    if(S.truck.fuel<=0&&thr!==0){if(fullMsgT<=0){toast(L('Sin nafta. Cargá combustible con G o desde el taller.'),'#cc4b30');fullMsgT=4}}
-    else{if(thr>0)tr.speed+=(tr.speed<0?18:9)*dt;else if(thr<0)tr.speed-=(tr.speed>0?16:6)*dt}
+    if(st.fuel<=0&&thr!==0){if(fullMsgT<=0){toast(L('Sin nafta. Cargá combustible con G o desde el taller.'),'#cc4b30');fullMsgT=4}}
+    else{const load=1-Math.min(.35,kgOf(st.cargo)/vehCap(tr)*.35);if(thr>0)tr.speed+=(tr.speed<0?18:def.acc*load)*dt;else if(thr<0)tr.speed-=(tr.speed>0?16:6)*dt}
     if(brake)tr.speed*=Math.pow(.05,dt);
-    tr.speed*=Math.pow(.7,dt);if(!thr&&Math.abs(tr.speed)<.3)tr.speed=0;tr.speed=clamp(tr.speed,-8,26);
-    const st=(keys['a']?1:0)-(keys['d']?1:0);tr.steer=lerp(tr.steer,st*.55,Math.min(1,dt*6));
-    S.truck.fuel=Math.max(0,S.truck.fuel-Math.abs(tr.speed)*dt*.012*(PK('conductor')?.6:1)*(720/CYCLE()*.5+.5));
-    engineSound(true,tr.speed);
-  }else{tr.speed*=Math.pow(.2,dt);if(Math.abs(tr.speed)<.2)tr.speed=0;tr.steer*=.9}
+    tr.speed*=Math.pow(.7,dt);if(!thr&&Math.abs(tr.speed)<.3)tr.speed=0;tr.speed=clamp(tr.speed,-7,def.max*(snowCover>.5&&def.bed!=='trailer'?.8:1));
+    const st2=(keys['a']?1:0)-(keys['d']?1:0);tr.steer=lerp(tr.steer,st2*.55,Math.min(1,dt*6));
+    st.fuel=Math.max(0,st.fuel-Math.abs(tr.speed)*dt*.012*def.fuel*(PK('conductor')?.6:1)*(720/CYCLE()*.5+.5));
+    engineSound(true,tr.speed*26/def.max);
+  }else if(tr.speed!==0){tr.speed*=Math.pow(.2,dt);if(Math.abs(tr.speed)<.2)tr.speed=0;tr.steer*=.9}
   if(tr.speed!==0){
-    tr.yaw+=tr.speed*Math.tan(tr.steer)/2.9*dt;
-    const nx=tr.x+Math.sin(tr.yaw)*tr.speed*dt,nz=tr.z+Math.cos(tr.yaw)*tr.speed*dt;
-    const hit=circleBlocked(nx,nz,1.5,'t');
-    if(hit){if(Math.abs(tr.speed)>6){sfx('crash',tr.x,tr.z);shake=Math.max(shake,.3)}tr.speed*=-.25}else{tr.x=nx;tr.z=nz}
-    if(Math.abs(tr.speed)>3.5){for(const e of enemies){if(e.dead||e.dying)continue;const d=Math.hypot(e.x-tr.x,e.z-tr.z);if(d<1.9+e.r){const dmg=Math.abs(tr.speed)*7*(PK('conductor')?1.4:1);if(e.type==='rex'||e.type==='cornudo'&&e.hp>dmg){tr.speed*=.3}else tr.speed*=.88;const wasAlive=!e.dying;hurtEnemy(e,dmg,false,'truck');if(wasAlive&&e.dying&&P.inTruck)S.stats.runover++;const a=Math.atan2(e.x-tr.x,e.z-tr.z);e.x+=Math.sin(a)*1.2;e.z+=Math.cos(a)*1.2;sfx('thud',e.x,e.z)}}}
+    const wb=def.len*.6;const ny=tr.yaw+tr.speed*Math.tan(tr.steer)/wb*dt;
+    const nx=tr.x+Math.sin(ny)*tr.speed*dt,nz=tr.z+Math.cos(ny)*tr.speed*dt;
+    const hit=vehBlocked(tr,nx,nz,ny);
+    if(hit){if(Math.abs(tr.speed)>6){sfx('crash',tr.x,tr.z);shake=Math.max(shake,.3)}tr.speed*=-.25}else{tr.x=nx;tr.z=nz;tr.yaw=ny}
+    if(Math.abs(tr.speed)>3.5){const off=def.len/2-1;const fx=tr.x+Math.sin(tr.yaw)*off*Math.sign(tr.speed),fz=tr.z+Math.cos(tr.yaw)*off*Math.sign(tr.speed);
+      for(const e of enemies){if(e.dead||e.dying)continue;const d=Math.hypot(e.x-fx,e.z-fz);if(d<def.wid*.85+e.r){const mass=def.cap>200?1.6:1;const dmg=Math.abs(tr.speed)*7*mass*(PK('conductor')?1.4:1);if(EDEF[e.type].heavy&&e.hp>dmg){tr.speed*=.3}else tr.speed*=.88;const wasAlive=!e.dying;hurtEnemy(e,dmg,false,'truck');if(wasAlive&&e.dying&&driven)S.stats.runover++;const a=Math.atan2(e.x-tr.x,e.z-tr.z);e.x+=Math.sin(a)*1.2;e.z+=Math.cos(a)*1.2;sfx('thud',e.x,e.z)}}}
   }
-  const c=Math.cos(tr.yaw),s=Math.sin(tr.yaw);const hF=groundY(tr.x+s*1.6,tr.z+c*1.6),hB=groundY(tr.x-s*1.6,tr.z-c*1.6),hL=groundY(tr.x+c*1,tr.z-s*1),hR=groundY(tr.x-c*1,tr.z+s*1);
-  tr.y=(hF+hB+hL+hR)/4;const g=tr.group;g.position.set(tr.x,tr.y,tr.z);g.rotation.set(0,0,0);g.rotateY(tr.yaw);g.rotateX(-Math.atan2(hF-hB,3.2));g.rotateZ(Math.atan2(hL-hR,2));
-  tr.wheels.forEach((w,i)=>{w.children[0].rotation.x+=tr.speed*dt/.45;if(i<2)w.rotation.y=tr.steer});
-  const k=kgOf(S.truck.cargo);tr.cargoBoxes.forEach((b,i)=>b.visible=k>i*6);
-  truckLight.intensity=darkness()>.3?(P.inTruck?2.2:0):0;
+  if(!tr.placed||tr.speed!==0||driven){tr.placed=true;
+    const c=Math.cos(tr.yaw),s=Math.sin(tr.yaw),hl=def.len/3,hw=def.wid/2;const hF=groundY(tr.x+s*hl,tr.z+c*hl),hB=groundY(tr.x-s*hl,tr.z-c*hl),hL=groundY(tr.x+c*hw,tr.z-s*hw),hR=groundY(tr.x-c*hw,tr.z+s*hw);
+    tr.y=(hF+hB+hL+hR)/4;const g=tr.group;g.position.set(tr.x,tr.y,tr.z);g.rotation.set(0,0,0);g.rotateY(tr.yaw);g.rotateX(-Math.atan2(hF-hB,hl*2));g.rotateZ(Math.atan2(hL-hR,hw*2));
+    tr.wheels.forEach((w,i)=>{w.children[0].rotation.x+=tr.speed*dt/.45;if(i<2)w.rotation.y=tr.steer})}
+  const k=kgOf(st.cargo),cap=vehCap(tr);tr.cargoBoxes.forEach((b,i)=>b.visible=k>i*cap/tr.cargoBoxes.length*.9);
+  if(driven)truckLight.intensity=darkness()>.3?2.2:0;
 }
-
 // ================= SHOP / CUSTOMERS =================
 const PATH_IN=[{x:0,z:28},{x:0,z:-6.5},{x:0,z:-9.3},{x:CUST_SPOT.x,z:CUST_SPOT.z}];
 const PATH_OUT=()=>[{x:0,z:-9.3},{x:0,z:-6.5},{x:0,z:40}];

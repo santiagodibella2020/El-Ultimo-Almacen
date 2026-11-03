@@ -1,7 +1,7 @@
 'use strict';
 // ================= GAME DATA =================
 // Every name here is the Spanish source text; the UI runs it through L() to translate.
-const SIZE=1000, SEG=250, STEP=SIZE/SEG, HALF=SIZE/2, WATER_Y=-5, SAVE_KEY='ultimo-almacen-3d-v1', SET_KEY='ultimo-almacen-settings', SAVE_V=3;
+const SIZE=1000, SEG=250, STEP=SIZE/SEG, HALF=SIZE/2, WATER_Y=-5, SAVE_KEY='ultimo-almacen-3d-v1', SET_KEY='ultimo-almacen-settings', SAVE_V=4;
 const PAL=22; // palisade half size
 const COUNTER={x:3.5,z:-11.1}, CUST_SPOT={x:3.5,z:-9.6}, BED={x:-4.6,z:-9.4};
 const TRUCK_HOME={x:11,z:9};
@@ -219,3 +219,107 @@ const PRESETS={
   normal:{n:'Sobreviviente',d:'La experiencia pensada: dura pero justa.',sb:{zpop:1,dinos:1,loot:1,daylen:1,needs:1,horde:1,infect:1,rot:1}},
   dificil:{n:'Apocalipsis',d:'El pueblo está lleno, el botín escasea y las noches son brutales.',sb:{zpop:3,dinos:2,loot:0,daylen:1,needs:2,horde:2,infect:1,rot:1}},
 };
+
+// ================= v0.3: MORE ENEMIES, BOSSES, SEASONS, CARGO VEHICLES, WEAPONS =================
+Object.assign(ITEMS,{
+  campera:{n:'Campera de abrigo',v:45,w:1.2,c:'#5a4a3a',cat:'tool',warm:9},
+  nucleo:{n:'Núcleo de bruma',v:40,w:.2,c:'#8fd06a',cat:'val'},
+  placa:{n:'Placa del Sargento',v:260,w:.3,c:'#b0b4b8',cat:'val',trophy:true},
+  cuchilla:{n:'Cuchilla del Matarife',v:260,w:2,c:'#9a9a92',cat:'val',trophy:true},
+  muestra:{n:'Muestra del Paciente Cero',v:260,w:.2,c:'#9acd5a',cat:'val',trophy:true},
+  garra:{n:'Garra del Alfa',v:260,w:.5,c:'#2a2a2a',cat:'val',trophy:true},
+  cuerno:{n:'Cuerno del Viejo',v:260,w:3,c:'#e8dcc0',cat:'val',trophy:true},
+  glandula:{n:'Glándula de la Reina',v:260,w:.4,c:'#7ac04a',cat:'val',trophy:true},
+});
+IK.length=0;IK.push(...Object.keys(ITEMS));
+Object.assign(WEAP,{
+  ballesta:{n:'Ballesta',dmg:80,rate:.3,mag:1,reload:1.5,hip:.03,ads:.003,range:130,ammo:'virotes',pellets:1,pierce:2,noise:5,recoil:.03,fov:45,w:2.5,v:420,snd:'ballesta'},
+  escopetac:{n:'Escopeta de combate',dmg:11,rate:.26,mag:8,reload:2.6,hip:.085,ads:.065,range:32,ammo:'cartuchos',pellets:7,pierce:1,noise:58,recoil:.06,fov:62,w:4,v:900,snd:'escopeta'},
+  francotirador:{n:'Rifle de francotirador',dmg:240,rate:1.5,mag:5,reload:3,hip:.09,ads:.0006,range:400,ammo:'p50',pellets:1,pierce:5,noise:95,recoil:.1,fov:12,scope:true,w:9,v:2400,ap:true,snd:'rifle'},
+  ametralladora:{n:'Ametralladora',dmg:24,rate:.075,mag:100,reload:5.5,hip:.07,ads:.02,range:160,ammo:'fusil',pellets:1,pierce:2,noise:90,recoil:.014,fov:55,auto:true,w:10,v:2800,snd:'fusil'},
+  lanzagranadas:{n:'Lanzagranadas',dmg:170,rate:.9,mag:6,reload:4,hip:.02,ads:.01,range:120,ammo:'granadas',pellets:1,pierce:1,noise:95,recoil:.09,fov:55,w:6,v:3200,grenade:true,snd:'lanzagranadas'},
+  katana:{n:'Katana',melee:true,dmg:58,rate:.42,reach:2.4,dur:150,w:1.2,v:380,head:.15},
+  mazo:{n:'Mazo',melee:true,dmg:80,rate:1.15,reach:2.3,dur:220,knock:3,w:6,v:160,ap:true},
+});
+WORDER.splice(0,WORDER.length,'pistola','revolver','escopeta','escopetac','rifle','francotirador','fusil','ametralladora','ballesta','lanzagranadas','cuchillo','katana','sarten','bate','martillo','palanca','mazo','machete','hacha','lanza');
+Object.assign(AMMO_N,{virotes:'Virotes',p50:'Balas .50',granadas:'Granadas'});
+Object.assign(AMMO_W,{virotes:.06,p50:.05,granadas:.25});
+// Enemies. base = model and hit spheres it borrows; scale/tint change the look.
+Object.assign(EDEF,{
+  griton:{n:'Gritón',hp:40,r:.4,speed:2.6,dmg:7,wall:5,xp:14,kind:'z',aggro:32,scream:true},
+  hinchado:{n:'Hinchado',hp:70,r:.55,speed:1.2,dmg:12,wall:10,xp:16,kind:'z',aggro:22,explode:true},
+  soldado:{n:'Soldado podrido',hp:130,r:.45,speed:1.9,dmg:16,wall:12,xp:26,kind:'z',aggro:30,armor:.55},
+  saltador:{n:'Saltador',base:'raptor',scale:.55,hp:22,r:.35,speed:7.2,dmg:6,wall:3,xp:8,kind:'d',aggro:22,lunge:true},
+  escupidor:{n:'Escupidor',base:'raptor',hp:65,r:.5,speed:4.2,dmg:9,wall:6,xp:20,kind:'d',aggro:30,spit:1},
+  acorazado:{n:'Acorazado podrido',hp:480,r:1.2,speed:1.7,dmg:30,wall:45,xp:48,kind:'zd',aggro:24,armor:.35,heavy:true},
+  sargento:{n:'Sargento Podrido',base:'soldado',scale:1.45,tint:'#7a2a1a',hp:1100,r:.65,speed:2.4,dmg:26,wall:60,xp:300,kind:'z',aggro:48,armor:.5,mini:true,lair:'militar',esc:['soldado',4]},
+  matarife:{n:'El Matarife',base:'bruto',scale:1.3,tint:'#7a1a14',hp:1500,r:.85,speed:2,dmg:42,wall:80,xp:320,kind:'z',aggro:40,charger:true,mini:true,lair:'frigorifico',esc:['caminante',6]},
+  paciente:{n:'Paciente Cero',base:'griton',scale:1.35,tint:'#e0e6d0',hp:850,r:.55,speed:3,dmg:18,wall:30,xp:300,kind:'z',aggro:50,scream:true,summon:true,infects:true,mini:true,lair:'hospital',esc:['corredor',3]},
+  alfa:{n:'Alfa Colmillo Negro',base:'raptor',scale:1.7,tint:'#1a1a1a',hp:750,r:.8,speed:7.4,dmg:24,wall:30,xp:300,kind:'d',aggro:45,lunge:true,mini:true,lair:'canadon',esc:['raptor',4]},
+  viejo:{n:'Cornudo Viejo',base:'cornudo',scale:1.5,tint:'#3a2c24',hp:2600,r:1.9,speed:2.4,dmg:48,wall:120,xp:340,kind:'d',aggro:40,charger:true,heavy:true,mini:true,lair:'salina',esc:['cornudo',2]},
+  reina:{n:'Reina Escupidora',base:'escupidor',scale:1.8,tint:'#2f6a2a',hp:950,r:.9,speed:4,dmg:16,wall:30,xp:320,kind:'d',aggro:45,spit:3,mini:true,lair:'laguna',esc:['escupidor',2]},
+  coloso:{n:'El Coloso de la Bruma',base:'bruto',scale:2.3,tint:'#2f3a28',hp:7000,r:1.6,speed:2.6,dmg:55,wall:200,xp:900,kind:'z',aggro:90,boss:true,heavy:true,slam:true,scream:true,summon:true},
+});
+EDEF.raptor.lunge=true;EDEF.raptorp.lunge=true;EDEF.rex.heavy=true;EDEF.cornudo.heavy=true;EDEF.cornudo.charger=true;
+Object.assign(DROPS,{
+  caminante:[...DROPS.caminante,['nucleo',.06,1,1]],corredor:[...DROPS.corredor,['nucleo',.06,1,1]],bruto:[...DROPS.bruto,['nucleo',.25,1,1]],raptorp:[...DROPS.raptorp,['nucleo',.12,1,1]],
+  griton:[['tela',.4,1,2],['pilas',.15,1,1],['nucleo',.15,1,1],['analgesicos',.1,1,1]],
+  hinchado:[['nucleo',.3,1,2],['podrida',.4,1,2],['desinfectante',.12,1,1]],
+  soldado:[['ammo:fusil',.5,6,15],['ammo:balas',.4,6,12],['venda',.25,1,2],['campera',.1,1,1],['ammo:granadas',.05,1,2],['w:fusil',.04,1,1],['w:escopetac',.03,1,1],['nucleo',.1,1,1]],
+  saltador:[['carne',.8,1,1],['cuero',.25,1,1]],
+  escupidor:[['carne',1,1,2],['cuero',.5,1,1],['colmillo',.4,1,1]],
+  acorazado:[['hueso',1,2,4],['chapa',.4,1,1],['colmillo',.6,1,2],['nucleo',.35,1,2],['ambar',.15,1,1]],
+  sargento:[['placa',1,1,1],['ammo:fusil',1,30,60],['ammo:p50',.6,5,10],['ammo:granadas',.5,2,4],['w:ametralladora',.25,1,1],['w:francotirador',.15,1,1],['joyas',.6,1,2]],
+  matarife:[['cuchilla',1,1,1],['carne',1,4,6],['w:mazo',.4,1,1],['w:katana',.2,1,1],['medicina',.7,1,2],['joyas',.5,1,2]],
+  paciente:[['muestra',1,1,1],['antibioticos',1,2,3],['medicina',1,1,2],['nucleo',1,2,3],['joyas',.4,1,1]],
+  alfa:[['garra',1,1,1],['colmillo',1,3,5],['cuero',1,2,3],['carne',1,3,4],['ambar',.5,1,1]],
+  viejo:[['cuerno',1,1,1],['carne',1,6,8],['cuero',1,4,5],['hueso',1,3,4],['ambar',.6,1,2]],
+  reina:[['glandula',1,1,1],['colmillo',1,2,4],['ambar',.7,1,2],['antibioticos',.5,1,1],['cuero',1,2,3]],
+  coloso:[['ambar',1,5,7],['joyas',1,4,6],['nucleo',1,5,8],['medicina',1,2,3],['w:lanzagranadas',1,1,1],['ammo:granadas',1,6,10]],
+  rex:[['ambar',1,5,7],['colmillo',1,6,8],['hueso',1,6,8],['medicina',1,2,2],['w:francotirador',1,1,1],['ammo:p50',1,10,15]],
+});
+// Special zones where the minibosses live, and the summons at the Green Stone crater.
+const LAIRS={
+  militar:{n:'Puesto militar',boss:'sargento'},frigorifico:{n:'Frigorífico abandonado',boss:'matarife'},hospital:{n:'Hospital en ruinas',boss:'paciente'},
+  canadon:{n:'Cañadón de los raptores',boss:'alfa'},salina:{n:'Salina',boss:'viejo'},laguna:{n:'Laguna podrida',boss:'reina'},
+};
+const SUMMONS={
+  coloso:{n:'El Coloso de la Bruma',d:'Una montaña de podridos cosidos por la bruma. Golpea el suelo y llama a los muertos.',need:{placa:1,cuchilla:1,muestra:1,nucleo:8}},
+  rex:{n:'Rex Podrido',d:'El rey de los huesos. Ya no viene solo de noche: lo despertás vos.',need:{garra:1,cuerno:1,glandula:1,colmillo:8,ambar:2}},
+};
+// Cargo vehicles. cap in kg.
+const VEH={
+  pickup:{n:'Camioneta',cap:40,max:26,acc:9,fuel:1,len:4.8,wid:2.1,col:'#6b2f22',bed:'open',cabZ:1.15},
+  furgon:{n:'Furgón',cap:180,max:22,acc:7,fuel:1.35,len:5.6,wid:2.2,col:'#8a8a84',bed:'box',cabZ:1.75},
+  camion:{n:'Camión de carga',cap:420,max:18,acc:4.5,fuel:1.9,len:7.8,wid:2.6,col:'#3f5a6a',bed:'box',cabZ:2.9,broken:true},
+  tractor:{n:'Tractor con acoplado',cap:300,max:13,acc:5,fuel:1.1,len:7.4,wid:2.3,col:'#5a7a2a',bed:'trailer',cabZ:2.4,broken:true},
+};
+const SEASONS={primavera:{n:'Primavera',msg:'Llegó la primavera.'},verano:{n:'Verano',msg:'Llegó el verano.'},otono:{n:'Otoño',msg:'Llegó el otoño.'},invierno:{n:'Invierno',msg:'Llegó el invierno.'}};
+const MONTHS=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+CONT.armario.loot.push(['campera',.22,1,1]);
+CONT.armeria.loot.push(['w:ballesta',.05,1,1],['w:escopetac',.03,1,1],['ammo:virotes',.25,4,10],['ammo:p50',.06,2,5]);
+CONT.herramientas.loot.push(['w:mazo',.04,1,1]);CONT.ferreteria.loot.push(['w:mazo',.06,1,1]);
+RECIPES.push(
+  {id:'virotes',n:'Virotes ×6',in:{madera:1,chatarra:1},ammo:['virotes',6]},
+  {id:'p50',n:'Balas .50 ×5',in:{chatarra:3,polvora:2},ammo:['p50',5],need:'banco'},
+  {id:'granadas',n:'Granadas ×2',in:{polvora:2,chatarra:2,cinta:1},ammo:['granadas',2],need:'banco'},
+  {id:'campera',n:'Campera de abrigo',in:{tela:4,cuero:1},out:['campera',1]},
+);
+SHOP.splice(5,0,
+  {id:'ballesta',n:'Ballesta',d:'Casi no hace ruido. Un virote por vez, pero pega fuerte.',p:420,weapon:true},
+  {id:'katana',n:'Katana',d:'Rápida y filosa. Corta cabezas con facilidad.',p:380,weapon:true},
+  {id:'mazo',n:'Mazo',d:'Lento y pesado. Rompe cualquier armadura y voltea a los grandes.',p:160,weapon:true},
+  {id:'escopetac',n:'Escopeta de combate',d:'Semiautomática: ocho cartuchos sin bombear.',p:900,weapon:true,minDay:5},
+  {id:'francotirador',n:'Rifle de francotirador',d:'Calibre .50. Atraviesa armaduras y hasta cinco enemigos.',p:2400,weapon:true,minDay:8},
+  {id:'ametralladora',n:'Ametralladora',d:'Cien tiros sin recargar. Pesa diez kilos.',p:2800,weapon:true,minDay:10},
+);
+SHOP.push(
+  {id:'a_virotes',n:'Virotes ×10',d:'Para la ballesta.',p:30,ammo:['virotes',10]},
+  {id:'a_p50',n:'Balas .50 ×10',d:'Para el rifle de francotirador.',p:160,ammo:['p50',10]},
+  {id:'a_gran',n:'Granadas ×4',d:'Para el lanzagranadas.',p:220,ammo:['granadas',4],minDay:10},
+  {id:'i_campera',n:'Campera de abrigo',d:'Abriga en invierno. Va a la mochila.',p:70,item:'campera'},
+);
+GOALS.splice(GOALS.length-1,0,
+  {id:'mini3',n:'Derrotá a 3 minijefes',r:600,test:()=>(S.stats.minis||0)>=3},
+  {id:'coloso',n:'Derrotá al Coloso de la Bruma',r:1500,test:()=>(S.stats.coloso||0)>=1},
+);

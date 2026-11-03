@@ -35,13 +35,41 @@ function rexModel(){
   const legL=grp(-.7,2.6,0,b),legR=grp(.7,2.6,0,b);[legL,legR].forEach(l=>{bx(.7,1.6,1,c2,0,-.7,0,l);bx(.45,1.1,.45,c2,0,-1.8,.2,l);bx(.6,.2,1,c2,0,-2.5,.4,l)});
   bx(.2,.6,.2,c2,-.6,3.3,1.6,b);bx(.2,.6,.2,c2,.6,3.3,1.6,b);
   g.userData={legs:[legL,legR],tail,tail2:t2,head,jaw,root:b,type:'x'};return g}
+function acorazadoModel(){
+  const g=new T3.Group(),b=grp(0,0,0,g);const c1='#5a5a46',c2='#3e3e30',pl='#8a8670';
+  bx(1.9,1,2.8,c1,0,1.05,0,b);for(let i=0;i<4;i++)for(let j=-1;j<=1;j++)bx(.42,.22,.5,pl,j*.6,1.62,-1+i*.66,b);
+  for(let i=0;i<5;i++){const sp=bx(.12,.45,.12,'#d8d0b8',(i%2?-.98:.98),1.3,-1.1+i*.55,b,CONE);sp.rotation.z=(i%2?1:-1)*1.2}
+  const head=grp(0,.95,1.55,b);bx(.8,.6,.8,c1,0,0,.2,head);bx(.9,.15,.5,pl,0,.35,.1,head);bx(.08,.08,.04,'#b8f070',-.25,.1,.62,head);bx(.08,.08,.04,'#b8f070',.25,.1,.62,head);
+  const legs=[];[[-.75,.9],[.75,.9],[-.75,-.9],[.75,-.9]].forEach(([x,z])=>{const l=grp(x,.6,z,b);bx(.4,.65,.4,c2,0,-.3,0,l);legs.push(l)});
+  const tail=grp(0,1,-1.4,b);bx(.4,.35,1.6,c1,0,0,-.75,tail);bx(.8,.5,.6,pl,0,0,-1.6,tail);
+  g.userData={legs,tail,head,root:b,type:'c'};return g}
+function escupidorModel(){
+  const m=raptorModel(false);const u=m.userData;
+  m.traverse(o=>{if(o.isMesh){const h=o.material.color.getHexString();if(h==='7d6a3c')o.material=mat('#5a6a3a');else if(h==='5a4a28')o.material=mat('#3e4a28')}});
+  for(let i=-1;i<=1;i+=2){const f=bx(.04,.55,.45,'#c8a03a',i*.2,.05,-.05,u.head);f.rotation.z=i*.7}
+  bx(.06,.22,.5,'#b84a2a',0,.25,0,u.head);return m}
+function tintModel(m,tint,amt){const tc=new T3.Color(tint);m.traverse(o=>{if(o.isMesh&&o.material&&o.material.color&&!o.material.isMeshBasicMaterial){const c=o.material.color.clone().lerp(tc,amt);o.material=mat('#'+c.getHexString())}})}
+function baseMesh(type){
+  switch(type){
+  case 'caminante':return humanoid(['#4d5546','#5a4a3a','#3f4a52','#5a5a4a','#6a5a4a','#3a3a44'][R()*6|0],'#8b9a6e',['#2f3328','#3a3a44','#4a3a2a'][R()*3|0],true);
+  case 'corredor':return humanoid('#6f6a55','#9aa57a','#3a3a30',true,.95);
+  case 'bruto':return humanoid('#4a4f3c','#7b8a5e','#2a2d22',true,1.4);
+  case 'griton':{const m=humanoid('#6a6458','#a8b090','#3a3a30',true,.95);const r=m.userData.root;bx(.16,.14,.04,'#3a0e0a',0,1.6,.22,r);m.userData.arms.forEach(a=>a.rotation.x=-2.6);m.userData.screamer=true;return m}
+  case 'hinchado':{const m=humanoid('#5a5a3a','#9aa060','#3a3a2a',true,1.1);const r=m.userData.root;bx(.75,.8,.7,'#8a9a4a',0,1.15,.12,r,new T3.SphereGeometry(.55,8,6));for(let i=0;i<4;i++)bx(.14,.14,.14,'#c8d06a',(R()-.5)*.6,1+R()*.5,.5,r);return m}
+  case 'soldado':{const m=humanoid('#4a5236','#7b8a5e','#3a3f2a',true,1.05);const r=m.userData.root;bx(.36,.14,.36,'#3a4030',0,1.88,.04,r);bx(.56,.5,.34,'#2f3526',0,1.2,0,r);return m}
+  case 'raptor':return raptorModel(false);case 'raptorp':return raptorModel(true);
+  case 'escupidor':return escupidorModel();
+  case 'cornudo':return cornudoModel();case 'acorazado':return acorazadoModel();
+  default:return rexModel()}}
+const MODEL_KEYS=['caminante','corredor','bruto','griton','hinchado','soldado','raptor','raptorp','escupidor','cornudo','acorazado','rex'];
+const modelKey=t=>MODEL_KEYS.includes(t)?t:modelKey(EDEF[t].base);
+const hitKey=t=>HIT[t]?t:hitKey(EDEF[t].base);
 function makeEnemyMesh(type){
-  let m;
-  if(type==='caminante')m=humanoid(['#4d5546','#5a4a3a','#3f4a52','#5a5a4a','#6a5a4a','#3a3a44'][R()*6|0],'#8b9a6e',['#2f3328','#3a3a44','#4a3a2a'][R()*3|0],true);
-  else if(type==='corredor')m=humanoid('#6f6a55','#9aa57a','#3a3a30',true,.95);
-  else if(type==='bruto')m=humanoid('#4a4f3c','#7b8a5e','#2a2d22',true,1.4);
-  else if(type==='raptor')m=raptorModel(false);else if(type==='raptorp')m=raptorModel(true);
-  else if(type==='cornudo')m=cornudoModel();else m=rexModel();
+  const d=EDEF[type];const m=baseMesh(modelKey(type));
+  if(d.tint)tintModel(m,d.tint,d.boss?.5:.4);
+  if(type==='saltador')tintModel(m,'#8a6a2a',.35);
+  if(d.scale)m.scale.setScalar(d.scale);
+  if(d.mini||d.boss){const r=m.userData.root;const eye=new T3.MeshBasicMaterial({color:d.kind==='d'?0xffb030:0xb8ff70});m.traverse(o=>{if(o.isMesh&&o.material.color&&['c8f08a','b8f070','d8b347'].includes(o.material.color.getHexString()))o.material=eye})}
   const meshes=[];m.traverse(o=>{if(o.isMesh){o.userData.base=o.material;meshes.push(o)}});m.userData.meshes=meshes;return m}
 // hit spheres (local, forward = +z)
 const HIT={
@@ -51,6 +79,10 @@ const HIT={
   raptor:{head:[0,1.38,1.05,.26],body:[[0,.92,0,.5],[0,1.1,.6,.25]]},
   raptorp:{head:[0,1.38,1.05,.26],body:[[0,.92,0,.5],[0,1.1,.6,.25]]},
   cornudo:{head:[0,1.4,2.05,.65],body:[[0,1.45,.4,1],[0,1.45,-.8,1]]},
+  griton:{head:[0,1.6,.06,.2],body:[[0,1.1,0,.34],[0,.52,0,.3]]},
+  hinchado:{head:[0,1.85,.07,.23],body:[[0,1.25,.1,.55],[0,.6,0,.33]]},
+  soldado:{head:[0,1.8,.06,.22],body:[[0,1.22,0,.38],[0,.58,0,.32]]},
+  acorazado:{head:[0,1,1.75,.45],body:[[0,1.2,.5,.95],[0,1.2,-.6,.95]]},
   rex:{head:[0,4.3,3,.95],body:[[0,3.2,0,1.6],[0,3.9,1.8,.9],[0,1.6,0,.9]]},
 };
 
@@ -71,6 +103,13 @@ function weaponShape(k,g){
   case 'machete':bx(.02,.07,.55,steel,0,0,-.3,g);bx(.035,.05,.16,grip,0,0,.03,g);break;
   case 'hacha':bx(.035,.035,.65,wood,0,0,-.22,g);bx(.02,.2,.14,steel,0,.04,-.52,g);break;
   case 'lanza':bx(.03,.03,1.2,wood,0,0,-.45,g);bx(.015,.05,.18,steel,0,0,-1.1,g);break;
+  case 'ballesta':bx(.06,.07,.6,wood,0,0,-.15,g);bx(.7,.04,.05,dark,0,.02,-.42,g);bx(.012,.012,.55,steel,0,.05,-.2,g);bx(.05,.12,.08,grip,0,-.09,.08,g);break;
+  case 'escopetac':bx(.08,.1,.7,'#22241f',0,0,-.25,g);bx(.06,.2,.1,'#22241f',0,-.12,-.1,g);bx(.07,.12,.22,'#2a2c26',0,-.03,.2,g);bx(.04,.04,.55,metal,0,.06,-.3,g);break;
+  case 'francotirador':{bx(.07,.08,1.15,'#2a2d26',0,0,-.4,g);bx(.08,.12,.4,'#3a3d30',0,-.05,.2,g);const sc=bx(.08,.08,.42,'#111',0,.11,-.15,g,CYL);sc.rotation.x=Math.PI/2;bx(.03,.2,.03,metal,-.08,-.12,-.85,g);bx(.03,.2,.03,metal,.08,-.12,-.85,g);break}
+  case 'ametralladora':bx(.1,.12,.9,'#22241f',0,0,-.3,g);bx(.14,.14,.18,'#3a3d30',.08,-.1,-.15,g);bx(.05,.05,.35,metal,0,.02,-.85,g);bx(.07,.12,.25,'#2a2c26',0,-.03,.25,g);bx(.03,.18,.03,metal,0,-.12,-.65,g);break;
+  case 'lanzagranadas':bx(.11,.11,.55,'#3a4030',0,0,-.2,g,CYL).rotation.x=Math.PI/2;bx(.18,.18,.18,'#2a2c26',0,-.02,-.02,g,CYL).rotation.x=Math.PI/2;bx(.06,.14,.08,grip,0,-.12,.1,g);break;
+  case 'katana':bx(.012,.04,.85,steel,0,0,-.5,g);bx(.08,.06,.02,'#b8952a',0,0,-.07,g);bx(.03,.035,.22,'#2a1a14',0,0,.05,g);break;
+  case 'mazo':bx(.04,.04,.85,wood,0,0,-.3,g);bx(.16,.16,.3,'#4a4d50',0,0,-.72,g);break;
   case 'build':{const lg=bx(.05,.05,.3,'#8a6b45',0,0,-.1,g,CYL);lg.rotation.x=Math.PI/2;break}
   }return g}
 const vm={};let vmRoot=grp(0,0,0,wScene),vmFlash;vmRoot.scale.setScalar(.75);

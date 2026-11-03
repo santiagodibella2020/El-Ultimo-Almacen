@@ -2,7 +2,16 @@
 
 Supervivencia en primera persona o con vista de arriba. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.2.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.3.0.
+
+## Novedades de la 0.3
+
+- 12 enemigos comunes: 6 podridos (caminante, corredor, bruto, gritón, hinchado que explota, soldado con chaleco) y 6 dinosaurios (raptor, raptor pálido, cornudo, saltador, escupidor de ácido, acorazado).
+- 6 minijefes, cada uno en su zona peligrosa del mapa (puesto militar, frigorífico, hospital, cañadón, salina y laguna). Sueltan un trofeo y su zona queda tranquila tres días.
+- 2 jefes que se invocan en la Piedra Verde con trofeos y lo que sueltan los enemigos comunes: el Coloso de la Bruma (podridos) y el Rex Podrido (dinos).
+- Calendario real: la partida empieza el 9 de noviembre y cada día de juego avanza un día. Estaciones del hemisferio sur (primavera el 21 de septiembre, verano el 21 de diciembre, otoño el 21 de marzo, invierno el 21 de junio) con temperatura, frío, calor, nieve y vegetación que cambia.
+- Vehículos de carga: además de la camioneta hay un furgón (180 kg), un camión (420 kg) y un tractor con acoplado (300 kg). El camión y el tractor aparecen rotos y se arreglan con herramientas y chatarra.
+- 7 armas nuevas: ballesta, escopeta de combate, rifle de francotirador, ametralladora, lanzagranadas, katana y mazo. Campera de abrigo para el invierno.
 
 ## Novedades de la 0.2
 
@@ -15,7 +24,7 @@ Estado: **acceso anticipado (prototipo)**, versión 0.2.0.
 
 ## Controles
 
-WASD moverse · Shift correr · C agacharse · Espacio saltar · Clic disparar o pegar · Clic derecho apuntar · R recargar · 1-9 armas (Q la anterior) · E usar o revisar · G cargar nafta · Tab inventario, salud y habilidades · M mapa · X comer o tomar · H vendar · B construir · L linterna · T órdenes al raptor · **V cambiar entre primera persona y vista de arriba** · F11 pantalla completa · Esc pausa.
+WASD moverse · Shift correr · C agacharse · Espacio saltar · Clic disparar o pegar · Clic derecho apuntar · R recargar · 1-9 o rueda del mouse armas (Q la anterior) · E usar, revisar o reparar · G cargar nafta · Tab inventario, salud y habilidades · M mapa · X comer o tomar · H vendar · B construir · L linterna · T órdenes al raptor · **V cambiar entre primera persona y vista de arriba** · F11 pantalla completa · Esc pausa.
 
 ## Qué hay en este repositorio
 
@@ -29,15 +38,10 @@ WASD moverse · Shift correr · C agacharse · Espacio saltar · Clic disparar o
 
 ## Cómo conseguir el .exe
 
-Cada vez que se sube un cambio a `main`, GitHub compila el juego solo:
+Cada vez que se sube un cambio a `main`, GitHub compila el juego solo (tarda unos 5 minutos) y lo publica en **Releases** con el número de versión de `package.json`. La última siempre está en [Releases → Latest](https://github.com/santiagodibella2020/El-Ultimo-Almacen/releases/latest), sin iniciar sesión:
 
-1. Entrá a la pestaña **Actions** del repositorio.
-2. Abrí la última ejecución de **Compilar para Windows** (tarda unos 5 minutos).
-3. Abajo, en **Artifacts**, descargá `ElUltimoAlmacen-windows`. Adentro hay:
-   - `ElUltimoAlmacen-0.1.0-portable.exe`: se abre con doble clic, no hace falta instalar.
-   - `ElUltimoAlmacen-0.1.0-steam.zip`: la carpeta del juego descomprimida, que es lo que se sube a Steam.
-
-Para publicar una versión numerada, se crea un tag (por ejemplo `v0.2.0`) y el workflow la adjunta en **Releases**.
+- `ElUltimoAlmacen-<versión>-portable.exe`: se abre con doble clic, no hace falta instalar.
+- `ElUltimoAlmacen-<versión>-steam.zip`: la carpeta del juego descomprimida, que es lo que se sube a Steam.
 
 ## Probarlo en la compu sin compilar
 
