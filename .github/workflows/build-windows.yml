@@ -30,7 +30,7 @@ jobs:
         run: npm run dist:win
 
       - name: Guardar los archivos compilados
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: ElUltimoAlmacen-windows
           path: |
@@ -43,7 +43,7 @@ jobs:
         run: echo "v=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
 
       - name: Publicar la versión para descargar
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: v${{ steps.ver.outputs.v }}
           name: El Último Almacén ${{ steps.ver.outputs.v }}
