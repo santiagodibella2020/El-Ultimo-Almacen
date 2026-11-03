@@ -33,7 +33,7 @@ function texturedMat(m){if(TMATS.has(m))return TMATS.get(m);let out=m;
   TMATS.set(m,out);return out}
 
 // ---------- Static batching: thousands of world boxes become a few dozen meshes ----------
-let batched=[];
+let batched=[];const VCTEX={};const vcTexMat=k=>VCTEX[k]||(VCTEX[k]=new T3.MeshLambertMaterial({vertexColors:true,map:TEX[k]}));
 function mergeStatic(){
   buildTextures();batched=[];world.updateMatrixWorld(true);
   const dyn=new Set(),addD=o=>{if(o)dyn.add(o)};
@@ -45,21 +45,21 @@ function mergeStatic(){
   world.traverse(o=>{if(!o.isMesh||o.isInstancedMesh||o.isSkinnedMesh||skip(o))return;const m=o.material;if(Array.isArray(m)||m.transparent)return;
     const g=o.geometry;if(!g||!g.attributes.position||!g.attributes.normal)return;
     const p=new T3.Vector3().setFromMatrixPosition(o.matrixWorld);const key=Math.floor((p.x+HALF)/CELL)+','+Math.floor((p.z+HALF)/CELL);
-    let byMat=buckets.get(key);if(!byMat)buckets.set(key,byMat=new Map());let arr=byMat.get(m);if(!arr)byMat.set(m,arr=[]);arr.push(o);victims.push(o)});
+    let byMat=buckets.get(key);if(!byMat)buckets.set(key,byMat=new Map());const plain=m.isMeshLambertMaterial&&!m.map&&!m.vertexColors&&!(m.emissive&&m.emissive.getHex());const gk=plain?'vc:'+texKind(m):m;let arr=byMat.get(gk);if(!arr)byMat.set(gk,arr=[]);arr.push(o);victims.push(o)});
   const v=new T3.Vector3(),n=new T3.Vector3(),nm3=new T3.Matrix3();
-  for(const byMat of buckets.values())for(const [m,list] of byMat){
+  for(const byMat of buckets.values())for(const [gk,list] of byMat){const m=list[0].material,vcK=typeof gk==='string'?gk.slice(3):null;
     if(list.length<2){continue}
     let vc=0,ic=0;for(const o of list){const g=o.geometry;vc+=g.attributes.position.count;ic+=g.index?g.index.count:g.attributes.position.count}
-    const pos=new Float32Array(vc*3),nor=new Float32Array(vc*3),uv=new Float32Array(vc*2),idx=vc>65535?new Uint32Array(ic):new Uint16Array(ic);
+    const col=vcK?new Float32Array(vc*3):null;const pos=new Float32Array(vc*3),nor=new Float32Array(vc*3),uv=new Float32Array(vc*2),idx=vc>65535?new Uint32Array(ic):new Uint16Array(ic);
     let vo=0,io=0,cast=false;
-    for(const o of list){const g=o.geometry,P=g.attributes.position,N=g.attributes.normal;nm3.getNormalMatrix(o.matrixWorld);cast=cast||o.castShadow;
+    for(const o of list){const oc=o.material.color;const g=o.geometry,P=g.attributes.position,N=g.attributes.normal;nm3.getNormalMatrix(o.matrixWorld);cast=cast||o.castShadow;
       for(let i=0;i<P.count;i++){v.fromBufferAttribute(P,i).applyMatrix4(o.matrixWorld);n.fromBufferAttribute(N,i).applyMatrix3(nm3).normalize();
         const k=(vo+i);pos[k*3]=v.x;pos[k*3+1]=v.y;pos[k*3+2]=v.z;nor[k*3]=n.x;nor[k*3+1]=n.y;nor[k*3+2]=n.z;
-        const ax=Math.abs(n.x),ay=Math.abs(n.y),az=Math.abs(n.z);let u,w;if(ay>=ax&&ay>=az){u=v.x;w=v.z}else if(ax>=az){u=v.z;w=v.y}else{u=v.x;w=v.y}uv[k*2]=u/2.4;uv[k*2+1]=w/2.4}
+        const ax=Math.abs(n.x),ay=Math.abs(n.y),az=Math.abs(n.z);let u,w;if(ay>=ax&&ay>=az){u=v.x;w=v.z}else if(ax>=az){u=v.z;w=v.y}else{u=v.x;w=v.y}if(col){col[k*3]=oc.r*1.08;col[k*3+1]=oc.g*1.08;col[k*3+2]=oc.b*1.08}uv[k*2]=u/2.4;uv[k*2+1]=w/2.4}
       if(g.index){for(let i=0;i<g.index.count;i++)idx[io++]=g.index.getX(i)+vo}else for(let i=0;i<P.count;i++)idx[io++]=vo+i;
       vo+=P.count}
     const bg=new T3.BufferGeometry();bg.setAttribute('position',new T3.BufferAttribute(pos,3));bg.setAttribute('normal',new T3.BufferAttribute(nor,3));bg.setAttribute('uv',new T3.BufferAttribute(uv,2));bg.setIndex(new T3.BufferAttribute(idx,1));bg.computeBoundingSphere();bg.computeBoundingBox();
-    const mesh=new T3.Mesh(bg,texturedMat(m));mesh.castShadow=cast;mesh.receiveShadow=true;mesh.matrixAutoUpdate=false;world.add(mesh);batched.push(mesh);
+    if(col)bg.setAttribute('color',new T3.BufferAttribute(col,3));const mesh=new T3.Mesh(bg,vcK?vcTexMat(vcK):texturedMat(m));mesh.castShadow=cast;mesh.receiveShadow=true;mesh.matrixAutoUpdate=false;world.add(mesh);batched.push(mesh);
     for(const o of list)o.userData.merged=true}
   for(const o of victims)if(o.userData.merged&&o.parent)o.parent.remove(o);
   // terrain detail: grass/dirt pattern on top of the vertex colors

@@ -1,8 +1,17 @@
 # El Último Almacén
 
-Supervivencia en primera persona o con vista de arriba. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
+Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.4.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.5.0.
+
+## Novedades de la 0.5
+
+- El juego queda solo en primera persona: se quitó la vista de arriba.
+- Armas nuevas por dentro y por fuera: cada una tiene miras, cargador, rieles, madera con veta y metal con brillo, y se ven las manos con guantes y las mangas. Al disparar salta el casquillo y sale humo del caño.
+- Cielo con nubes que se mueven, sol y estrellas de noche.
+- Pasto que se mueve con el viento y cambia de color con la estación, flores en primavera y verano, piedras por todo el mapa y basura en el pueblo y la ruta (cubiertas, tambores, cajones, bolsas, conos y postes caídos).
+- Enemigos con más detalle: bocas con dientes, ropa rota, costillas a la vista, sangre, pelo, manos y zapatos; los dinosaurios tienen garras, púas, fosas nasales y crestas.
+- Aunque hay más detalle, en el pueblo se dibujan menos objetos por cuadro que en la 0.4 (de unos 640 a unos 490).
 
 ## Novedades de la 0.4
 
@@ -31,7 +40,7 @@ Estado: **acceso anticipado (prototipo)**, versión 0.4.0.
 
 ## Controles
 
-WASD moverse · Shift correr · C agacharse · Espacio saltar · Clic disparar o pegar · Clic derecho apuntar · R recargar · 1-9 o rueda del mouse armas (Q la anterior) · E usar, revisar o reparar · G cargar nafta · Tab inventario, salud y habilidades · M mapa · X comer o tomar · H vendar · B construir · L linterna · T órdenes al raptor · **V cambiar entre primera persona y vista de arriba** · F11 pantalla completa · Esc pausa.
+WASD moverse · Shift correr · C agacharse · Espacio saltar · Clic disparar o pegar · Clic derecho apuntar · R recargar · 1-9 o rueda del mouse armas (Q la anterior) · E usar, revisar o reparar · G cargar nafta · Tab inventario, salud y habilidades · M mapa · X comer o tomar · H vendar · B construir · L linterna · T órdenes al raptor · F11 pantalla completa · Esc pausa.
 
 ## Qué hay en este repositorio
 

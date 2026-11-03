@@ -39,7 +39,7 @@ function genContracts(){
     S.contracts.push({who:CLIENTS[R()*CLIENTS.length|0],item,qty,reward:Math.round(v*qty*(1.7+R()*.6)+20),dl:S.day+(R()<.5?0:1)})}}
 
 // ================= RUNTIME =================
-let gstate='loading',locked=false,debugNoLock=false,camMode=settings.cam==='iso'?'iso':'fp';
+let gstate='loading',locked=false,debugNoLock=false,camMode='fp';
 const P={x:0,y:2,z:0,vy:0,yaw:0,pitch:0,onGround:true,bob:0,inTruck:false,aim:null};
 let fireCd=0,reloadT=0,reloadMax=1,swingT=0,healCd=0,stamina=100,invuln=0,lastHitT=99,recoil=0,recoilYaw=0,adsT=0,shake=0,hurtFx=0,flashOn=true,stepT=0;
 let pendingLevels=0,time=0,spawnT=0,custT=8,exploreT=0,hordeLeft=0,hordeT=0,rexPending=false,lootMsgT=0,fullMsgT=0,groanT=3,hudT=0,holdT=0,holdKey=null,buildMode=false,buildSel=0,buildRot=0,ghost=null,lastWeapon='pistola',thunderT=0,lightning=0;
@@ -96,7 +96,7 @@ function startGame(state){
   for(let i=0;i<Math.round(14*SB('zpop'));i++)spawnTown(true);
   equip();
   $('loading').hidden=true;$('hud').hidden=false;
-  if(S.tutorial<1){S.tutorial=1;hint(L('Explorá, juntá mercadería y volvé al almacén antes de las 20:00.'),800);hint(L('El pueblo está al sur por la ruta: casas y negocios para revisar mueble por mueble.'),9000);hint(L('V cambia entre primera persona y vista de arriba.'),17000);hint(L('Disparar hace ruido y atrae a todo lo que ande cerca.'),25000)}
+  if(S.tutorial<1){S.tutorial=1;hint(L('Explorá, juntá mercadería y volvé al almacén antes de las 20:00.'),800);hint(L('El pueblo está al sur por la ruta: casas y negocios para revisar mueble por mueble.'),9000);hint(L('Disparar hace ruido y atrae a todo lo que ande cerca.'),25000)}
   resume();
 }
 function setWallAlive(i,alive){const w=walls[i];w.mesh.visible=alive;w.box.dead=!alive}
