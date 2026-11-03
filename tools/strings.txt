@@ -1,0 +1,631 @@
+{s} subió a nivel {n}.
+Partida guardada
+No se pudo guardar. Usá el código de partida de la pausa.
+Explorá, juntá mercadería y volvé al almacén antes de las 20:00.
+El pueblo está al sur por la ruta: casas y negocios para revisar mueble por mueble.
+V cambia entre primera persona y vista de arriba.
+Disparar hace ruido y atrae a todo lo que ande cerca.
+Conseguiste: {w}. Tecla {n}.
+{w} en mejor estado: lo cambiaste.
+Necesitás carpintería {n}.
+Necesitás un martillo.
+Te faltan materiales.
+Pinchos
+El raptor quedó tirado y débil. Con carne en la mochila podés domesticarlo (mantené E).
+Torreta
+Raptor
+Camioneta
+¡Cayó el Rex Podrido! Juntá el ámbar.
+cabeza
+¡Rompieron un tramo de la empalizada!
+Rompieron una defensa.
+¡Están saqueando tu almacén!
+Herida: {w}. Vendala con H.
+Estás sangrando y no tenés vendas, botiquín ni tela.
+Vendaste: {w}.
+No tenés heridas abiertas y la vida está completa.
+No tenés vendas ni botiquín en la mochila.
+Usaste: {i}.
+Te pusiste: {i}.
+No tenés heridas para desinfectar.
+Desinfectaste las heridas.
+Tomaste analgésicos. El dolor baja por unas horas.
+Los antibióticos frenaron la infección.
+Tomaste antibióticos, pero no estabas infectado.
+La linterna ya tiene pilas cargadas.
+Cambiaste las pilas de la linterna.
+Eso estaba podrido. Te cayó mal.
+La carne cruda te cayó mal. Mejor cocinala en una fogata.
+Tomaste: {i}.
+Comiste: {i}.
+No tenés hambre ni sed.
+No tenés comida ni bebida en la mochila.
+Se cerró la herida: {w}.
+{n} quedó mal herida y escapó. Vuelve al almacén al amanecer.
+¡Domesticaste un raptor! Se llama Chispa. T para que te siga o cuide el almacén.
+El tiempo cambia: {w}.
+Está oscureciendo. Volvé al almacén antes de las 20:00.
+Noche {d}: la bruma trae {n} podridos.
+Algo enorme se mueve en el desierto.
+¡El Rex Podrido viene hacia el almacén!
+Se venció el encargo de {who}. Bajó tu reputación.
+Amanece. La bruma se retira y {n} podridos se desploman.
+{n} volvió al almacén.
+Día {d}. Ayer vendiste ${m}. Hoy buscan: {i}.
+Se pudrieron {n} alimentos.
+La bruma no te deja dormir de noche.
+No tenés sueño.
+Hay peligro cerca: no podés dormir.
+Estás sangrando: vendate primero.
+Ya es tarde para dormir.
+Dormiste {h} horas.
+Mientras tanto vendiste ${m}.
+Sin {a}. Usá un arma cuerpo a cuerpo o comprá en el almacén.
+¡Se rompió: {w}!
+Reparaste: {w}.
+Día {d}
+La infección te ganó. Los caravaneros te encontraron y te curaron a medias.
+Perdiste lo que llevabas: {l}.
+No llevabas nada en la mochila.
+Mientras estabas inconsciente te robaron ${m}.
+W acelerar · S frenar o reversa · A/D doblar · E bajar
+No hay lugar para bajar acá.
+Sin nafta. Cargá combustible con G o desde el taller.
+Un cliente se fue sin nada: los estantes están vacíos.
+Un cliente vio comida podrida en el estante y se fue enojado.
+Vendiste {i} ×{q} a ${p} c/u (total ${t}).
+Venta en el almacén: +${t}
+Le pareció caro: {i} a ${p}. Se fue sin comprar.
+Hambre
+Sed
+Sangrando
+Dolor
+Infectado
+Intoxicado
+Pánico
+Mojado
+Sobrecarga
+El Último Almacén
+Partida guardada.
+No se pudo guardar. Copiá el código de abajo.
+Código copiado.
+Seleccioné el código: copialo con Ctrl+C.
+Ese código no es válido. Revisá que esté completo.
+PUEBLO
+ALMACÉN
+Blanco: vos · Rojo: camioneta · Puntos claros: fósiles · M o Esc para cerrar
+Nivel {n}
+Ya tenés {n}
+Nueva
+Sin mochila
+Ponértela
+Tomar
+Comer
+Usar
+perecedero
+Tirar
+La mochila está vacía.
+Armas
+en la mano
+Equipar
+Reparar con cinta
+Munición
+Vida
+Cansancio
+Heridas
+Vendada
+Dejó de sangrar
+Desinfectada
+Sin heridas.
+Infección de la bruma: {n}%. Solo los antibióticos la frenan. Al llegar al 100% te va a matar de a poco.
+Estás intoxicado por comer algo en mal estado. Se pasa solo con el tiempo.
+Vendar o curar (H)
+Mejoras elegidas
+Todavía ninguna. Subí de nivel para elegir.
+Guardar
+Todo
+Vacío.
+No te entra más: llevás demasiado peso.
+Descargaste de la mochila: {l}.
+De la camioneta: {l}.
+noche
+Plata
+Reputación
+Hoy
+Encargos
+Llevar 1
+Dejar 1
+encima
+guardada
+Llevar
+Al entrar se descargan solos los materiales y objetos de valor de la mochila, y la caja de la camioneta si está estacionada cerca. Comida, bebida, medicina y herramientas quedan encima.
+Mochila: {a} de {b} kg.
+Producto
+Depósito
+Mochila
+El depósito está vacío. Salí a buscar mercadería.
+Chance de que lo compren: {n}%
+Vacío
+Estante {n}
+el más buscado hoy
+Precio
+Lo pagan bien hasta ~${n}
+{n} en depósito
+Elegí un producto del depósito para venderlo.
+Hoy en demanda: {i}. Los clientes vienen de 7:00 a 19:00 aunque estés afuera y compran de lo que haya en los estantes. Precio alto: más plata por venta, pero más gente se va sin comprar y baja tu reputación.
+Los encargos pagan mucho más que el estante y suben tu reputación. Se entregan con lo que tengas en el depósito. Si se vencen, la reputación baja.
+Quiere: {i} ×{q}.
+Entregado.
+Vence hoy a las 19:00.
+Vence mañana a las 19:00.
+Paga ${r} · tenés {n}
+Listo
+Entregar
+No hay encargos por ahora. Mañana llegan nuevos.
+Necesitás: {u} (en Mejoras).
+Necesitás: {t}.
+Usa:
+Va a tu munición
+Va a tus armas
+Va al depósito
+Fabricar
+Empalizada al {n}%
+Hay {n} tramos rotos por donde pueden entrar.
+Cada chatarra o tabla repara 100 puntos.
+Costo: {n} · tenés {h}
+Reparar
+Tanque de la camioneta
+Tiene {n}% de nafta. Cada combustible carga 30%.
+La camioneta tiene que estar estacionada cerca del almacén.
+Combustible en depósito: {n}
+Cargar
+Completo
+Comprar ${p}
+Lo comprás a los caravaneros que pasan por la ruta. Más caro que fabricarlo, pero al toque.
+Tenés {n}
+En mochila: {n}
+En depósito: {n}
+Ya es tuya
+Llega el día {d}
+Premio ${r}
+Cumplida
+Pendiente
+Tu historia
+Últimos movimientos del mostrador
+Todavía no pasó ningún cliente.
+No entra en la mochila.
+Fabricaste: {r}
+Reparaste la empalizada con {n} materiales.
+Tanque al {n}%.
+{who} te pagó ${r}.
+Compraste: {u}.
+No entraba en la mochila: quedó en el depósito.
+Día {d} · ${m}
+Generando el mundo…
+Algo falló al cargar. Recargá la página.
+Personalizada
+Elegí cada opción a tu gusto.
+Sí
+No
+Pantalla completa
+Salir de pantalla completa
+Calidad
+Alta (sombras)
+Media
+Baja (más fluido)
+Escala de resolución
+Campo de visión
+Brillo
+Grano de película
+Filtro de color crudo
+Cámara al empezar
+Primera persona
+Vista de arriba
+Volumen general
+Efectos
+Ambiente (lluvia, viento)
+Sensibilidad del mouse
+Sensibilidad al apuntar
+Invertir eje vertical
+Moverte
+Correr
+Agacharte (menos ruido)
+Espacio
+Saltar · frenar la camioneta
+Clic
+Disparar o pegar
+Clic der.
+Apuntar
+Recargar · girar construcción
+Armas · arma anterior
+Usar, abrir, revisar · cargar nafta
+Inventario, salud y habilidades
+Mapa
+Comer o tomar
+Vendar y curar
+Construir
+Linterna
+Órdenes a tu raptor
+Cambiar cámara
+Pausa
+Teclas
+Idioma
+Mostrar consejos
+Algunos carteles del mundo cambian de idioma al volver a cargar la partida.
+No se pudo generar el mundo: 
+Vista de arriba: apuntás con el mouse. Rueda para acercar.
+Agachado: hacés menos ruido.
+De pie.
+Construiste: {b}.
+No se puede construir ahí.
+La linterna no tiene pilas.
+Linterna prendida
+Linterna apagada
+{n} te sigue.
+{n} se queda cuidando el almacén.
+Se agotaron las pilas de la linterna. Con L cambiás si tenés repuesto.
+a la caja
+La caja de la camioneta está llena.
+Llevás demasiado peso. Dejá cosas o cargalas en la camioneta.
+Meta cumplida: {g}. Premio ${r}.
+E · Bajarse
+E · Atender el almacén
+E · Dormir
+Cansancio {n}%
+E · Estante {n}
+E · Subir a la camioneta
+Nafta {n}%
+G · Cargar 1 combustible
+Cargaste nafta: +30%.
+Mantené E · Cocinar {n} carne
+Cocinaste {n} carne asada.
+Fogata
+Traé carne cruda para cocinarla
+Raptor debilitado
+Ya tenés un raptor
+Mantené E · Domesticar raptor
+Le das 1 carne
+Necesitás carne en la mochila para domesticarlo
+E · Revisar: {c}
+Ya revisado
+Mantené E · Excavar fósiles
+Quedan {n}
+Algo se movió bajo la arena…
+Pueblo
+Caja {a}/{b} kg
+NOCHE · BRUMA
+ATARDECER
+AMANECER
+DÍA
+Pilas {n}%
+{i} ×{q} para {who} · ${r}
+hoy 19:00
+herida
+Estado
+Manos vacías
+R girar
+Clic construir · B salir
+Lata de comida
+Pan
+Fruta
+Leche
+Galletitas
+Chocolate
+Carne cruda
+Carne asada
+Comida podrida
+Botella de agua
+Gaseosa
+Venda
+Desinfectante
+Analgésicos
+Antibióticos
+Botiquín
+Madera
+Tablas
+Clavos
+Chapa
+Chatarra
+Cinta adhesiva
+Cuerda
+Tela
+Pólvora
+Combustible
+Pilas
+Encendedor
+Serrucho
+Caja de herramientas
+Cuero
+Hueso fósil
+Colmillo
+Joyas
+Ámbar
+Riñonera
+Mochila escolar
+Mochila de campamento
+Bolso militar
+Pistola 9 mm
+Revólver
+Escopeta
+Rifle de caza
+Fusil de asalto
+Cuchillo
+Sartén
+Bate de béisbol
+Martillo
+Palanca
+Machete
+Hacha
+Lanza
+Caminante
+Corredor
+Bruto
+Raptor podrido
+Cornudo
+Rex Podrido
+Heladera
+Alacena
+Armario
+Botiquín de baño
+Escritorio
+Banco de herramientas
+Góndola
+Estante de farmacia
+Estante de ferretería
+Armero
+Mostrador
+Baúl del auto
+Tacho de basura
+Surtidor
+Caja
+Estante extra
+Un producto más a la venta al mismo tiempo.
+Muros reforzados
+Toda la empalizada aguanta más golpes.
+Torreta automática
+Dispara sola a lo que se acerque. Va en una esquina del patio.
+Fogón
+Permite cocinar carne asada en el taller.
+Banco de recarga
+Permite fabricar munición con pólvora.
+Heladera a nafta
+La comida del depósito se pudre mucho más lento.
+Cosido de mochila
++4 kg de capacidad en cualquier mochila.
+Caja de carga
++40 kg en la caja de la camioneta.
+Linterna potente
+El haz llega mucho más lejos y gasta menos pilas.
+Cartel luminoso
+Atrae más clientes durante el día.
+Barricada
+Frena a los podridos. La rompen a golpes.
+Lastiman y frenan a lo que pase por encima.
+Alumbra de noche. Con E cocinás la carne cruda.
+Muro de tablas
+Mucho más fuerte que la barricada. Necesita martillo y carpintería 2.
+Muro de chapa
+Lo más duro que podés levantar. Carpintería 4.
+Puntería
+Menos dispersión y recarga más rápida.
+Cuerpo a cuerpo
+Más daño y menos desgaste de las armas.
+Carpintería
+Defensas más fuertes y nuevos muros.
+Supervivencia
+Menos hambre y sed, talás más rápido.
+Primeros auxilios
+Las curaciones rinden más y las heridas cierran antes.
+Atletismo
+Más aguante y velocidad al correr.
+Población de podridos
+Baja
+Normal
+Alta
+Extrema
+Dinosaurios
+Pocos
+Normales
+Muchos
+Botín
+Escaso
+Abundante
+Duración del día
+12 min
+24 min
+36 min
+48 min
+Hambre y sed
+Lentas
+Rápidas
+Hordas nocturnas
+Suaves
+Brutales
+Infección de la bruma
+Desactivada
+Activada
+La comida se pudre
+Aprendiz
+Pocos podridos, mucho botín y días largos. Para conocer el mundo.
+Sobreviviente
+La experiencia pensada: dura pero justa.
+Apocalipsis
+El pueblo está lleno, el botín escasea y las noches son brutales.
+Tablas ×3
+Vendas ×2
+Vendas ×3
+Balas 9 mm ×10
+Balas .38 ×6
+Cartuchos ×4
+Balas de rifle ×5
+Balas 5.56 ×15
+Pulso firme
++15% de daño con armas de fuego.
+Piel dura
++25 de vida máxima.
+Piernas largas
++8% de velocidad.
+Manos rápidas
+Recargás un 20% más rápido.
+Mula de carga
++5 kg en la mochila.
+Labia
+Los clientes aceptan precios un 8% más altos.
+Carnicero
+Los animales sueltan 1 carne extra.
+Carroñero
+Encontrás más cosas en muebles, cajas y autos.
+Filo
++30% de daño cuerpo a cuerpo y las armas se gastan menos.
+Segundo aire
+Recuperás vida sola si pasan 5 s sin que te peguen.
+Ojo de halcón
+Los tiros a la cabeza hacen un 30% más.
+Pulmones
++30% de aguante para correr.
+Estómago de fierro
+El hambre y la sed bajan un 30% más lento.
+Domador
+Tu raptor pega un 50% más fuerte.
+Conductor
+La camioneta gasta menos nafta y atropella más fuerte.
+Sangre espesa
+Las mordidas casi nunca se infectan.
+Sobreviví 3 noches
+Vendé 50 productos
+Completá 5 encargos
+Domesticá un raptor
+Revisá 30 muebles del pueblo
+Hacé 50 tiros a la cabeza
+Construí 5 defensas
+Atropellá 20 bichos con la camioneta
+Llevá una habilidad a nivel 5
+Ganá $3.000 en ventas
+Cazá al Rex Podrido
+Sobreviví 10 noches
+Ocho perdigones por disparo. Brutal de cerca.
+Seis tiros pesados que atraviesan a dos.
+Clic derecho para mirar por la mira. Atraviesa hasta tres enemigos.
+Automático: mantené el clic. Gasta munición rápido.
+Pega muy fuerte y tala en dos golpes.
+Balas 9 mm ×20
+Para la pistola.
+Balas .38 ×12
+Para el revólver.
+Cartuchos ×8
+Para la escopeta.
+Balas de rifle ×10
+Para el rifle.
+Balas 5.56 ×30
+Para el fusil.
+Para el sangrado. Va a la mochila.
+Cura mucho, desinfecta y frena el sangrado.
+Curan la infección de la bruma.
+Agua
+Para la sed. Va a la mochila.
+Para la linterna.
+Clavos ×20
+Para los muros. Va al depósito.
+Para la camioneta. Va al depósito.
+Comida
+Bebida
+Medicina
+Material
+Herramienta
+Valioso
+Balas 9 mm
+Balas .38
+Cartuchos
+Balas de rifle
+Balas 5.56
+Supermercado
+Farmacia
+Ferretería
+Armería
+Estación de servicio
+Casa
+Rasguño
+Corte profundo
+Mordida
+Despejado
+Nublado
+Lluvia
+Tormenta
+Niebla
+Mercado
+Taller
+Gasolinera
+Noches sobrevividas
+Enemigos abatidos
+Tiros a la cabeza
+Muebles revisados
+Productos vendidos
+Encargos cumplidos
+Atropellados
+Rex Podridos cazados
+N
+NE
+E
+SE
+S
+SO
+O
+NO
+Cargando el mundo…
+Aguante
+E bajar · Espacio frenar
+Hacé clic para seguir
+El mouse se usa para mirar. Esc pausa.
+Año 3 de la Bruma · Ruta 40, kilómetro 1.112
+El Último
+Almacén
+Continuar
+Nueva partida
+Elegí la dificultad y las reglas del mundo
+Opciones
+Gráficos, sonido, controles e idioma
+Salir
+Hace tres inviernos cayó la Piedra Verde. Su bruma levantó a los muertos: a la gente, y también a los huesos que dormían bajo la tierra. Vos tenés lo único abierto en cien kilómetros: un almacén con empalizada, una camioneta vieja y una pistola. Al sur, por la ruta, quedó un pueblo entero para saquear. De noche, la bruma trae a los podridos hasta tu puerta.
+En pantallas táctiles no se puede jugar: abrilo desde la PC.
+Acceso anticipado
+Elegí tu apocalipsis
+Reglas del mundo
+Semilla del mapa (opcional)
+Ya tenés una partida guardada: empezar una nueva la reemplaza.
+Empezar
+Volver
+Configuración
+Pantalla
+Sonido
+Controles
+Juego e idioma
+Tu almacén
+Volver · E
+Estantes
+Mejoras
+Caravaneros
+Metas
+Personaje
+Cerrar · Tab
+Inventario
+Salud
+Habilidades
+Tomar todo
+Cerrar · E
+Tu mochila
+Adentro
+Subiste de nivel
+Elegí una mejora. Se acumulan si repetís.
+Respirá un poco
+Seguir jugando
+Guardar ahora
+Menú principal
+Salir del juego
+Código de partida
+Copiá este código para tener un respaldo o pasar tu partida a otra compu. Pegá uno y tocá Cargar para recuperarla.
+Copiar código
+Cargar código
+Te agarraron
+Despertar en el almacén
+Cansado
+Agotado

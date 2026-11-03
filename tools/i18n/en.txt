@@ -1,0 +1,631 @@
+1|{s} rose to level {n}.
+2|Game saved
+3|Couldn't save. Use the save code in the pause menu.
+4|Explore, gather goods and get back to the store before 20:00.
+5|The town is south along the road: houses and shops to search piece by piece.
+6|V switches between first person and top-down view.
+7|Gunfire makes noise and draws everything nearby.
+8|You got: {w}. Key {n}.
+9|{w} in better shape: you swapped it.
+10|You need carpentry {n}.
+11|You need a hammer.
+12|You're missing materials.
+13|Spikes
+14|The raptor is down and weak. With meat in your bag you can tame it (hold E).
+15|Turret
+16|Raptor
+17|Truck
+18|The Rotten Rex has fallen! Grab the amber.
+19|head
+20|They broke a section of the palisade!
+21|They broke a defense.
+22|They're looting your store!
+23|Wound: {w}. Bandage it with H.
+24|You're bleeding and have no bandages, first aid kit or cloth.
+25|You bandaged: {w}.
+26|No open wounds and full health.
+27|No bandages or first aid kit in your bag.
+28|You used: {i}.
+29|You put on: {i}.
+30|You have no wounds to disinfect.
+31|You disinfected your wounds.
+32|You took painkillers. The pain eases for a few hours.
+33|The antibiotics stopped the infection.
+34|You took antibiotics, but you weren't infected.
+35|The flashlight already has fresh batteries.
+36|You changed the flashlight batteries.
+37|That was rotten. It made you sick.
+38|The raw meat made you sick. Better cook it on a campfire.
+39|You drank: {i}.
+40|You ate: {i}.
+41|You're not hungry or thirsty.
+42|No food or drink in your bag.
+43|A wound closed: {w}.
+44|{n} got badly hurt and ran off. She'll be back at the store at dawn.
+45|You tamed a raptor! Her name is Chispa. T to have her follow you or guard the store.
+46|The weather changes: {w}.
+47|It's getting dark. Get back to the store before 20:00.
+48|Night {d}: the mist brings {n} rotters.
+49|Something huge is moving in the desert.
+50|The Rotten Rex is coming for the store!
+51|{who}'s order expired. Your reputation dropped.
+52|Dawn. The mist pulls back and {n} rotters collapse.
+53|{n} is back at the store.
+54|Day {d}. Yesterday you sold ${m}. Today they want: {i}.
+55|{n} food items went bad.
+56|The mist won't let you sleep at night.
+57|You're not sleepy.
+58|Danger nearby: you can't sleep.
+59|You're bleeding: bandage yourself first.
+60|It's too late to sleep.
+61|You slept {h} hours.
+62|Meanwhile you sold ${m}.
+63|Out of {a}. Use a melee weapon or buy some at the store.
+64|It broke: {w}!
+65|You repaired: {w}.
+66|Day {d}
+67|The infection got you. The caravan found you and patched you up as best they could.
+68|You lost what you were carrying: {l}.
+69|Your bag was empty.
+70|While you were out cold they stole ${m}.
+71|W accelerate · S brake or reverse · A/D steer · E get out
+72|No room to get out here.
+73|Out of gas. Refuel with G or at the workshop.
+74|A customer left empty-handed: the shelves are empty.
+75|A customer saw rotten food on the shelf and left angry.
+76|You sold {i} ×{q} at ${p} each (total ${t}).
+77|Sale at the store: +${t}
+78|Too expensive for them: {i} at ${p}. They left without buying.
+79|Hunger
+80|Thirst
+81|Bleeding
+82|Pain
+83|Infected
+84|Food poisoning
+85|Panic
+86|Wet
+87|Overloaded
+88|The Last Store
+89|Game saved.
+90|Couldn't save. Copy the code below.
+91|Code copied.
+92|Code selected: copy it with Ctrl+C.
+93|That code isn't valid. Check that it's complete.
+94|TOWN
+95|STORE
+96|White: you · Red: truck · Light dots: fossils · M or Esc to close
+97|Level {n}
+98|You have {n}
+99|New
+100|No bag
+101|Wear it
+102|Drink
+103|Eat
+104|Use
+105|perishable
+106|Drop
+107|Your bag is empty.
+108|Weapons
+109|in hand
+110|Equip
+111|Repair with tape
+112|Ammo
+113|Health
+114|Fatigue
+115|Wounds
+116|Bandaged
+117|Stopped bleeding
+118|Disinfected
+119|No wounds.
+120|Mist infection: {n}%. Only antibiotics stop it. At 100% it will slowly kill you.
+121|You have food poisoning from eating something bad. It wears off with time.
+122|Bandage or heal (H)
+123|Chosen perks
+124|None yet. Level up to choose.
+125|Store
+126|All
+127|Empty.
+128|You can't fit any more: you're carrying too much weight.
+129|Unloaded from your bag: {l}.
+130|From the truck: {l}.
+131|night
+132|Cash
+133|Reputation
+134|Today
+135|Orders
+136|Take 1
+137|Leave 1
+138|carried
+139|stored
+140|Take
+141|When you come in, materials and valuables are unloaded from your bag automatically, and so is the truck bed if it's parked nearby. Food, drinks, medicine and tools stay with you.
+142|Bag: {a} of {b} kg.
+143|Product
+144|Storage
+145|Bag
+146|Storage is empty. Go out and find goods.
+147|Chance they'll buy it: {n}%
+148|Empty
+149|Shelf {n}
+150|today's most wanted
+151|Price
+152|They pay well up to ~${n}
+153|{n} in storage
+154|Pick a product from storage to sell it.
+155|In demand today: {i}. Customers come from 7:00 to 19:00 even when you're out and buy whatever is on the shelves. High price: more money per sale, but more people leave without buying and your reputation drops.
+156|Orders pay much more than the shelf and raise your reputation. They're delivered from what you have in storage. If they expire, your reputation drops.
+157|Wants: {i} ×{q}.
+158|Delivered.
+159|Due today at 19:00.
+160|Due tomorrow at 19:00.
+161|Pays ${r} · you have {n}
+162|Done
+163|Deliver
+164|No orders right now. New ones arrive tomorrow.
+165|You need: {u} (in Upgrades).
+166|You need: {t}.
+167|Uses:
+168|Goes to your ammo
+169|Goes to your weapons
+170|Goes to storage
+171|Craft
+172|Palisade at {n}%
+173|There are {n} broken sections they can get through.
+174|Each scrap or plank repairs 100 points.
+175|Cost: {n} · you have {h}
+176|Repair
+177|Truck tank
+178|It has {n}% gas. Each fuel can fills 30%.
+179|The truck must be parked near the store.
+180|Fuel in storage: {n}
+181|Refuel
+182|Maxed
+183|Buy ${p}
+184|You buy from the caravans passing along the road. Pricier than crafting, but instant.
+185|You have {n}
+186|In bag: {n}
+187|In storage: {n}
+188|Already yours
+189|Arrives on day {d}
+190|Reward ${r}
+191|Completed
+192|Pending
+193|Your story
+194|Latest counter activity
+195|No customers yet.
+196|It doesn't fit in your bag.
+197|You crafted: {r}
+198|You repaired the palisade with {n} materials.
+199|Tank at {n}%.
+200|{who} paid you ${r}.
+201|You bought: {u}.
+202|It didn't fit in your bag: it went to storage.
+203|Day {d} · ${m}
+204|Generating the world…
+205|Something went wrong while loading. Reload the page.
+206|Custom
+207|Choose every option yourself.
+208|Yes
+209|No
+210|Fullscreen
+211|Exit fullscreen
+212|Quality
+213|High (shadows)
+214|Medium
+215|Low (smoother)
+216|Resolution scale
+217|Field of view
+218|Brightness
+219|Film grain
+220|Gritty color filter
+221|Starting camera
+222|First person
+223|Top-down view
+224|Master volume
+225|Effects
+226|Ambience (rain, wind)
+227|Mouse sensitivity
+228|Aiming sensitivity
+229|Invert vertical axis
+230|Move
+231|Run
+232|Crouch (less noise)
+233|Space
+234|Jump · brake the truck
+235|Click
+236|Shoot or strike
+237|Right click
+238|Aim
+239|Reload · rotate building
+240|Weapons · previous weapon
+241|Use, open, search · refuel
+242|Inventory, health and skills
+243|Map
+244|Eat or drink
+245|Bandage and heal
+246|Build
+247|Flashlight
+248|Orders for your raptor
+249|Switch camera
+250|Pause
+251|Keys
+252|Language
+253|Show tips
+254|Some signs in the world change language when you reload the game.
+255|Couldn't generate the world:
+256|Top-down view: aim with the mouse. Wheel to zoom.
+257|Crouching: you make less noise.
+258|Standing.
+259|You built: {b}.
+260|You can't build there.
+261|The flashlight has no batteries.
+262|Flashlight on
+263|Flashlight off
+264|{n} follows you.
+265|{n} stays to guard the store.
+266|The flashlight batteries ran out. Press L to swap if you have spares.
+267|to the truck bed
+268|The truck bed is full.
+269|You're carrying too much weight. Drop things or load them in the truck.
+270|Goal completed: {g}. Reward ${r}.
+271|E · Get out
+272|E · Run the store
+273|E · Sleep
+274|Fatigue {n}%
+275|E · Shelf {n}
+276|E · Get in the truck
+277|Gas {n}%
+278|G · Add 1 fuel
+279|You refueled: +30%.
+280|Hold E · Cook {n} meat
+281|You cooked {n} roast meat.
+282|Campfire
+283|Bring raw meat to cook it
+284|Weakened raptor
+285|You already have a raptor
+286|Hold E · Tame raptor
+287|You give it 1 meat
+288|You need meat in your bag to tame it
+289|E · Search: {c}
+290|Already searched
+291|Hold E · Dig up fossils
+292|{n} left
+293|Something moved under the sand…
+294|Town
+295|Truck bed {a}/{b} kg
+296|NIGHT · MIST
+297|DUSK
+298|DAWN
+299|DAY
+300|Batteries {n}%
+301|{i} ×{q} for {who} · ${r}
+302|today 19:00
+303|hurt
+304|Condition
+305|Empty hands
+306|R rotate
+307|Click to build · B to exit
+308|Canned food
+309|Bread
+310|Fruit
+311|Milk
+312|Crackers
+313|Chocolate
+314|Raw meat
+315|Roast meat
+316|Rotten food
+317|Water bottle
+318|Soda
+319|Bandage
+320|Disinfectant
+321|Painkillers
+322|Antibiotics
+323|First aid kit
+324|Wood
+325|Planks
+326|Nails
+327|Sheet metal
+328|Scrap
+329|Duct tape
+330|Rope
+331|Cloth
+332|Gunpowder
+333|Fuel
+334|Batteries
+335|Lighter
+336|Saw
+337|Toolbox
+338|Leather
+339|Fossil bone
+340|Fang
+341|Jewelry
+342|Amber
+343|Fanny pack
+344|School backpack
+345|Hiking backpack
+346|Military bag
+347|9 mm pistol
+348|Revolver
+349|Shotgun
+350|Hunting rifle
+351|Assault rifle
+352|Knife
+353|Frying pan
+354|Baseball bat
+355|Hammer
+356|Crowbar
+357|Machete
+358|Axe
+359|Spear
+360|Walker
+361|Runner
+362|Brute
+363|Rotten raptor
+364|Horned beast
+365|Rotten Rex
+366|Fridge
+367|Cupboard
+368|Wardrobe
+369|Medicine cabinet
+370|Desk
+371|Workbench
+372|Store shelf
+373|Pharmacy shelf
+374|Hardware shelf
+375|Gun rack
+376|Counter
+377|Car trunk
+378|Trash can
+379|Gas pump
+380|Crate
+381|Extra shelf
+382|One more product on sale at the same time.
+383|Reinforced walls
+384|The whole palisade takes more hits.
+385|Automatic turret
+386|Shoots at anything that comes close. Goes in a corner of the yard.
+387|Stove
+388|Lets you cook roast meat in the workshop.
+389|Reloading bench
+390|Lets you craft ammo with gunpowder.
+391|Gas-powered fridge
+392|Food in storage spoils much more slowly.
+393|Bag stitching
+394|+4 kg of capacity on any bag.
+395|Cargo box
+396|+40 kg in the truck bed.
+397|Powerful flashlight
+398|The beam reaches much farther and uses fewer batteries.
+399|Neon sign
+400|Draws more customers during the day.
+401|Barricade
+402|Slows the rotters down. They break it with blows.
+403|Hurts and slows whatever walks over it.
+404|Lights up the night. Press E to cook raw meat.
+405|Plank wall
+406|Much stronger than the barricade. Needs a hammer and carpentry 2.
+407|Sheet metal wall
+408|The toughest thing you can raise. Carpentry 4.
+409|Aiming
+410|Less spread and faster reloads.
+411|Melee
+412|More damage and less weapon wear.
+413|Carpentry
+414|Stronger defenses and new walls.
+415|Survival
+416|Less hunger and thirst, faster tree felling.
+417|First aid
+418|Healing goes further and wounds close sooner.
+419|Athletics
+420|More stamina and speed when running.
+421|Rotter population
+422|Low
+423|Normal
+424|High
+425|Extreme
+426|Dinosaurs
+427|Few
+428|Normal
+429|Many
+430|Loot
+431|Scarce
+432|Abundant
+433|Day length
+434|12 min
+435|24 min
+436|36 min
+437|48 min
+438|Hunger and thirst
+439|Slow
+440|Fast
+441|Night hordes
+442|Mild
+443|Brutal
+444|Mist infection
+445|Off
+446|On
+447|Food spoils
+448|Rookie
+449|Few rotters, lots of loot and long days. To get to know the world.
+450|Survivor
+451|The intended experience: tough but fair.
+452|Apocalypse
+453|The town is packed, loot is scarce and the nights are brutal.
+454|Planks ×3
+455|Bandages ×2
+456|Bandages ×3
+457|9 mm rounds ×10
+458|.38 rounds ×6
+459|Shells ×4
+460|Rifle rounds ×5
+461|5.56 rounds ×15
+462|Steady hand
+463|+15% firearm damage.
+464|Thick skin
+465|+25 max health.
+466|Long legs
+467|+8% speed.
+468|Quick hands
+469|You reload 20% faster.
+470|Pack mule
+471|+5 kg in your bag.
+472|Silver tongue
+473|Customers accept prices 8% higher.
+474|Butcher
+475|Animals drop 1 extra meat.
+476|Scavenger
+477|You find more in furniture, crates and cars.
+478|Edge
+479|+30% melee damage and weapons wear less.
+480|Second wind
+481|You regain health if 5 s pass without being hit.
+482|Hawk eye
+483|Headshots deal 30% more.
+484|Lungs
+485|+30% stamina for running.
+486|Iron stomach
+487|Hunger and thirst drop 30% slower.
+488|Tamer
+489|Your raptor hits 50% harder.
+490|Driver
+491|The truck uses less gas and rams harder.
+492|Thick blood
+493|Bites almost never get infected.
+494|Survive 3 nights
+495|Sell 50 products
+496|Complete 5 orders
+497|Tame a raptor
+498|Search 30 pieces of furniture in town
+499|Land 50 headshots
+500|Build 5 defenses
+501|Run over 20 creatures with the truck
+502|Raise a skill to level 5
+503|Earn $3,000 in sales
+504|Hunt the Rotten Rex
+505|Survive 10 nights
+506|Eight pellets per shot. Brutal up close.
+507|Six heavy shots that go through two targets.
+508|Right click to look through the scope. Goes through up to three enemies.
+509|Automatic: hold the click. Burns through ammo fast.
+510|Hits very hard and fells a tree in two swings.
+511|9 mm rounds ×20
+512|For the pistol.
+513|.38 rounds ×12
+514|For the revolver.
+515|Shells ×8
+516|For the shotgun.
+517|Rifle rounds ×10
+518|For the rifle.
+519|5.56 rounds ×30
+520|For the assault rifle.
+521|For bleeding. Goes to your bag.
+522|Heals a lot, disinfects and stops bleeding.
+523|They cure the mist infection.
+524|Water
+525|For thirst. Goes to your bag.
+526|For the flashlight.
+527|Nails ×20
+528|For walls. Goes to storage.
+529|For the truck. Goes to storage.
+530|Food
+531|Drink
+532|Medicine
+533|Material
+534|Tool
+535|Valuable
+536|9 mm rounds
+537|.38 rounds
+538|Shells
+539|Rifle rounds
+540|5.56 rounds
+541|Supermarket
+542|Pharmacy
+543|Hardware store
+544|Gun shop
+545|Gas station
+546|House
+547|Scratch
+548|Deep cut
+549|Bite
+550|Clear
+551|Cloudy
+552|Rain
+553|Storm
+554|Fog
+555|Market
+556|Workshop
+557|Gas station
+558|Nights survived
+559|Enemies killed
+560|Headshots
+561|Furniture searched
+562|Products sold
+563|Orders completed
+564|Run over
+565|Rotten Rexes hunted
+566|N
+567|NE
+568|E
+569|SE
+570|S
+571|SW
+572|W
+573|NW
+574|Loading the world…
+575|Stamina
+576|E get out · Space brake
+577|Click to continue
+578|The mouse is used to look around. Esc pauses.
+579|Year 3 of the Mist · Route 40, kilometer 1,112
+580|The Last
+581|Store
+582|Continue
+583|New game
+584|Choose the difficulty and the rules of the world
+585|Options
+586|Graphics, sound, controls and language
+587|Quit
+588|Three winters ago the Green Stone fell. Its mist raised the dead: people, and also the bones that slept under the earth. You run the only open place for a hundred kilometers: a store behind a palisade, an old truck and a pistol. To the south, down the road, a whole town was left to loot. At night, the mist brings the rotters to your door.
+589|Touch screens aren't supported: open it on a PC.
+590|Early access
+591|Choose your apocalypse
+592|World rules
+593|Map seed (optional)
+594|You already have a saved game: starting a new one replaces it.
+595|Start
+596|Back
+597|Settings
+598|Display
+599|Sound
+600|Controls
+601|Game and language
+602|Your store
+603|Back · E
+604|Shelves
+605|Upgrades
+606|Caravans
+607|Goals
+608|Character
+609|Close · Tab
+610|Inventory
+611|Health
+612|Skills
+613|Take all
+614|Close · E
+615|Your bag
+616|Inside
+617|Level up
+618|Choose a perk. They stack if you pick one again.
+619|Catch your breath
+620|Keep playing
+621|Save now
+622|Main menu
+623|Quit game
+624|Save code
+625|Copy this code to keep a backup or move your game to another computer. Paste one and press Load to restore it.
+626|Copy code
+627|Load code
+628|They got you
+629|Wake up at the store
+630|Tired
+631|Exhausted
