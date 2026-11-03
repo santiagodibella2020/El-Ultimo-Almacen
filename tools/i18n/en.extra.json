@@ -113,5 +113,7 @@
  "Nieve": "Snow",
  "Minijefes derrotados": "Minibosses defeated",
  "Colosos derrotados": "Colossi defeated",
- "Cráter": "Crater"
+ "Cráter": "Crater",
+ "Mapa distinto (opcional)": "Different map (optional)",
+ "Vacío: el mapa de siempre. Escribí una palabra para otro mapa.": "Empty: the usual map. Type a word for a different map."
 }

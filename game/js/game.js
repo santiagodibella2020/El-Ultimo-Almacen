@@ -77,7 +77,7 @@ function clearRuntime(){
 }
 function startGame(state){
   clearRuntime();S=state;
-  genWorld(S.seed);
+  genWorld(worldSeed());
   if(!S.walls||S.walls.length!==walls.length)S.walls=walls.map(()=>wallMax());
   walls.forEach((w,i)=>setWallAlive(i,S.walls[i]>0));
   conts.forEach(c=>{if(S.cont[c.i])markLooted(c)});

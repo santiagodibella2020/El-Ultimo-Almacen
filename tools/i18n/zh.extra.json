@@ -113,5 +113,7 @@
  "Nieve": "雪",
  "Minijefes derrotados": "击败的小头目",
  "Colosos derrotados": "击败的巨像",
- "Cráter": "陨石坑"
+ "Cráter": "陨石坑",
+ "Mapa distinto (opcional)": "不同的地图（可选）",
+ "Vacío: el mapa de siempre. Escribí una palabra para otro mapa.": "留空：常规地图。输入一个词可生成另一张地图。"
 }

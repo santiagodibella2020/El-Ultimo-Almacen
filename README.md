@@ -2,7 +2,14 @@
 
 Supervivencia en primera persona o con vista de arriba. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.3.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.4.0.
+
+## Novedades de la 0.4
+
+- Mapa fijo: todas las partidas nuevas usan el mismo mundo, así podés aprenderte el terreno. Para jugar en otro mapa, escribí cualquier palabra en "Mapa distinto" al crear la partida. Las partidas guardadas conservan su mapa.
+- Rendimiento: el mundo y los enemigos se dibujan en bloques, con entre 2 y 5 veces menos objetos por cuadro según la zona.
+- Texturas dibujadas por el juego para pasto, revoque, madera, ladrillo, chapa y hojas.
+- Sonido nuevo: disparos en capas con eco al aire libre, sonido estéreo según de dónde viene, pasos distintos en pasto, ruta, madera, nieve y agua, pájaros de día y grillos y aullidos de noche.
 
 ## Novedades de la 0.3
 

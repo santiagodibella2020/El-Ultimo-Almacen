@@ -196,8 +196,8 @@ function renderNewGame(){
 $('newgame').addEventListener('click',e=>{const p=e.target.closest('[data-preset]');if(p){ngPreset=p.dataset.preset;if(PRESETS[ngPreset])ngSb=Object.assign({},PRESETS[ngPreset].sb);renderNewGame();return}
   const b=e.target.closest('[data-a]');if(!b)return;
   if(b.dataset.a==='ngback')toMenu();
-  if(b.dataset.a==='ngstart'){const seedTxt=$('ngSeed').value.trim();let seed=(Math.random()*2**31)|0;if(seedTxt){seed=0;for(const ch of seedTxt)seed=(Math.imul(seed,31)+ch.charCodeAt(0))|0;seed=Math.abs(seed)}
-    lsDel(SAVE_KEY);if(camMode==='fp')requestLock();const st=newState(seed,ngSb);loadingThen(()=>{st.t=SANDBOX.daylen.v[st.sb.daylen]*2/24;startGame(st);saveGame(true)})}});
+  if(b.dataset.a==='ngstart'){const seedTxt=$('ngSeed').value.trim();const seed=(Math.random()*2**31)|0;let wseed=WORLD_SEED;if(seedTxt){wseed=0;for(const ch of seedTxt)wseed=(Math.imul(wseed,31)+ch.charCodeAt(0))|0;wseed=Math.abs(wseed)}
+    lsDel(SAVE_KEY);if(camMode==='fp')requestLock();const st=newState(seed,ngSb);st.wseed=wseed;loadingThen(()=>{st.t=SANDBOX.daylen.v[st.sb.daylen]*2/24;startGame(st);saveGame(true)})}});
 $('newgame').addEventListener('change',e=>{const s=e.target.closest('[data-sb]');if(!s)return;ngSb[s.dataset.sb]=+s.value;ngPreset='custom';renderNewGame()});
 // Options
 let optTab='video',optBack='menu';
@@ -238,7 +238,7 @@ function frame(now){const dt=Math.min(.05,(now-last)/1000);last=now;
 (function boot(){
   applyStatic();applyPost();applyQuality();buildBody();
   const st=refreshMenu();
-  setTimeout(()=>{try{S=st||newState((Math.random()*2**31)|0);genWorld(S.seed);enemies=[];customers=[];pickups=[];builds=[];walls.forEach(w=>w.mesh.visible=true);updateUpgradeVisuals();initVehicles();applySeason();P.x=-8;P.z=30;P.y=groundY(P.x,P.z);P.yaw=.25;P.pitch=-.08;S.t=CYCLE()*330/720;
+  setTimeout(()=>{try{S=st||Object.assign(newState((Math.random()*2**31)|0),{wseed:WORLD_SEED});genWorld(worldSeed());enemies=[];customers=[];pickups=[];builds=[];walls.forEach(w=>w.mesh.visible=true);updateUpgradeVisuals();initVehicles();applySeason();P.x=-8;P.z=30;P.y=groundY(P.x,P.z);P.yaw=.25;P.pitch=-.08;S.t=CYCLE()*330/720;
     $('loading').hidden=true;gstate='menu';show('menu')}catch(err){console.error(err);$('loading').textContent=L('No se pudo generar el mundo: ')+err.message}},30);
   window.__almacen={state:()=>S,P,truck:()=>truck,enemies:()=>enemies,conts:()=>conts,buildings:()=>buildings,openPanel:t=>openPanel(t),openLoot:i=>openLoot(conts[i]),openInv:t=>openInv(t),forcePlay:()=>{debugNoLock=true;gstate='play';hideAll();$('wait').hidden=true},spawn:(t,x,z)=>spawnEnemy(t,x,z),update:dt=>update(dt),setCam:m=>{camMode=m;document.body.classList.toggle('iso',m==='iso')},hurt:(d,t)=>hurtPlayer(d,t?{type:t}:null)};
   requestAnimationFrame(frame);
