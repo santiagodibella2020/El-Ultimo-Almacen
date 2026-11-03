@@ -1,0 +1,44 @@
+{
+  "name": "el-ultimo-almacen",
+  "productName": "El Último Almacén",
+  "version": "0.1.0",
+  "description": "Supervivencia en primera persona con zombies, dinosaurios y tu propio almacén.",
+  "author": "santiagodibella2020",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "com.santiagodibella.elultimoalmacen",
+    "productName": "El Ultimo Almacen",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "game/**/*",
+      "build/icon.png"
+    ],
+    "win": {
+      "icon": "build/icon.png",
+      "target": [
+        "portable",
+        "zip"
+      ]
+    },
+    "portable": {
+      "artifactName": "ElUltimoAlmacen-${version}-portable.exe"
+    },
+    "zip": {
+      "artifactName": "ElUltimoAlmacen-${version}-steam.zip"
+    }
+  }
+}
