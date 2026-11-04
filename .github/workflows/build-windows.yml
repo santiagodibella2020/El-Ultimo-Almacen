@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -29,14 +30,6 @@ jobs:
       - name: Compilar el .exe y el .zip para Steam
         run: npm run dist:win
 
-      - name: Guardar los archivos compilados
-        uses: actions/upload-artifact@v7
-        with:
-          name: ElUltimoAlmacen-windows
-          path: |
-            dist/*.exe
-            dist/*.zip
-
       - name: Leer la versión
         id: ver
         shell: bash
@@ -52,3 +45,17 @@ jobs:
           files: |
             dist/*.exe
             dist/*.zip
+
+      # Las copias guardadas en Actions ocupan el espacio gratis de la cuenta.
+      # El juego ya queda en Releases, así que se borran todas las que haya.
+      - name: Borrar copias viejas de Actions
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const arts = await github.paginate(github.rest.actions.listArtifactsForRepo, {
+              owner: context.repo.owner, repo: context.repo.repo, per_page: 100 });
+            for (const a of arts) {
+              await github.rest.actions.deleteArtifact({
+                owner: context.repo.owner, repo: context.repo.repo, artifact_id: a.id });
+            }
+            core.info(`Borradas ${arts.length} copias`);
