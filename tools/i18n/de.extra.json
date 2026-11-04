@@ -456,5 +456,15 @@
  "Necesitás 1 madera para prenderla": "Du brauchst 1 Holz, um es anzuzünden",
  "Mantené E · Prender la fogata": "E halten · Lagerfeuer anzünden",
  "Usa 1 madera": "Verbraucht 1 Holz",
- "Con la niebla se acercan más podridos. No los vas a ver venir.": "Bei Nebel kommen mehr Verrottete näher. Du siehst sie nicht kommen."
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "Bei Nebel kommen mehr Verrottete näher. Du siehst sie nicht kommen.",
+ "Cliente apurado": "Eiliger Kunde",
+ "Regateador": "Feilscher",
+ "Quiso regatear {i} a ${p} y se fue sin comprar.": "Wollte {i} für ${p} herunterhandeln und ging ohne zu kaufen.",
+ "Hoy ya vendiste mucho de: {i}. Por hoy se buscan menos.": "Davon hast du heute schon viel verkauft: {i}. Heute wird es weniger gesucht.",
+ "Hace frío: se busca combustible, té y tela.": "Es ist kalt: Gesucht werden Treibstoff, Tee und Stoff.",
+ "Hace calor: se busca agua y gaseosa.": "Es ist heiß: Gesucht werden Wasser und Limonade.",
+ "Llueve: la gente sale poco y busca comida que dure.": "Es regnet: Die Leute gehen kaum raus und suchen haltbares Essen.",
+ "Anoche hubo apagón: se buscan pilas y encendedores.": "Letzte Nacht gab es einen Stromausfall: Gesucht werden Batterien und Feuerzeuge.",
+ "Después de una noche dura se buscan vendas y remedios.": "Nach einer harten Nacht werden Verbände und Medikamente gesucht.",
+ "Es invierno: la comida fresca escasea.": "Es ist Winter: Frische Lebensmittel sind knapp."
 }

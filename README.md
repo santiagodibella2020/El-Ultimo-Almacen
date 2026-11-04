@@ -4,6 +4,17 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.24
+- **Muebles del hogar con choque**: la mesa, el sillón, la biblioteca, el velador y las plantas ya no se atraviesan.
+- **Clientes**:
+  - Usan el modelo humano 3D.
+  - Con buena reputación entran más a la vez (hasta 7).
+  - Hay clientes apurados (pagan más caro y compran rápido) y regateadores (llevan más cantidad, pero quieren precio bajo).
+- **Precios que se mueven**:
+  - Lo que vendés mucho se satura durante el día.
+  - El frío, el calor, la lluvia, el invierno, los apagones y las noches duras cambian lo que busca la gente.
+  - El panel de estantes te muestra por qué.
+
 ## Novedades de la 0.23
 - **Apagones**: desde el día 3, algunas noches se corta la luz del almacén (más seguido si hay tormenta). Sin luz no andan las lámparas ni las torretas, y la linterna gasta más rápido. Con el banco de recarga las torretas siguen funcionando, pero disparan más lento.
 - **Noche cerrada**: desde el día 4, a veces la bruma se espesa toda la noche y la horda viene un 50 % más grande.

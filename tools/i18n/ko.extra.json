@@ -456,5 +456,15 @@
  "Necesitás 1 madera para prenderla": "불을 붙이려면 나무 1개가 필요하다",
  "Mantené E · Prender la fogata": "E 길게 누르기 · 모닥불 피우기",
  "Usa 1 madera": "나무 1개 사용",
- "Con la niebla se acercan más podridos. No los vas a ver venir.": "안개 속에서는 더 많은 부패체가 다가온다. 오는 것이 보이지 않는다."
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "안개 속에서는 더 많은 부패체가 다가온다. 오는 것이 보이지 않는다.",
+ "Cliente apurado": "급한 손님",
+ "Regateador": "흥정꾼",
+ "Quiso regatear {i} a ${p} y se fue sin comprar.": "{i}을(를) ${p}에서 흥정하려다 사지 않고 떠났다.",
+ "Hoy ya vendiste mucho de: {i}. Por hoy se buscan menos.": "오늘 이미 많이 팔았다: {i}. 오늘은 덜 찾는다.",
+ "Hace frío: se busca combustible, té y tela.": "춥다: 연료, 차, 천을 찾는다.",
+ "Hace calor: se busca agua y gaseosa.": "덥다: 물과 탄산음료를 찾는다.",
+ "Llueve: la gente sale poco y busca comida que dure.": "비가 온다: 사람들이 잘 나오지 않고 오래 가는 음식을 찾는다.",
+ "Anoche hubo apagón: se buscan pilas y encendedores.": "어젯밤 정전이 있었다: 건전지와 라이터를 찾는다.",
+ "Después de una noche dura se buscan vendas y remedios.": "힘든 밤이 지나면 붕대와 약을 찾는다.",
+ "Es invierno: la comida fresca escasea.": "겨울이다: 신선한 음식이 부족하다."
 }

@@ -456,5 +456,15 @@
  "Necesitás 1 madera para prenderla": "火をつけるには木材が1つ必要",
  "Mantené E · Prender la fogata": "Eを長押し · たき火をつける",
  "Usa 1 madera": "木材を1つ使う",
- "Con la niebla se acercan más podridos. No los vas a ver venir.": "霧の中ではより多くの腐れが近づいてくる。来るのが見えない。"
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "霧の中ではより多くの腐れが近づいてくる。来るのが見えない。",
+ "Cliente apurado": "急いでいる客",
+ "Regateador": "値切る客",
+ "Quiso regatear {i} a ${p} y se fue sin comprar.": "{i}を${p}から値切ろうとして、買わずに帰った。",
+ "Hoy ya vendiste mucho de: {i}. Por hoy se buscan menos.": "今日はもうたくさん売った：{i}。今日はあまり求められない。",
+ "Hace frío: se busca combustible, té y tela.": "寒い：燃料、お茶、布が求められている。",
+ "Hace calor: se busca agua y gaseosa.": "暑い：水とソーダが求められている。",
+ "Llueve: la gente sale poco y busca comida que dure.": "雨：人はあまり外に出ず、日持ちする食べ物を求めている。",
+ "Anoche hubo apagón: se buscan pilas y encendedores.": "昨夜は停電だった：電池とライターが求められている。",
+ "Después de una noche dura se buscan vendas y remedios.": "厳しい夜の後は包帯と薬が求められる。",
+ "Es invierno: la comida fresca escasea.": "冬：新鮮な食べ物が少ない。"
 }

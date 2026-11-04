@@ -456,5 +456,15 @@
  "Necesitás 1 madera para prenderla": "Нужна 1 древесина, чтобы разжечь",
  "Mantené E · Prender la fogata": "Удерживай E · Разжечь костёр",
  "Usa 1 madera": "Тратит 1 древесину",
- "Con la niebla se acercan más podridos. No los vas a ver venir.": "В тумане подходит больше гнилых. Ты не увидишь, как они приближаются."
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "В тумане подходит больше гнилых. Ты не увидишь, как они приближаются.",
+ "Cliente apurado": "Спешащий покупатель",
+ "Regateador": "Торгаш",
+ "Quiso regatear {i} a ${p} y se fue sin comprar.": "Пытался сбить цену на {i} (${p}) и ушёл без покупки.",
+ "Hoy ya vendiste mucho de: {i}. Por hoy se buscan menos.": "Сегодня ты уже много продал: {i}. Сегодня это ищут меньше.",
+ "Hace frío: se busca combustible, té y tela.": "Холодно: ищут топливо, чай и ткань.",
+ "Hace calor: se busca agua y gaseosa.": "Жарко: ищут воду и газировку.",
+ "Llueve: la gente sale poco y busca comida que dure.": "Идёт дождь: люди почти не выходят и ищут еду, которая хранится.",
+ "Anoche hubo apagón: se buscan pilas y encendedores.": "Ночью отключали свет: ищут батарейки и зажигалки.",
+ "Después de una noche dura se buscan vendas y remedios.": "После тяжёлой ночи ищут бинты и лекарства.",
+ "Es invierno: la comida fresca escasea.": "Зима: свежей еды мало."
 }
