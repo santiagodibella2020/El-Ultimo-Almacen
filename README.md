@@ -4,6 +4,11 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.20
+- **Armas en primera persona con modelos 3D**: pistola, revólver, escopeta, escopeta de combate, cuchillo, hacha y sartén.
+- **Calle y campamentos**: faroles de verdad, señales de tránsito (pare, prohibido estacionar y de ruta), tachos de basura, bidones y garrafas tirados, carpas y fogatas en los campamentos, y los autos abandonados del pueblo usan los modelos de los vehículos.
+- Modelos libres (CC0) de Quaternius (Survival Pack y Street Pack). Se regeneran con `tools/models/props/build.sh`.
+
 ## Novedades de la 0.19
 - **Zombis y dinosaurios con modelos 3D hechos por artistas**: zombi (caminante, corredor, bruto, gritón, soldado y jefes, cada uno con su tinte), hinchado, raptor y sus variantes, Rex, cornudo y acorazado. Todos con animaciones de reposo, caminar, correr, atacar y morir.
 - **La gente de los pueblos** usa un modelo humano nuevo, con su ropa, piel y accesorios de siempre (sombreros, velos, gorras, bufandas).
