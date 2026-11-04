@@ -315,6 +315,63 @@ Alambre de púas
 Esta noche hay asedio: la bruma trae el doble de podridos y un jefe. Prepará el almacén.
 ¡Asedio! Aguantá hasta el amanecer.
 Aguantaste el asedio. La gente de la ruta te manda ${n} y te tiene más respeto.
+Cacería
+Limpieza
+Rescate
+Recuperar carga
+Entrega
+norte
+noreste
+este
+sureste
+sur
+suroeste
+oeste
+noroeste
+Hay dinosaurios rondando la zona. Cazá {q} y te pago bien.
+Los zombis no nos dejan trabajar. Bajá {q} y volvé a contarme.
+Una manada de raptores se instaló al {dir}, a unos {d} m. Sacalos de ahí.
+Se juntaron zombis al {dir}, a unos {d} m de acá. Limpiá esa zona, por favor.
+Un muchacho salió a buscar remedios y no volvió. Lo vieron al {dir}, a unos {d} m. Traelo de vuelta.
+Perdimos una caja con provisiones al {dir}, a unos {d} m. Hay bichos cerca. ¿Me la traés?
+Tengo un paquete para {n}, en {p}. Tiene que llegar en dos días. ¿Lo llevás?
+Volvé con {n} a cobrar ({d} m)
+Cazá {e}: {a}/{b}
+dinosaurios
+zombis
+Limpiá la zona: quedan {n}
+Andá a la zona marcada ({d} m)
+Llevalo a {p} ({d} m)
+Encontrá al sobreviviente ({d} m)
+Buscá la carga ({d} m)
+Llevá el paquete a {n} ({d} m)
+Misión fallida: {t}
+Se venció el plazo.
+El sobreviviente no lo logró.
+Llegaron a salvo. Hablá con {n} para cobrar.
+Misión cumplida: volvé con {n}.
+Zona limpia. Volvé con {n}.
+E · Ayudar al sobreviviente
+Gracias… pensé que no salía de esta. Te sigo.
+Mantené E · Agarrar la caja
+Agarraste la carga. Volvé con {n}.
+Misión cumplida.
+¿Eso es para mí? Gracias por traerlo hasta acá.
+Te da
+Entregar el paquete
+Listo para cobrar
+En curso
+Gracias. Esto no me lo olvido.
+Cobrar
+Abandonar
+Hoy no tengo nada para vos. Volvé mañana.
+Plazo: {n} días
+Aceptar
+Ya tenés una misión en curso. Terminala o abandonala primero.
+Misiones
+Misión aceptada. Está marcada en la brújula y el mapa.
+Misión abandonada.
+Salud {n}%
 {d} de {m}
 Arreglaste: {v}. Ya podés manejarlo.
 Mantené E · Reparar: {v}
@@ -384,7 +441,6 @@ Comprar
 Compra de tu mochila y de los vehículos estacionados cerca.
 tenés {n}
 Vender 1
-Te da
 un relato
 No necesito nada más. Gracias por todo.
 {a} de {b} relatos

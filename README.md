@@ -4,6 +4,11 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.21
+- **Misiones de los personajes**: cada NPC tiene una pestaña nueva, *Misiones*, con un pedido por vez. Hay cinco tipos: cacería (zombis o dinosaurios), limpiar una zona tomada, rescatar a un sobreviviente y escoltarlo hasta el pueblo (se sube a la camioneta con vos), recuperar una caja de provisiones custodiada y llevar un paquete a otro personaje.
+- El objetivo se marca en la brújula, en el mapa y con una columna de luz celeste. El HUD muestra el progreso.
+- Pagan plata, reputación, experiencia y a veces algo de lo que vende ese personaje. Tienen plazo: si se vence o el sobreviviente muere, la misión falla. Después de cada misión, ese personaje tiene otra al día siguiente.
+
 ## Novedades de la 0.20
 - **Armas en primera persona con modelos 3D**: pistola, revólver, escopeta, escopeta de combate, cuchillo, hacha y sartén.
 - **Calle y campamentos**: faroles de verdad, señales de tránsito (pare, prohibido estacionar y de ruta), tachos de basura, bidones y garrafas tirados, carpas y fogatas en los campamentos, y los autos abandonados del pueblo usan los modelos de los vehículos.
