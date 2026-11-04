@@ -52,6 +52,9 @@ kbd{font:600 12px var(--f-mono);background:var(--panel2);border:1px solid var(--
 /* HUD */
 #hud{position:fixed;inset:0;pointer-events:none;z-index:10;font-family:var(--f-body)}
 .hbox{position:absolute;background:rgba(10,14,12,.72);border-left:3px solid var(--amber)}
+.hbox{background:linear-gradient(90deg,rgba(0,0,0,.38),rgba(0,0,0,0));border-left:0;text-shadow:0 1px 3px #000,0 0 6px rgba(0,0,0,.6)}
+#hBR{background:linear-gradient(270deg,rgba(0,0,0,.38),rgba(0,0,0,0));border-right:0}
+.hcontract,.hsmall{opacity:.8}
 #hTL{left:16px;top:16px;padding:10px 14px 10px 13px;min-width:240px;display:grid;gap:4px}
 #hTL.night{border-left-color:var(--red)}
 .hrow{display:flex;align-items:baseline;gap:12px}
@@ -424,5 +427,6 @@ input[type=text]{font:500 14px var(--f-body);background:var(--bg);color:var(--fg
 <script src="js/v9gfx.js"></script>
 <script src="js/v9decor.js"></script>
 <script src="js/v9cine.js"></script>
+<script src="js/v10gfx.js"></script>
 </body>
 </html>

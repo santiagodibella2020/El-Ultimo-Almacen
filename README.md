@@ -4,6 +4,11 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.10
+
+- Texturas de 1024 px (4 veces más nítidas) en paredes, pisos, suelo y hojas, con anisotropía alta.
+- HUD más limpio, sin cajas: degradados suaves y texto con sombra.
+
 ## Novedades de la 0.9
 
 - **Escape** cierra todos los paneles y vuelve atrás (inventario, mapa, almacén, diario, cargas, pausa), y reintenta capturar el mouse si el navegador lo rechaza.
