@@ -4,6 +4,11 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.16
+- El hinchado, el cornudo (y el Cornudo Viejo), el acorazado y el Rex Podrido ahora tienen modelos hechos en Blender, con esqueleto y animaciones de reposo, caminar, correr, atacar y morir.
+- La gente de los pueblos usa el modelo humano nuevo: respira, se da vuelta caminando para mirarte y conserva sus sombreros, velos y bufandas.
+- El Coloso de la Bruma usa el modelo de zombi grande.
+
 ## Novedades de la 0.15
 
 - **Modelos nuevos hechos en Blender** para zombis (caminante, corredor, bruto, gritón, soldado y sus jefes) y raptores (raptor, raptor podrido, escupidor, saltador, Alfa y la Reina): malla orgánica de una pieza, esqueleto y animaciones de reposo, caminar, correr, atacar y morir.
