@@ -456,5 +456,15 @@
  "Necesitás 1 madera para prenderla": "Yakmak için 1 odun lazım",
  "Mantené E · Prender la fogata": "E basılı tut · Kamp ateşini yak",
  "Usa 1 madera": "1 odun kullanır",
- "Con la niebla se acercan más podridos. No los vas a ver venir.": "Siste daha çok çürük yaklaşıyor. Geldiklerini görmeyeceksin."
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "Siste daha çok çürük yaklaşıyor. Geldiklerini görmeyeceksin.",
+ "Cliente apurado": "Aceleci müşteri",
+ "Regateador": "Pazarlıkçı",
+ "Quiso regatear {i} a ${p} y se fue sin comprar.": "{i} için ${p} fiyatında pazarlık yapmaya çalıştı ve almadan gitti.",
+ "Hoy ya vendiste mucho de: {i}. Por hoy se buscan menos.": "Bugün zaten çok sattın: {i}. Bugün daha az aranıyor.",
+ "Hace frío: se busca combustible, té y tela.": "Hava soğuk: yakıt, çay ve kumaş aranıyor.",
+ "Hace calor: se busca agua y gaseosa.": "Hava sıcak: su ve gazoz aranıyor.",
+ "Llueve: la gente sale poco y busca comida que dure.": "Yağmur yağıyor: insanlar az çıkıyor ve dayanıklı yiyecek arıyor.",
+ "Anoche hubo apagón: se buscan pilas y encendedores.": "Dün gece elektrik kesildi: pil ve çakmak aranıyor.",
+ "Después de una noche dura se buscan vendas y remedios.": "Zor bir geceden sonra sargı bezi ve ilaç aranıyor.",
+ "Es invierno: la comida fresca escasea.": "Kış geldi: taze yiyecek az."
 }

@@ -389,6 +389,16 @@ Necesitás 1 madera para prenderla
 Mantené E · Prender la fogata
 Usa 1 madera
 Con la niebla se acercan más podridos. No los vas a ver venir.
+Hace frío: se busca combustible, té y tela.
+Hace calor: se busca agua y gaseosa.
+Llueve: la gente sale poco y busca comida que dure.
+Anoche hubo apagón: se buscan pilas y encendedores.
+Después de una noche dura se buscan vendas y remedios.
+Es invierno: la comida fresca escasea.
+Cliente apurado
+Regateador
+Quiso regatear {i} a ${p} y se fue sin comprar.
+Hoy ya vendiste mucho de: {i}. Por hoy se buscan menos.
 {d} de {m}
 Arreglaste: {v}. Ya podés manejarlo.
 Mantené E · Reparar: {v}

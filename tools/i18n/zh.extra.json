@@ -456,5 +456,15 @@
  "Necesitás 1 madera para prenderla": "需要1个木材才能点燃",
  "Mantené E · Prender la fogata": "按住 E · 点燃篝火",
  "Usa 1 madera": "消耗1个木材",
- "Con la niebla se acercan más podridos. No los vas a ver venir.": "起雾时会有更多腐尸靠近。你看不到它们过来。"
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "起雾时会有更多腐尸靠近。你看不到它们过来。",
+ "Cliente apurado": "赶时间的顾客",
+ "Regateador": "爱砍价的顾客",
+ "Quiso regatear {i} a ${p} y se fue sin comprar.": "想把{i}从${p}砍价，没买就走了。",
+ "Hoy ya vendiste mucho de: {i}. Por hoy se buscan menos.": "今天已经卖了很多：{i}。今天需求变少了。",
+ "Hace frío: se busca combustible, té y tela.": "天冷：大家要燃料、茶和布。",
+ "Hace calor: se busca agua y gaseosa.": "天热：大家要水和汽水。",
+ "Llueve: la gente sale poco y busca comida que dure.": "下雨：人们很少出门，想要耐放的食物。",
+ "Anoche hubo apagón: se buscan pilas y encendedores.": "昨晚停电了：大家要电池和打火机。",
+ "Después de una noche dura se buscan vendas y remedios.": "熬过艰难的一夜后，大家要绷带和药。",
+ "Es invierno: la comida fresca escasea.": "冬天：新鲜食物稀缺。"
 }

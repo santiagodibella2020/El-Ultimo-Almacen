@@ -456,5 +456,15 @@
  "Necesitás 1 madera para prenderla": "Você precisa de 1 madeira para acendê-la",
  "Mantené E · Prender la fogata": "Segure E · Acender a fogueira",
  "Usa 1 madera": "Usa 1 madeira",
- "Con la niebla se acercan más podridos. No los vas a ver venir.": "Com a neblina, mais podres se aproximam. Você não vai vê-los chegar."
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "Com a neblina, mais podres se aproximam. Você não vai vê-los chegar.",
+ "Cliente apurado": "Cliente apressado",
+ "Regateador": "Pechincheiro",
+ "Quiso regatear {i} a ${p} y se fue sin comprar.": "Tentou pechinchar {i} a ${p} e foi embora sem comprar.",
+ "Hoy ya vendiste mucho de: {i}. Por hoy se buscan menos.": "Você já vendeu muito de: {i}. Hoje procuram menos.",
+ "Hace frío: se busca combustible, té y tela.": "Está frio: procuram combustível, chá e tecido.",
+ "Hace calor: se busca agua y gaseosa.": "Está calor: procuram água e refrigerante.",
+ "Llueve: la gente sale poco y busca comida que dure.": "Está chovendo: as pessoas saem pouco e procuram comida que dure.",
+ "Anoche hubo apagón: se buscan pilas y encendedores.": "Ontem à noite houve apagão: procuram pilhas e isqueiros.",
+ "Después de una noche dura se buscan vendas y remedios.": "Depois de uma noite dura procuram bandagens e remédios.",
+ "Es invierno: la comida fresca escasea.": "É inverno: a comida fresca está escassa."
 }

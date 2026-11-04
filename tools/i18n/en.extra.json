@@ -456,5 +456,15 @@
  "Necesitás 1 madera para prenderla": "You need 1 wood to light it",
  "Mantené E · Prender la fogata": "Hold E · Light the campfire",
  "Usa 1 madera": "Uses 1 wood",
- "Con la niebla se acercan más podridos. No los vas a ver venir.": "With the fog, more rotters come close. You won't see them coming."
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "With the fog, more rotters come close. You won't see them coming.",
+ "Cliente apurado": "Customer in a hurry",
+ "Regateador": "Haggler",
+ "Quiso regatear {i} a ${p} y se fue sin comprar.": "Tried to haggle {i} at ${p} and left without buying.",
+ "Hoy ya vendiste mucho de: {i}. Por hoy se buscan menos.": "You already sold a lot of: {i}. People want less of it today.",
+ "Hace frío: se busca combustible, té y tela.": "It's cold: people want fuel, tea and cloth.",
+ "Hace calor: se busca agua y gaseosa.": "It's hot: people want water and soda.",
+ "Llueve: la gente sale poco y busca comida que dure.": "It's raining: people barely go out and want food that keeps.",
+ "Anoche hubo apagón: se buscan pilas y encendedores.": "There was a blackout last night: people want batteries and lighters.",
+ "Después de una noche dura se buscan vendas y remedios.": "After a hard night people want bandages and medicine.",
+ "Es invierno: la comida fresca escasea.": "It's winter: fresh food is scarce."
 }
