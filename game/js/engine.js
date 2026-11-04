@@ -54,10 +54,15 @@ function resize(){const w=innerWidth,h=innerHeight;renderer.setSize(w,h,false);c
 addEventListener('resize',resize);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.5)*settings.res);resize();
 
-const BOX=new T3.BoxGeometry(1,1,1),CYL=new T3.CylinderGeometry(.5,.5,1,8),CONE=new T3.ConeGeometry(.5,1,6);
+let ROUNDING=false;
+function roundedBox(r){const g=new T3.BoxGeometry(1,1,1,5,5,5),p=g.attributes.position,n=g.attributes.normal,inner=.5-r,v=new T3.Vector3(),q=new T3.Vector3();
+  for(let i=0;i<p.count;i++){v.set(p.getX(i),p.getY(i),p.getZ(i));q.set(Math.max(-inner,Math.min(inner,v.x)),Math.max(-inner,Math.min(inner,v.y)),Math.max(-inner,Math.min(inner,v.z)));v.sub(q);
+    if(v.lengthSq()>1e-8){v.normalize();n.setXYZ(i,v.x,v.y,v.z);p.setXYZ(i,q.x+v.x*r,q.y+v.y*r,q.z+v.z*r)}}
+  g.computeBoundingSphere();return g}
+const BOX=new T3.BoxGeometry(1,1,1),RBOX=roundedBox(.3),CYL=new T3.CylinderGeometry(.5,.5,1,8),CONE=new T3.ConeGeometry(.5,1,6);
 const MATS={};function mat(c,o){const k=c+(o?JSON.stringify(o):'');return MATS[k]||(MATS[k]=new T3.MeshLambertMaterial(Object.assign({color:c},o||{})))}
 const WHITE=new T3.MeshBasicMaterial({color:0xfff4e0});
-function bx(w,h,d,c,x,y,z,parent,geo){const m=new T3.Mesh(geo||BOX,typeof c==='string'||typeof c==='number'?mat(c):c);m.scale.set(w,h,d);m.position.set(x||0,y||0,z||0);m.castShadow=true;m.receiveShadow=true;if(parent)parent.add(m);return m}
+function bx(w,h,d,c,x,y,z,parent,geo){const m=new T3.Mesh(geo||(ROUNDING?RBOX:BOX),typeof c==='string'||typeof c==='number'?mat(c):c);m.scale.set(w,h,d);m.position.set(x||0,y||0,z||0);m.castShadow=true;m.receiveShadow=true;if(parent)parent.add(m);return m}
 function grp(x,y,z,parent){const g=new T3.Group();g.position.set(x||0,y||0,z||0);if(parent)parent.add(g);return g}
 
 // ================= POST FX (film grain, vignette, color grade) =================

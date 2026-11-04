@@ -4,6 +4,10 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.12
+
+- Zombis y dinosaurios con formas redondeadas (torso, extremidades, cabezas y colas) en lugar de bloques; mantienen todas sus animaciones.
+
 ## Novedades de la 0.11
 
 - Gradación más táctica: colores más apagados y con más contraste, pasto menos flúo, viñeta y bloom mínimos, más nitidez.
