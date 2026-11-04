@@ -1,8 +1,10 @@
 /* v0.15: zombis y raptores con modelos hechos en Blender (malla orgánica, esqueleto y animaciones) */
+// Modelos de Quaternius: colores glTF (lineales) al espacio de color del juego, texturas sin conversión y sin metal.
+function fixMat15(m){(Array.isArray(m)?m:[m]).forEach(m=>{if(!m)return;if(m.map){m.map.encoding=THREE.LinearEncoding;m.map.needsUpdate=true}else if(m.color)m.color.convertLinearToSRGB();if('metalness' in m)m.metalness=0;if('roughness' in m)m.roughness=Math.max(.75,m.roughness)})}
 const GLB15T={ready:false,tpl:{}};
 (function(){try{const b64=s=>{const bin=atob(s),a=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)a[i]=bin.charCodeAt(i);return a.buffer};
   const ld=new THREE.GLTFLoader();let n=0;const ks=Object.keys(GLB15);
-  ks.forEach(k=>ld.parse(b64(GLB15[k]),'',gl=>{gl.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;o.geometry.computeBoundingSphere();o.geometry.boundingSphere.radius*=1.6}});GLB15T.tpl[k]=gl;if(++n===ks.length)GLB15T.ready=true},err=>console.error('glb15',k,err)))}catch(e){console.error('glb15',e)}})();
+  ks.forEach(k=>ld.parse(b64(GLB15[k]),'',gl=>{gl.scene.traverse(o=>{if(o.isMesh){fixMat15(o.material);o.castShadow=true;o.receiveShadow=true;o.geometry.computeBoundingSphere();o.geometry.boundingSphere.radius*=1.6}});GLB15T.tpl[k]=gl;if(++n===ks.length)GLB15T.ready=true},err=>console.error('glb15',k,err)))}catch(e){console.error('glb15',e)}})();
 const baseOf15=t=>{let k=t,i=0;while(EDEF[k]&&EDEF[k].base&&i++<4)k=EDEF[k].base;return k};
 const HUM15={caminante:1,corredor:.95,bruto:1.35,griton:.95,soldado:1.05},RAP15={raptor:1,raptorp:1};
 /* v0.16: hinchado, Rex y cuadrúpedos */
@@ -17,10 +19,13 @@ function glbMesh15(type){
   const tint=new THREE.Color();
   for(const m of mats){const nm=m.name;
     if(kind==='hinchado'){
+      if(m.map)m.color.set('#b8c890');
       if(nm==='cloth')m.color.set(['#6a6450','#5a5a4a','#7a6a50'][R()*3|0]);if(nm==='pants')m.color.set('#3a3a34');if(nm==='skin')m.color.set('#9aa070');
     }else if(kind==='rex'){if(nm==='hide')m.color.set('#6a5a44');
     }else if(kind==='cornudo'||kind==='acorazado'){if(nm==='hide')m.color.set(kind==='cornudo'?'#7a6a52':'#5a5a46');
     }else if(kind==='zombie'){
+      // modelo con textura: un tinte suave para que no sean todos iguales
+      if(m.map){m.color.set(b==='soldado'?'#8a9a70':CLOTH15[R()*CLOTH15.length|0]).lerp(new THREE.Color(1,1,1),.55);if(b==='bruto')m.color.multiplyScalar(.85)}
       if(nm==='cloth')m.color.set(b==='soldado'?'#4a5236':CLOTH15[R()*CLOTH15.length|0]);
       if(nm==='pants')m.color.set(b==='soldado'?'#3f4630':['#3a4250','#4a4238','#2f3238','#55503f'][R()*4|0]);
       if(nm==='skin')m.color.set(b==='corredor'?'#9aa07e':b==='bruto'?'#7b8a5e':b==='griton'?'#b0b49a':'#8b9a6e');
@@ -68,7 +73,7 @@ function npcGlb16(id){if(!GLB15T.ready||!GLB15T.tpl.human)return null;const d=NP
   let head=null,chest=null;inner.traverse(o=>{if(o.isBone){if(o.name==='head')head=o;if(o.name==='chest')chest=o}});
   const g=new THREE.Group();g.add(inner);const acc=new THREE.Group(),lo=new THREE.Group();
   const B=(w,h,dd,c,x,y,z,top)=>{const hd=top!==false&&y>1.52;return bx(w*.8,h,dd*.78,c,x*.8,y,z*(hd?.72:.85),hd?acc:lo)};
-  const a=d.acc;B(.045,.035,.02,'#1a1a1a',-.06,1.73,.18);B(.045,.035,.02,'#1a1a1a',.06,1.73,.18);
+  const a=d.acc;
   if(a==='shawl'){B(.58,.32,.34,'#5a3a4a',0,1.36,0);B(.33,.12,.33,'#b8b4aa',0,1.86,-.02);B(.14,.14,.14,'#b8b4aa',0,1.9,-.15)}
   else if(a==='veil'){B(.34,.42,.26,'#1e1e26',0,1.74,-.08);B(.32,.05,.06,'#e8e8e0',0,1.85,.1);B(.06,.06,.02,'#c8b060',0,1.32,.15)}
   else if(a==='cap'){B(.33,.1,.33,'#2a3a6a',0,1.87,0);B(.3,.03,.16,'#2a3a6a',0,1.83,.2);B(.06,.6,.02,'#2a3440',-.15,1.2,.145);B(.06,.6,.02,'#2a3440',.15,1.2,.145)}
