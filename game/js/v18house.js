@@ -55,7 +55,7 @@ function face18(b,x,z){if(!b)return 0;const dl=x-b.x0,dr=b.x1-x,db=z-b.z0,df=b.z
 
 let inst18=null;const mat18=new THREE.MeshStandardMaterial({vertexColors:true,roughness:.85,metalness:.05});
 function apply18(){
-  H18.pending=[];if(!world)return;const items={};const add=(k,x,y,z,yaw,sx,sy,sz,c)=>{if(!H18.geo[k])return false;(items[k]||(items[k]=[])).push({x,y,z,yaw,sx,sy,sz,c});return true};
+  H18.pending=[];if(!world)return;const items={};const put18=(k,x,y,z,yaw,sx,sy,sz,c)=>{if(!H18.geo[k])return false;(items[k]||(items[k]=[])).push({x,y,z,yaw,sx,sy,sz,c});return true};
   const emptyGeo=new THREE.BufferGeometry();emptyGeo.setAttribute('position',new THREE.Float32BufferAttribute([0,0,0,0,0,0,0,0,0],3));emptyGeo.setAttribute('normal',new THREE.Float32BufferAttribute([0,1,0,0,1,0,0,1,0],3));
   // Contenedores: el modelo ocupa la caja de colisión; la caja vieja deja de dibujarse.
   for(const c of conts){const def=CONT18[c.type];const ms=c.mesh;if(!def||!ms||!ms.isMesh||c.car)continue;
@@ -65,23 +65,23 @@ function apply18(){
     const asp=H18.geo[k0].userData.aspect;const nt=def.tile?Math.max(1,Math.min(5,Math.round((along/depth)/asp))):1;
     const y0=ms.position.y-bh/2;const ax=side?0:1,az=side?1:0;let ok=false;
     for(let i=0;i<nt;i++){const off=(i+.5)/nt*along-along/2;const k=def.m[i%def.m.length];
-      ok=add(k,c.x+ax*off,y0,c.z+az*off,yaw,along/nt,bh,depth,c)||ok}
+      ok=put18(k,c.x+ax*off,y0,c.z+az*off,yaw,along/nt,bh,depth,c)||ok}
     if(ok){ms.geometry=emptyGeo;c.m18=true}}
   for(const h of houses18){const b=h.b,R=h.rng;const fl=b.floor;
     for(const e of h.extra){const yaw=face18(b,e.x,e.z);const side=Math.abs(Math.sin(yaw))>.5;
-      if(e.k==='bed'){const yb=Math.abs(e.d-e.w)>0?(e.d>e.w?0:Math.PI/2):0;add('Bed_Single',e.x,fl,e.z,yb+(R()<.5?0:Math.PI),e.w,1.05,e.d);
-        add('Carpet_1',e.x+(R()-.5)*.4,fl+.01,e.z,yb,2,.03,1.4);add('NightStand_1',e.x+(e.x>b.cx?-1:1)*1.15,fl,e.z+(R()-.5)*.6,yaw,.5,.55,.5)}
-      else{add('Table_RoundLarge',e.x,fl,e.z,0,e.w,e.hh,e.d);
-        [[-1,0,Math.PI/2],[1,0,-Math.PI/2]].forEach(([sx,sz,ry])=>add('Chair_1',e.x+sx*(e.w/2+.25),fl,e.z+sz,ry,.45,1,.45))}}
+      if(e.k==='bed'){const yb=Math.abs(e.d-e.w)>0?(e.d>e.w?0:Math.PI/2):0;put18('Bed_Single',e.x,fl,e.z,yb+(R()<.5?0:Math.PI),e.w,1.05,e.d);
+        put18('Carpet_1',e.x+(R()-.5)*.4,fl+.01,e.z,yb,2,.03,1.4);put18('NightStand_1',e.x+(e.x>b.cx?-1:1)*1.15,fl,e.z+(R()-.5)*.6,yaw,.5,.55,.5)}
+      else{put18('Table_RoundLarge',e.x,fl,e.z,0,e.w,e.hh,e.d);
+        [[-1,0,Math.PI/2],[1,0,-Math.PI/2]].forEach(([sx,sz,ry])=>put18('Chair_1',e.x+sx*(e.w/2+.25),fl,e.z+sz,ry,.45,1,.45))}}
     // Ventanas: marco con vidrio sobre cada vidrio oscuro, por fuera.
-    for(const p of h.panes){add('Window_Small1',p.x,p.y-.62,p.z,p.alongX?0:Math.PI/2,p.alongX?1.25:.16,1.25,p.alongX?.16:1.25)}
+    for(const p of h.panes){put18('Window_Small1',p.x,p.y-.62,p.z,p.alongX?0:Math.PI/2,p.alongX?1.25:.16,1.25,p.alongX?.16:1.25)}
     if(!h.store){
       // Puerta abierta contra la pared, al lado del vano.
       const doorWall=h.side<0?3:2,dz=b.z0+b.d*.3,wx=doorWall===3?b.x1-.2:b.x0+.2,inward=doorWall===3?-1:1;
-      add('Door_1',wx+inward*.02,fl,dz-.75-.47,Math.PI/2*inward,.08,2.15,.9);
+      put18('Door_1',wx+inward*.02,fl,dz-.75-.47,Math.PI/2*inward,.08,2.15,.9);
       // Planta en un rincón y lámpara de techo en cada ambiente.
-      if(R()<.7)add(R()<.5?'Houseplant_1':'Houseplant_3',b.cx+(b.cx>wx?1:-1)*(b.w/2-.55),fl,b.z1-.55,0,.5,.9,.5);
-      add('Light_Ceiling1',b.cx,fl+2.25,b.cz-b.d/4,0,.35,.75,.35);add('Light_Ceiling1',b.cx,fl+2.25,b.cz+b.d/4,0,.35,.75,.35);
+      if(R()<.7)put18(R()<.5?'Houseplant_1':'Houseplant_3',b.cx+(b.cx>wx?1:-1)*(b.w/2-.55),fl,b.z1-.55,0,.5,.9,.5);
+      put18('Light_Ceiling1',b.cx,fl+2.25,b.cz-b.d/4,0,.35,.75,.35);put18('Light_Ceiling1',b.cx,fl+2.25,b.cz+b.d/4,0,.35,.75,.35);
       roof18(h)}
   }
   // Una InstancedMesh por modelo.
