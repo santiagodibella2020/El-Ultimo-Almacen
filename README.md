@@ -4,6 +4,11 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.17
+- **Vehículos con modelos 3D de verdad** en lugar de cajas: camioneta, furgón, camión, tractor (con su acoplado), auto familiar, 4x4, ambulancia y colectivo.
+- Colores gastados acordes al juego, ruedas que giran al andar y las delanteras que doblan.
+- Modelos libres (CC0) de Kenney (Car Kit) y Quaternius (Realistic Car Pack y Public Transport Pack). Se regeneran con `tools/models/veh/build.sh` (requiere `pip install bpy`).
+
 ## Novedades de la 0.16
 - El hinchado, el cornudo (y el Cornudo Viejo), el acorazado y el Rex Podrido ahora tienen modelos hechos en Blender, con esqueleto y animaciones de reposo, caminar, correr, atacar y morir.
 - La gente de los pueblos usa el modelo humano nuevo: respira, se da vuelta caminando para mirarte y conserva sus sombreros, velos y bufandas.
@@ -119,6 +124,7 @@ WASD moverse · Shift correr · C agacharse · Espacio saltar · Clic disparar o
 | Carpeta / archivo | Para qué sirve |
 | --- | --- |
 | `game/index.html` | El juego completo. Se abre también en cualquier navegador. |
+| `game/js/glb17.js` | Modelos de vehículos CC0 de Kenney (kenney.nl) y Quaternius (quaternius.com), dominio público. |
 | `game/vendor/three.min.js` | Motor 3D (three.js r128, licencia MIT) incluido para que funcione sin internet. |
 | `main.js` | La ventana de escritorio (Electron). Arranca en pantalla completa; F11 la alterna. |
 | `build/icon.png` | Ícono provisorio de la aplicación. |
