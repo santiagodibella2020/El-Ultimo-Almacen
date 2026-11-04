@@ -4,6 +4,11 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.19
+- **Zombis y dinosaurios con modelos 3D hechos por artistas**: zombi (caminante, corredor, bruto, gritón, soldado y jefes, cada uno con su tinte), hinchado, raptor y sus variantes, Rex, cornudo y acorazado. Todos con animaciones de reposo, caminar, correr, atacar y morir.
+- **La gente de los pueblos** usa un modelo humano nuevo, con su ropa, piel y accesorios de siempre (sombreros, velos, gorras, bufandas).
+- Modelos libres (CC0) de Quaternius (Zombie Animated, Animated Men Characters y Dinosaurs Pack). Se regeneran con `tools/models/mobs/build.sh`.
+
 ## Novedades de la 0.18
 - **Casas amuebladas con modelos 3D**: heladeras, cocinas, alacenas, bibliotecas, mesitas, estanterías, camas, mesas con sillas, alfombras, plantas, lámparas, puertas y marcos de ventana. Los muebles que se pueden revisar siguen funcionando igual y se oscurecen cuando ya los saqueaste.
 - Las casas tienen techo a dos aguas (algunas con chimenea).
