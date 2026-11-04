@@ -69,7 +69,7 @@ function mergeStatic(){
   // the dynamic store pieces and containers still get texture detail on their own materials
   for(const c of conts){const ms=c.mesh;if(ms&&ms.isMesh&&!c.car)ms.material=texturedMat(ms.material)}
 }
-const _genWorld=genWorld;genWorld=function(seed){_genWorld(seed);try{mergeStatic();mergeWorldGroups()}catch(e){console.error('mergeStatic',e)}};
+const _genWorld=genWorld;genWorld=function(seed){_genWorld(seed);try{if(typeof buildDecor9==="function")buildDecor9(seed)}catch(e){console.error("decor9",e)}try{mergeStatic();mergeWorldGroups()}catch(e){console.error('mergeStatic',e)}};
 // markLooted swaps to a dark material; keep its texture detail
 const _markLooted=markLooted;markLooted=function(c){_markLooted(c);if(c.mesh&&c.mesh.isMesh&&!c.car)c.mesh.material=texturedMat(c.mesh.material)};
 

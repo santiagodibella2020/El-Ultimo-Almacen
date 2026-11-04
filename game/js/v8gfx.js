@@ -14,10 +14,12 @@ function initPost8(){
     post8.quad=new T3.Mesh(new T3.PlaneGeometry(2,2),new T3.MeshBasicMaterial());post8.quad.frustumCulled=false;post8.scn.add(post8.quad);
     post8.mats.bright=fsMat8('uniform sampler2D tex;uniform float thr;varying vec2 vUv;void main(){vec3 c=texture2D(tex,vUv).rgb;float l=dot(c,vec3(.299,.587,.114));float k=smoothstep(thr,thr+.3,l);gl_FragColor=vec4(c*k,1.);}',{tex:{value:null},thr:{value:.62}});
     post8.mats.blur=fsMat8('uniform sampler2D tex;uniform vec2 dir;varying vec2 vUv;void main(){vec3 c=texture2D(tex,vUv).rgb*.2270270;c+=texture2D(tex,vUv+dir*1.3846).rgb*.3162162;c+=texture2D(tex,vUv-dir*1.3846).rgb*.3162162;c+=texture2D(tex,vUv+dir*3.2307).rgb*.0702702;c+=texture2D(tex,vUv-dir*3.2307).rgb*.0702702;gl_FragColor=vec4(c,1.);}',{tex:{value:null},dir:{value:new T3.Vector2()}});
-    post8.mats.comp=fsMat8(`uniform sampler2D tex,b1,b2;uniform float expo,bloom,vig,sat,contrast,time,flash;uniform vec3 shadowT,highT;varying vec2 vUv;
+    post8.mats.comp=fsMat8(`uniform sampler2D tex,b1,b2;uniform float expo,bloom,vig,sat,contrast,time,flash,sharp;uniform vec2 px;uniform vec3 shadowT,highT;varying vec2 vUv;
       float hash(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}
       void main(){
         vec3 c=texture2D(tex,vUv).rgb;
+        vec3 nb=(texture2D(tex,vUv+vec2(px.x,0.)).rgb+texture2D(tex,vUv-vec2(px.x,0.)).rgb+texture2D(tex,vUv+vec2(0.,px.y)).rgb+texture2D(tex,vUv-vec2(0.,px.y)).rgb)*.25;
+        c+=clamp(c-nb,-.12,.12)*sharp;                             // nitidez (unsharp mask)
         c+=(texture2D(b1,vUv).rgb*.55+texture2D(b2,vUv).rgb*.75)*bloom;
         c*=expo;
         c=c/(1.+max(c-.78,0.)*1.1);c=clamp(c,0.,1.);               // soft shoulder first, so nothing escapes 0..1
@@ -30,7 +32,7 @@ function initPost8(){
         vec2 q=vUv-.5;float v=1.-dot(q,q)*vig*1.6;c*=clamp(v,0.,1.);
         c+=(hash(vUv*vec2(1731.,947.)+time)-.5)/255.;             // dither, kills banding in the sky
         gl_FragColor=vec4(clamp(c,0.,1.),1.);}`,
-      {tex:{value:null},b1:{value:null},b2:{value:null},expo:{value:1.0},bloom:{value:.42},vig:{value:.55},sat:{value:1.12},contrast:{value:.38},time:{value:0},flash:{value:0},shadowT:{value:new T3.Color(.9,.97,1.1)},highT:{value:new T3.Color(1.06,1.02,.94)}});
+      {tex:{value:null},b1:{value:null},b2:{value:null},expo:{value:1.0},bloom:{value:.42},vig:{value:.55},sat:{value:1.12},contrast:{value:.38},time:{value:0},flash:{value:0},sharp:{value:.9},px:{value:new T3.Vector2(.001,.001)},shadowT:{value:new T3.Color(.9,.97,1.1)},highT:{value:new T3.Color(1.06,1.02,.94)}});
     return true;
   }catch(e){console.error('post8 init',e);post8.failed=true;post8.on=false}
 }
@@ -56,7 +58,7 @@ function runPost8(){
   m.blur.uniforms.tex.value=c1.texture;m.blur.uniforms.dir.value.set(1/c1.width,0);pass8(m.blur,c2);
   m.blur.uniforms.tex.value=c2.texture;m.blur.uniforms.dir.value.set(0,1/c1.height);pass8(m.blur,c1);
   const u=m.comp.uniforms;u.tex.value=rt.texture;u.b1.value=a1.texture;u.b2.value=c1.texture;u.time.value=time%10;
-  u.expo.value=1.0*(settings.bright||1);
+  u.expo.value=1.0*(settings.bright||1);u.px.value.set(1/rt.width,1/rt.height);
   pass8(m.comp,null);
 }
 const _render8=render;
@@ -66,7 +68,7 @@ render=function(dt){
   if(!post8.quad&&!initPost8()){return _render8(dt)}
   post8.on=true;sizePost8();
   if(S){applyLighting();updateCamera(dt);updateRain(dt,weatherFx().rain,camera.position.x,camera.position.y,camera.position.z)}
-  const viewmodel=S&&!P.inTruck&&camMode==='fp'&&!['menu','newgame','options'].includes(gstate);
+  const viewmodel=S&&!P.inTruck&&camMode==='fp'&&!['menu','newgame','options','cine'].includes(gstate);
   renderer.setRenderTarget(post8.rt);renderer.clear();renderer.render(scene,camera);renderer.clearDepth();if(viewmodel)renderer.render(wScene,wCam);
   runPost8();
 };

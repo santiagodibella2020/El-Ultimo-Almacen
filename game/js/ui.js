@@ -200,7 +200,7 @@ function updateCamera(dt){
 }
 function render(dt){
   if(S){applyLighting();updateCamera(dt);updateRain(dt,weatherFx().rain,camera.position.x,camera.position.y,camera.position.z)}
-  renderer.clear();renderer.render(scene,camera);renderer.clearDepth();if(S&&!P.inTruck&&camMode==='fp'&&!['menu','newgame','options'].includes(gstate))renderer.render(wScene,wCam);
+  renderer.clear();renderer.render(scene,camera);renderer.clearDepth();if(S&&!P.inTruck&&camMode==='fp'&&!['menu','newgame','options','cine'].includes(gstate))renderer.render(wScene,wCam);
 }
 
 // ================= HUD =================

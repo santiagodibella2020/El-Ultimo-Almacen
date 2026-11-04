@@ -25,6 +25,9 @@ for(const m of v6.matchAll(/\b(?:n|d|role|hi|txt|ask|thanks|tx|hint|label):'((?:
 for(const m of world.matchAll(/const types=\[([^\]]+)\]/g))m[1].match(/'([^']+)'/g).forEach(s=>add(s.slice(1,-1)));
 for(const m of menus.matchAll(/\['([A-ZÁÉÍÓÚÑa-záéíóúñ ][^']+)',st\./g))add(m[1]);
 for(const m of ui.matchAll(/const DIRS=\{([^}]+)\}/g))m[1].match(/'([^']+)'/g).forEach(s=>add(s.slice(1,-1)));
+const v9d=fs.readFileSync(path.join(G,'js','v9decor.js'),'utf8'),v9c=fs.readFileSync(path.join(G,'js','v9cine.js'),'utf8');
+for(const m of v9d.matchAll(/\b(?:n|d):'((?:[^'\\]|\\.)*)'/g))add(m[1]);for(const m of v9d.matchAll(/\['([A-Z][a-z]+)','#/g))add(m[1]);
+for(const m of v9c.matchAll(/\btext:'((?:[^'\\]|\\.)*)'/g))add(m[1]);
 // 3. static HTML
 const html=fs.readFileSync(path.join(G,'index.html'),'utf8');
 for(const m of html.matchAll(/<([a-z0-9]+)([^>]*)\sdata-t(?:="")?(\s[^>]*)?>([^<]*)</g))add(m[4].trim());

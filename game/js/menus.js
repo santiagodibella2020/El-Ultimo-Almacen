@@ -113,9 +113,7 @@ let tab='deposito',panelMsg='';
 const KEEP_CATS=['food','drink','med','tool','bag'];
 function openPanel(t){
   gstate='panel';mouse.down=false;unlock();tab=t||tab;
-  const moved=[];IK.forEach(k=>{if(KEEP_CATS.includes(ITEMS[k].cat)&&k!=='carne'&&k!=='podrida')return;const q=S.inv[k]||0;if(q>0){S.stash[k]=(S.stash[k]||0)+q;S.inv[k]=0;moved.push(`${nm(k)} ×${q}`)}});
-  const tm=[];for(const v of vehNear(0,0,40))IK.forEach(k=>{const q=v.st.cargo[k]||0;if(q>0){S.stash[k]=(S.stash[k]||0)+q;v.st.cargo[k]=0;tm.push(`${nm(k)} ×${q}`)}});
-  panelMsg=(moved.length?L('Descargaste de la mochila: {l}.',{l:moved.join(', ')})+' ':'')+(tm.length?L('De los vehículos: {l}.',{l:tm.join(', ')}):'');
+  panelMsg='';
   saveGame(true);renderPanel();show('panel')}
 function closePanel(){refreshShelves();resume()}
 function renderPanel(){
@@ -125,11 +123,15 @@ function renderPanel(){
   document.querySelectorAll('#tabs button').forEach(b=>{b.classList.toggle('on',b.dataset.tab===tab);if(b.dataset.tab==='encargos')b.innerHTML=esc(L('Encargos'))+(ac?`<span class="badge">${ac}</span>`:'')});
   $('pbody').innerHTML=(panelMsg?`<div class="banner">${esc(panelMsg)}</div>`:'')+({deposito:tabDeposito,estantes:tabEstantes,encargos:tabEncargos,taller:tabTaller,mejoras:tabMejoras,armeria:tabArmeria,metas:tabMetas}[tab])()}
 const vehCargo=k=>vehicles.reduce((s,v)=>s+(v.st.cargo[k]||0),0);
+const nearV=()=>vehNear(0,0,40);
+const vehCargoN=k=>nearV().reduce((s,v)=>s+(v.st.cargo[k]||0),0);
 const storeVeh=()=>vehNear(0,0,40).filter(v=>!v.st.broken).sort((a,b)=>a.st.fuel-b.st.fuel)[0];
 function tabDeposito(){
-  const rows=IK.filter(k=>(S.stash[k]||0)+(S.inv[k]||0)+vehCargo(k)>0).map(k=>row(`<div>${ico(k)}${esc(nm(k))} <span class="chance">· $${ITEMS[k].v} · ${kg(ITEMS[k].w)} kg</span></div><div class="num">${S.stash[k]||0}</div><div class="num">${S.inv[k]||0}</div><div class="num">${vehCargo(k)}</div><div class="acts">${btn(L('Llevar 1'),'take',`data-k="${k}" ${(S.stash[k]||0)<1?'disabled':''}`)}${btn(L('Dejar 1'),'drop',`data-k="${k}" ${(S.inv[k]||0)<1?'disabled':''}`)}</div>`)).join('');
+  const rows=IK.filter(k=>(S.stash[k]||0)+(S.inv[k]||0)+vehCargoN(k)>0).map(k=>row(`<div>${ico(k)}${esc(nm(k))} <span class="chance">· $${ITEMS[k].v} · ${kg(ITEMS[k].w)} kg</span></div><div class="num">${S.stash[k]||0}</div><div class="num">${S.inv[k]||0}</div><div class="num">${vehCargoN(k)}</div><div class="acts">${btn(L('Llevar 1'),'take',`data-k="${k}" ${(S.stash[k]||0)<1?'disabled':''}`)}${btn(L('Dejar 1'),'drop',`data-k="${k}" ${(S.inv[k]||0)<1?'disabled':''}`)}${btn(L('Dejar todo'),'dropall',`data-k="${k}" ${(S.inv[k]||0)<1?'disabled':''}`)}${btn(L('Del auto: 1'),'vone',`data-k="${k}" ${vehCargoN(k)<1?'disabled':''}`)}${btn(L('Del auto: todo'),'vall',`data-k="${k}" ${vehCargoN(k)<1?'disabled':''}`)}${btn(L('Del auto a la mochila'),'vbag',`data-k="${k}" ${vehCargoN(k)<1?'disabled':''}`)}</div>`)).join('');
+  const anyV=nearV().some(v=>IK.some(k=>(v.st.cargo[k]||0)>0)),anyB=IK.some(k=>(S.inv[k]||0)>0&&!(KEEP_CATS.includes(ITEMS[k].cat)&&k!=='carne'&&k!=='podrida'));
+  const bulk=`<div class="acts">${btn(L('Descargar todo el vehículo'),'vallx',anyV?'':'disabled')}${btn(L('Vaciar mochila (materiales y valor)'),'bagall',anyB?'':'disabled')}</div>`;
   const wrows=[...hotbar().map(k=>row(`<div>${esc(wn(k))}</div><div class="num">${esc(L('encima'))}</div><div></div><div></div><div class="acts">${btn(L('Guardar'),'wstore',`data-k="${k}"`)}</div>`)),...S.wstash.map(k=>row(`<div>${esc(wn(k))}</div><div class="num">${esc(L('guardada'))}</div><div></div><div></div><div class="acts">${btn(L('Llevar'),'wtake',`data-k="${k}"`)}</div>`))].join('');
-  return `<div class="banner">${esc(L('Al entrar se descargan solos los materiales y objetos de valor de la mochila, y la carga de todos los vehículos estacionados cerca. Comida, bebida, medicina y herramientas quedan encima.'))} ${esc(L('Mochila: {a} de {b} kg.',{a:kg(invKg()),b:capKg()}))}</div>
+  return `<div class="banner">${esc(L('Nada se descarga solo: elegí qué dejar en el depósito y qué sacar de los vehículos cercanos.'))} ${esc(L('Mochila: {a} de {b} kg.',{a:kg(invKg()),b:capKg()}))}</div>${bulk}
   <div class="rows">${row(`<div>${esc(L('Producto'))}</div><div>${esc(L('Depósito'))}</div><div>${esc(L('Mochila'))}</div><div>${esc(L('Vehículos'))}</div><div></div>`,'head')}${rows||row(`<div>${esc(L('El depósito está vacío. Salí a buscar mercadería.'))}</div>`)}</div>
   <h4>${esc(L('Armas'))}</h4><div class="rows">${wrows}</div>
   <h4>${esc(L('Munición'))}</h4><p class="note">${Object.keys(AMMO_N).map(a=>`${esc(an(a))}: ${S.ammo[a]}`).join(' · ')}</p>`}
@@ -163,6 +165,10 @@ $('panel').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(
   if(a==='close'){closePanel();return}
   if(a==='take'){if(addInv(k,1)>0)panelMsg=L('No entra en la mochila.');else S.stash[k]--}
   if(a==='drop'){S.inv[k]--;S.stash[k]=(S.stash[k]||0)+1}
+  if(a==='dropall'){S.stash[k]=(S.stash[k]||0)+S.inv[k];S.inv[k]=0}
+  if(a==='vone'||a==='vall'||a==='vbag'){let want=a==='vone'?1:1e9,left=0;for(const v of nearV()){while(want>0&&(v.st.cargo[k]||0)>0){if(a==='vbag'){if(addInv(k,1)>0){left=1;want=0;break}}else S.stash[k]=(S.stash[k]||0)+1;v.st.cargo[k]--;want--}}if(left)panelMsg=L('No entra en la mochila.')}
+  if(a==='vallx'){for(const v of nearV())IK.forEach(kk=>{const q=v.st.cargo[kk]||0;if(q>0){S.stash[kk]=(S.stash[kk]||0)+q;v.st.cargo[kk]=0}});panelMsg=L('Descargaste todo el vehículo en el depósito.')}
+  if(a==='bagall'){IK.forEach(kk=>{if(KEEP_CATS.includes(ITEMS[kk].cat)&&kk!=='carne'&&kk!=='podrida')return;const q=S.inv[kk]||0;if(q>0){S.stash[kk]=(S.stash[kk]||0)+q;S.inv[kk]=0}});panelMsg=L('Dejaste en el depósito los materiales y objetos de valor.')}
   if(a==='wstore'){S.weapons=S.weapons.filter(x=>x!==k);S.wstash.push(k);if(S.cur===k){S.cur=hotbar()[0]||null;equip()}}
   if(a==='wtake'){S.wstash=S.wstash.filter(x=>x!==k);S.weapons.push(k);if(!S.cur){S.cur=k;equip()}}
   if(a==='craft'){const r=RECIPES.find(x=>x.id===b.dataset.r),n=+b.dataset.n;if(haveIn(r,n)&&!recipeLock(r)){Object.entries(r.in).forEach(([kk,q])=>S.stash[kk]-=q*n);if(r.ammo)S.ammo[r.ammo[0]]+=r.ammo[1]*n;else if(r.weapon)giveWeapon(r.weapon,true);else S.stash[r.out[0]]=(S.stash[r.out[0]]||0)+r.out[1]*n;panelMsg=L('Fabricaste: {r}',{r:L(r.n)})+(n>1?` ×${n}`:'')+'.';sfx('crate');addSk(r.id==='asado'?'supervivencia':'carpinteria',2*n)}}

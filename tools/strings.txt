@@ -130,8 +130,6 @@ Guardar
 Todo
 Vacío.
 No te entra más: llevás demasiado peso.
-Descargaste de la mochila: {l}.
-De los vehículos: {l}.
 noche
 Plata
 Reputación
@@ -139,10 +137,16 @@ Hoy
 Encargos
 Llevar 1
 Dejar 1
+Dejar todo
+Del auto: 1
+Del auto: todo
+Del auto a la mochila
+Descargar todo el vehículo
+Vaciar mochila (materiales y valor)
 encima
 guardada
 Llevar
-Al entrar se descargan solos los materiales y objetos de valor de la mochila, y la carga de todos los vehículos estacionados cerca. Comida, bebida, medicina y herramientas quedan encima.
+Nada se descarga solo: elegí qué dejar en el depósito y qué sacar de los vehículos cercanos.
 Mochila: {a} de {b} kg.
 Producto
 Depósito
@@ -200,6 +204,8 @@ Tu historia
 Últimos movimientos del mostrador
 Todavía no pasó ningún cliente.
 No entra en la mochila.
+Descargaste todo el vehículo en el depósito.
+Dejaste en el depósito los materiales y objetos de valor.
 Fabricaste: {r}
 Reparaste la empalizada con {n} materiales.
 Tanque al {n}%.
@@ -388,6 +394,10 @@ Hay gente viva en la zona. Buscá pueblos, hablá con ellos (E) y armá la histo
 V · cambiar vista (tercera persona / interior)
 Vista: tercera persona
 Vista: interior
+Esc: saltear
+Colocado
+Hacé del almacén tu hogar: lo que compres aparece adentro. Guardar devuelve la mitad del precio.
+Compraste: {n}.
 Lata de comida
 Pan
 Fruta
@@ -879,6 +889,35 @@ S
 SO
 O
 NO
+Piso de madera
+Tablones cálidos en todo el salón.
+Alfombra
+Elegí el color que más te guste.
+Mesa con sillas
+Para comer en familia.
+Sillón
+Un lugar para descansar.
+Biblioteca
+Libros viejos y alguna foto.
+Velador
+Luz cálida sobre la mesa de noche.
+Plantas
+Un poco de verde en medio de todo.
+Cuadros
+Recuerdos de antes del desastre.
+Guirnalda de luces
+Foquitos de colores bajo el techo.
+Trofeo de caza
+Un cráneo de bicho sobre la puerta.
+Roja
+Azul
+Verde
+Mostaza
+Hace meses que el mundo se pudrió.
+Los podridos caminan de noche. Los dinosaurios volvieron a la tierra.
+Pero el almacén sigue en pie.
+Mientras haya mercadería, habrá un mañana.
+Algo enorme despertó…
 Cargando el mundo…
 Aguante
 E bajar · Espacio frenar
@@ -911,6 +950,7 @@ Tu almacén
 Volver · E
 Estantes
 Mejoras
+Hogar
 Caravaneros
 Metas
 Personaje

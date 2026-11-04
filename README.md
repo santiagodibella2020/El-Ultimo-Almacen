@@ -4,6 +4,15 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.9
+
+- **Escape** cierra todos los paneles y vuelve atrás (inventario, mapa, almacén, diario, cargas, pausa), y reintenta capturar el mouse si el navegador lo rechaza.
+- **Carga manual**: al entrar al almacén ya no se descarga nada solo. En el depósito elegís: dejar 1 / dejar todo, sacar del auto 1 / todo / a la mochila, o descargar todo el vehículo.
+- **Look más nítido, tipo shooter táctico**: sin grano, filtro de nitidez, colores más vivos y niebla más liviana.
+- **Cinemáticas**: intro al empezar una partida y una escena corta la primera vez que despierta un jefe. Se saltean con Esc, Espacio o clic.
+- **Más detalle**: casas con alfombras, cuadros, lámparas, plantas y sillas; negocios con luces; autos y un colectivo abandonados en la calle del pueblo, faroles, bancos y buzones; campamentos de sobrevivientes en el monte.
+- **El almacén como hogar**: nueva pestaña *Hogar* para comprar piso de madera, alfombra (4 colores), mesa con sillas, sillón, biblioteca, velador, plantas, cuadros, guirnalda y un trofeo de caza.
+
 ## Novedades de la 0.8
 
 - Salto gráfico de gama media: el juego ahora se dibuja con posprocesado (suavizado de bordes 4x en calidad alta, brillo suave en luces y cielo, curva de contraste de cine, sombras frías y luces cálidas, viñeta y colores más vivos).
