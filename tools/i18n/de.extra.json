@@ -442,5 +442,19 @@
  "Camilla": "Krankenbett",
  "Vitrina de medicamentos": "Medikamentenschrank",
  "Pupitre": "Schulbank",
- "Cocina del comedor": "Kantinenküche"
+ "Cocina del comedor": "Kantinenküche",
+ "Apagón: se cortó la luz en el almacén. Sin luz no andan las lámparas ni las torretas.": "Stromausfall: Im Laden ist der Strom weg. Ohne Strom gehen Lampen und Geschütztürme nicht.",
+ "El banco de recarga mantiene las torretas andando, pero más lentas.": "Die Ladestation hält die Geschütztürme am Laufen, aber langsamer.",
+ "Noche cerrada: la bruma se espesa y vienen más podridos que nunca.": "Finstere Nacht: Der Nebel wird dichter und es kommen mehr Verrottete als je zuvor.",
+ "Volvió la luz.": "Der Strom ist wieder da.",
+ "Apagón": "Stromausfall",
+ "Noche cerrada": "Finstere Nacht",
+ "La lluvia apagó la fogata.": "Der Regen hat das Lagerfeuer gelöscht.",
+ "La lluvia apagó la fogata": "Der Regen hat das Lagerfeuer gelöscht",
+ "Esperá a que pare de llover": "Warte, bis der Regen aufhört",
+ "Fogata apagada": "Lagerfeuer aus",
+ "Necesitás 1 madera para prenderla": "Du brauchst 1 Holz, um es anzuzünden",
+ "Mantené E · Prender la fogata": "E halten · Lagerfeuer anzünden",
+ "Usa 1 madera": "Verbraucht 1 Holz",
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "Bei Nebel kommen mehr Verrottete näher. Du siehst sie nicht kommen."
 }

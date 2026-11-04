@@ -442,5 +442,19 @@
  "Camilla": "病床",
  "Vitrina de medicamentos": "药品柜",
  "Pupitre": "课桌",
- "Cocina del comedor": "食堂厨房"
+ "Cocina del comedor": "食堂厨房",
+ "Apagón: se cortó la luz en el almacén. Sin luz no andan las lámparas ni las torretas.": "停电：杂货店断电了。没电的话，灯和炮塔都无法运作。",
+ "El banco de recarga mantiene las torretas andando, pero más lentas.": "充电装置让炮塔继续运转，但速度变慢。",
+ "Noche cerrada: la bruma se espesa y vienen más podridos que nunca.": "漆黑之夜：迷雾变浓，来的腐尸比以往任何时候都多。",
+ "Volvió la luz.": "来电了。",
+ "Apagón": "停电",
+ "Noche cerrada": "漆黑之夜",
+ "La lluvia apagó la fogata.": "雨浇灭了篝火。",
+ "La lluvia apagó la fogata": "雨浇灭了篝火",
+ "Esperá a que pare de llover": "等雨停吧",
+ "Fogata apagada": "篝火已熄灭",
+ "Necesitás 1 madera para prenderla": "需要1个木材才能点燃",
+ "Mantené E · Prender la fogata": "按住 E · 点燃篝火",
+ "Usa 1 madera": "消耗1个木材",
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "起雾时会有更多腐尸靠近。你看不到它们过来。"
 }

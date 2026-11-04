@@ -442,5 +442,19 @@
  "Camilla": "Łóżko szpitalne",
  "Vitrina de medicamentos": "Gablota z lekami",
  "Pupitre": "Ławka szkolna",
- "Cocina del comedor": "Kuchnia stołówki"
+ "Cocina del comedor": "Kuchnia stołówki",
+ "Apagón: se cortó la luz en el almacén. Sin luz no andan las lámparas ni las torretas.": "Awaria prądu: w sklepie nie ma prądu. Bez prądu lampy i wieżyczki nie działają.",
+ "El banco de recarga mantiene las torretas andando, pero más lentas.": "Bank ładowania utrzymuje wieżyczki w działaniu, ale wolniej.",
+ "Noche cerrada: la bruma se espesa y vienen más podridos que nunca.": "Ciemna noc: mgła gęstnieje i nadciąga więcej gnijących niż kiedykolwiek.",
+ "Volvió la luz.": "Prąd wrócił.",
+ "Apagón": "Awaria prądu",
+ "Noche cerrada": "Ciemna noc",
+ "La lluvia apagó la fogata.": "Deszcz zgasił ognisko.",
+ "La lluvia apagó la fogata": "Deszcz zgasił ognisko",
+ "Esperá a que pare de llover": "Poczekaj, aż przestanie padać",
+ "Fogata apagada": "Ognisko zgasło",
+ "Necesitás 1 madera para prenderla": "Potrzebujesz 1 drewna, żeby je rozpalić",
+ "Mantené E · Prender la fogata": "Przytrzymaj E · Rozpal ognisko",
+ "Usa 1 madera": "Zużywa 1 drewno",
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "We mgle podchodzi więcej gnijących. Nie zobaczysz, jak nadchodzą."
 }

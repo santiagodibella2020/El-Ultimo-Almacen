@@ -375,6 +375,20 @@ Salud {n}%
 Estación de servicio La Posta
 Escuela rural N.º 14
 Hospital San Roque
+Apagón: se cortó la luz en el almacén. Sin luz no andan las lámparas ni las torretas.
+El banco de recarga mantiene las torretas andando, pero más lentas.
+Noche cerrada: la bruma se espesa y vienen más podridos que nunca.
+Volvió la luz.
+Apagón
+Noche cerrada
+La lluvia apagó la fogata.
+La lluvia apagó la fogata
+Esperá a que pare de llover
+Fogata apagada
+Necesitás 1 madera para prenderla
+Mantené E · Prender la fogata
+Usa 1 madera
+Con la niebla se acercan más podridos. No los vas a ver venir.
 {d} de {m}
 Arreglaste: {v}. Ya podés manejarlo.
 Mantené E · Reparar: {v}

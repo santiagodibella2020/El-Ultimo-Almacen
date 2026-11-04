@@ -442,5 +442,19 @@
  "Camilla": "Hospital bed",
  "Vitrina de medicamentos": "Medicine cabinet",
  "Pupitre": "School desk",
- "Cocina del comedor": "Cafeteria kitchen"
+ "Cocina del comedor": "Cafeteria kitchen",
+ "Apagón: se cortó la luz en el almacén. Sin luz no andan las lámparas ni las torretas.": "Blackout: the power went out at the store. Without power the lamps and turrets don't work.",
+ "El banco de recarga mantiene las torretas andando, pero más lentas.": "The charging bank keeps the turrets running, but slower.",
+ "Noche cerrada: la bruma se espesa y vienen más podridos que nunca.": "Pitch-black night: the mist thickens and more rotters than ever are coming.",
+ "Volvió la luz.": "The power is back.",
+ "Apagón": "Blackout",
+ "Noche cerrada": "Pitch-black night",
+ "La lluvia apagó la fogata.": "The rain put out the campfire.",
+ "La lluvia apagó la fogata": "The rain put out the campfire",
+ "Esperá a que pare de llover": "Wait for the rain to stop",
+ "Fogata apagada": "Campfire out",
+ "Necesitás 1 madera para prenderla": "You need 1 wood to light it",
+ "Mantené E · Prender la fogata": "Hold E · Light the campfire",
+ "Usa 1 madera": "Uses 1 wood",
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "With the fog, more rotters come close. You won't see them coming."
 }

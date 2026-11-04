@@ -442,5 +442,19 @@
  "Camilla": "병원 침대",
  "Vitrina de medicamentos": "약품 진열장",
  "Pupitre": "학교 책상",
- "Cocina del comedor": "급식실 주방"
+ "Cocina del comedor": "급식실 주방",
+ "Apagón: se cortó la luz en el almacén. Sin luz no andan las lámparas ni las torretas.": "정전: 가게에 전기가 나갔다. 전기가 없으면 조명과 포탑이 작동하지 않는다.",
+ "El banco de recarga mantiene las torretas andando, pero más lentas.": "충전 장치 덕분에 포탑은 돌아가지만 더 느리다.",
+ "Noche cerrada: la bruma se espesa y vienen más podridos que nunca.": "칠흑 같은 밤: 안개가 짙어지고 그 어느 때보다 많은 부패체가 몰려온다.",
+ "Volvió la luz.": "전기가 돌아왔다.",
+ "Apagón": "정전",
+ "Noche cerrada": "칠흑 같은 밤",
+ "La lluvia apagó la fogata.": "비 때문에 모닥불이 꺼졌다.",
+ "La lluvia apagó la fogata": "비 때문에 모닥불이 꺼졌다",
+ "Esperá a que pare de llover": "비가 그칠 때까지 기다리자",
+ "Fogata apagada": "꺼진 모닥불",
+ "Necesitás 1 madera para prenderla": "불을 붙이려면 나무 1개가 필요하다",
+ "Mantené E · Prender la fogata": "E 길게 누르기 · 모닥불 피우기",
+ "Usa 1 madera": "나무 1개 사용",
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "안개 속에서는 더 많은 부패체가 다가온다. 오는 것이 보이지 않는다."
 }

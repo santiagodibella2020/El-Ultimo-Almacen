@@ -442,5 +442,19 @@
  "Camilla": "Lit d'hôpital",
  "Vitrina de medicamentos": "Vitrine à médicaments",
  "Pupitre": "Pupitre",
- "Cocina del comedor": "Cuisine de la cantine"
+ "Cocina del comedor": "Cuisine de la cantine",
+ "Apagón: se cortó la luz en el almacén. Sin luz no andan las lámparas ni las torretas.": "Coupure de courant : plus d'électricité au magasin. Sans courant, les lampes et les tourelles ne marchent pas.",
+ "El banco de recarga mantiene las torretas andando, pero más lentas.": "La batterie de recharge fait tourner les tourelles, mais plus lentement.",
+ "Noche cerrada: la bruma se espesa y vienen más podridos que nunca.": "Nuit noire : la brume s'épaissit et les pourris arrivent plus nombreux que jamais.",
+ "Volvió la luz.": "Le courant est revenu.",
+ "Apagón": "Coupure de courant",
+ "Noche cerrada": "Nuit noire",
+ "La lluvia apagó la fogata.": "La pluie a éteint le feu de camp.",
+ "La lluvia apagó la fogata": "La pluie a éteint le feu de camp",
+ "Esperá a que pare de llover": "Attends que la pluie s'arrête",
+ "Fogata apagada": "Feu de camp éteint",
+ "Necesitás 1 madera para prenderla": "Il te faut 1 bois pour l'allumer",
+ "Mantené E · Prender la fogata": "Maintiens E · Allumer le feu de camp",
+ "Usa 1 madera": "Utilise 1 bois",
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "Avec le brouillard, plus de pourris approchent. Tu ne les verras pas venir."
 }

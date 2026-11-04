@@ -442,5 +442,19 @@
  "Camilla": "Hasta yatağı",
  "Vitrina de medicamentos": "İlaç dolabı",
  "Pupitre": "Okul sırası",
- "Cocina del comedor": "Yemekhane mutfağı"
+ "Cocina del comedor": "Yemekhane mutfağı",
+ "Apagón: se cortó la luz en el almacén. Sin luz no andan las lámparas ni las torretas.": "Elektrik kesintisi: dükkânın elektriği gitti. Elektrik olmadan lambalar ve taretler çalışmaz.",
+ "El banco de recarga mantiene las torretas andando, pero más lentas.": "Şarj ünitesi taretleri çalıştırıyor ama daha yavaş.",
+ "Noche cerrada: la bruma se espesa y vienen más podridos que nunca.": "Zifiri gece: sis koyulaşıyor ve her zamankinden çok çürük geliyor.",
+ "Volvió la luz.": "Elektrik geldi.",
+ "Apagón": "Elektrik kesintisi",
+ "Noche cerrada": "Zifiri gece",
+ "La lluvia apagó la fogata.": "Yağmur kamp ateşini söndürdü.",
+ "La lluvia apagó la fogata": "Yağmur kamp ateşini söndürdü",
+ "Esperá a que pare de llover": "Yağmurun dinmesini bekle",
+ "Fogata apagada": "Kamp ateşi sönük",
+ "Necesitás 1 madera para prenderla": "Yakmak için 1 odun lazım",
+ "Mantené E · Prender la fogata": "E basılı tut · Kamp ateşini yak",
+ "Usa 1 madera": "1 odun kullanır",
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "Siste daha çok çürük yaklaşıyor. Geldiklerini görmeyeceksin."
 }

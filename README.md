@@ -4,6 +4,12 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.23
+- **Apagones**: desde el día 3, algunas noches se corta la luz del almacén (más seguido si hay tormenta). Sin luz no andan las lámparas ni las torretas, y la linterna gasta más rápido. Con el banco de recarga las torretas siguen funcionando, pero disparan más lento.
+- **Noche cerrada**: desde el día 4, a veces la bruma se espesa toda la noche y la horda viene un 50 % más grande.
+- **Niebla**: mientras dura se acercan grupos de podridos que no ves venir.
+- **Lluvia**: apaga las fogatas que están a la intemperie. Cuando para, las prendés de nuevo con 1 madera.
+
 ## Novedades de la 0.22
 - **Lugares nuevos para explorar**:
   - **Estación de servicio La Posta**: playa con surtidores, minimercado y lubricentro.

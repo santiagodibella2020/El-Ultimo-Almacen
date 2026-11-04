@@ -442,5 +442,19 @@
  "Camilla": "Больничная койка",
  "Vitrina de medicamentos": "Шкаф с лекарствами",
  "Pupitre": "Парта",
- "Cocina del comedor": "Кухня столовой"
+ "Cocina del comedor": "Кухня столовой",
+ "Apagón: se cortó la luz en el almacén. Sin luz no andan las lámparas ni las torretas.": "Отключение света: в магазине пропало электричество. Без света не работают лампы и турели.",
+ "El banco de recarga mantiene las torretas andando, pero más lentas.": "Зарядный блок держит турели в работе, но они стреляют медленнее.",
+ "Noche cerrada: la bruma se espesa y vienen más podridos que nunca.": "Непроглядная ночь: мгла густеет, и гнилых идёт больше, чем когда-либо.",
+ "Volvió la luz.": "Свет вернулся.",
+ "Apagón": "Отключение света",
+ "Noche cerrada": "Непроглядная ночь",
+ "La lluvia apagó la fogata.": "Дождь потушил костёр.",
+ "La lluvia apagó la fogata": "Дождь потушил костёр",
+ "Esperá a que pare de llover": "Подожди, пока кончится дождь",
+ "Fogata apagada": "Костёр погас",
+ "Necesitás 1 madera para prenderla": "Нужна 1 древесина, чтобы разжечь",
+ "Mantené E · Prender la fogata": "Удерживай E · Разжечь костёр",
+ "Usa 1 madera": "Тратит 1 древесину",
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "В тумане подходит больше гнилых. Ты не увидишь, как они приближаются."
 }

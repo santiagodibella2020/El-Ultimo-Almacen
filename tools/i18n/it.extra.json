@@ -442,5 +442,19 @@
  "Camilla": "Lettino",
  "Vitrina de medicamentos": "Vetrina dei medicinali",
  "Pupitre": "Banco di scuola",
- "Cocina del comedor": "Cucina della mensa"
+ "Cocina del comedor": "Cucina della mensa",
+ "Apagón: se cortó la luz en el almacén. Sin luz no andan las lámparas ni las torretas.": "Blackout: è saltata la luce all'emporio. Senza corrente lampade e torrette non funzionano.",
+ "El banco de recarga mantiene las torretas andando, pero más lentas.": "Il banco di ricarica tiene accese le torrette, ma più lente.",
+ "Noche cerrada: la bruma se espesa y vienen más podridos que nunca.": "Notte fonda: la bruma si infittisce e arrivano più putridi che mai.",
+ "Volvió la luz.": "È tornata la luce.",
+ "Apagón": "Blackout",
+ "Noche cerrada": "Notte fonda",
+ "La lluvia apagó la fogata.": "La pioggia ha spento il falò.",
+ "La lluvia apagó la fogata": "La pioggia ha spento il falò",
+ "Esperá a que pare de llover": "Aspetta che smetta di piovere",
+ "Fogata apagada": "Falò spento",
+ "Necesitás 1 madera para prenderla": "Ti serve 1 legno per accenderlo",
+ "Mantené E · Prender la fogata": "Tieni premuto E · Accendi il falò",
+ "Usa 1 madera": "Usa 1 legno",
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "Con la nebbia si avvicinano più putridi. Non li vedrai arrivare."
 }

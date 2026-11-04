@@ -442,5 +442,19 @@
  "Camilla": "Maca",
  "Vitrina de medicamentos": "Vitrine de medicamentos",
  "Pupitre": "Carteira escolar",
- "Cocina del comedor": "Cozinha do refeitório"
+ "Cocina del comedor": "Cozinha do refeitório",
+ "Apagón: se cortó la luz en el almacén. Sin luz no andan las lámparas ni las torretas.": "Apagão: a luz do armazém caiu. Sem luz, as lâmpadas e as torretas não funcionam.",
+ "El banco de recarga mantiene las torretas andando, pero más lentas.": "O banco de recarga mantém as torretas funcionando, mas mais devagar.",
+ "Noche cerrada: la bruma se espesa y vienen más podridos que nunca.": "Noite fechada: a bruma engrossa e vêm mais podres do que nunca.",
+ "Volvió la luz.": "A luz voltou.",
+ "Apagón": "Apagão",
+ "Noche cerrada": "Noite fechada",
+ "La lluvia apagó la fogata.": "A chuva apagou a fogueira.",
+ "La lluvia apagó la fogata": "A chuva apagou a fogueira",
+ "Esperá a que pare de llover": "Espere a chuva parar",
+ "Fogata apagada": "Fogueira apagada",
+ "Necesitás 1 madera para prenderla": "Você precisa de 1 madeira para acendê-la",
+ "Mantené E · Prender la fogata": "Segure E · Acender a fogueira",
+ "Usa 1 madera": "Usa 1 madeira",
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "Com a neblina, mais podres se aproximam. Você não vai vê-los chegar."
 }
