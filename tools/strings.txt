@@ -372,6 +372,9 @@ Misiones
 Misión aceptada. Está marcada en la brújula y el mapa.
 Misión abandonada.
 Salud {n}%
+Estación de servicio La Posta
+Escuela rural N.º 14
+Hospital San Roque
 {d} de {m}
 Arreglaste: {v}. Ya podés manejarlo.
 Mantené E · Reparar: {v}
@@ -557,6 +560,10 @@ Mostrador
 Baúl del auto
 Tacho de basura
 Surtidor
+Camilla
+Vitrina de medicamentos
+Pupitre
+Cocina del comedor
 Caja
 Estante extra
 Un producto más a la venta al mismo tiempo.

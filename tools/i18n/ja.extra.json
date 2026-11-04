@@ -435,5 +435,12 @@
  "Misiones": "ミッション",
  "Misión aceptada. Está marcada en la brújula y el mapa.": "ミッションを引き受けた。コンパスと地図に表示されている。",
  "Misión abandonada.": "ミッションを放棄した。",
- "Salud {n}%": "体力 {n}%"
+ "Salud {n}%": "体力 {n}%",
+ "Estación de servicio La Posta": "ガソリンスタンド「ラ・ポスタ」",
+ "Escuela rural N.º 14": "第14農村学校",
+ "Hospital San Roque": "サン・ロケ病院",
+ "Camilla": "病院のベッド",
+ "Vitrina de medicamentos": "薬品棚",
+ "Pupitre": "学校の机",
+ "Cocina del comedor": "給食室の厨房"
 }

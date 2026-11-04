@@ -435,5 +435,12 @@
  "Misiones": "Задания",
  "Misión aceptada. Está marcada en la brújula y el mapa.": "Задание принято. Оно отмечено на компасе и карте.",
  "Misión abandonada.": "Задание отменено.",
- "Salud {n}%": "Здоровье {n}%"
+ "Salud {n}%": "Здоровье {n}%",
+ "Estación de servicio La Posta": "Заправка «Ла-Поста»",
+ "Escuela rural N.º 14": "Сельская школа № 14",
+ "Hospital San Roque": "Больница Сан-Роке",
+ "Camilla": "Больничная койка",
+ "Vitrina de medicamentos": "Шкаф с лекарствами",
+ "Pupitre": "Парта",
+ "Cocina del comedor": "Кухня столовой"
 }

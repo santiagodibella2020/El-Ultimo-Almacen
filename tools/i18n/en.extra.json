@@ -435,5 +435,12 @@
  "Misiones": "Missions",
  "Misión aceptada. Está marcada en la brújula y el mapa.": "Mission accepted. It's marked on the compass and the map.",
  "Misión abandonada.": "Mission abandoned.",
- "Salud {n}%": "Health {n}%"
+ "Salud {n}%": "Health {n}%",
+ "Estación de servicio La Posta": "La Posta gas station",
+ "Escuela rural N.º 14": "Rural School No. 14",
+ "Hospital San Roque": "San Roque Hospital",
+ "Camilla": "Hospital bed",
+ "Vitrina de medicamentos": "Medicine cabinet",
+ "Pupitre": "School desk",
+ "Cocina del comedor": "Cafeteria kitchen"
 }

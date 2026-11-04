@@ -435,5 +435,12 @@
  "Misiones": "Missionen",
  "Misión aceptada. Está marcada en la brújula y el mapa.": "Mission angenommen. Sie ist auf dem Kompass und der Karte markiert.",
  "Misión abandonada.": "Mission abgebrochen.",
- "Salud {n}%": "Gesundheit {n} %"
+ "Salud {n}%": "Gesundheit {n} %",
+ "Estación de servicio La Posta": "Tankstelle La Posta",
+ "Escuela rural N.º 14": "Dorfschule Nr. 14",
+ "Hospital San Roque": "Krankenhaus San Roque",
+ "Camilla": "Krankenbett",
+ "Vitrina de medicamentos": "Medikamentenschrank",
+ "Pupitre": "Schulbank",
+ "Cocina del comedor": "Kantinenküche"
 }

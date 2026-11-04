@@ -106,6 +106,10 @@ const CONT={
   baul:{n:'Baúl del auto',loot:[['combustible',.5,1,2],['chatarra',.6,1,3],['cinta',.25,1,1],['lata',.2,1,1],['ammo:balas',.25,5,10],['herramientas',.04,1,1],['w:bate',.05,1,1]]},
   tacho:{n:'Tacho de basura',loot:[['chatarra',.4,1,1],['tela',.4,1,2],['podrida',.5,1,2],['lata',.12,1,1],['clavos',.2,2,6]]},
   surtidor:{n:'Surtidor',loot:[['combustible',.85,1,3]]},
+  camilla:{n:'Camilla',loot:[['venda',.6,1,2],['desinfectante',.3,1,1],['analgesicos',.3,1,1],['tela',.4,1,2],['antibioticos',.05,1,1]]},
+  vitrina:{n:'Vitrina de medicamentos',loot:[['venda',.85,2,5],['desinfectante',.6,1,2],['analgesicos',.6,1,3],['antibioticos',.35,1,2],['medicina',.35,1,2]]},
+  pupitre:{n:'Pupitre',loot:[['galletitas',.3,1,1],['chocolate',.15,1,1],['pilas',.18,1,1],['encendedor',.06,1,1],['mochila_e',.05,1,1]]},
+  comedor:{n:'Cocina del comedor',loot:[['lata',.75,2,5],['galletitas',.5,1,3],['agua',.55,1,3],['leche',.3,1,2],['pan',.25,1,2],['encendedor',.15,1,1]]},
   caja:{n:'Caja',loot:[['lata',.4,1,2],['agua',.3,1,2],['venda',.25,1,1],['chatarra',.4,1,2],['ammo:balas',.3,5,10],['ammo:cartuchos',.12,2,4],['clavos',.3,3,8],['ambar',.03,1,1]]},
 };
 const UPG={
