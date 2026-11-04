@@ -4,6 +4,11 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.25
+- **Armas largas con modelos 3D**: el rifle de caza, el rifle de francotirador (con mira), el fusil de asalto y la ametralladora dejan de ser cajas.
+- **Brazos en primera persona**: las manos ahora son antebrazo y mano del modelo humano, con guante y manga.
+- Modelos CC0 de Quaternius. Se regeneran con `tools/models/guns/build.sh`.
+
 ## Novedades de la 0.24
 - **Muebles del hogar con choque**: la mesa, el sillón, la biblioteca, el velador y las plantas ya no se atraviesan.
 - **Clientes**:

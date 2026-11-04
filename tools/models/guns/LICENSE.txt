@@ -1,0 +1,4 @@
+Armas largas: Quaternius (quaternius.com), "Animated FPS Guns" (Rifle, SniperRifle, P90) y "Gun Pack Vol.1" (AK47).
+Brazos: antebrazo y mano del humano "Male_Casual" de Quaternius (Animated Men Characters).
+Licencia CC0 1.0 (dominio público): https://creativecommons.org/publicdomain/zero/1.0/
+Fuente: espejo https://github.com/beep2bleep/FreeAssetsByKenneyNLandQuaternius
