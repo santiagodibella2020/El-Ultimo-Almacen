@@ -1,0 +1,4 @@
+Modelos de vehículos usados en El Último Almacén:
+- Kenney Car Kit (kenney.nl): truck, van, delivery, tractor. Licencia CC0 1.0 (dominio público).
+- Quaternius (quaternius.com) Realistic Car Pack y Public Transport Pack: NormalCar1, SUV, Bus, Ambulance. Licencia CC0 1.0 (dominio público).
+https://creativecommons.org/publicdomain/zero/1.0/
