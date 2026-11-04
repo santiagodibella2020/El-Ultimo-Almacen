@@ -371,5 +371,13 @@
  "No hace falta irse a ningún lado.": "Никуда не нужно уходить.",
  "Alcanza con seguir abierto.": "Достаточно оставаться открытым.",
  "Cae la primera noche.": "Наступает первая ночь.",
- "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "Ночью гнилые выходят за тобой. Вернись на склад и защищай его."
+ "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "Ночью гнилые выходят за тобой. Вернись на склад и защищай его.",
+ "Mostrar FPS": "Показывать FPS",
+ "Alambre de púas": "Колючая проволока",
+ "Esta noche hay asedio: la bruma trae el doble de podridos y un jefe. Prepará el almacén.": "Сегодня ночью осада: туман приведёт вдвое больше гнилых и босса. Подготовь склад.",
+ "¡Asedio! Aguantá hasta el amanecer.": "Осада! Продержись до рассвета.",
+ "Aguantaste el asedio. La gente de la ruta te manda ${n} y te tiene más respeto.": "Ты выдержал осаду. Люди с дороги присылают тебе ${n} и уважают тебя больше.",
+ "Frena mucho y lastima a lo que intente cruzarlo.": "Сильно замедляет и ранит всех, кто пытается пройти.",
+ "Mina casera": "Самодельная мина",
+ "Explota cuando un bicho la pisa. Se usa una sola vez.": "Взрывается, когда на неё наступает тварь. Одноразовая."
 }

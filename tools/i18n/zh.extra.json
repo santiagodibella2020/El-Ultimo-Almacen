@@ -371,5 +371,13 @@
  "No hace falta irse a ningún lado.": "不需要去任何地方。",
  "Alcanza con seguir abierto.": "只要继续开门就够了。",
  "Cae la primera noche.": "第一个夜晚降临。",
- "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "夜里腐烂者会出来找你。回到仓库,守住它。"
+ "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "夜里腐烂者会出来找你。回到仓库,守住它。",
+ "Mostrar FPS": "显示 FPS",
+ "Alambre de púas": "铁丝网",
+ "Esta noche hay asedio: la bruma trae el doble de podridos y un jefe. Prepará el almacén.": "今晚有围攻:迷雾会带来两倍的腐烂者和一个首领。准备好仓库。",
+ "¡Asedio! Aguantá hasta el amanecer.": "围攻!坚持到黎明。",
+ "Aguantaste el asedio. La gente de la ruta te manda ${n} y te tiene más respeto.": "你撑过了围攻。路上的人们送来 ${n},也更尊敬你了。",
+ "Frena mucho y lastima a lo que intente cruzarlo.": "大幅减速并伤害试图穿越的东西。",
+ "Mina casera": "自制地雷",
+ "Explota cuando un bicho la pisa. Se usa una sola vez.": "怪物踩上去就会爆炸。一次性。"
 }

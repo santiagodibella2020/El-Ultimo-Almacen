@@ -371,5 +371,13 @@
  "No hace falta irse a ningún lado.": "There is no need to go anywhere.",
  "Alcanza con seguir abierto.": "Staying open is enough.",
  "Cae la primera noche.": "The first night falls.",
- "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "At night the rotten come looking for you. Get back to the warehouse and defend it."
+ "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "At night the rotten come looking for you. Get back to the warehouse and defend it.",
+ "Mostrar FPS": "Show FPS",
+ "Alambre de púas": "Barbed wire",
+ "Esta noche hay asedio: la bruma trae el doble de podridos y un jefe. Prepará el almacén.": "Siege tonight: the mist brings twice the rotten and a boss. Get the warehouse ready.",
+ "¡Asedio! Aguantá hasta el amanecer.": "Siege! Hold out until dawn.",
+ "Aguantaste el asedio. La gente de la ruta te manda ${n} y te tiene más respeto.": "You survived the siege. The people on the road send you ${n} and respect you more.",
+ "Frena mucho y lastima a lo que intente cruzarlo.": "Slows down a lot and hurts whatever tries to cross it.",
+ "Mina casera": "Homemade mine",
+ "Explota cuando un bicho la pisa. Se usa una sola vez.": "Explodes when a creature steps on it. Single use."
 }

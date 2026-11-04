@@ -25,7 +25,7 @@ for(const m of v6.matchAll(/\b(?:n|d|role|hi|txt|ask|thanks|tx|hint|label):'((?:
 for(const m of world.matchAll(/const types=\[([^\]]+)\]/g))m[1].match(/'([^']+)'/g).forEach(s=>add(s.slice(1,-1)));
 for(const m of menus.matchAll(/\['([A-ZÁÉÍÓÚÑa-záéíóúñ ][^']+)',st\./g))add(m[1]);
 for(const m of ui.matchAll(/const DIRS=\{([^}]+)\}/g))m[1].match(/'([^']+)'/g).forEach(s=>add(s.slice(1,-1)));
-const v9d=fs.readFileSync(path.join(G,'js','v9decor.js'),'utf8'),v9c=fs.readFileSync(path.join(G,'js','v9cine.js'),'utf8');
+const v9d=fs.readFileSync(path.join(G,'js','v9decor.js'),'utf8')+fs.readFileSync(path.join(G,'js','v14defense.js'),'utf8'),v9c=fs.readFileSync(path.join(G,'js','v9cine.js'),'utf8');
 for(const m of v9d.matchAll(/\b(?:n|d):'((?:[^'\\]|\\.)*)'/g))add(m[1]);for(const m of v9d.matchAll(/\['([A-Z][a-z]+)','#/g))add(m[1]);
 for(const f of ['v9cine.js','v13story.js']){const src=fs.readFileSync(path.join(G,'js',f),'utf8');for(const m of src.matchAll(/\btext:'((?:[^'\\]|\\.)*)'/g))add(m[1])}
 // 3. static HTML

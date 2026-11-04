@@ -371,5 +371,13 @@
  "No hace falta irse a ningún lado.": "Não é preciso ir a lugar nenhum.",
  "Alcanza con seguir abierto.": "Basta continuar aberto.",
  "Cae la primera noche.": "Cai a primeira noite.",
- "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "À noite os podres vêm atrás de você. Volte ao armazém e defenda-o."
+ "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "À noite os podres vêm atrás de você. Volte ao armazém e defenda-o.",
+ "Mostrar FPS": "Mostrar FPS",
+ "Alambre de púas": "Arame farpado",
+ "Esta noche hay asedio: la bruma trae el doble de podridos y un jefe. Prepará el almacén.": "Esta noite tem cerco: a névoa traz o dobro de podres e um chefe. Prepare o armazém.",
+ "¡Asedio! Aguantá hasta el amanecer.": "Cerco! Aguente até o amanhecer.",
+ "Aguantaste el asedio. La gente de la ruta te manda ${n} y te tiene más respeto.": "Você aguentou o cerco. O pessoal da estrada te manda ${n} e te respeita mais.",
+ "Frena mucho y lastima a lo que intente cruzarlo.": "Freia muito e machuca o que tentar atravessar.",
+ "Mina casera": "Mina caseira",
+ "Explota cuando un bicho la pisa. Se usa una sola vez.": "Explode quando um bicho pisa nela. Uso único."
 }

@@ -4,6 +4,12 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.14
+
+- **Defensa del almacén**: dos construcciones nuevas en el modo construcción, *Alambre de púas* (frena mucho y lastima) y *Mina casera* (explota al pisarla, un solo uso).
+- **Noches de asedio** cada 7 días: aviso a la mañana, el doble de podridos y un jefe de la bruma. Si aguantás hasta el amanecer, cobrás una recompensa y subís reputación.
+- **Rendimiento**: contador de FPS opcional y escala de resolución hasta 150% para placas potentes (Opciones > Video).
+
 ## Novedades de la 0.13
 
 - **Sensación al disparar**: agujeros de bala en paredes y suelo, charcos de sangre al herir y al matar, salpicadura en los tiros a la cabeza y empuje del enemigo al recibir el impacto.

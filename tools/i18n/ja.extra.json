@@ -371,5 +371,13 @@
  "No hace falta irse a ningún lado.": "どこかへ行く必要はない。",
  "Alcanza con seguir abierto.": "店を開け続ければ、それでいい。",
  "Cae la primera noche.": "最初の夜が訪れる。",
- "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "夜になると腐った者たちがお前を探しに来る。倉庫に戻って守り抜け。"
+ "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "夜になると腐った者たちがお前を探しに来る。倉庫に戻って守り抜け。",
+ "Mostrar FPS": "FPSを表示",
+ "Alambre de púas": "有刺鉄線",
+ "Esta noche hay asedio: la bruma trae el doble de podridos y un jefe. Prepará el almacén.": "今夜は包囲戦:霧が二倍の腐った者とボスを連れてくる。倉庫の準備をしよう。",
+ "¡Asedio! Aguantá hasta el amanecer.": "包囲戦だ!夜明けまで耐えろ。",
+ "Aguantaste el asedio. La gente de la ruta te manda ${n} y te tiene más respeto.": "包囲戦を生き延びた。街道の人々が${n}を送ってくれ、敬意も増した。",
+ "Frena mucho y lastima a lo que intente cruzarlo.": "大きく足止めし、越えようとする者を傷つける。",
+ "Mina casera": "手製の地雷",
+ "Explota cuando un bicho la pisa. Se usa una sola vez.": "怪物が踏むと爆発する。一度きり。"
 }

@@ -371,5 +371,13 @@
  "No hace falta irse a ningún lado.": "Non serve andare da nessuna parte.",
  "Alcanza con seguir abierto.": "Basta restare aperti.",
  "Cae la primera noche.": "Cala la prima notte.",
- "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "Di notte i marci vengono a cercarti. Torna al magazzino e difendilo."
+ "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "Di notte i marci vengono a cercarti. Torna al magazzino e difendilo.",
+ "Mostrar FPS": "Mostra FPS",
+ "Alambre de púas": "Filo spinato",
+ "Esta noche hay asedio: la bruma trae el doble de podridos y un jefe. Prepará el almacén.": "Stanotte c’è l’assedio: la nebbia porta il doppio dei marci e un boss. Prepara il magazzino.",
+ "¡Asedio! Aguantá hasta el amanecer.": "Assedio! Resisti fino all’alba.",
+ "Aguantaste el asedio. La gente de la ruta te manda ${n} y te tiene más respeto.": "Hai superato l’assedio. La gente della strada ti manda ${n} e ti rispetta di più.",
+ "Frena mucho y lastima a lo que intente cruzarlo.": "Rallenta molto e ferisce chi prova ad attraversarlo.",
+ "Mina casera": "Mina artigianale",
+ "Explota cuando un bicho la pisa. Se usa una sola vez.": "Esplode quando una bestia la calpesta. Uso singolo."
 }

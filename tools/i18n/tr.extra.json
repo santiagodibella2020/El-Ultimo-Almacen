@@ -371,5 +371,13 @@
  "No hace falta irse a ningún lado.": "Hiçbir yere gitmeye gerek yok.",
  "Alcanza con seguir abierto.": "Açık kalmak yeter.",
  "Cae la primera noche.": "İlk gece çöküyor.",
- "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "Geceleri çürükler seni aramaya çıkar. Depoya dön ve onu savun."
+ "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "Geceleri çürükler seni aramaya çıkar. Depoya dön ve onu savun.",
+ "Mostrar FPS": "FPS göster",
+ "Alambre de púas": "Dikenli tel",
+ "Esta noche hay asedio: la bruma trae el doble de podridos y un jefe. Prepará el almacén.": "Bu gece kuşatma var: sis iki kat çürük ve bir boss getiriyor. Depoyu hazırla.",
+ "¡Asedio! Aguantá hasta el amanecer.": "Kuşatma! Şafağa kadar dayan.",
+ "Aguantaste el asedio. La gente de la ruta te manda ${n} y te tiene más respeto.": "Kuşatmayı atlattın. Yoldaki insanlar sana ${n} gönderiyor ve sana daha çok saygı duyuyor.",
+ "Frena mucho y lastima a lo que intente cruzarlo.": "Çok yavaşlatır ve geçmeye çalışanı yaralar.",
+ "Mina casera": "El yapımı mayın",
+ "Explota cuando un bicho la pisa. Se usa una sola vez.": "Bir yaratık bastığında patlar. Tek kullanımlık."
 }

@@ -371,5 +371,13 @@
  "No hace falta irse a ningún lado.": "Inutile d’aller où que ce soit.",
  "Alcanza con seguir abierto.": "Il suffit de rester ouvert.",
  "Cae la primera noche.": "La première nuit tombe.",
- "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "La nuit, les pourris viennent te chercher. Retourne à l’entrepôt et défends-le."
+ "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "La nuit, les pourris viennent te chercher. Retourne à l’entrepôt et défends-le.",
+ "Mostrar FPS": "Afficher les FPS",
+ "Alambre de púas": "Fil barbelé",
+ "Esta noche hay asedio: la bruma trae el doble de podridos y un jefe. Prepará el almacén.": "Siège ce soir : la brume amène deux fois plus de pourris et un boss. Prépare l’entrepôt.",
+ "¡Asedio! Aguantá hasta el amanecer.": "Siège ! Tiens jusqu’à l’aube.",
+ "Aguantaste el asedio. La gente de la ruta te manda ${n} y te tiene más respeto.": "Tu as survécu au siège. Les gens de la route t’envoient ${n} et te respectent davantage.",
+ "Frena mucho y lastima a lo que intente cruzarlo.": "Ralentit beaucoup et blesse ce qui tente de le franchir.",
+ "Mina casera": "Mine artisanale",
+ "Explota cuando un bicho la pisa. Se usa una sola vez.": "Explose quand une bête marche dessus. Usage unique."
 }

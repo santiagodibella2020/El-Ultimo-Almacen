@@ -228,8 +228,7 @@ Baja (más fluido)
 Escala de resolución
 Campo de visión
 Brillo
-Grano de película
-Filtro de color crudo
+Mostrar FPS
 Volumen general
 Efectos
 Ambiente (lluvia, viento)
@@ -312,6 +311,10 @@ Estado
 Manos vacías
 R girar
 Clic construir · B salir
+Alambre de púas
+Esta noche hay asedio: la bruma trae el doble de podridos y un jefe. Prepará el almacén.
+¡Asedio! Aguantá hasta el amanecer.
+Aguantaste el asedio. La gente de la ruta te manda ${n} y te tiene más respeto.
 {d} de {m}
 Arreglaste: {v}. Ya podés manejarlo.
 Mantené E · Reparar: {v}
@@ -909,6 +912,9 @@ Guirnalda de luces
 Foquitos de colores bajo el techo.
 Trofeo de caza
 Un cráneo de bicho sobre la puerta.
+Frena mucho y lastima a lo que intente cruzarlo.
+Mina casera
+Explota cuando un bicho la pisa. Se usa una sola vez.
 Roja
 Azul
 Verde

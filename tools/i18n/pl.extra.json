@@ -371,5 +371,13 @@
  "No hace falta irse a ningún lado.": "Nie trzeba nigdzie odchodzić.",
  "Alcanza con seguir abierto.": "Wystarczy pozostać otwartym.",
  "Cae la primera noche.": "Zapada pierwsza noc.",
- "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "Nocą zgnili przychodzą po ciebie. Wróć do magazynu i go broń."
+ "De noche los podridos salen a buscarte. Volvé al almacén y defendelo.": "Nocą zgnili przychodzą po ciebie. Wróć do magazynu i go broń.",
+ "Mostrar FPS": "Pokaż FPS",
+ "Alambre de púas": "Drut kolczasty",
+ "Esta noche hay asedio: la bruma trae el doble de podridos y un jefe. Prepará el almacén.": "Dziś w nocy oblężenie: mgła przyniesie dwa razy więcej zgniłych i bossa. Przygotuj magazyn.",
+ "¡Asedio! Aguantá hasta el amanecer.": "Oblężenie! Wytrzymaj do świtu.",
+ "Aguantaste el asedio. La gente de la ruta te manda ${n} y te tiene más respeto.": "Przetrwałeś oblężenie. Ludzie z drogi przysyłają ci ${n} i bardziej cię szanują.",
+ "Frena mucho y lastima a lo que intente cruzarlo.": "Mocno spowalnia i rani to, co próbuje przejść.",
+ "Mina casera": "Domowa mina",
+ "Explota cuando un bicho la pisa. Se usa una sola vez.": "Wybucha, gdy stwór na nią nadepnie. Jednorazowa."
 }
