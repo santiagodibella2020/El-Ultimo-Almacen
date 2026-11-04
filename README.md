@@ -4,6 +4,12 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.18
+- **Casas amuebladas con modelos 3D**: heladeras, cocinas, alacenas, bibliotecas, mesitas, estanterías, camas, mesas con sillas, alfombras, plantas, lámparas, puertas y marcos de ventana. Los muebles que se pueden revisar siguen funcionando igual y se oscurecen cuando ya los saqueaste.
+- Las casas tienen techo a dos aguas (algunas con chimenea).
+- **Naturaleza nueva**: pinos y árboles de verdad cerca del jugador (de lejos siguen las formas simples para no perder rendimiento), piedras, arbustos, arbustos con frutos, plantas, flores, tocones y troncos caídos. Cambian de color con las estaciones.
+- Modelos libres (CC0) de Quaternius (Furniture/House Interior Pack y Ultimate Nature Pack). Se regeneran con `tools/models/house/build.sh` y `tools/models/nature/build.sh`.
+
 ## Novedades de la 0.17
 - **Vehículos con modelos 3D de verdad** en lugar de cajas: camioneta, furgón, camión, tractor (con su acoplado), auto familiar, 4x4, ambulancia y colectivo.
 - Colores gastados acordes al juego, ruedas que giran al andar y las delanteras que doblan.
