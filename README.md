@@ -4,6 +4,12 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.15
+
+- **Modelos nuevos hechos en Blender** para zombis (caminante, corredor, bruto, gritón, soldado y sus jefes) y raptores (raptor, raptor podrido, escupidor, saltador, Alfa y la Reina): malla orgánica de una pieza, esqueleto y animaciones de reposo, caminar, correr, atacar y morir.
+- Ropa de colores variados, sangre y manchas pintadas en el modelo, y destello rojo al recibir un impacto.
+- Los modelos se regeneran con `tools/models/build.sh` (requiere `pip install bpy`).
+
 ## Novedades de la 0.14
 
 - **Defensa del almacén**: dos construcciones nuevas en el modo construcción, *Alambre de púas* (frena mucho y lastima) y *Mina casera* (explota al pisarla, un solo uso).
