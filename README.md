@@ -4,6 +4,12 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.13
+
+- **Sensación al disparar**: agujeros de bala en paredes y suelo, charcos de sangre al herir y al matar, salpicadura en los tiros a la cabeza y empuje del enemigo al recibir el impacto.
+- **Música dinámica** generada en el juego: tranquila de día, tensa de noche y con percusión cuando te ataca un grupo o un jefe (sigue el volumen de ambiente).
+- **Cinemáticas nuevas**: la primera noche y el final de la historia, cuando juntás todos los relatos.
+
 ## Novedades de la 0.12
 
 - Zombis y dinosaurios con formas redondeadas (torso, extremidades, cabezas y colas) en lugar de bloques; mantienen todas sus animaciones.

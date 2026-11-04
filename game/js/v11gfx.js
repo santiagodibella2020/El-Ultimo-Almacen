@@ -4,7 +4,7 @@ const _applyLighting11=applyLighting;
 applyLighting=function(){_applyLighting11();
   if(!S)return;
   // más sol y menos luz de cielo => sombras marcadas (aspecto más "duro" de shooter táctico)
-  sun.intensity*=1.25;hemi.intensity*=.72;
+  sun.intensity*=1.25;hemi.intensity*=.85;
 };
 const _render11=render;
 render=function(dt){
