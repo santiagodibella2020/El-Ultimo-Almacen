@@ -435,5 +435,12 @@
  "Misiones": "임무",
  "Misión aceptada. Está marcada en la brújula y el mapa.": "임무를 수락했다. 나침반과 지도에 표시되어 있다.",
  "Misión abandonada.": "임무를 포기했다.",
- "Salud {n}%": "체력 {n}%"
+ "Salud {n}%": "체력 {n}%",
+ "Estación de servicio La Posta": "라 포스타 주유소",
+ "Escuela rural N.º 14": "제14 시골 학교",
+ "Hospital San Roque": "산 로케 병원",
+ "Camilla": "병원 침대",
+ "Vitrina de medicamentos": "약품 진열장",
+ "Pupitre": "학교 책상",
+ "Cocina del comedor": "급식실 주방"
 }

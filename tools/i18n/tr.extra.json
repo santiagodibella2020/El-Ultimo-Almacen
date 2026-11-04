@@ -435,5 +435,12 @@
  "Misiones": "Görevler",
  "Misión aceptada. Está marcada en la brújula y el mapa.": "Görev kabul edildi. Pusulada ve haritada işaretli.",
  "Misión abandonada.": "Görev bırakıldı.",
- "Salud {n}%": "Sağlık %{n}"
+ "Salud {n}%": "Sağlık %{n}",
+ "Estación de servicio La Posta": "La Posta benzin istasyonu",
+ "Escuela rural N.º 14": "14 No'lu Köy Okulu",
+ "Hospital San Roque": "San Roque Hastanesi",
+ "Camilla": "Hasta yatağı",
+ "Vitrina de medicamentos": "İlaç dolabı",
+ "Pupitre": "Okul sırası",
+ "Cocina del comedor": "Yemekhane mutfağı"
 }

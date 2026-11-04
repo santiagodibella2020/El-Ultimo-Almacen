@@ -4,6 +4,15 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
 
+## Novedades de la 0.22
+- **Lugares nuevos para explorar**:
+  - **Estación de servicio La Posta**: playa con surtidores, minimercado y lubricentro.
+  - **Escuela rural N.º 14**: aulas con pupitres, dirección, comedor y patio con juegos.
+  - **Hospital San Roque**: internación, farmacia, consultorio y una zona de cuarentena afuera.
+- No son lugares seguros: cada día que te acercás están tomados por podridos (el hospital es el más peligroso).
+- Botín nuevo: camillas, vitrinas de medicamentos, pupitres y la cocina del comedor.
+- Las misiones de limpieza a veces te mandan a estos lugares.
+
 ## Novedades de la 0.21
 - **Misiones de los personajes**: cada NPC tiene una pestaña nueva, *Misiones*, con un pedido por vez. Hay cinco tipos: cacería (zombis o dinosaurios), limpiar una zona tomada, rescatar a un sobreviviente y escoltarlo hasta el pueblo (se sube a la camioneta con vos), recuperar una caja de provisiones custodiada y llevar un paquete a otro personaje.
 - El objetivo se marca en la brújula, en el mapa y con una columna de luz celeste. El HUD muestra el progreso.
