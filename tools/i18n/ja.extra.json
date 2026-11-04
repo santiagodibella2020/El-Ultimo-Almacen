@@ -442,5 +442,19 @@
  "Camilla": "病院のベッド",
  "Vitrina de medicamentos": "薬品棚",
  "Pupitre": "学校の机",
- "Cocina del comedor": "給食室の厨房"
+ "Cocina del comedor": "給食室の厨房",
+ "Apagón: se cortó la luz en el almacén. Sin luz no andan las lámparas ni las torretas.": "停電：店の電気が止まった。電気がないとランプもタレットも動かない。",
+ "El banco de recarga mantiene las torretas andando, pero más lentas.": "充電バンクのおかげでタレットは動くが、遅くなる。",
+ "Noche cerrada: la bruma se espesa y vienen más podridos que nunca.": "闇夜：霧が濃くなり、かつてないほど多くの腐れが来る。",
+ "Volvió la luz.": "電気が戻った。",
+ "Apagón": "停電",
+ "Noche cerrada": "闇夜",
+ "La lluvia apagó la fogata.": "雨でたき火が消えた。",
+ "La lluvia apagó la fogata": "雨でたき火が消えた",
+ "Esperá a que pare de llover": "雨がやむのを待とう",
+ "Fogata apagada": "たき火が消えている",
+ "Necesitás 1 madera para prenderla": "火をつけるには木材が1つ必要",
+ "Mantené E · Prender la fogata": "Eを長押し · たき火をつける",
+ "Usa 1 madera": "木材を1つ使う",
+ "Con la niebla se acercan más podridos. No los vas a ver venir.": "霧の中ではより多くの腐れが近づいてくる。来るのが見えない。"
 }
