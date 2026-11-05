@@ -1,7 +1,12 @@
 // Ventana de escritorio de El Último Almacén (Electron).
-const { app, BrowserWindow, globalShortcut, Menu } = require('electron');
+const { app, BrowserWindow, globalShortcut, Menu, ipcMain } = require('electron');
 Menu.setApplicationMenu(null);
 const path = require('path');
+const coop = require('./coop-server');
+
+// Cooperativo: el anfitrión abre un servidor en el puerto 27015.
+ipcMain.handle('coop-host', async () => { try { return await coop.start(); } catch (e) { return { error: String(e && e.message || e) }; } });
+ipcMain.handle('coop-stop', () => { coop.stop(); return true; });
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -18,6 +23,7 @@ function createWindow() {
       contextIsolation: true,
       nodeIntegration: false,
       backgroundThrottling: false,
+      preload: path.join(__dirname, 'preload.js'),
     },
   });
   win.setMenuBarVisibility(false);
@@ -42,6 +48,7 @@ app.whenReady().then(() => {
 });
 
 app.on('window-all-closed', () => {
+  coop.stop();
   globalShortcut.unregisterAll();
   app.quit();
 });

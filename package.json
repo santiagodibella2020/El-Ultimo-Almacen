@@ -1,7 +1,7 @@
 {
   "name": "el-ultimo-almacen",
   "productName": "El Último Almacén",
-  "version": "0.34.0",
+  "version": "0.35.0",
   "description": "Supervivencia en primera persona con zombies, dinosaurios y tu propio almacén.",
   "author": "santiagodibella2020",
   "license": "UNLICENSED",
@@ -24,6 +24,8 @@
     },
     "files": [
       "main.js",
+      "preload.js",
+      "coop-server.js",
       "game/**/*",
       "build/icon.png"
     ],
