@@ -4,6 +4,14 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.29
+- **Inventario nuevo**: a la izquierda se ve en 3D la mochila que llevás puesta (riñonera, escolar, de campamento, bolso militar o táctica), con su capacidad y una barra de peso. Se puede girar arrastrando con el mouse.
+- **Saqueo**: la mochila queda de fondo en la columna "Tu mochila" y se pasa cada cosa tocando la fila entera, sin botoncitos de flecha.
+- **Botones justos**: en el almacén, el inventario, el saqueo y los vecinos ya no aparecen botones apagados que no se pueden usar. Si era una compra que no te alcanza, queda el precio a la vista; si no se puede hacer, la tarjeta dice qué falta.
+- **Panel del almacén**: tiene alto fijo (no salta al cambiar de pestaña), entran todas las pestañas y cada pestaña arranca desde arriba. La tabla del depósito queda alineada.
+- El menú principal muestra la versión real.
+- Modelos CC0 de Quaternius (Survival Pack y RPG Items Pack). Se regeneran con `tools/models/bags/build.sh`.
+
 ## Novedades de la 0.28
 - **Gente en el almacén**: desde el día 2 llega gente al portón buscando refugio. Cada uno tiene un oficio y aporta algo todas las mañanas a cambio de techo, comida, agua y protección.
   - **Diez oficios**: granjero (riega la huerta y cosecha), cazador (carne y cuero), aguatero (agua), enfermero (vendas, remedios y te cura una vez por día), mecánico (chatarra y combustible), carpintero (tablas, clavos y repara barricadas y muros), guardia (le dispara a lo que se acerca de noche), cocinero (asa la carne cruda y la gente come menos), carroñero (materiales) y almacenero (vende mientras estás afuera).

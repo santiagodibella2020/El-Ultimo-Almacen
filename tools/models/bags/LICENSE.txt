@@ -1,0 +1,4 @@
+Mochilas, bolso y riñonera de la pantalla de inventario:
+Quaternius (quaternius.com), "Survival Pack" (Backpack) y "RPG Items Pack" (Backpack, Bag, Pouch).
+Licencia CC0 1.0 (dominio público): https://creativecommons.org/publicdomain/zero/1.0/
+Los .glb vienen de github.com/trebeljahr/quaternius-showcase (public/glb/survival_pack y public/glb/rpg_items_pack) y se usan tal cual.
