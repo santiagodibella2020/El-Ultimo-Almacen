@@ -9,7 +9,7 @@ const H32={ready:false,geo:{},want:false};
 const DESAT32={tanque_gasolina:.6};
 // qué contenedor usa qué modelo (se activa solo si el modelo está en glb32.js)
 const CONT32={caja:'caja_armas',surtidor:'surtidor_nafta',heladera:'heladera_oxidada',camilla:'camilla_hospital',pupitre:'pupitre_escolar',
-  gondola:'gondola_super',herramientas:'banco_herramientas',tacho:'contenedor_basura'};
+  gondola:'gondola_super',herramientas:'banco_herramientas',tacho:'contenedor_basura',botiquin:'botiquin_pared',kiosco:'mostrador_caja'};
 // los muebles que ahora tienen modelo propio dejan de usar el de Quaternius (v18)
 if(typeof CONT18!=='undefined')for(const t in CONT32)if(typeof GLB32!=='undefined'&&GLB32[CONT32[t]])delete CONT18[t];
 (function(){try{
@@ -68,6 +68,9 @@ function apply32(){H32.want=false;if(!world||!H32.ready)return;
   scatter('bolsas_arena',.6,26,.45,false,st);
   scatter('cajon_madera',.75,30,.4,false,st);
   scatter('carro_supermercado',.95,16,.4,true,null);
+  scatter('generador_electrico',.9,8,.5,false,st);
+  scatter('barricada_madera',1.3,14,.9,false,st);
+  scatter('bidon_agua',.8,24,.3,false,null);
   // ----- muebles y cajas de botín con modelo propio -----
   const emptyGeo=new THREE.BufferGeometry();emptyGeo.setAttribute('position',new THREE.Float32BufferAttribute([0,0,0,0,0,0,0,0,0],3));emptyGeo.setAttribute('normal',new THREE.Float32BufferAttribute([0,1,0,0,1,0,0,1,0],3));
   const per={};

@@ -4,6 +4,10 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.34
+- **Última tanda de modelos Hunyuan3D-2**: botiquines de pared y mostradores (con caja registradora) con modelo propio.
+- *Decoración nueva*: generadores eléctricos y barricadas de madera cerca de estaciones y campamentos, y bidones de agua azules por el pueblo y la ruta.
+
 ## Novedades de la 0.33
 - **Más modelos hechos con IA (Hunyuan3D-2)**: camillas de hospital, pupitres de escuela, góndolas de supermercado, bancos de herramientas y tachos de basura reemplazan a los modelos viejos de sus lugares.
 - *Decoración suelta* nueva: bolsas de arena y cajones de madera cerca de estaciones y campamentos, y carros de supermercado tirados en el pueblo.
