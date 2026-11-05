@@ -251,6 +251,7 @@ Inventario, salud y habilidades
 Mapa
 Diario: relatos y lugares
 Cambiar la vista dentro del auto
+Lanzar: botella, molotov o granada
 Comer o tomar
 Vendar y curar
 Construir
@@ -399,6 +400,129 @@ Cliente apurado
 Regateador
 Quiso regatear {i} a ${p} y se fue sin comprar.
 Hoy ya vendiste mucho de: {i}. Por hoy se buscan menos.
+Ciudad de San Ignacio
+Supermercado
+Farmacia
+Ferretería
+Bar
+Oficinas
+Tienda de ropa
+Kiosco
+Armería
+Hipermercado
+Comisaría
+Clínica
+CIUDAD
+Puesto abandonado
+Retén militar
+Llegaste a la Ciudad de San Ignacio. Está llena de podridos: revisá los negocios de a uno.
+Semillas de zanahoria
+Semillas de tomate
+Semillas de maíz
+Semillas de zapallo
+Zanahoria
+Tomate
+Choclo
+Zapallo
+Huerta
+Huerta: necesitás semillas
+Se encuentran en ferreterías y las vende Don Benito.
+Mantené E · Plantar {s}
+Plantaste {s}. Acordate de regar todos los días.
+Mantené E · Cosechar {s}
+Cosechaste {s} ×{q}
+E · Regar {s} (1 agua)
+Cosecha en {n} días si la regás todos los días
+regada hoy
+sin regar: necesitás agua
+Un perro flaco ronda la entrada del almacén. Con algo de comida capaz que se queda.
+{n} volvió al almacén, ya repuesto.
+{n} olfatea algo en: {c}
+{n} ladra en el almacén: algo se acerca por el {d}.
+{n} gruñe: se acerca algo por el {d}.
+{n} quedó muy lastimado y volvió cojeando al almacén. Mañana va a estar mejor.
+Un perro flaco
+Tiene hambre. Traele carne o una lata.
+Mantené E · Darle {f} al perro
+El perro se quedó con vos. Le pusiste Pampa. E cerca de él: que te siga o que cuide el almacén.
+E · {n}: quedate cuidando el almacén
+E · {n}: seguime
+{n} vuelve al almacén a cuidarlo.
+Granjero
+Riega la huerta todos los días y cosecha verdura extra.
+Cazador
+Sale de día y vuelve con carne y a veces cuero.
+Aguatero
+Saca y filtra agua del pozo: varias botellas por día.
+Enfermero
+Hace vendas y remedios. Una vez por día te cura si le hablás.
+Mecánico
+Desarma chatarra útil y a veces consigue combustible.
+Carpintero
+Hace tablas y clavos, y repara las barricadas y muros cada mañana.
+Guardia
+Vigila el portón y le dispara a lo que se acerca de noche.
+Cocinero
+Asa la carne cruda del depósito y hace que la gente coma menos.
+Carroñero
+Sale a revolver casas abandonadas y trae materiales.
+Almacenero
+Atiende el mostrador y vende mientras vos estás afuera.
+Están por irse: {n}.
+{n} se fue: no aguantó más.
+No alcanzó la comida para tu gente.
+No alcanzó el agua para tu gente.
+Anoche entraron bichos al patio: tu gente tiene miedo.
+Tu gente aportó: {i}.
+Hoy tu gente no aportó nada.
+Llegó alguien al portón buscando refugio: {n}, {j}. Hablale o mirá la pestaña Gente del almacén.
+Ya no está.
+No hay lugar para dormir: armá una carpa.
+{n} se queda en el almacén.
+{n} juntó sus cosas y se fue.
+No entran más carpas en el patio.
+Faltan materiales en el depósito.
+Armaste una carpa: dos lugares más para dormir.
+Los bichos mataron a {n}.
+Contento
+Tranquilo
+Preocupado
+A punto de irse
+No queda casi comida en el depósito.
+El agua se está terminando.
+Así no se puede vivir. Si sigue así me voy.
+Anoche escuché a los bichos en el patio...
+Acá estamos bien. Gracias por el techo.
+Se aguanta. Hacemos lo que podemos.
+E · Hablar con {n}
+{j} · busca refugio
+E · {n}: curarte
+{n} te curó y te vendó las heridas.
+Ánimo {n}%
+menos de un día
+{n} días
+Media ración
+Ración normal
+Ración generosa
+Llega gente al portón buscando refugio. Cada uno aporta según su oficio a cambio de un lugar para dormir, comida, agua y protección. Cada mañana comen y toman del depósito.
+Lugares para dormir: {a} de {b}
+Comida para {n}
+Agua para {n}
+Armar carpa (+2 lugares)
+Carpa
+Esperando en el portón
+Se va si no le contestás antes del día {d}.
+Recibir
+Rechazar
+Nadie por ahora. Con mejor reputación llega más gente.
+Tu gente
+Ayer: {i}
+Reparó {n} defensas.
+Despedir
+Todavía no recibiste a nadie.
+El ánimo sube con comida, agua y noches tranquilas. Baja si falta algo, si los bichos entran al patio o si muere alguien. Con el ánimo muy bajo se van. Con buen ánimo rinden más.
+Portón
+Conseguí una mochila para cargar más.
 {d} de {m}
 Arreglaste: {v}. Ya podés manejarlo.
 Mantené E · Reparar: {v}
@@ -422,6 +546,34 @@ Hay un jefe despierto.
 Invocá a un jefe con trofeos
 tranquila
 Piedra Verde
+Sin stock en el depósito
+Botella vacía
+Molotov
+Granada de mano
+Arrojables
+No tenés nada para lanzar. Las molotov y las granadas se hacen en el taller; las botellas vacías salen al tomar agua o revolviendo tachos.
+¡Golpe por la espalda!
+Oculto
+Te están buscando
+Te vieron
+agachado
+Listo para lanzar con G: {i}.
+Para lanzar (G)
+Preparar (G)
+Casas de la ruta
+El pueblo
+San Ignacio
+De noche nadie sale. Mandalo a la mañana.
+No hay comida y agua para que lleve en el viaje.
+{n} salió para {z}. Vuelve el día {d}.
+{n} no volvió de {z}.
+{n} volvió herido de {z} con: {i}.
+{n} volvió de {z} con: {i}.
+De expedición en {z} · vuelve el día {d}
+1 día
+Cancelar
+Mandar de expedición
+Expediciones: mandás a alguien a buscar cosas afuera. Lleva comida y agua del depósito y vuelve con lo que encuentra. Más lejos hay más cosas, pero es más peligroso. Los guardias y los cazadores se cuidan mejor; el carronero encuentra más.
 Terminal
 Puerto Escondido
 Carga: {v}
@@ -433,7 +585,6 @@ Completaste el relato «{t}». Recompensa: ${m}.
 Te dejaron algo en el depósito.
 Conocés toda la historia. Leé el final en tu diario (J).
 Descubriste: {p}
-E · Hablar con {n}
 E · Leer: {t}
 Ya está en tu diario
 Mantené E · Subir al mirador
@@ -687,7 +838,6 @@ Labia
 Los clientes aceptan precios un 8% más altos.
 Carnicero
 Los animales sueltan 1 carne extra.
-Carroñero
 Encontrás más cosas en muebles, cajas y autos.
 Filo
 +30% de daño cuerpo a cuerpo y las armas se gastan menos.
@@ -801,10 +951,6 @@ septiembre
 octubre
 noviembre
 diciembre
-Supermercado
-Farmacia
-Ferretería
-Armería
 Estación de servicio
 Casa
 Rasguño
@@ -906,7 +1052,6 @@ Gracias. Ahora entiendo un poco más. Escuchá…
 Llegaron chicos nuevos. Si me traés latas y agua, comen toda la semana.
 Los chicos te mandan saludos.
 Tano
-Mecánico
 ¿Qué traés? Si tiene motor, lo arreglo. Si no tiene, también.
 En la terminal quedó un colectivo. Le falta poco para andar.
 Un auto chico gasta poco. Un camión lleva todo, pero toma nafta como loco.
@@ -924,7 +1069,6 @@ La antena anda con lo justo. Con seis pilas llego más lejos.
 El viento me dobló un tramo de la antena. Traeme chatarra y cinta.
 Listo. Ahora se escucha hasta el mar.
 Rufino
-Cazador
 Despacio. Los bichos huelen el apuro.
 Al sur hay una estación de tren. El Tano arregla cualquier cosa con motor.
 Los raptores cazan en manada. Si ves uno, hay tres más mirándote.
@@ -1050,6 +1194,7 @@ Volver · E
 Estantes
 Mejoras
 Hogar
+Gente
 Caravaneros
 Metas
 Personaje
