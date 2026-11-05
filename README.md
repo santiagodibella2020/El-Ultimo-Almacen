@@ -4,6 +4,13 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.32
+- **Modelos hechos con IA (Hunyuan3D-2) en el estilo semi-realista**, generados en la PC de santiago y aligerados para el juego:
+  - *Barriles oxidados*: en estaciones de servicio, campamentos, el pueblo y al costado de la ruta (se chocan).
+  - *Bidones de nafta* tirados por ahí.
+  - *Cajas con candado* de botín, *heladeras*, *surtidores* y más muebles a medida que se generan.
+- Los modelos tienen el color de la textura pasado a color por vértice y unas 4000 caras (`tools/models/hunyuan/build.sh`).
+
 ## Novedades de la 0.31
 - **Arrojables (tecla G)**:
   - *Botella vacía*: hace ruido donde cae y los bichos que no te vieron van a ver qué pasó. Sirve para despejar una puerta o pasar de largo. Salen al tomar agua y revolviendo tachos.
