@@ -52,10 +52,10 @@ function apply19(){
   // Arbustos, plantas, flores y troncos caídos (solo decoración, sin colisión).
   const R=mulberry32((worldSeed()^0xb05c)>>>0);lod19.decor=[];const kinds=[['Bush_1',1.6,1.2],['Bush_2',1.5,1.1],['BushBerries_1',1.5,1.2],['Plant_1',1.1,.5],['Flowers',.5,.8],['TreeStump',1.1,.55],['WoodLog',2.4,.6]].filter(k=>G[k[0]]);
   const spots={};for(const k of kinds)spots[k[0]]=[];
-  for(let a=0;a<9000;a++){const x=(R()-.5)*SIZE*.94,z=(R()-.5)*SIZE*.94;const y=terrainY(x,z);if(y<WATER_Y+.4||y>28)continue;if(Math.abs(x-roadX(z))<5||townW(x,z)>.05||insideBuilding(x,z))continue;
+  const AR19=Math.min(1.5,SIZE*SIZE/1e6);for(let a=0;a<9000*AR19;a++){const x=(R()-.5)*SIZE*.94,z=(R()-.5)*SIZE*.94;const y=terrainY(x,z);if(y<WATER_Y+.4||y>28)continue;if(Math.abs(x-roadX(z))<5||townW(x,z)>.05||insideBuilding(x,z))continue;
     if(ruins.some(r=>x>r.x0-2&&x<r.x1+2&&z>r.z0-2&&z<r.z1+2))continue;if(Math.max(Math.abs(x),Math.abs(z))<40)continue;
     const m=moist(x,z),r=R();const k=r<.42?(m>.45?(R()<.2?'BushBerries_1':R()<.5?'Bush_1':'Bush_2'):'Plant_1'):r<.72?'Flowers':r<.86?'Plant_1':r<.94?'TreeStump':'WoodLog';
-    if(!spots[k])continue;if(spots[k].length>(k==='Flowers'?1400:k==='TreeStump'||k==='WoodLog'?160:900))continue;spots[k].push([x,y,z,.7+R()*.6,R()*6.283])}
+    if(!spots[k])continue;if(spots[k].length>(k==='Flowers'?1400:k==='TreeStump'||k==='WoodLog'?160:900)*AR19)continue;spots[k].push([x,y,z,.7+R()*.6,R()*6.283])}
   for(const [k,w,h] of kinds){const list=spots[k];if(!list.length)continue;const geo=fit19(G[k],w,0,h);const im=new THREE.InstancedMesh(geo,k==='Flowers'||k==='Plant_1'?mats19.plant:k==='TreeStump'||k==='WoodLog'?mats19.wood:mats19.broad,list.length);
     im.castShadow=k!=='Flowers'&&k!=='Plant_1';im.receiveShadow=true;im.frustumCulled=false;im.setColorAt(0,new THREE.Color(1,1,1));im.count=0;world.add(im);extra19.push(im);
     const items=list.map(([x,y,z,s,ry])=>{dm.position.set(x,y-.05,z);dm.rotation.set(0,ry,0);dm.scale.set(s,s,s);dm.updateMatrix();return{x,z,m:dm.matrix.clone(),k:.85+(ry/6.283)*.3}});

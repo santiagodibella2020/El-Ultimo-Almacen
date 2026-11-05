@@ -2,7 +2,17 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.8.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
+
+## Novedades de la 0.26
+- **Mapa más grande**: pasa de 1 km a 1,6 km por lado. Todo lo de siempre queda en el mismo lugar; pasando las lomas hay una zona nueva con 18 puestos abandonados para saquear.
+- **Ciudad de San Ignacio**: al final de la ruta, pasando el pueblo. 30 manzanas con avenida, departamentos de varios pisos, supermercados, farmacias, ferreterías, bares, oficinas, tiendas de ropa, kioscos y armerías, más un hipermercado, comisarías, clínicas, depósitos, estacionamientos con autos para revisar y un retén militar en el centro.
+  - Está llena de podridos: cada manzana se llena una vez por día cuando te acercás (de noche, más). En la comisaría y el retén hay soldados.
+- **Perro**: desde el día 2 un perro flaco ronda la entrada del almacén. Dale carne o una lata y se queda (se llama Pampa).
+  - Te sigue, muerde a lo que te ataca, ladra cuando se acerca algo y olfatea los muebles que tienen algo bueno.
+  - E cerca de él: que te siga o que cuide el almacén. Si lo lastiman mucho vuelve al almacén y al otro día está bien.
+- **Huerta**: seis canteros en el patio. Plantás semillas (ferreterías, Don Benito), regás con agua (la lluvia también riega) y cosechás zanahorias, tomates, choclos y zapallos para comer o vender. En invierno crecen más lento.
+- Modelos CC0 de Quaternius (Ultimate Animated Animals y Crops Pack). Se regeneran con `tools/models/life/build.sh`.
 
 ## Novedades de la 0.25
 - **Armas largas con modelos 3D**: el rifle de caza, el rifle de francotirador (con mira), el fusil de asalto y la ametralladora dejan de ser cajas.

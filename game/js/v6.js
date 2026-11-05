@@ -128,7 +128,7 @@ let seed6=WORLD_SEED,sites6=null,sitesNoise6=null,npcs6=[],notes6=[],anim6=[],lo
 const townMain6=townW;
 function rawMain6(x,z){
   let h=(fbm(nH,x*.0042,z*.0042,5)-.5)*95+(nD(x*.03,z*.03)-.5)*3;
-  const d=Math.max(Math.abs(x),Math.abs(z));if(d>420)h+=(d-420)*.55;
+  const d=Math.max(Math.abs(x),Math.abs(z));h+=ridge26(d);
   const rd=Math.abs(x-roadX(z));if(rd<9){const t=smooth(9,4,rd);h=lerp(h,Math.max(h*.7,WATER_Y+1.2),t*.8)}
   const tw=townMain6(x,z);if(tw>0)h=lerp(h,TOWN_Y+(nD(x*.05,z*.05)-.5)*.3,tw);
   const r=Math.hypot(x,z);const t=smooth(30,75,r);h=lerp(2,h,t);return h}
@@ -434,7 +434,7 @@ const _vehInteract6=vehInteract;vehInteract=function(look){
   for(const v of vehicles){if(look(v.x,v.z,v.def.len/2+1.6)){if(v.st.broken&&(S.inv.kit_motor||0)>0)return{label:L('Mantené E · Reparar con el kit: {v}',{v:vName(v)}),sub:L('Usa 1 kit de motor'),hold:3,key:'kit'+v.k,type:'fix',act:()=>{S.inv.kit_motor--;v.st.broken=false;sfx('build');gainXp(20);toast(L('Arreglaste: {v}. Ya podés manejarlo.',{v:vName(v)}),'#8fbb62',5)}};break}}
   const r=_vehInteract6(look);if(r&&r.act&&!r.hold)r.sub=(r.sub||'')+' · '+L('Por atrás: abrir carga');return r};
 function climb6(){const s=story6();sfx('step');const R0=Math.floor((P.z+HALF)/10),C0=Math.floor((P.x+HALF)/10),rad=20;
-  for(let j=-rad;j<=rad;j++)for(let i=-rad;i<=rad;i++){if(i*i+j*j>rad*rad)continue;const x=C0+i,z=R0+j;if(x>=0&&z>=0&&x<100&&z<100)explored[z*100+x]=1}
+  for(let j=-rad;j<=rad;j++)for(let i=-rad;i<=rad;i++){if(i*i+j*j>rad*rad)continue;const x=C0+i,z=R0+j;if(x>=0&&z>=0&&x<EXW&&z<EXW)explored[z*EXW+x]=1}
   let n=0;for(const p of sites6||[])if(Math.hypot(p.x-P.x,p.z-P.z)<300&&reveal6(p.id))n++;
   toast(L('Desde arriba ves todo el valle.')+(n?' '+L('Marcaste {n} lugares nuevos en el mapa.',{n}):''),'#c9a24a',6);
   if(!s.lookout){s.lookout=true;gainXp(15)}giveFrag6('radio3')}
