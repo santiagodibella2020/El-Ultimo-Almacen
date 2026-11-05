@@ -4,6 +4,15 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.28
+- **Gente en el almacén**: desde el día 2 llega gente al portón buscando refugio. Cada uno tiene un oficio y aporta algo todas las mañanas a cambio de techo, comida, agua y protección.
+  - **Diez oficios**: granjero (riega la huerta y cosecha), cazador (carne y cuero), aguatero (agua), enfermero (vendas, remedios y te cura una vez por día), mecánico (chatarra y combustible), carpintero (tablas, clavos y repara barricadas y muros), guardia (le dispara a lo que se acerca de noche), cocinero (asa la carne cruda y la gente come menos), carroñero (materiales) y almacenero (vende mientras estás afuera).
+  - **Techo**: en el almacén duermen dos; para más, armá carpas en el patio (tela, madera y cuerda). Entran seis carpas.
+  - **Comida y agua**: cada mañana comen y toman del depósito. Podés elegir media ración, normal o generosa.
+  - **Ánimo**: sube con comida, agua y noches tranquilas; baja si falta algo, si los bichos entran al patio o si matan a alguien. Con el ánimo por el piso se van; con buen ánimo rinden más. De noche, si se acercan bichos, corren a meterse al almacén.
+  - Todo se maneja en la nueva pestaña **Gente** del panel del almacén (recibir, rechazar, despedir, carpas y raciones). Hablales con E para saber cómo están.
+- Arreglo: los enemigos a veces se quedaban yendo y viniendo en la esquina de un edificio cuando te buscaban adentro.
+
 ## Novedades de la 0.27
 - **Enemigos más inteligentes**:
   - **Vista**: ven hacia adelante (de espaldas casi no te notan) y no ven a través de paredes. Agachado o caminando despacio pasás más desapercibido; corriendo, te escuchan cerca.

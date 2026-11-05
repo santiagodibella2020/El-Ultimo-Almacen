@@ -114,9 +114,11 @@ function around27(e,gx,gz){const eb=insideBuilding(e.x,e.z),gb=insideBuilding(gx
     if(segRect27(e.x,e.z,gx,gz,r)){const d=Math.hypot(b.cx-e.x,b.cz-e.z);if(d<ht){ht=d;hit=r}}}
   if(!hit)return null;const m=.6,cs=[[hit.x0-m,hit.z0-m],[hit.x1+m,hit.z0-m],[hit.x0-m,hit.z1+m],[hit.x1+m,hit.z1+m]];let best=null,bd=1e9;
   // Si ya llegó a una esquina, planifica desde esa esquina (si no, gira en el lugar).
+  // lo que falta desde una esquina: directo si ve el destino, si no por la esquina vecina que sí lo ve
+  const sees=(x,z)=>!segRect27(x,z,gx,gz,hit),rest27=(x,z)=>{if(sees(x,z))return Math.hypot(gx-x,gz-z);let m=1e9;for(const [qx,qz] of cs)if(sees(qx,qz)&&!segRect27(x,z,qx,qz,hit))m=Math.min(m,Math.hypot(qx-x,qz-z)+Math.hypot(gx-qx,gz-qz));return m};
   let sx=e.x,sz=e.z;for(const [cx,cz] of cs)if(Math.hypot(cx-e.x,cz-e.z)<1.3){sx=cx;sz=cz}
   if(!segRect27(sx,sz,gx,gz,hit))return{x:gx,z:gz};
   for(const [cx,cz] of cs){
-    if(Math.hypot(cx-sx,cz-sz)<.1||segRect27(sx,sz,cx,cz,hit))continue;const c=Math.hypot(cx-e.x,cz-e.z)+Math.hypot(gx-cx,gz-cz);if(c<bd){bd=c;best={x:cx,z:cz}}}
+    if(Math.hypot(cx-sx,cz-sz)<.1||segRect27(sx,sz,cx,cz,hit))continue;const c=Math.hypot(cx-e.x,cz-e.z)+rest27(cx,cz);if(c<bd){bd=c;best={x:cx,z:cz}}}
   return best}
 const _route27b=route27;route27=function(e,gx,gz){const w=_route27b(e,gx,gz)||{x:gx,z:gz,direct:true};if(w.door)return w;const c=around27(e,w.x,w.z);return c||(w.direct?null:w)};
