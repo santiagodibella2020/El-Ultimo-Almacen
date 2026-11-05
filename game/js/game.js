@@ -203,12 +203,13 @@ function updateEnemy(e,dt){
   }else{
     const sneak=(keys['control']||P.crouch)&&!P.inTruck?.55:1;
     const ar=d.aggro*(night?1.4:1)*(keys['shift']&&!P.inTruck?1.15:1)*sneak*(weatherFx().rain>.5||weatherFx().snow>.5?.8:1);
-    if(!e.aggro&&dP<ar&&gstate!=='dead')e.aggro=true;
+    if(!e.aggro&&dP<ar&&gstate!=='dead'&&ai27sees(e,dP,ar,dt))ai27aggro(e);
     if(e.aggro&&dP>Math.max(ar*2.6,65))e.aggro=false;
+    if(e.aggro&&!e.returning&&ai27lost(e,dP,dt))e.aggro=false;
     if(e.home){const hd=Math.hypot(e.home.x-e.x,e.home.z-e.z);if(hd>(d.boss?120:60)&&(e.aggro||e.angry)){e.aggro=false;e.angry=false;e.returning=true}if(e.returning&&hd<8)e.returning=false}
     if(e.returning){dir=Math.atan2(e.home.x-e.x,e.home.z-e.z);sp=e.speed*1.3;e.hp=Math.min(e.maxHp,e.hp+e.maxHp*.02*dt)}
     else if(petD<8&&petD<dP){tgt='pet';dir=Math.atan2(pet.x-e.x,pet.z-e.z)}
-    else if(e.aggro){tgt='p';dir=Math.atan2(dx,dz);
+    else if(e.aggro){tgt='p';dir=ai27chase(e,dx,dz,dP,dt);if(e.sp27)sp*=e.sp27;
       if(d.lunge&&dP<11&&e.lungeCd<=0){e.lunge=.4;e.lungeCd=2;sfx('shriek',e.x,e.z)}
       if(e.lunge>0){e.lunge-=dt;sp*=1.8}
       if(d.charger)charging();
@@ -216,13 +217,14 @@ function updateEnemy(e,dt){
       if(d.spit&&dP>5&&dP<24){if(dP<15&&!d.mini)dir=null;if(e.spitCd<=0){e.spitCd=d.mini?2:2.8;spitAt(e)}}
       if(d.explode&&dP<e.r+1.3){e.fuse=.8;sfx('fuse',e.x,e.z);return}
       if(d.slam&&dP<7&&e.slamCd<=0){e.slamCd=4.5;e.slamT=.7}}
+    else if(ai27inv(e,dt)){dir=e.d27;sp=e.speed*.75}
     else if(e.horde){const cdx=CUST_SPOT.x-e.x,cdz=CUST_SPOT.z+3-e.z,dc=Math.hypot(cdx,cdz);if(dc<3){dir=null;e.loot-=dt;if(e.loot<=0){e.loot=2.5;lootStash()}}else dir=Math.atan2(cdx,cdz)}
     else if(e.home){const hd=Math.hypot(e.home.x-e.x,e.home.z-e.z);if(hd>14){dir=Math.atan2(e.home.x-e.x,e.home.z-e.z);sp=e.speed*.5}else{dir=wander(e,dt);sp=e.speed*.35}}
     else{dir=wander(e,dt);sp=e.speed*.4}
   }
   if(e.slamT>0){e.slamT-=dt;dir=null;if(e.slamT<=0)slam(e)}
   if(dir!=null){
-    if(e.stuck>0){e.stuck-=dt;dir+=e.stuckDir}
+    if(e.stuck>0){e.stuck-=dt;dir+=e.stuckDir}else if(e.aggro||e.inv27||e.horde)dir=ai27steer(e,dir,dt);
     const turn=(e.charge>0)?1.2:(e.aggro?8:3);e.yaw+=clamp(angDiff(e.yaw,dir),-turn*dt,turn*dt);
     const hit=moveCircle(e,Math.sin(e.yaw)*sp*dt,Math.cos(e.yaw)*sp*dt,e.r,'e');
     e.anim+=dt*sp*2.2/(e.scale||1);
@@ -443,7 +445,7 @@ function shoot(){
   const {o,fwd}=aimRay();
   const up=Math.abs(fwd.y)>.99?new T3.Vector3(1,0,0):new T3.Vector3(0,1,0);const rt=new T3.Vector3().crossVectors(fwd,up).normalize();up.crossVectors(rt,fwd).normalize();
   const dm=(1+.15*PK('pulso'));
-  if(w.grenade){const d=fwd.clone().addScaledVector(rt,(R()-.5)*2*spread).addScaledVector(up,(R()-.5)*2*spread+.06).normalize();launchGrenade(o.clone().addScaledVector(fwd,.8),d,w.dmg*dm);recoil+=w.recoil;vmKick=1;muzzleLight.intensity=3;sfx(w.snd);for(const e of enemies){if(!EDEF[e.type].neutral&&!e.dying&&Math.hypot(e.x-P.x,e.z-P.z)<w.noise)e.aggro=true}if(S.mags[S.cur]===0&&S.ammo[w.ammo]>0)setTimeout(()=>{if(S&&S.mags[S.cur]===0)startReload()},250);return}
+  if(w.grenade){const d=fwd.clone().addScaledVector(rt,(R()-.5)*2*spread).addScaledVector(up,(R()-.5)*2*spread+.06).normalize();launchGrenade(o.clone().addScaledVector(fwd,.8),d,w.dmg*dm);recoil+=w.recoil;vmKick=1;muzzleLight.intensity=3;sfx(w.snd);for(const e of enemies){if(!EDEF[e.type].neutral&&!e.dying&&Math.hypot(e.x-P.x,e.z-P.z)<w.noise)ai27hear(e,w.noise)}if(S.mags[S.cur]===0&&S.ammo[w.ammo]>0)setTimeout(()=>{if(S&&S.mags[S.cur]===0)startReload()},250);return}
   for(let i=0;i<w.pellets;i++){
     const d=fwd.clone().addScaledVector(rt,(R()-.5)*2*spread).addScaledVector(up,(R()-.5)*2*spread).normalize();
     const wall=rayObstacle(o,d,w.range);
@@ -454,7 +456,7 @@ function shoot(){
     const start=camMode==='fp'?o.clone().addScaledVector(fwd,.6).addScaledVector(rt,.18).addScaledVector(up,-.15):o.clone().addScaledVector(fwd,.7);if(i<3)tracer(start,end);if(i===0)muzzleLight.position.copy(start)}
   recoil+=w.recoil*(ads?.6:1);recoilYaw+=(R()-.5)*w.recoil*.6;vmKick=1;muzzleLight.intensity=3;vmFlash.material.opacity=1;
   sfx(w.snd||S.cur);
-  for(const e of enemies){if(!EDEF[e.type].neutral&&!e.dying&&Math.hypot(e.x-P.x,e.z-P.z)<w.noise)e.aggro=true}
+  for(const e of enemies){if(!EDEF[e.type].neutral&&!e.dying&&Math.hypot(e.x-P.x,e.z-P.z)<w.noise)ai27hear(e,w.noise)}
   if(S.mags[S.cur]===0&&S.ammo[w.ammo]>0)setTimeout(()=>{if(S&&S.mags[S.cur]===0)startReload()},250);
 }
 let vmKick=0;
