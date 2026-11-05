@@ -64,8 +64,10 @@ function shopSign26(b,kind,doorSide,w,d){const sh=SHOP26[kind];if(!sh||!sh.sign)
 
 // Un edificio de la ciudad: planta baja revisable, pisos de arriba solo por fuera.
 function cityBuilding26(rng,cx,cz,w,d,kind,doorSide,floors){
-  const doors=[[doorSide,.5,kind==='hiper'||kind==='deposito'?3.2:kind==='depto'?1.5:2.4]];
-  if(w*d>500)doors.push([doorSide<2?(doorSide===0?1:0):(doorSide===2?3:2),.5,2]);
+  // La pared interior de deptos/clínica cruza el centro: la puerta va corrida para no quedar tapada.
+  const dp=(kind==='depto'&&doorSide>=2)||(kind==='clinica'&&doorSide<2)?.28:.5;
+  const doors=[[doorSide,dp,kind==='hiper'||kind==='deposito'?3.2:kind==='depto'?1.5:2.4]];
+  if(w*d>500)doors.push([doorSide<2?(doorSide===0?1:0):(doorSide===2?3:2),dp,2]);
   const cols=SHOP26.depto.col,col=kind==='clinica'?'#d8d4c8':kind==='comisaria'?'#b8b4a8':cols[rng()*cols.length|0];
   const o={name:kind,col,doors,roofCol:['#4a4844','#3a3834','#5a524a'][rng()*3|0],upper:floors>1?(floors-1)*3.2:0,H:3.4,floorCol:kind==='depto'?'#6a5a48':'#7a7870'};
   const avoid={};

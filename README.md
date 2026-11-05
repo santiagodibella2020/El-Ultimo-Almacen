@@ -4,6 +4,16 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.27
+- **Enemigos más inteligentes**:
+  - **Vista**: ven hacia adelante (de espaldas casi no te notan) y no ven a través de paredes. Agachado o caminando despacio pasás más desapercibido; corriendo, te escuchan cerca.
+  - **Oído**: los disparos atraen a los que están cerca, y los más lejanos van a revisar de dónde vino el ruido.
+  - **Persecución**: si te pierden de vista van al último lugar donde te vieron, te siguen el rastro un rato y después buscan por la zona antes de rendirse.
+  - **Los podridos se avisan**: cuando uno te descubre gime y los de alrededor se acercan a ver.
+  - **Rapaces en manada**: chillan para llamar a la manada, te rodean por los costados y atacan de a uno, mordiendo y retirándose.
+  - **Puertas y edificios**: encuentran la puerta para entrar a buscarte (y para salir), rodean las casas por las esquinas y esquivan obstáculos en vez de quedarse trabados.
+- Arreglo: algunas puertas de departamentos y clínicas de la ciudad quedaban tapadas por una pared interior.
+
 ## Novedades de la 0.26
 - **Mapa más grande**: pasa de 1 km a 1,6 km por lado. Todo lo de siempre queda en el mismo lugar; pasando las lomas hay una zona nueva con 18 puestos abandonados para saquear.
 - **Ciudad de San Ignacio**: al final de la ruta, pasando el pueblo. 30 manzanas con avenida, departamentos de varios pisos, supermercados, farmacias, ferreterías, bares, oficinas, tiendas de ropa, kioscos y armerías, más un hipermercado, comisarías, clínicas, depósitos, estacionamientos con autos para revisar y un retén militar en el centro.
