@@ -55,6 +55,19 @@ function apply32(){H32.want=false;if(!world||!H32.ready)return;
       if(Math.abs(x-roadX(z))<3.4)continue;if(inTown&&townW(x,z)<.3)continue;if(!free32(x,z,.4))continue;
       list.push({x,y:terrainY(x,z),z,ry:R()*6.283,k:.5+R()*.12,t:.85+R()*.2})}
     if(list.length)inst32(unit32('tanque_gasolina',1),list)}
+  // ----- decoración suelta: bolsas de arena, cajones de madera y carros de supermercado -----
+  const scatter=(key,h,n,solidR,inTownOnly,near)=>{if(!H32.geo[key])return;const list=[];
+    for(let a=0;a<900&&list.length<n;a++){let x,z;
+      if(near&&near.length&&a<400){const s=near[(R()*near.length)|0],an=R()*6.283,d=s.r*(.35+R()*.5);x=s.x+Math.cos(an)*d;z=s.z+Math.sin(an)*d}
+      else{const inTown=inTownOnly||a<600;z=inTown?TOWN_Z+(R()-.5)*160:(R()-.5)*SIZE*.9;x=inTown?roadX(z)+(R()-.5)*110:roadX(z)+(R()<.5?-1:1)*(4.8+R()*3);
+        if(inTown&&townW(x,z)<.3)continue}
+      if(Math.abs(x-roadX(z))<3.4)continue;if(!free32(x,z,solidR+.2))continue;
+      const y=terrainY(x,z),k=h*(.9+R()*.2);list.push({x,y,z,ry:R()*6.283,k,t:.85+R()*.2});if(solidR)solid32(x,z,solidR,solidR,y,k*.8)}
+    if(list.length)inst32(unit32(key,1),list.map(p=>({x:p.x,y:p.y,z:p.z,ry:p.ry,sx:p.k,sy:p.k,sz:p.k,t:p.t})))};
+  let st=[];try{st=sitesGet6().filter(s=>s.kind==='gas22'||s.kind==='camp'||s.kind==='terminal')}catch(e){}
+  scatter('bolsas_arena',.6,26,.45,false,st);
+  scatter('cajon_madera',.75,30,.4,false,st);
+  scatter('carro_supermercado',.95,16,.4,true,null);
   // ----- muebles y cajas de botín con modelo propio -----
   const emptyGeo=new THREE.BufferGeometry();emptyGeo.setAttribute('position',new THREE.Float32BufferAttribute([0,0,0,0,0,0,0,0,0],3));emptyGeo.setAttribute('normal',new THREE.Float32BufferAttribute([0,1,0,0,1,0,0,1,0],3));
   const per={};
