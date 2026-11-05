@@ -4,6 +4,15 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.31
+- **Arrojables (tecla G)**:
+  - *Botella vacía*: hace ruido donde cae y los bichos que no te vieron van a ver qué pasó. Sirve para despejar una puerta o pasar de largo. Salen al tomar agua y revolviendo tachos.
+  - *Molotov*: prende fuego el piso unos segundos; lo que pasa por ahí se quema y sigue ardiendo un rato. Se hace en el taller con una botella vacía, combustible y tela. La lluvia lo apaga antes.
+  - *Granada de mano*: rebota y explota a los 2,4 segundos. Se hace en el taller (con banco) con pólvora, chatarra y cinta.
+  - En el inventario elegís cuál tener a mano ("Preparar (G)"); abajo a la derecha se ve cuál vas a tirar.
+- **Sigilo**: abajo de la mira aparece si estás *oculto*, si *te están buscando* o si *te vieron* (solo cuando hay bichos cerca). Pegarle cuerpo a cuerpo a uno que no te vio hace mucho más daño: con el cuchillo un caminante cae de un golpe.
+- **Expediciones**: en la pestaña Gente podés mandar a alguien a las casas de la ruta, al pueblo (un día) o a San Ignacio (dos días). Se lleva comida y agua del depósito y vuelve con lo que encontró. Más lejos hay más cosas pero es más peligroso: puede volver herido o no volver. Los guardias y cazadores se cuidan mejor; el carronero trae más.
+
 ## Novedades de la 0.30
 - Saqueo con el mueble de fondo: la heladera, el placard, el baúl del auto, la góndola o el tacho que estás revisando se ve en 3D detrás de la columna "Adentro".
 - Carga de vehículos con la misma pantalla: el vehículo de fondo, filas que se tocan para pasar cosas y la mochila del otro lado.
