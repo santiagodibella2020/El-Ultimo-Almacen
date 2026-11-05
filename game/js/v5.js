@@ -172,9 +172,9 @@ function updateGrass(){if(!S||!terrainMesh)return;buildGrass();grassU.value=time
 let rockInst=null;
 function buildDetails(rng){
   if(rockInst){scene.remove(rockInst);rockInst.geometry.dispose()}
-  const N=520;rockInst=new T3.InstancedMesh(new T3.DodecahedronGeometry(1,0),new T3.MeshLambertMaterial({color:0x8a877e,map:TEX.concrete||null}),N);rockInst.castShadow=true;rockInst.receiveShadow=true;
+  const N=Math.round(520*Math.min(1.5,SIZE*SIZE/1e6));rockInst=new T3.InstancedMesh(new T3.DodecahedronGeometry(1,0),new T3.MeshLambertMaterial({color:0x8a877e,map:TEX.concrete||null}),N);rockInst.castShadow=true;rockInst.receiveShadow=true;
   const m=new T3.Matrix4(),q=new T3.Quaternion(),e=new T3.Euler(),sc=new T3.Vector3(),ps=new T3.Vector3(),col=new T3.Color();let n=0;
-  for(let a=0;a<4000&&n<N;a++){const x=(rng()-.5)*SIZE*.94,z=(rng()-.5)*SIZE*.94;if(grassBlocked(x,z)||insideBuilding(x,z))continue;const y=terrainY(x,z);const s=.25+Math.pow(rng(),3)*1.6;
+  for(let a=0;a<N*8&&n<N;a++){const x=(rng()-.5)*SIZE*.94,z=(rng()-.5)*SIZE*.94;if(grassBlocked(x,z)||insideBuilding(x,z))continue;const y=terrainY(x,z);const s=.25+Math.pow(rng(),3)*1.6;
     ps.set(x,y+s*.15,z);e.set(rng()*3,rng()*3,rng()*3);q.setFromEuler(e);sc.set(s*(.8+rng()*.6),s*(.5+rng()*.4),s*(.8+rng()*.6));m.compose(ps,q,sc);rockInst.setMatrixAt(n,m);const t=.75+rng()*.35;col.setRGB(t,t*.98,t*.93);rockInst.setColorAt(n,col);n++}
   rockInst.count=n;scene.add(rockInst);
   // litter: tires, barrels, crates, bags, cones and papers in town and along the road

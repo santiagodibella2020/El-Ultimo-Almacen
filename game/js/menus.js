@@ -24,8 +24,8 @@ $('dead').addEventListener('click',e=>{if(e.target.closest('[data-a="respawn"]')
 // ---------- Map ----------
 function openMap(){gstate='map';unlock();const c=$('mapc'),m=c.getContext('2d');const s=Math.min(innerWidth-40,innerHeight-40,800);c.style.width=s+'px';c.style.height=s+'px';
   m.imageSmoothingEnabled=true;m.fillStyle='#0a0d0b';m.fillRect(0,0,800,800);m.drawImage(mapImg,0,0,800,800);const f=800/SIZE;
-  m.fillStyle='#0a0d0b';for(let z=0;z<100;z++)for(let x=0;x<100;x++)if(!explored[z*100+x])m.fillRect(x*8,z*8,8.5,8.5);
-  const X=x=>(x+HALF)*f,Z=z=>(z+HALF)*f;const seen=(x,z)=>explored[Math.floor((z+HALF)/10)*100+Math.floor((x+HALF)/10)];
+  m.fillStyle='#0a0d0b';const ec=800/EXW;for(let z=0;z<EXW;z++)for(let x=0;x<EXW;x++)if(!explored[z*EXW+x])m.fillRect(x*ec,z*ec,ec+.5,ec+.5);
+  const X=x=>(x+HALF)*f,Z=z=>(z+HALF)*f;const seen=(x,z)=>explored[Math.floor((z+HALF)/10)*EXW+Math.floor((x+HALF)/10)];
   m.font='600 13px "IBM Plex Mono",monospace';m.textAlign='center';
   const label=(t,x,y)=>{const tw=m.measureText(t).width+8;m.fillStyle='rgba(10,13,11,.8)';m.fillRect(x-tw/2,y-12,tw,16);m.fillStyle='#dedcc9';m.fillText(t,x,y)};
   for(const r of ruins){if(!seen(r.cx,r.cz))continue;m.fillStyle='#8c887e';m.fillRect(X(r.x0),Z(r.z0),r.w*f,r.d*f);label(L(r.type),X(r.cx),Z(r.z0)-6)}

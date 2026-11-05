@@ -82,7 +82,7 @@ function startGame(state){
   walls.forEach((w,i)=>setWallAlive(i,S.walls[i]>0));
   conts.forEach(c=>{if(S.cont[c.i])markLooted(c)});
   if(S.fossils&&S.fossils.length===fossils.length)fossils.forEach((f,k)=>{f.uses=+S.fossils[k];if(f.uses<=0)f.mesh.visible=false});
-  if(S.explored){try{const b=atob(S.explored);for(let i=0;i<explored.length;i++)explored[i]=(b.charCodeAt(i>>3)>>(i&7))&1}catch(e){}}
+  if(S.explored){try{const b=atob(S.explored);if(b.length*8<explored.length){const ow=Math.round(Math.sqrt(b.length*8)),o=(EXW-ow)>>1;for(let i=0;i<ow*ow;i++)if((b.charCodeAt(i>>3)>>(i&7))&1)explored[((i/ow|0)+o)*EXW+(i%ow)+o]=1}else for(let i=0;i<explored.length;i++)explored[i]=(b.charCodeAt(i>>3)>>(i&7))&1}catch(e){}}
   (S.chopped||[]).forEach(i=>{const t=trees[i];if(t&&t.alive){t.alive=false;setTreeVisible(t,false)}});
   (S.builds||[]).forEach(b=>placeBuild(b.t,b.x,b.z,b.rot,b.hp,true));
   if(!S.demand)rollDemand();if(!S.contracts||!S.contracts.length)genContracts();
@@ -141,7 +141,7 @@ function updateGhost(){
 
 // ================= COLLISION =================
 function circleBlocked(x,z,r,who){
-  if(Math.abs(x)>488||Math.abs(z)>488)return{edge:true};
+  if(Math.abs(x)>HALF-12||Math.abs(z)>HALF-12)return{edge:true};
   for(const b of qAABB(x,z)){if(b.dead||b.kind==='floor')continue;if(b.kind==='gate'&&(who==='p'||who==='t'||who==='c'||who==='pet'))continue;
     const cx=clamp(x,b.x0,b.x1),cz=clamp(z,b.z0,b.z1);if((x-cx)**2+(z-cz)**2<r*r)return b}
   const t=qTrees(x,z,t=>(t.x-x)**2+(t.z-z)**2<(t.r+r)**2);if(t)return t;
@@ -165,7 +165,7 @@ function hitSpheres(e){const H=HIT[hitKey(e.type)],c=Math.cos(e.yaw),s=Math.sin(
 function spawnEnemy(type,x,z,horde=false){const d=EDEF[type];const sc=(d.mini||d.boss)?1+(S.day-1)*.02:1+(S.day-1)*.07;const mesh=makeEnemyMesh(type);const y=groundY(x,z);mesh.position.set(x,y,z);scene.add(mesh);
   const e={type,x,z,y,r:d.r,hp:d.hp*sc,maxHp:d.hp*sc,speed:d.speed*(.88+R()*.24)*(season()==='invierno'&&d.kind!=='d'?.9:1),scale:d.scale||1,scrT:2+R()*3,spitCd:1+R()*2,slamCd:3,fuse:0,dmg:d.dmg*(1+(S.day-1)*.04),atk:0,wallAtk:0,yaw:R()*6.28,wander:0,wdir:null,aggro:false,horde,flash:0,anim:R()*10,lunge:0,lungeCd:0,charge:0,chargeCd:0,angry:false,loot:1,dead:false,dying:0,mesh,stun:0,stuck:0,target:null};
   enemies.push(e);return e}
-function findSpawn(cx,cz,minD,maxD,awayOutpost){for(let k=0;k<40;k++){const a=R()*6.283,d=minD+R()*(maxD-minD),x=cx+Math.cos(a)*d,z=cz+Math.sin(a)*d;if(Math.abs(x)>470||Math.abs(z)>470)continue;const y=terrainY(x,z);if(y<WATER_Y+.4||y>30)continue;if(awayOutpost&&Math.hypot(x,z)<awayOutpost)continue;if(Math.hypot(x-P.x,z-P.z)<minD*.8)continue;if(circleBlocked(x,z,1,'e'))continue;return{x,z,m:moist(x,z)}}return null}
+function findSpawn(cx,cz,minD,maxD,awayOutpost){for(let k=0;k<40;k++){const a=R()*6.283,d=minD+R()*(maxD-minD),x=cx+Math.cos(a)*d,z=cz+Math.sin(a)*d;if(Math.abs(x)>EDGE+50||Math.abs(z)>EDGE+50)continue;const y=terrainY(x,z);if(y<WATER_Y+.4||y>30)continue;if(awayOutpost&&Math.hypot(x,z)<awayOutpost)continue;if(Math.hypot(x-P.x,z-P.z)<minD*.8)continue;if(circleBlocked(x,z,1,'e'))continue;return{x,z,m:moist(x,z)}}return null}
 function spawnTown(initial){
   for(let k=0;k<30;k++){let x,z;if(R()<.35&&buildings.length){const b=buildings[R()*buildings.length|0];x=b.x0+1+R()*(b.w-2);z=b.z0+1+R()*(b.d-2)}else{z=TOWN_Z-70+R()*140;x=roadX(z)+(R()-.5)*90}
     if(Math.hypot(x-P.x,z-P.z)<(initial?40:28))continue;if(circleBlocked(x,z,.6,'e'))continue;

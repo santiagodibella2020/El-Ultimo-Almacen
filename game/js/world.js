@@ -4,11 +4,15 @@ let S=null; // saved state
 let vehicles=[],lairs=[],altar=null,pineMat,broadMat;
 let nH,nM,nD,heights,terrainMesh,water,ruins,conts,fossils,trees,rocks,aabbs,aabbGrid,treeGrid,ruinGrid,walls,shelfUnits,turrets,truck,mapImg,explored,pickups,enemies,customers,builds,pet,buildings,roofs;
 let world=null; // THREE.Group holding all generated content
-const roadX=z=>30*Math.sin(z*.006)+8*Math.sin(z*.021);
+const roadX0=z=>30*Math.sin(z*.006)+8*Math.sin(z*.021);
+// v0.26: la ruta entra derecha a la ciudad (avenida principal).
+const CITY_RX=Math.round(roadX0(580));
+let LEGACY26=false;// true mientras se calcula el terreno como era antes de la 0.26
+const roadX=z=>z<452||LEGACY26?roadX0(z):lerp(roadX0(z),CITY_RX,smooth(452,486,z));
 function townW(x,z){return (1-smooth(70,88,Math.abs(z-TOWN_Z)))*(1-smooth(50,64,Math.abs(x-roadX(z))))}
 function rawHeight(x,z){
   let h=(fbm(nH,x*.0042,z*.0042,5)-.5)*95+(nD(x*.03,z*.03)-.5)*3;
-  const d=Math.max(Math.abs(x),Math.abs(z));if(d>420)h+=(d-420)*.55;
+  const d=Math.max(Math.abs(x),Math.abs(z));h+=ridge26(d);
   const rd=Math.abs(x-roadX(z));if(rd<9){const t=smooth(9,4,rd);h=lerp(h,Math.max(h*.7,WATER_Y+1.2),t*.8)}
   const tw=townW(x,z);if(tw>0)h=lerp(h,TOWN_Y+(nD(x*.05,z*.05)-.5)*.3,tw);
   const r=Math.hypot(x,z);const t=smooth(30,75,r);h=lerp(2,h,t);
@@ -19,6 +23,14 @@ function terrainY(x,z){const fx=(x+HALF)/STEP,fz=(z+HALF)/STEP;const ix=clamp(Ma
   if(tx+tz<=1)return a+(b-a)*tx+(c-a)*tz; return d+(c-d)*(1-tx)+(b-d)*(1-tz)}
 function groundY(x,z){let y=terrainY(x,z);const list=ruinGrid.get(gkey(x,z,20));if(list)for(const r of list){if(x>r.x0&&x<r.x1&&z>r.z0&&z<r.z1&&r.floor>y)y=r.floor}
   if(x>-6&&x<6&&z>-16&&z<-8)y=Math.max(y,2.05);return y}
+// v0.26: altura como era antes de agrandar el mapa (montañas desde 420 m), para que lo de siempre quede igual.
+// Las lomas de siempre (desde 420 m) siguen igual hasta los 450 m; después bajan a la zona nueva, y el borde del mapa queda en EDGE.
+function ridge26(d){if(LEGACY26)return d>420?(d-420)*.55:0;return d<=420?0:d<450?(d-420)*.55:d<500?16.5*(1-smooth(450,500,d)):d>EDGE?(d-EDGE)*.55:0}
+let oldH26=null,oldH26n=null;
+function oldY26(x,z,y){const d=Math.max(Math.abs(x),Math.abs(z));if(d<=450)return y==null?terrainY(x,z):y;
+  const W=251;if(oldH26n!==nH){oldH26n=nH;oldH26=new Float32Array(W*W);LEGACY26=true;try{for(let j=0;j<W;j++)for(let i=0;i<W;i++)oldH26[j*W+i]=rawHeight(-500+i*4,-500+j*4)}finally{LEGACY26=false}}
+  const fx=(x+500)/4,fz=(z+500)/4;const ix=clamp(Math.floor(fx),0,W-2),iz=clamp(Math.floor(fz),0,W-2);const tx=clamp(fx-ix,0,1),tz=clamp(fz-iz,0,1);
+  const a=oldH26[iz*W+ix],b=oldH26[iz*W+ix+1],c=oldH26[(iz+1)*W+ix],e=oldH26[(iz+1)*W+ix+1];if(tx+tz<=1)return a+(b-a)*tx+(c-a)*tz;return e+(c-e)*(1-tx)+(b-e)*(1-tz)}
 const gkey=(x,z,c)=>(Math.floor(x/c)+500)*2000+(Math.floor(z/c)+500);
 function addAABB(b){aabbs.push(b);const x0=Math.floor((b.x0-2)/16),x1=Math.floor((b.x1+2)/16),z0=Math.floor((b.z0-2)/16),z1=Math.floor((b.z1+2)/16);for(let i=x0;i<=x1;i++)for(let j=z0;j<=z1;j++){const k=(i+500)*2000+(j+500);let l=aabbGrid.get(k);if(!l)aabbGrid.set(k,l=[]);l.push(b)}return b}
 const EMPTY=[];
@@ -32,7 +44,7 @@ function signTexture(text,bg='#1b1712',fg='#e3a33b'){const c=document.createElem
 function genWorld(seed){
   if(world){scene.remove(world);world.traverse(o=>{if(o.geometry&&o.geometry!==BOX&&o.geometry!==CYL&&o.geometry!==CONE)o.geometry.dispose()})}
   world=new T3.Group();scene.add(world);
-  const rng=mulberry32(seed);nH=makeNoise(seed^0x51);nM=makeNoise(seed^0xa7);nD=makeNoise(seed^0x3c);
+  const rng=mulberry32(seed),rng0=rng;nH=makeNoise(seed^0x51);nM=makeNoise(seed^0xa7);nD=makeNoise(seed^0x3c);
   aabbs=[];aabbGrid=new Map();treeGrid=new Map();ruinGrid=new Map();conts=[];buildings=[];roofs=[];
   // Terrain: muted, washed-out colors
   const W=SEG+1;heights=new Float32Array(W*W);
@@ -56,8 +68,8 @@ function genWorld(seed){
     const w=8+rng()*7|0,d=7+rng()*6|0;const ang=rng()*Math.PI*2,rad=80+rng()*350;const cx=Math.cos(ang)*rad,cz=Math.sin(ang)*rad;
     const x0=cx-w/2,x1=cx+w/2,z0=cz-d/2,z1=cz+d/2;
     if(ruins.some(r=>x0<r.x1+12&&x1>r.x0-12&&z0<r.z1+12&&z1>r.z0-12))continue;
-    if(Math.abs(cx-roadX(cz))<w/2+7)continue;if(townW(cx,cz)>0||Math.abs(cz-TOWN_Z)<100&&Math.abs(cx-roadX(cz))<80)continue;
-    const hs=[terrainY(x0,z0),terrainY(x1,z0),terrainY(x0,z1),terrainY(x1,z1),terrainY(cx,cz)];const mn=Math.min(...hs),mx=Math.max(...hs);
+    if(Math.abs(cx-roadX0(cz))<w/2+7)continue;if(townW(cx,cz)>0||Math.abs(cz-TOWN_Z)<100&&Math.abs(cx-roadX0(cz))<80)continue;
+    const hs=[oldY26(x0,z0),oldY26(x1,z0),oldY26(x0,z1),oldY26(x1,z1),oldY26(cx,cz)];const mn=Math.min(...hs),mx=Math.max(...hs);
     if(mn<WATER_Y+.8||mx-mn>4.5)continue;
     const type=types[rng()*types.length|0];const r={x0,x1,z0,z1,cx,cz,w,d,type,floor:mx+.12,ruin:true};ruins.push(r);
     const g=grp(0,0,0,world);
@@ -85,26 +97,28 @@ function genWorld(seed){
     fossils.push({x,z,y,uses:3,mesh:g})}
   // Trees & rocks
   trees=[];rocks=[];
-  const cand=[];for(let gx=-470;gx<470;gx+=5)for(let gz=-470;gz<470;gz+=5){const x=gx+rng()*4,z=gz+rng()*4;const m=moist(x,z),y=terrainY(x,z);if(y<WATER_Y+.6||y>28)continue;if(Math.max(Math.abs(x),Math.abs(z))<45)continue;if(Math.abs(x-roadX(z))<6)continue;if(townW(x,z)>.05)continue;if(ruins.some(r=>x>r.x0-3&&x<r.x1+3&&z>r.z0-3&&z<r.z1+3))continue;
-    const r=rng();if(m>.56&&r<.5)cand.push({x,z,y,type:0});else if(m>.42&&m<=.56&&r<.05)cand.push({x,z,y,type:1});else if(m<=.42&&r<.012)cand.push({x,z,y,type:1});else if(r>.985)rocks.push({x,z,y,s:.6+rng()*1.4})}
+  const cand=[];const rngO=mulberry32((seed^0x26e0)>>>0);// v0.26: el anillo nuevo usa otro generador para no mover lo de siempre
+  for(let gx=-EDGE-50;gx<EDGE+50;gx+=5)for(let gz=-EDGE-50;gz<EDGE+50;gz+=5){const old=gx>=-470&&gx<470&&gz>=-470&&gz<470,rng=old?rng0:rngO;const x=gx+rng()*4,z=gz+rng()*4;const m=moist(x,z),y=terrainY(x,z),yc=old?oldY26(x,z,y):y;if(yc<WATER_Y+.6||yc>28)continue;if(Math.max(Math.abs(x),Math.abs(z))<45)continue;if(Math.abs(x-(old?roadX0:roadX)(z))<6)continue;if(townW(x,z)>.05)continue;if(ruins.some(r=>x>r.x0-3&&x<r.x1+3&&z>r.z0-3&&z<r.z1+3))continue;
+    if(!old&&rngO()<.6)continue;const r=rng();if(m>.56&&r<.5)cand.push({x,z,y,type:0,old});else if(m>.42&&m<=.56&&r<.05)cand.push({x,z,y,type:1,old});else if(m<=.42&&r<.012)cand.push({x,z,y,type:1,old});else if(r>.985)rocks.push({x,z,y,s:.6+rng()*1.4,old})}
+  {const o=cand.filter(t=>t.old),n=cand.filter(t=>!t.old);cand.length=0;cand.push(...o,...n);const ro=rocks.filter(t=>t.old),rn=rocks.filter(t=>!t.old);rocks.length=0;rocks.push(...ro,...rn)}
   const pines=cand.filter(t=>t.type===0),broads=cand.filter(t=>t.type===1);
   const trunkM=new T3.InstancedMesh(CYL,mat('#4a3523'),cand.length),pineM=new T3.InstancedMesh(new T3.ConeGeometry(1,1,7),pineMat=new T3.MeshLambertMaterial({color:0x2a3a24}),pines.length),broadM=new T3.InstancedMesh(new T3.IcosahedronGeometry(1,0),broadMat=new T3.MeshLambertMaterial({color:0x3a4f2e}),broads.length);
   [trunkM,pineM,broadM].forEach(m=>{m.castShadow=true;m.receiveShadow=true;world.add(m)});
   const dm=new T3.Object3D();let ti=0,pi=0,bi=0;
-  for(const t of cand){const s=.8+rng()*.6;t.s=s;t.r=.35*s;t.alive=true;t.hp=4;t.h=t.type?5*s:9*s;
+  for(const t of cand){const rng=t.old?rng0:rngO;const s=.8+rng()*.6;t.s=s;t.r=.35*s;t.alive=true;t.hp=4;t.h=t.type?5*s:9*s;
     dm.rotation.set(0,0,0);dm.scale.set(.5*s,(t.type?2:2.4)*s,.5*s);dm.position.set(t.x,t.y+(t.type?2:2.4)*s/2-.1,t.z);dm.updateMatrix();trunkM.setMatrixAt(ti,dm.matrix);t.ti=ti++;
     if(t.type===0){dm.position.set(t.x,t.y+2.2*s+3.2*s,t.z);dm.scale.set(2.2*s,7*s,2.2*s);dm.rotation.y=rng()*3;dm.updateMatrix();pineM.setMatrixAt(pi,dm.matrix);t.ci=pi++;t.cm=pineM}
     else{dm.position.set(t.x,t.y+2*s+1.6*s,t.z);dm.scale.set(2.6*s,2.2*s,2.6*s);dm.rotation.y=rng()*3;dm.updateMatrix();broadM.setMatrixAt(bi,dm.matrix);t.ci=bi++;t.cm=broadM}
     trees.push(t);addTreeObj(t)}
   t3trunk=trunkM;
   const rockM=new T3.InstancedMesh(new T3.DodecahedronGeometry(1,0),mat('#6d6a62'),rocks.length);rockM.castShadow=true;rockM.receiveShadow=true;world.add(rockM);
-  rocks.forEach((r,i)=>{dm.position.set(r.x,r.y+r.s*.3,r.z);dm.scale.set(r.s,r.s*.75,r.s*1.1);dm.rotation.set(rng(),rng()*3,0);dm.updateMatrix();rockM.setMatrixAt(i,dm.matrix);addTreeObj({x:r.x,z:r.z,y:r.y,r:r.s*.85,h:r.s*1.2,alive:true,rock:true})});
+  rocks.forEach((r,i)=>{const rng=r.old?rng0:rngO;dm.position.set(r.x,r.y+r.s*.3,r.z);dm.scale.set(r.s,r.s*.75,r.s*1.1);dm.rotation.set(rng(),rng()*3,0);dm.updateMatrix();rockM.setMatrixAt(i,dm.matrix);addTreeObj({x:r.x,z:r.z,y:r.y,r:r.s*.85,h:r.s*1.2,alive:true,rock:true})});
   buildAltar(rng);buildLairs(rng);buildVehicles(rng);
   // Map image
   mapImg=document.createElement('canvas');mapImg.width=W;mapImg.height=W;const mc=mapImg.getContext('2d'),id=mc.createImageData(W,W);
   for(let iz=0;iz<W;iz++)for(let ix=0;ix<W;ix++){const i=iz*W+ix,j=(iz*W+ix)*3,h=heights[i];let r,g,b;if(h<WATER_Y){r=40;g=70;b=82}else{r=cols[j]*255;g=cols[j+1]*255;b=cols[j+2]*255;const sh=clamp((h+10)/40,0,1)*.4+.8;r*=sh;g*=sh;b*=sh}id.data[i*4]=r;id.data[i*4+1]=g;id.data[i*4+2]=b;id.data[i*4+3]=255}
   mc.putImageData(id,0,0);
-  explored=new Uint8Array(100*100);
+  explored=new Uint8Array(EXW*EXW);
   buildSky();
 }
 

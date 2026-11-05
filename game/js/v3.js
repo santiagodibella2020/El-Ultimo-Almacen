@@ -117,7 +117,7 @@ function compassExtras(mark){
   if(altar&&altarSeen()){const d=Math.hypot(altar.x-P.x,altar.z-P.z);if(d>40)mark(altar.x,altar.z,'#7aff5a','◆')}
   for(const v of vehicles){if(v===truck&&P.inTruck)continue;if(!v.st.seen&&v.k!=='pickup')continue;const d=Math.hypot(v.x-P.x,v.z-P.z);if(d>15&&d<400)mark(v.x,v.z,v.k==='pickup'?'#c9614a':'#b08a5a')}
   for(const e of enemies)if(EDEF[e.type].boss&&!e.dying)mark(e.x,e.z,'#ff4a2a',e.type==='rex'?'REX':'☠')}
-const seenAt=(x,z)=>{const i=Math.floor((z+HALF)/10)*100+Math.floor((x+HALF)/10);return explored&&explored[i]};
+const seenAt=(x,z)=>{const i=Math.floor((z+HALF)/10)*EXW+Math.floor((x+HALF)/10);return explored&&explored[i]};
 const lairSeen=l=>seenAt(l.x,l.z);const altarSeen=()=>seenAt(altar.x,altar.z);
 function mapExtras(m,X,Z,label){
   for(const l of lairs){if(!lairSeen(l))continue;const last=S.lairs[l.k],calm=last!=null&&S.day-last<3;m.fillStyle=calm?'#6a6a60':'#b04a3a';m.beginPath();m.arc(X(l.x),Z(l.z),7,0,6.283);m.fill();label(L(LAIRS[l.k].n)+(calm?' · '+L('tranquila'):''),X(l.x),Z(l.z)-12)}

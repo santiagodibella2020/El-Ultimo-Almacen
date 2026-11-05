@@ -1,7 +1,7 @@
 'use strict';
 // ================= GAME DATA =================
 // Every name here is the Spanish source text; the UI runs it through L() to translate.
-const SIZE=1000, SEG=250, STEP=SIZE/SEG, HALF=SIZE/2, WATER_Y=-5, SAVE_KEY='ultimo-almacen-3d-v1', SET_KEY='ultimo-almacen-settings', SAVE_V=4,WORLD_SEED=1109;
+const SIZE=1600, SEG=400, EDGE=720, EXW=SIZE/10, STEP=SIZE/SEG, HALF=SIZE/2, WATER_Y=-5, SAVE_KEY='ultimo-almacen-3d-v1', SET_KEY='ultimo-almacen-settings', SAVE_V=4,WORLD_SEED=1109;
 const PAL=22; // palisade half size
 const COUNTER={x:3.5,z:-11.1}, CUST_SPOT={x:3.5,z:-9.6}, BED={x:-4.6,z:-9.4};
 const TRUCK_HOME={x:11,z:9};
