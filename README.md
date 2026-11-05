@@ -4,6 +4,12 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.30
+- Saqueo con el mueble de fondo: la heladera, el placard, el baúl del auto, la góndola o el tacho que estás revisando se ve en 3D detrás de la columna "Adentro".
+- Carga de vehículos con la misma pantalla: el vehículo de fondo, filas que se tocan para pasar cosas y la mochila del otro lado.
+- Vecinos con retrato en 3D (se puede girar arrastrando).
+- Estantes del almacén con el producto apilado a la vista; el taller y los caravaneros muestran el ícono de cada cosa.
+
 ## Novedades de la 0.29
 - **Inventario nuevo**: a la izquierda se ve en 3D la mochila que llevás puesta (riñonera, escolar, de campamento, bolso militar o táctica), con su capacidad y una barra de peso. Se puede girar arrastrando con el mouse.
 - **Saqueo**: la mochila queda de fondo en la columna "Tu mochila" y se pasa cada cosa tocando la fila entera, sin botoncitos de flecha.
