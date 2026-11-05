@@ -4,6 +4,16 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.35
+- **Cooperativo de dos jugadores en red**, cada uno en su PC:
+  - El anfitrión entra a su partida y la abre desde la pausa: *Esc > Cooperativo > Abrir mi partida*. El juego muestra su IP (la primera vez Windows pregunta por el firewall: hay que permitirlo).
+  - El otro va a *Cooperativo* en el menú principal, escribe esa IP y toca *Unirse*. Aparece al lado del anfitrión.
+  - En la misma casa alcanza con la IP que muestra el juego. Por internet, lo más fácil es que los dos instalen Radmin VPN o ZeroTier y usen la IP que da el programa (o abrir el puerto 27015 en el router del anfitrión).
+  - El mundo es el del anfitrión: los bichos, las hordas, la hora, el día y el clima. Cada uno tiene su mochila, su plata, su vida y su botín.
+  - Los bichos persiguen y atacan al jugador que tienen más cerca. Los tiros, golpes, granadas y molotov del invitado lastiman a los bichos de verdad. Se ven el otro jugador (con su nombre y distancia) y se escuchan sus disparos.
+  - Mientras haya alguien conectado el mundo no se frena al abrir el inventario, el almacén o la pausa.
+  - El invitado guarda su personaje aparte, así no pisa su partida de un jugador.
+
 ## Novedades de la 0.34
 - **Última tanda de modelos Hunyuan3D-2**: botiquines de pared y mostradores (con caja registradora) con modelo propio.
 - *Decoración nueva*: generadores eléctricos y barricadas de madera cerca de estaciones y campamentos, y bidones de agua azules por el pueblo y la ruta.
