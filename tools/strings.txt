@@ -660,6 +660,8 @@ Lugares para dormir: {n}
 Guardias en torres: {a} de {b}
 Oficios
 Con los días cada uno gana experiencia y rinde más. Cambiar de oficio hace perder la mitad de la experiencia.
+El cornudo patea el suelo: te está avisando. Alejate o va a embestir.
+Sin su líder, la manada se dispersa.
 Terminal
 Puerto Escondido
 Carga: {v}
