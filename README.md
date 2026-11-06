@@ -4,6 +4,11 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.40
+- **Historias de la gente**: cada persona del almacén tiene su historia en tres momentos (un fugitivo que huye de una banda, alguien que busca a su hija, alguien que quiere devolverle esperanza al lugar). Cuando te quiere hablar te avisa; acercate y apretá E. Lo que decidís cambia el desenlace: alguien puede irse, quedarse, dejarte un botín o encontrar a su familia.
+- **Lo que hacés en la ruta se recuerda**: ayudar a la gente baja los precios de las caravanas y a veces te dejan regalos; dejar gente tirada hace correr rumores que le pesan a tu gente.
+- **Cinco finales** distintos (La casa de todos, La fortaleza, El camino a la costa, Los que cuentan y El último almacén) según el pueblo que armaste, tu gente, los relatos que juntaste, los vecinos y tus decisiones. A partir del día 15, abrí el diario (J) y tocá *Contar cómo termina tu historia*. La partida sigue después.
+
 ## Novedades de la 0.39
 - **La gente vive en el almacén**: los guardias patrullan el patio y, si están heridos, se cubren dentro del almacén. Gastan balas del depósito (sin balas pegan flojo). Todos devuelven los golpes de cerca, y el enfermero cura a los heridos.
 - **Eventos en la ruta** con decisiones: un viajero herido (podés vendarlo, ayudarlo o seguir de largo, y eso se recuerda), una caravana de comerciantes, autos abandonados con emboscada y un camión varado con combustible. Acercate y apretá E.
