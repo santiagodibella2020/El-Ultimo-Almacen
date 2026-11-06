@@ -2,7 +2,10 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.42.0.
+
+## Novedades de la 0.42
+- Más modelos de Hunyuan3D en el mapa: **camión de basura, ambulancia y tractor viejos** abandonados en los caminos, **palés con cajas** cerca de campamentos y estaciones, **carteles de ruta oxidados** al costado de los caminos y **casas rurales de chapa** (macizas, sin interior) alejadas de la ruta.
 
 ## Novedades de la 0.41
 - **Autos abandonados** con modelos nuevos (generados con Hunyuan3D): una pickup oxidada y un sedán, torcidos al costado de las rutas y los caminos.
