@@ -825,5 +825,19 @@
 "Llegaste al día {d} con {n} personas a tu lado.": "Dotarłeś do dnia {d} z {n} osobami u boku.",
 "Contar cómo termina tu historia": "Opowiedz, jak kończy się twoja historia",
 "La partida sigue después. Podés volver a contarla cuando quieras.": "Gra toczy się dalej. Możesz opowiedzieć ją na nowo, kiedy zechcesz.",
-"La historia sigue, mientras vos sigas.": "Historia trwa, dopóki ty trwasz."
+"La historia sigue, mientras vos sigas.": "Historia trwa, dopóki ty trwasz.",
+"E · Levantar: {w}": "E · Podnieś: {w}",
+"Ya tenés una: te da munición o la deja en mejor estado": "Już ją masz: da amunicję lub naprawi",
+"Revisá 3 muebles o cajas del pueblo (E)": "Przeszukaj 3 meble lub skrzynie w miasteczku (E)",
+"Vendé algo desde el mostrador del almacén": "Sprzedaj coś z lady sklepu",
+"Construí una defensa en el patio": "Zbuduj fortyfikację na podwórzu",
+"Sobreviví tu primera noche": "Przetrwaj pierwszą noc",
+"Sumá a una persona a tu gente (panel del almacén)": "Przyjmij jedną osobę do ekipy (panel sklepu)",
+"Hablá con alguien de un pueblo (E)": "Porozmawiaj z kimś z wioski (E)",
+"Revisá 15 muebles o cajas": "Przeszukaj 15 mebli lub skrzyń",
+"Construí una estructura del pueblo": "Zbuduj obiekt miasteczka",
+"Llegá a la Ciudad de San Ignacio": "Dotrzyj do Miasta San Ignacio",
+"Aguantá hasta el día 7": "Wytrzymaj do dnia 7",
+"Objetivo cumplido: +${m}": "Cel osiągnięty: +${m}",
+"OBJETIVO": "CEL"
 }

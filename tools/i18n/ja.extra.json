@@ -825,5 +825,19 @@
 "Llegaste al día {d} con {n} personas a tu lado.": "{d}日目に到達した。{n}人が隣にいる。",
 "Contar cómo termina tu historia": "物語の結末を語る",
 "La partida sigue después. Podés volver a contarla cuando quieras.": "ゲームはその後も続く。いつでもまた語り直せる。",
-"La historia sigue, mientras vos sigas.": "物語は、あなたが続ける限り続く。"
+"La historia sigue, mientras vos sigas.": "物語は、あなたが続ける限り続く。",
+"E · Levantar: {w}": "E · 拾う：{w}",
+"Ya tenés una: te da munición o la deja en mejor estado": "すでに持っている：弾薬がもらえるか状態が良くなる",
+"Revisá 3 muebles o cajas del pueblo (E)": "町の家具や箱を3つ調べる（E）",
+"Vendé algo desde el mostrador del almacén": "店のカウンターで何か売る",
+"Construí una defensa en el patio": "庭に防御を作る",
+"Sobreviví tu primera noche": "最初の夜を生き延びる",
+"Sumá a una persona a tu gente (panel del almacén)": "仲間を1人加える（店のパネル）",
+"Hablá con alguien de un pueblo (E)": "村の人と話す（E）",
+"Revisá 15 muebles o cajas": "家具や箱を15個調べる",
+"Construí una estructura del pueblo": "町の施設を建てる",
+"Llegá a la Ciudad de San Ignacio": "サン・イグナシオの街にたどり着く",
+"Aguantá hasta el día 7": "7日目まで耐える",
+"Objetivo cumplido: +${m}": "目標達成：+${m}",
+"OBJETIVO": "目標"
 }

@@ -2,7 +2,11 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.42.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.43.0.
+
+## Novedades de la 0.43
+- **Las armas tiradas se levantan** (E): escopeta, rifle de caza, hacha de bombero y machete. Si ya tenés el arma, te dan munición o la dejan en mejor estado.
+- **Guía de los primeros días**: un cartelito en la esquina te da un objetivo a la vez (saquear, vender, construir, pasar la primera noche, sumar gente, hablar con un vecino, llegar a la ciudad, aguantar hasta el día 7), con un premio en plata al cumplirlo. Las partidas empezadas pasada la tercera noche no lo muestran.
 
 ## Novedades de la 0.42
 - Más modelos de Hunyuan3D en el mapa: **camión de basura, ambulancia y tractor viejos** abandonados en los caminos, **palés con cajas** cerca de campamentos y estaciones, **carteles de ruta oxidados** al costado de los caminos y **casas rurales de chapa** (macizas, sin interior) alejadas de la ruta.

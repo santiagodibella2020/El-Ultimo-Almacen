@@ -825,5 +825,19 @@
 "Llegaste al día {d} con {n} personas a tu lado.": "{d}일째에 도달했다. 곁에는 {n}명이 있다.",
 "Contar cómo termina tu historia": "이야기가 어떻게 끝나는지 들려주기",
 "La partida sigue después. Podés volver a contarla cuando quieras.": "게임은 그 뒤에도 이어진다. 원할 때 언제든 다시 들려줄 수 있다.",
-"La historia sigue, mientras vos sigas.": "이야기는 당신이 계속하는 한 이어진다."
+"La historia sigue, mientras vos sigas.": "이야기는 당신이 계속하는 한 이어진다.",
+"E · Levantar: {w}": "E · 줍기: {w}",
+"Ya tenés una: te da munición o la deja en mejor estado": "이미 가지고 있다: 탄약을 주거나 상태가 좋아진다",
+"Revisá 3 muebles o cajas del pueblo (E)": "마을의 가구나 상자 3개 뒤지기 (E)",
+"Vendé algo desde el mostrador del almacén": "가게 계산대에서 뭔가 팔기",
+"Construí una defensa en el patio": "마당에 방어 시설 짓기",
+"Sobreviví tu primera noche": "첫 밤을 버티기",
+"Sumá a una persona a tu gente (panel del almacén)": "사람 한 명을 일행으로 들이기 (가게 패널)",
+"Hablá con alguien de un pueblo (E)": "마을 사람과 이야기하기 (E)",
+"Revisá 15 muebles o cajas": "가구나 상자 15개 뒤지기",
+"Construí una estructura del pueblo": "마을 시설 짓기",
+"Llegá a la Ciudad de San Ignacio": "산 이그나시오 시에 도착하기",
+"Aguantá hasta el día 7": "7일째까지 버티기",
+"Objetivo cumplido: +${m}": "목표 달성: +${m}",
+"OBJETIVO": "목표"
 }

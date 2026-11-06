@@ -825,5 +825,19 @@
 "Llegaste al día {d} con {n} personas a tu lado.": "You reached day {d} with {n} people at your side.",
 "Contar cómo termina tu historia": "Tell how your story ends",
 "La partida sigue después. Podés volver a contarla cuando quieras.": "The game goes on afterwards. You can tell it again whenever you like.",
-"La historia sigue, mientras vos sigas.": "The story goes on, as long as you do."
+"La historia sigue, mientras vos sigas.": "The story goes on, as long as you do.",
+"E · Levantar: {w}": "E · Pick up: {w}",
+"Ya tenés una: te da munición o la deja en mejor estado": "You already have one: it gives ammo or restores it",
+"Revisá 3 muebles o cajas del pueblo (E)": "Search 3 pieces of furniture or crates in town (E)",
+"Vendé algo desde el mostrador del almacén": "Sell something from the store counter",
+"Construí una defensa en el patio": "Build a defense in the yard",
+"Sobreviví tu primera noche": "Survive your first night",
+"Sumá a una persona a tu gente (panel del almacén)": "Bring one person into your crew (store panel)",
+"Hablá con alguien de un pueblo (E)": "Talk to someone in a village (E)",
+"Revisá 15 muebles o cajas": "Search 15 pieces of furniture or crates",
+"Construí una estructura del pueblo": "Build a town structure",
+"Llegá a la Ciudad de San Ignacio": "Reach the City of San Ignacio",
+"Aguantá hasta el día 7": "Hold out until day 7",
+"Objetivo cumplido: +${m}": "Objective complete: +${m}",
+"OBJETIVO": "OBJECTIVE"
 }

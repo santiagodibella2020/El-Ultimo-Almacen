@@ -825,5 +825,19 @@
 "Llegaste al día {d} con {n} personas a tu lado.": "{d}. güne yanında {n} kişiyle ulaştın.",
 "Contar cómo termina tu historia": "Hikâyenin nasıl bittiğini anlat",
 "La partida sigue después. Podés volver a contarla cuando quieras.": "Oyun sonrasında da devam eder. İstediğin zaman yeniden anlatabilirsin.",
-"La historia sigue, mientras vos sigas.": "Sen devam ettikçe hikâye de devam eder."
+"La historia sigue, mientras vos sigas.": "Sen devam ettikçe hikâye de devam eder.",
+"E · Levantar: {w}": "E · Al: {w}",
+"Ya tenés una: te da munición o la deja en mejor estado": "Zaten var: cephane verir ya da durumunu düzeltir",
+"Revisá 3 muebles o cajas del pueblo (E)": "Kasabadaki 3 mobilya veya sandığı ara (E)",
+"Vendé algo desde el mostrador del almacén": "Dükkânın tezgâhından bir şey sat",
+"Construí una defensa en el patio": "Avluda bir savunma yap",
+"Sobreviví tu primera noche": "İlk gecende hayatta kal",
+"Sumá a una persona a tu gente (panel del almacén)": "Ekibe bir kişi kat (dükkân paneli)",
+"Hablá con alguien de un pueblo (E)": "Bir köyde biriyle konuş (E)",
+"Revisá 15 muebles o cajas": "15 mobilya veya sandık ara",
+"Construí una estructura del pueblo": "Bir kasaba yapısı kur",
+"Llegá a la Ciudad de San Ignacio": "San Ignacio Şehri'ne ulaş",
+"Aguantá hasta el día 7": "7. güne kadar dayan",
+"Objetivo cumplido: +${m}": "Hedef tamamlandı: +${m}",
+"OBJETIVO": "HEDEF"
 }
