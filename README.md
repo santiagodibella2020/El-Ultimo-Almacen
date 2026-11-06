@@ -4,6 +4,10 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.41
+- **Autos abandonados** con modelos nuevos (generados con Hunyuan3D): una pickup oxidada y un sedán, torcidos al costado de las rutas y los caminos.
+- **Armas tiradas** cerca de campamentos, estaciones y terminales: escopeta de caño doble, rifle de caza, hacha de bombero y machete. Por ahora son decoración, no se levantan.
+
 ## Novedades de la 0.40
 - **Historias de la gente**: cada persona del almacén tiene su historia en tres momentos (un fugitivo que huye de una banda, alguien que busca a su hija, alguien que quiere devolverle esperanza al lugar). Cuando te quiere hablar te avisa; acercate y apretá E. Lo que decidís cambia el desenlace: alguien puede irse, quedarse, dejarte un botín o encontrar a su familia.
 - **Lo que hacés en la ruta se recuerda**: ayudar a la gente baja los precios de las caravanas y a veces te dejan regalos; dejar gente tirada hace correr rumores que le pesan a tu gente.
