@@ -4,6 +4,14 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.38
+- **Sensación de golpe**: al pegar hay una pausa mínima (más larga con armas cuerpo a cuerpo y en la cabeza), el enemigo retrocede y se tambalea (se echa atrás con un tiro a la cabeza, se dobla con uno al torso), cada impacto suena distinto y al matar la cámara se sacude.
+- **IA por especie**:
+  - Los **cornudos** son territoriales: si te acercás patean el suelo, te miran y avisan; si seguís cerca, embisten. Agachado te toleran más cerca.
+  - Los **raptores** acechan en manada con un líder: te rodean a distancia mientras los mirás y atacan cuando mirás para otro lado, cuando estás flojo o después de un rato. Si herís a uno, todos atacan. Si matás al líder, la manada puede dispersarse.
+  - Los **podridos** van hacia los ruidos: tiros de los guardias y torretas, y la camioneta a toda velocidad.
+- **Director de dificultad** (invisible): mide cómo te va (vida, daño reciente, bajas) y ajusta el tamaño de las hordas y el botín. Si te va muy bien las noches se ponen más duras; si venís mal, aflojan y aparece más botín.
+
 ## Novedades de la 0.37
 - **El almacén crece hasta ser un pueblo**. Nueva pestaña **Pueblo** en el panel del almacén con estructuras que se construyen con materiales y plata y se ven en el patio: casas (cuatro lugares para dormir cada una), campo de cultivo, pozo con bomba, taller grande, enfermería, puestos de mercado, torres de vigilancia, anexo del almacén (dos estantes más) y muralla de piedra (la empalizada aguanta más).
 - **Nivel del asentamiento**: Campamento, Aldea, Pueblo y Pueblo fortificado. Con más gente y más estructuras llega más gente, a veces de a varios, y todos rinden un poco más.

@@ -1,6 +1,6 @@
 'use strict';
 // ================= STATE =================
-const SB=k=>SANDBOX[k].v[(S&&S.sb&&S.sb[k]!=null)?S.sb[k]:SANDBOX[k].d];
+const SB=k=>{const v=SANDBOX[k].v[(S&&S.sb&&S.sb[k]!=null)?S.sb[k]:SANDBOX[k].d];return(k==='horde'||k==='loot')&&typeof dir38==='function'?v*dir38(k):v};
 const CYCLE=()=>SB('daylen');
 const nm=k=>L(ITEMS[k].n), wn=k=>L(WEAP[k].n), an=k=>L(AMMO_N[k]);
 function newState(seed,sb){return{v:SAVE_V,seed,sb:Object.assign({},PRESETS.normal.sb,sb||{}),day:1,t:0,money:100,rep:2,level:1,xp:0,perks:{},hp:100,food:90,water:85,fat:10,panic:0,infect:0,wet:0,sick:0,pk:0,wounds:[],sk:{},bag:'mochila_e',battery:100,
