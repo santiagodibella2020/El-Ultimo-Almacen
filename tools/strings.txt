@@ -796,6 +796,18 @@ Llegá a la Ciudad de San Ignacio
 Aguantá hasta el día 7
 Objetivo cumplido: +${m}
 OBJETIVO
+Tu mochila quedó donde caíste: volvé a buscarla antes de dos días.
+Tu mochila quedó a {n} m.
+Perdiste tu mochila: alguien se la llevó.
+E · Recuperar tu mochila
+Recuperaste lo que llevabas.
+Se huele en el aire: mañana de noche viene una horda enorme. Reforzá las defensas y juntá munición.
+¡La gran horda! Esta noche vienen {n} podridos. Resistí hasta el amanecer.
+Raptores rondan la huerta esta noche. Si llegan al amanecer, arrasan los cultivos.
+Tormenta de noche: la lluvia trae más podridos.
+Los raptores arrasaron {n} cultivos.
+Los raptores no pasaron de la huerta. Se salvaron los cultivos.
+Sobreviviste a la gran horda. Los sobrevivientes te dejan ${m} y mejora tu reputación.
 Terminal
 Puerto Escondido
 Carga: {v}

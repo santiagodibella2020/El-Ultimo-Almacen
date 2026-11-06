@@ -2,7 +2,12 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.43.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.44.0.
+
+## Novedades de la 0.44
+- **Morir cuesta**: la mochila queda donde caíste, con una columna de luz. Tenés dos días para volver a buscarla (E); si no, se la llevan.
+- **Noches distintas**: raptores que rondan la huerta y arrasan cultivos si llegan al amanecer, y tormentas nocturnas que traen más podridos (además del apagón y la noche cerrada).
+- **La gran horda**: cada 7 días hay un aviso a la mañana y esa noche vienen el doble de podridos. Si aguantás hasta el amanecer, los sobrevivientes te pagan y sube tu reputación.
 
 ## Novedades de la 0.43
 - **Las armas tiradas se levantan** (E): escopeta, rifle de caza, hacha de bombero y machete. Si ya tenés el arma, te dan munición o la dejan en mejor estado.
