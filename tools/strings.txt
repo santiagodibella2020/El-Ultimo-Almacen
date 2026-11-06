@@ -808,6 +808,25 @@ Tormenta de noche: la lluvia trae más podridos.
 Los raptores arrasaron {n} cultivos.
 Los raptores no pasaron de la huerta. Se salvaron los cultivos.
 Sobreviviste a la gran horda. Los sobrevivientes te dejan ${m} y mejora tu reputación.
+Grabación 1
+«Día 1. El compuesto salió del depósito B. Dicen que fue un accidente, pero las válvulas estaban cortadas a mano. La bruma no nació sola.»
+Grabación 2
+«Día 9. Los animales cambiaron primero: los dinosaurios que clonamos para el parque se pudrieron antes que la gente. Alguien sabía lo que venía y se fue sin avisar.»
+Grabación 3
+«Día 20. Si alguien escucha esto: la bruma se retira con el amanecer porque la luz rompe el compuesto. Esa es la grieta. Algún día habrá que dejar de escondernos de noche.»
+E · Escuchar la radio
+Radio de la banda
+Una voz repite: «Habla {n}. El camino es nuestro: quien pase, paga. Los del almacén tienen cosas buenas, ya los vamos a visitar.»
+Apagar la radio
+E · Abrir la jaula
+Liberaste a quien tenían preso. La banda de {n} pierde fuerza y deja de asaltar el almacén.
+E · Escuchar grabadora
+Ya la escuchaste
+Guardar la cinta
+Juntaste las tres grabaciones: sabés por qué se retira la bruma con el sol. Eso cambia cómo ves las noches.
+{n} y su banda andan cerca del almacén esta noche. Las torretas ayudan.
+La banda de {n} se llevó ${m} de la caja.
+La banda de {n} se fue sin llevarse nada: las torretas la espantaron.
 Terminal
 Puerto Escondido
 Carga: {v}

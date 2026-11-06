@@ -2,7 +2,12 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.44.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.45.0.
+
+## Novedades de la 0.45
+- **El misterio de la bruma**: tres laboratorios abandonados (mesa, bidones químicos y una grabadora vieja) con grabaciones que cuentan de dónde salió la bruma y por qué se retira con el sol.
+- **La banda del camino**: un campamento con fogata, radio, jaula y quien manda. Escuchar la radio avisa de los asaltos; abrir la jaula debilita a la banda. Desde el día 9, si seguís sin liberarla, a veces roba parte de la caja (las torretas ayudan).
+- Seis modelos nuevos de Hunyuan3D (grabadora, mesa de laboratorio, bidón químico, fogata, jaula, radio militar).
 
 ## Novedades de la 0.44
 - **Morir cuesta**: la mochila queda donde caíste, con una columna de luz. Tenés dos días para volver a buscarla (E); si no, se la llevan.
