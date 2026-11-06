@@ -4,6 +4,13 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.36
+- **Mapa más llano y con más caminos**: las lomas son mucho más bajas y hay una red de caminos rurales (este-oeste y norte-sur) que une el almacén, el pueblo, los puestos y la ciudad. Las rutas tienen líneas pintadas, postes de luz con cables y objetos tirados al costado. El pueblo tiene dos calles paralelas con faroles y la ciudad de San Ignacio tiene faroles en las avenidas.
+- **Sombras estables**: ya no titilan al caminar y cubren más terreno alrededor.
+- **Cielo más quieto**: las nubes casi no se mueven.
+- **Manos y armas cuerpo a cuerpo**: el hacha, el bate, la lanza, la katana, el mazo y la palanca se agarran con las dos manos y quedan en guardia. Cada arma tiene su golpe (hachazo, barrido, tajo, estocada), con su duración y un golpe de cámara al impactar.
+- Las partidas guardadas siguen funcionando, pero el terreno cambió: los árboles y objetos pueden haber quedado en otro lugar.
+
 ## Novedades de la 0.35
 - **Cooperativo de dos jugadores en red**, cada uno en su PC:
   - El anfitrión entra a su partida y la abre desde la pausa: *Esc > Cooperativo > Abrir mi partida*. El juego muestra su IP (la primera vez Windows pregunta por el firewall: hay que permitirlo).

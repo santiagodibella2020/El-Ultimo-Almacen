@@ -133,7 +133,7 @@ const _applyLighting=applyLighting;applyLighting=function(){_applyLighting();try
   u.bot.value.copy(scene.fog.color);u.top.value.copy(scene.fog.color).lerp(new T3.Color(dk>.5?0x05080d:0x3d5a7a),.55*(1-wf.dim)).multiplyScalar(1-.35*dk);
   u.sunDir.value.copy(sun.position).sub(sun.target.position).normalize();u.sunCol.value.copy(sun.color);u.sunAmt.value=(1-dk)*(1-wf.dim*.9);
   const cp=camera.position;skyDome.position.copy(cp);skyStars.position.copy(cp);cloudSky.position.set(cp.x,cp.y+170,cp.z);
-  const cu=cloudSky.material.uniforms;cu.off.value.set(time*.0016+cp.x/5400,time*.0007+cp.z/5400);cu.amt.value=.45+wf.dim*.55;cu.col.value.copy(scene.fog.color).lerp(new T3.Color(0xffffff),.35*(1-dk)).multiplyScalar(1-.6*dk);
+  const cu=cloudSky.material.uniforms;cu.off.value.set(time*.00018+cp.x/30000,time*.00008+cp.z/30000);cu.amt.value=.45+wf.dim*.55;cu.col.value.copy(scene.fog.color).lerp(new T3.Color(0xffffff),.35*(1-dk)).multiplyScalar(1-.6*dk);
   skyStars.material.opacity=Math.max(0,dk-.4)*1.6*(1-wf.dim);if(typeof starPts!=="undefined"&&starPts)starPts.visible=false;
   const fl=flash.intensity>0;wHemi.intensity=.12+.5*(1-dk)*(1-wf.dim*.4)+(fl?.25:0);wAmb.intensity=.18+.4*(1-dk)+(fl?.2:0);wDir.intensity=.15+.5*(1-dk);wDir.color.copy(sun.color);
   updateGrass()}catch(e){console.error(e)}};
@@ -154,7 +154,7 @@ function buildGrass(){if(grassInst)return;
 const vhash2=(x,z)=>{let h=Math.imul(x|0,374761393)^Math.imul(z|0,668265263);h=Math.imul(h^(h>>>13),1274126177);return((h^(h>>>16))>>>0)/4294967296};
 const GSEASON={primavera:[.4,.5,.28],verano:[.56,.54,.32],otono:[.54,.44,.26],invierno:[.46,.48,.38]};
 const FCOL=[0xe8d24a,0xf2f0e8,0x9a6ad0,0xd8584a];
-function grassBlocked(x,z){if(Math.abs(x-roadX(z))<5||townW(x,z)>.35||Math.max(Math.abs(x),Math.abs(z))<PAL+2)return true;const y=terrainY(x,z);if(y<WATER_Y+.4||y>16)return true;
+function grassBlocked(x,z){if(Math.abs(x-roadX(z))<5||roadD36(x,z)<4.8||townW(x,z)>.35||Math.max(Math.abs(x),Math.abs(z))<PAL+2)return true;const y=terrainY(x,z);if(y<WATER_Y+.4||y>16)return true;
   for(const r of ruins)if(x>r.x0-1&&x<r.x1+1&&z>r.z0-1&&z<r.z1+1)return true;return false}
 function updateGrass(){if(!S||!terrainMesh)return;buildGrass();grassU.value=time;
   const snowy=(S.snow||0)>.5;grassInst.visible=!snowy;flowerInst.visible=!snowy&&(season()==='primavera'||season()==='verano');

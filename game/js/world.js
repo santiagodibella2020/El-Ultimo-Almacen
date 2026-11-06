@@ -9,6 +9,22 @@ const roadX0=z=>30*Math.sin(z*.006)+8*Math.sin(z*.021);
 const CITY_RX=Math.round(roadX0(580));
 let LEGACY26=false;// true mientras se calcula el terreno como era antes de la 0.26
 const roadX=z=>z<452||LEGACY26?roadX0(z):lerp(roadX0(z),CITY_RX,smooth(452,486,z));
+// v0.36: red de caminos rurales (este-oeste y norte-sur) y calles paralelas en el pueblo. Solo en el mundo nuevo.
+const AMP36=36;
+const ROADS36=[
+  {t:'h',c:-440,a:26,f:.0062,p:1.2,u0:-720,u1:720},{t:'h',c:-200,a:30,f:.0051,p:3.1,u0:-720,u1:720},
+  {t:'h',c:335,a:20,f:.0068,p:.4,u0:-720,u1:720},{t:'h',c:450,a:10,f:.009,p:2,u0:-720,u1:720},
+  {t:'v',c:-440,a:24,f:.0057,p:.7,u0:-720,u1:450},{t:'v',c:440,a:24,f:.0049,p:2.4,u0:-720,u1:450},
+  {t:'r',c:-64,u0:82,u1:268},{t:'r',c:64,u0:82,u1:268},
+  {t:'x',c:84,u0:-64,u1:64},{t:'x',c:268,u0:-64,u1:64}];
+function roadD36(x,z,sk){if(LEGACY26)return 999;let d=999;
+  for(let i=0;i<ROADS36.length;i++){if(i===sk)continue;const r=ROADS36[i];let a,b;
+    if(r.t==='h'){a=x;b=z-(r.c+r.a*Math.sin(x*r.f+r.p))}
+    else if(r.t==='v'){a=z;b=x-(r.c+r.a*Math.sin(z*r.f+r.p))}
+    else if(r.t==='r'){a=z;b=x-(roadX(z)+r.c)}
+    else{a=x-roadX(z);b=z-r.c}
+    const q=a<r.u0?Math.hypot(b,a-r.u0):a>r.u1?Math.hypot(b,a-r.u1):Math.abs(b);if(q<d)d=q}
+  return d}
 function townW(x,z){return (1-smooth(70,88,Math.abs(z-TOWN_Z)))*(1-smooth(50,64,Math.abs(x-roadX(z))))}
 function rawHeight(x,z){
   let h=(fbm(nH,x*.0042,z*.0042,5)-.5)*95+(nD(x*.03,z*.03)-.5)*3;
@@ -53,7 +69,7 @@ function genWorld(seed){
   const cG=[.36,.42,.26],cF=[.24,.3,.19],cS=[.58,.52,.38],cR=[.45,.43,.4],cB=[.27,.3,.24],cRoad=[.3,.29,.27],cY=[.4,.35,.28],cT=[.38,.4,.3];
   for(let i=0;i<pos.count;i++){const x=pos.getX(i),z=pos.getZ(i);const h=rawHeight(x,z);pos.setY(i,h);
     const iz=Math.round((z+HALF)/STEP),ix=Math.round((x+HALF)/STEP);heights[iz*W+ix]=h;
-    const m=moist(x,z);let c=m>.56?cF:m<.4?cS:cG;if(h>16)c=cR;if(h<WATER_Y+.6)c=cB;if(townW(x,z)>.5)c=cT;if(Math.abs(x-roadX(z))<4.2&&h>WATER_Y)c=cRoad;if(Math.max(Math.abs(x),Math.abs(z))<PAL+1)c=cY;
+    const m=moist(x,z);let c=m>.56?cF:m<.4?cS:cG;if(h>16)c=cR;if(h<WATER_Y+.6)c=cB;if(townW(x,z)>.5)c=cT;if((Math.abs(x-roadX(z))<4.2||roadD36(x,z)<3.6)&&h>WATER_Y)c=cRoad;if(Math.max(Math.abs(x),Math.abs(z))<PAL+1)c=cY;
     const n=(nD(x*.3,z*.3)-.5)*.12;cols[i*3]=c[0]*(1+n);cols[i*3+1]=c[1]*(1+n);cols[i*3+2]=c[2]*(1+n)}
   geo.setAttribute('color',new T3.BufferAttribute(cols,3));geo.computeVertexNormals();
   terrainMesh=new T3.Mesh(geo,new T3.MeshLambertMaterial({vertexColors:true,flatShading:true}));terrainMesh.receiveShadow=true;world.add(terrainMesh);
@@ -100,6 +116,7 @@ function genWorld(seed){
   const cand=[];const rngO=mulberry32((seed^0x26e0)>>>0);// v0.26: el anillo nuevo usa otro generador para no mover lo de siempre
   for(let gx=-EDGE-50;gx<EDGE+50;gx+=5)for(let gz=-EDGE-50;gz<EDGE+50;gz+=5){const old=gx>=-470&&gx<470&&gz>=-470&&gz<470,rng=old?rng0:rngO;const x=gx+rng()*4,z=gz+rng()*4;const m=moist(x,z),y=terrainY(x,z),yc=old?oldY26(x,z,y):y;if(yc<WATER_Y+.6||yc>28)continue;if(Math.max(Math.abs(x),Math.abs(z))<45)continue;if(Math.abs(x-(old?roadX0:roadX)(z))<6)continue;if(townW(x,z)>.05)continue;if(ruins.some(r=>x>r.x0-3&&x<r.x1+3&&z>r.z0-3&&z<r.z1+3))continue;
     if(!old&&rngO()<.6)continue;const r=rng();if(m>.56&&r<.5)cand.push({x,z,y,type:0,old});else if(m>.42&&m<=.56&&r<.05)cand.push({x,z,y,type:1,old});else if(m<=.42&&r<.012)cand.push({x,z,y,type:1,old});else if(r>.985)rocks.push({x,z,y,s:.6+rng()*1.4,old})}
+  for(const arr of [cand,rocks])for(let i=arr.length-1;i>=0;i--)if(roadD36(arr[i].x,arr[i].z)<6)arr.splice(i,1);
   {const o=cand.filter(t=>t.old),n=cand.filter(t=>!t.old);cand.length=0;cand.push(...o,...n);const ro=rocks.filter(t=>t.old),rn=rocks.filter(t=>!t.old);rocks.length=0;rocks.push(...ro,...rn)}
   const pines=cand.filter(t=>t.type===0),broads=cand.filter(t=>t.type===1);
   const trunkM=new T3.InstancedMesh(CYL,mat('#4a3523'),cand.length),pineM=new T3.InstancedMesh(new T3.ConeGeometry(1,1,7),pineMat=new T3.MeshLambertMaterial({color:0x2a3a24}),pines.length),broadM=new T3.InstancedMesh(new T3.IcosahedronGeometry(1,0),broadMat=new T3.MeshLambertMaterial({color:0x3a4f2e}),broads.length);

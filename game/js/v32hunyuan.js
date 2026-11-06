@@ -71,6 +71,12 @@ function apply32(){H32.want=false;if(!world||!H32.ready)return;
   scatter('generador_electrico',.9,8,.5,false,st);
   scatter('barricada_madera',1.3,14,.9,false,st);
   scatter('bidon_agua',.8,24,.3,false,null);
+  // al costado de los caminos nuevos: cajones, bidones, bolsas, tachos y barricadas sueltas
+  const roadside=(key,h,n,solidR)=>{if(!H32.geo[key]||typeof roadPts36!=='function')return;const pts=roadPts36().filter(p=>p.road>=0&&Math.abs(p.x-roadX(p.z))>12),list=[];
+    for(let a=0;a<600&&list.length<n&&pts.length;a++){const p=pts[(R()*pts.length)|0],side=R()<.5?-1:1,off=4.6+R()*2.4,x=p.x+Math.cos(p.yaw)*side*off,z=p.z-Math.sin(p.yaw)*side*off;
+      if(!free32(x,z,solidR+.2)||roadD36(x,z)<4.2)continue;const y=terrainY(x,z),k=h*(.9+R()*.2);list.push({x,y,z,ry:R()*6.283,k,t:.85+R()*.2});if(solidR)solid32(x,z,solidR,solidR,y,k*.8)}
+    if(list.length)inst32(unit32(key,1),list.map(p=>({x:p.x,y:p.y,z:p.z,ry:p.ry,sx:p.k,sy:p.k,sz:p.k,t:p.t})))};
+  roadside('cajon_madera',.75,30,.4);roadside('bidon_agua',.8,22,.3);roadside('bolsas_arena',.6,14,.45);roadside('contenedor_basura',1.1,10,.5);roadside('barricada_madera',1.3,10,.9);roadside('generador_electrico',.9,5,.5);
   // ----- muebles y cajas de botín con modelo propio -----
   const emptyGeo=new THREE.BufferGeometry();emptyGeo.setAttribute('position',new THREE.Float32BufferAttribute([0,0,0,0,0,0,0,0,0],3));emptyGeo.setAttribute('normal',new THREE.Float32BufferAttribute([0,1,0,0,1,0,0,1,0],3));
   const per={};
