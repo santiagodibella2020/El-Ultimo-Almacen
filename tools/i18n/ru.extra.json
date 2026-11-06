@@ -825,5 +825,19 @@
 "Llegaste al día {d} con {n} personas a tu lado.": "Ты дожил до дня {d}, и рядом с тобой {n} человек.",
 "Contar cómo termina tu historia": "Рассказать, чем заканчивается твоя история",
 "La partida sigue después. Podés volver a contarla cuando quieras.": "Игра продолжится после этого. Ты можешь рассказать её снова, когда захочешь.",
-"La historia sigue, mientras vos sigas.": "История продолжается, пока продолжаешь ты."
+"La historia sigue, mientras vos sigas.": "История продолжается, пока продолжаешь ты.",
+"E · Levantar: {w}": "E · Подобрать: {w}",
+"Ya tenés una: te da munición o la deja en mejor estado": "Такое уже есть: даст патроны или починит",
+"Revisá 3 muebles o cajas del pueblo (E)": "Обыщи 3 предмета мебели или ящика в городке (E)",
+"Vendé algo desde el mostrador del almacén": "Продай что-нибудь с прилавка магазина",
+"Construí una defensa en el patio": "Построй защиту во дворе",
+"Sobreviví tu primera noche": "Переживи первую ночь",
+"Sumá a una persona a tu gente (panel del almacén)": "Возьми одного человека в команду (панель магазина)",
+"Hablá con alguien de un pueblo (E)": "Поговори с кем-нибудь в посёлке (E)",
+"Revisá 15 muebles o cajas": "Обыщи 15 предметов мебели или ящиков",
+"Construí una estructura del pueblo": "Построй сооружение посёлка",
+"Llegá a la Ciudad de San Ignacio": "Дойди до города Сан-Игнасио",
+"Aguantá hasta el día 7": "Продержись до 7-го дня",
+"Objetivo cumplido: +${m}": "Цель выполнена: +${m}",
+"OBJETIVO": "ЦЕЛЬ"
 }

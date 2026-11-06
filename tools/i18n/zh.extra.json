@@ -825,5 +825,19 @@
 "Llegaste al día {d} con {n} personas a tu lado.": "你走到了第{d}天，身边有{n}个人。",
 "Contar cómo termina tu historia": "讲述你的故事如何结束",
 "La partida sigue después. Podés volver a contarla cuando quieras.": "之后游戏会继续。你随时可以再讲一遍。",
-"La historia sigue, mientras vos sigas.": "只要你继续，故事就继续。"
+"La historia sigue, mientras vos sigas.": "只要你继续，故事就继续。",
+"E · Levantar: {w}": "E · 拾取：{w}",
+"Ya tenés una: te da munición o la deja en mejor estado": "你已经有一把了：会给你弹药或修复它",
+"Revisá 3 muebles o cajas del pueblo (E)": "搜查镇上的3件家具或箱子（E）",
+"Vendé algo desde el mostrador del almacén": "在商店柜台卖点东西",
+"Construí una defensa en el patio": "在院子里建一座防御设施",
+"Sobreviví tu primera noche": "熬过第一个夜晚",
+"Sumá a una persona a tu gente (panel del almacén)": "让一个人加入你的队伍（商店面板）",
+"Hablá con alguien de un pueblo (E)": "和村子里的人说话（E）",
+"Revisá 15 muebles o cajas": "搜查15件家具或箱子",
+"Construí una estructura del pueblo": "建造一座小镇设施",
+"Llegá a la Ciudad de San Ignacio": "抵达圣伊格纳西奥城",
+"Aguantá hasta el día 7": "撑到第7天",
+"Objetivo cumplido: +${m}": "目标完成：+${m}",
+"OBJETIVO": "目标"
 }

@@ -1,12 +1,12 @@
 'use strict';
 /* v0.41-0.42: autos abandonados y armas tiradas con modelos de Hunyuan3D (tanda 4).
    - Una pickup oxidada y un sedán abandonado al costado de las rutas y los caminos, torcidos como si los hubieran dejado ahí.
-   - Escopeta, rifle de caza, hacha de bombero y machete tirados cerca de campamentos, estaciones y terminales (son decoración, no se levantan). */
+   - Escopeta, rifle de caza, hacha de bombero y machete tirados cerca de campamentos, estaciones y terminales (se levantan con E). */
 // acostado: el eje más largo queda horizontal, de largo L, apoyado en el piso
 function lay41(k,L){const g=H32.geo[k].clone();let bb=g.boundingBox,s=bb.getSize(new THREE.Vector3());
   if(s.y>=s.x&&s.y>=s.z){g.rotateX(-Math.PI/2);g.computeBoundingBox();bb=g.boundingBox;s=bb.getSize(new THREE.Vector3())}
   const c=bb.getCenter(new THREE.Vector3());g.translate(-c.x,-bb.min.y,-c.z);const m=Math.max(s.x,s.z);g.scale(L/m,L/m,L/m);g.computeBoundingBox();g.computeBoundingSphere();return g}
-const V41={};
+const V41={im:{}};
 function apply41(){if(!world||!H32.ready)return;
   const R=mulberry32((worldSeed()^0x41c0de)>>>0);let sites=[];try{sites=sitesGet6().filter(s=>s.kind==='gas22'||s.kind==='camp'||s.kind==='terminal')}catch(e){}
   // ----- autos -----
@@ -49,5 +49,5 @@ function apply41(){if(!world||!H32.ready)return;
   for(const [key,L,n] of guns){if(!H32.geo[key]||!sites.length)continue;const list=[];
     for(let a=0;a<300&&list.length<n;a++){const s=sites[(R()*sites.length)|0],an=R()*6.283,d=s.r*(.2+R()*.6),x=s.x+Math.cos(an)*d,z=s.z+Math.sin(an)*d;
       if(!free32(x,z,.5))continue;list.push({x,y:terrainY(x,z)+.02,z,ry:R()*6.283,t:.85+R()*.2})}
-    V41[key]=list;if(list.length)inst32(lay41(key,L),list)}}
+    V41[key]=list;if(list.length)V41.im[key]=inst32(lay41(key,L),list)}}
 const _apply41=apply32;apply32=function(){_apply41.apply(this,arguments);try{apply41()}catch(e){console.error('v41',e)}};

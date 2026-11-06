@@ -782,6 +782,20 @@ Contar cómo termina tu historia
 La partida sigue después. Podés volver a contarla cuando quieras.
 Seguir jugando
 La historia sigue, mientras vos sigas.
+E · Levantar: {w}
+Ya tenés una: te da munición o la deja en mejor estado
+Revisá 3 muebles o cajas del pueblo (E)
+Vendé algo desde el mostrador del almacén
+Construí una defensa en el patio
+Sobreviví tu primera noche
+Sumá a una persona a tu gente (panel del almacén)
+Hablá con alguien de un pueblo (E)
+Revisá 15 muebles o cajas
+Construí una estructura del pueblo
+Llegá a la Ciudad de San Ignacio
+Aguantá hasta el día 7
+Objetivo cumplido: +${m}
+OBJETIVO
 Terminal
 Puerto Escondido
 Carga: {v}
