@@ -31,13 +31,13 @@ function job28(k){return{
   carronero:[L('Carroñero'),L('Sale a revolver casas abandonadas y trae materiales.')],
   almacenero:[L('Almacenero'),L('Atiende el mostrador y vende mientras vos estás afuera.')],
 }[k]}
-const NAMES28=['Rubén','Marta','Chela','Osvaldo','Nelly','Tito','Graciela','Beto','Rosa','Hugo','Mirta','Cacho','Silvia','Ramiro','Lucía','Pocho','Norma','Lalo','Inés','Ernesto','Delia','Quique','Teresa','Fermín','Alicia','Mingo','Elsa','Julián','Coca','Ricardo'];
+const NAMES28=['Anselmo','Berta','Clara','Dante','Estela','Fausto','Gladys','Horacio','Irma','Jorge','Rubén','Marta','Chela','Osvaldo','Nelly','Tito','Graciela','Beto','Rosa','Hugo','Mirta','Cacho','Silvia','Ramiro','Lucía','Pocho','Norma','Lalo','Inés','Ernesto','Delia','Quique','Teresa','Fermín','Alicia','Mingo','Elsa','Julián','Coca','Ricardo'];
 const CAP0_28=2,TENT_MAX28=6,TENT_COST28={tela:4,madera:4,cuerda:2};
 const TENTS28=[[9,8.5],[15,8.5],[9,15.5],[15,15.5],[19.2,12],[12,19.6]],FIRE28=[12,12];
 const NEED28={food:30,drink:35};
 
 function crew28(){if(!S.crew28)S.crew28={list:[],cand:[],tents:0,rat:1,rd:0,nid:1,log:[],breach:false};return S.crew28}
-const cap28=()=>CAP0_28+2*crew28().tents;
+const cap28=()=>CAP0_28+2*crew28().tents+(typeof capExtra37==='function'?capExtra37():0);
 const hostile28=e=>!e.dead&&!e.dying&&!(EDEF[e.type].neutral&&!e.angry)&&!e.tame;
 
 // ---------- Comer y tomar del depósito ----------
@@ -91,7 +91,7 @@ function diff28(a,b){const o={};for(const k of Object.keys(b)){const q=b[k]-(a[k
 
 // ---------- Llegan al portón ----------
 function arrive28(){const C=crew28();if(S.day<2||C.rd===S.day)return;const h=hourOf(S.t);if(h<9||h>17)return;C.rd=S.day;
-  const first=!C.seen;const ch=first?1:.5+Math.min(.3,(S.rep||0)*.03);if(C.cand.length>=2||R()>ch)return;
+  const first=!C.seen;const ch=first?1:.5+Math.min(.3,(S.rep||0)*.03)+(typeof arriveBonus37==='function'?arriveBonus37():0);if(C.cand.length>=(typeof candCap37==='function'?candCap37():2)||R()>ch)return;
   const have=new Set([...C.list,...C.cand].map(w=>w.job));let ks=Object.keys(JOBS28).filter(k=>!have.has(k));if(!ks.length)ks=Object.keys(JOBS28);
   if(first)ks=['aguatero','granjero','carpintero','cazador'];
   const used=new Set([...C.list,...C.cand].map(w=>w.name));const names=NAMES28.filter(n=>!used.has(n));
@@ -122,9 +122,10 @@ function personMesh28(w){const j=JOBS28[w.job];let g=typeof glbHuman24==='functi
   if(!g){g=new THREE.Group();bx(.5,.9,.3,j.col,0,1.2,0,g);bx(.3,.3,.3,SKINS28[w.skin||0],0,1.85,0,g);bx(.4,.75,.25,'#2f3a48',0,.38,0,g)}
   scene.add(g);return g}
 function home28(w,i){const C=crew28(),h=hourOf(S.t),night=h>=19.5||h<6.5,J=JOBS28[w.job];
-  if(w.cand)return{x:2+i*1.4,z:19.2};
+  if(w.cand)return{x:2+(i%8)*1.4,z:19.2+(i>>3)*1.4};
+  const tw=typeof tower37==='function'?tower37(w):null;if(tw)return tw;
   if(J.away&&!night&&h>=8&&h<18)return null;
-  if(night&&w.job!=='guardia'){if(i<CAP0_28)return{x:-2.5+i*1.6,z:-13.4};const t=TENTS28[(i-CAP0_28)>>1]||FIRE28;const s=(i-CAP0_28)&1?1:-1;return{x:t[0]+s*1.3,z:t[1]+(t[1]<FIRE28[1]?1.4:-1.4)}}
+  if(night&&w.job!=='guardia'){if(i<CAP0_28)return{x:-2.5+i*1.6,z:-13.4};const sx=typeof sleep37==='function'?sleep37(i):null;if(sx)return sx;const t=TENTS28[(i-CAP0_28)>>1]||FIRE28;const s=(i-CAP0_28)&1?1:-1;return{x:t[0]+s*1.3,z:t[1]+(t[1]<FIRE28[1]?1.4:-1.4)}}
   const same=C.list.filter(o=>o.job===w.job),k=same.indexOf(w);return{x:J.spot[0]+k*1.3,z:J.spot[1]+k*.4}}
 function threat28(x,z,r){for(const e of enemies)if(hostile28(e)&&Math.abs(e.x-x)<r&&Math.abs(e.z-z)<r&&Math.hypot(e.x-x,e.z-z)<r)return e;return null}
 let crewT28=0,guardT28=0,hourT28=-1;

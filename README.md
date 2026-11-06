@@ -4,6 +4,12 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.37
+- **El almacén crece hasta ser un pueblo**. Nueva pestaña **Pueblo** en el panel del almacén con estructuras que se construyen con materiales y plata y se ven en el patio: casas (cuatro lugares para dormir cada una), campo de cultivo, pozo con bomba, taller grande, enfermería, puestos de mercado, torres de vigilancia, anexo del almacén (dos estantes más) y muralla de piedra (la empalizada aguanta más).
+- **Nivel del asentamiento**: Campamento, Aldea, Pueblo y Pueblo fortificado. Con más gente y más estructuras llega más gente, a veces de a varios, y todos rinden un poco más.
+- **Torres**: un guardia en cada torre dispara más lejos y más fuerte. Cada torre necesita un guardia.
+- **Mejor gestión de la gente**: se puede cambiar el oficio de cada uno, ganan experiencia con los días (Novato hasta Maestro) y rinden más, y se puede aceptar automáticamente a los que llegan. La gente nueva llega según lo que le falta al pueblo.
+
 ## Novedades de la 0.36
 - **Mapa más llano y con más caminos**: las lomas son mucho más bajas y hay una red de caminos rurales (este-oeste y norte-sur) que une el almacén, el pueblo, los puestos y la ciudad. Las rutas tienen líneas pintadas, postes de luz con cables y objetos tirados al costado. El pueblo tiene dos calles paralelas con faroles y la ciudad de San Ignacio tiene faroles en las avenidas.
 - **Sombras estables**: ya no titilan al caminar y cubren más terreno alrededor.

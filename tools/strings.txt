@@ -574,6 +574,92 @@ De expedición en {z} · vuelve el día {d}
 Cancelar
 Mandar de expedición
 Expediciones: mandás a alguien a buscar cosas afuera. Lleva comida y agua del depósito y vuelve con lo que encuentra. Más lejos hay más cosas, pero es más peligroso. Los guardias y los cazadores se cuidan mejor; el carronero encuentra más.
+Invitado
+Anfitrión
+Conectando…
+No se pudo conectar: revisá la IP.
+Conectado. Esperando al anfitrión…
+Esperando a que se una tu amigo…
+Se cortó la conexión con el anfitrión. Seguís jugando solo.
+Se cerró la partida cooperativa.
+Sin conexión.
+No se pudo conectar. Fijate la IP, que el anfitrión haya abierto la partida y que el firewall deje pasar el juego.
+Te desconectaste.
+El cooperativo funciona en el juego de escritorio (Windows).
+Abriendo la partida…
+No se pudo abrir la partida: {e}
+Tu amigo salió de la partida.
+El anfitrión cerró la partida. Seguís jugando solo.
+Tu amigo está conectado.
+Se unió tu amigo a la partida.
+Tu amigo
+El anfitrión todavía no entró a su partida. Probá de nuevo en un rato.
+Conectado con el anfitrión.
+Entraste a la partida de tu amigo. Los bichos, la hora y el clima son los de su mundo; tu mochila y tu plata son tuyas.
+Escribí la IP del anfitrión.
+Cooperativo
+Jugá con un amigo, cada uno en su PC
+Dos jugadores en red
+Tu partida está abierta. Pasale a tu amigo esta dirección para que entre desde su menú (Cooperativo > Unirse):
+Si están en la misma casa usen esa IP. Por internet, instalen los dos Radmin VPN o ZeroTier y usen la IP que les da el programa, o abran el puerto {p} en el router.
+Cerrar la partida cooperativa
+Volver
+Estás jugando en la partida de tu amigo.
+Desconectarme
+Abrí tu partida para que un amigo se una desde su PC. El mundo, los bichos, la hora y el clima son los tuyos; cada uno tiene su mochila, su plata y su vida.
+Mientras esté conectado, el mundo no se frena cuando abrís el inventario o la pausa.
+Abrir mi partida
+Unirse a la partida de un amigo
+Tu amigo abre su partida desde la pausa (Esc > Cooperativo) y te pasa su IP.
+Unirse
+Ser el anfitrión
+Entrá a tu partida (Continuar o Nueva partida) y abrila desde la pausa: Esc > Cooperativo > Abrir mi partida.
+Casa
+Cuatro lugares más para dormir.
+Campo de cultivo
+Los granjeros cosechan mucha más verdura.
+Pozo con bomba
+Los aguateros sacan la mitad más de agua.
+Taller grande
+Mecánicos y carpinteros rinden la mitad más.
+Enfermería
+El enfermero rinde más y la gente se desanima menos.
+Puestos de mercado
+Vienen más clientes y el almacenero vende más.
+Torre de vigilancia
+Un guardia arriba dispara más lejos y más fuerte. Cada torre necesita un guardia.
+Anexo del almacén
+Una sala más para vender: dos estantes más.
+Muralla de piedra
+La empalizada aguanta mucho más.
+Campamento
+Aldea
+Pueblo fortificado
+Novato
+Práctico
+Experimentado
+Experto
+Maestro
+Llegó otra persona al portón: {n}, {j}.
+Se sumó {n} ({j}).
+¡Tu asentamiento ya es {n}! Llega más gente y todos rinden un poco más.
+Ya no podés levantar más.
+Te falta plata.
+Faltan materiales.
+Construiste: {n}.
+{n} ahora es {j}.
+El almacén puede crecer hasta ser un pueblo. Cada estructura se levanta con materiales y plata y se ve en el patio. Con más gente y más estructuras sube el nivel del asentamiento: llega más gente y todos rinden más.
+Puntos {n}
+Próximo nivel ({m}): {n} puntos
+Nivel máximo
+Gente {a} de {b} · Pueden esperar en el portón: {c}
+Aceptar solo yo
+Aceptar automáticamente a los que lleguen
+Estructuras
+Lugares para dormir: {n}
+Guardias en torres: {a} de {b}
+Oficios
+Con los días cada uno gana experiencia y rinde más. Cambiar de oficio hace perder la mitad de la experiencia.
 Terminal
 Puerto Escondido
 Carga: {v}
@@ -952,7 +1038,6 @@ octubre
 noviembre
 diciembre
 Estación de servicio
-Casa
 Rasguño
 Corte profundo
 Mordida
@@ -1183,7 +1268,6 @@ Reglas del mundo
 Mapa distinto (opcional)
 Ya tenés una partida guardada: empezar una nueva la reemplaza.
 Empezar
-Volver
 Configuración
 Pantalla
 Sonido
