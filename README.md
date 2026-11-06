@@ -4,6 +4,11 @@ Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinos
 
 Estado: **acceso anticipado (prototipo)**, versión 0.26.0.
 
+## Novedades de la 0.39
+- **La gente vive en el almacén**: los guardias patrullan el patio y, si están heridos, se cubren dentro del almacén. Gastan balas del depósito (sin balas pegan flojo). Todos devuelven los golpes de cerca, y el enfermero cura a los heridos.
+- **Eventos en la ruta** con decisiones: un viajero herido (podés vendarlo, ayudarlo o seguir de largo, y eso se recuerda), una caravana de comerciantes, autos abandonados con emboscada y un camión varado con combustible. Acercate y apretá E.
+- **Cuatro perks nuevos** para builds distintas: Pies de gato (sigilo), Líder nato (gente más eficaz), Pirómano (explosivos más fuertes) y Don de gentes (mejores precios y premios en la ruta).
+
 ## Novedades de la 0.38
 - **Sensación de golpe**: al pegar hay una pausa mínima (más larga con armas cuerpo a cuerpo y en la cabeza), el enemigo retrocede y se tambalea (se echa atrás con un tiro a la cabeza, se dobla con uno al torso), cada impacto suena distinto y al matar la cámara se sacude.
 - **IA por especie**:

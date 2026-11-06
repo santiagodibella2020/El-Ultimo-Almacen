@@ -107,7 +107,7 @@ const _updateEnemy35=updateEnemy;updateEnemy=function(e,dt){
   return _updateEnemy35.call(this,e,dt)};
 
 // ---------- Cada cuadro ----------
-const IDLE35=['inv','loot','panel','npc','bigmap','map','pause','diario','altar','wait'];
+const IDLE35=['ev39','inv','loot','panel','npc','bigmap','map','pause','diario','altar','wait'];
 const _update35=update;update=function(dt){
   if(CO.role==='guest'&&coopOn()&&CO.started){// el invitado no genera bichos propios
     for(let i=enemies.length-1;i>=0;i--){const e=enemies[i];if(!e.mir&&!e.dying){scene.remove(e.mesh);enemies.splice(i,1)}}
