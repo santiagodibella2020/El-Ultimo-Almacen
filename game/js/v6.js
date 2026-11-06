@@ -127,9 +127,10 @@ GOALS.splice(GOALS.length-1,0,
 let seed6=WORLD_SEED,sites6=null,sitesNoise6=null,npcs6=[],notes6=[],anim6=[],lookout6=null;
 const townMain6=townW;
 function rawMain6(x,z){
-  let h=(fbm(nH,x*.0042,z*.0042,5)-.5)*95+(nD(x*.03,z*.03)-.5)*3;
+  let h=(fbm(nH,x*.0042,z*.0042,5)-.5)*(LEGACY26?95:AMP36)+(nD(x*.03,z*.03)-.5)*3;
   const d=Math.max(Math.abs(x),Math.abs(z));h+=ridge26(d);
   const rd=Math.abs(x-roadX(z));if(rd<9){const t=smooth(9,4,rd);h=lerp(h,Math.max(h*.7,WATER_Y+1.2),t*.8)}
+  if(!LEGACY26){const r2=roadD36(x,z);if(r2<9){const t=smooth(9,4,r2);h=lerp(h,Math.max(h*.7,WATER_Y+1.2),t*.8)}}
   const tw=townMain6(x,z);if(tw>0)h=lerp(h,TOWN_Y+(nD(x*.05,z*.05)-.5)*.3,tw);
   const r=Math.hypot(x,z);const t=smooth(30,75,r);h=lerp(2,h,t);return h}
 function sitesGet6(){
