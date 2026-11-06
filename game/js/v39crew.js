@@ -73,7 +73,7 @@ const EV39T={
   opts:[{t:()=>L('Sacar combustible (hace ruido)'),f:ev=>{give6('combustible',PK('diplo')?3:2);noise38(P.x,P.z,60);ambush39(2,true,true);return L('Llenás los bidones, pero el ruido se oye lejos. Vienen podridos.')}},
    {t:()=>L('Revisar la cabina'),f:ev=>{loot39({chatarra:3,pilas:2,lata:2});if(Math.random()<.3){ambush39(2,false);return L('Encontrás algo útil, pero había alguien durmiendo en el asiento de atrás.')}return L('Encontrás cosas útiles y nadie te molesta.')}},
    {t:()=>L('Seguir de largo'),f:ev=>L('Lo dejás atrás.')}]}};
-const price39=p=>Math.round(p*(PK('diplo')?.7:1));
+const price39=p=>{const k=(S.story&&S.story.karma)||0;return Math.round(p*(PK('diplo')?.7:1)*(k>=3?.9:k<=-2?1.25:1))};
 function karma39(n){const s=story6();s.karma=(s.karma||0)+n;if(n>0)s.helped=(s.helped||0)+1}
 function take39(o){for(const k in o){let left=o[k];const a=Math.min(left,S.inv[k]||0);S.inv[k]=(S.inv[k]||0)-a;left-=a;if(left>0)S.stash[k]=Math.max(0,(S.stash[k]||0)-left)}}
 const have39=k=>(S.inv[k]||0)+(S.stash[k]||0);
@@ -112,18 +112,20 @@ const _genWorld39=genWorld;genWorld=function(){try{evClear39()}catch(e){}return 
 
 // interacción y panel de decisión
 const _findInteract39=findInteract;
-findInteract=function(){if(ev39&&!ev39.done&&Math.hypot(ev39.x-P.x,ev39.z-P.z)<4.6){const T=EV39T[ev39.type];return{label:L('E · {n}',{n:T.n()}),sub:L('Decidí qué hacer'),act:openEv39}}
+findInteract=function(){if(ev39&&!ev39.done&&Math.hypot(ev39.x-P.x,ev39.z-P.z)<4.6){const T=EV39T[ev39.type];return{label:L('E · {n}',{n:T.n()}),sub:L('Decidí qué hacer'),act:()=>openEv39()}}
   return _findInteract39()};
-let evRes39='';
-function openEv39(){evRes39='';gstate='ev39';unlock();sfx('pickup');renderEv39();show('ev39')}
-function renderEv39(){const T=EV39T[ev39.type];$('ev39Name').textContent=T.n();
-  const opts=T.opts.map((o,i)=>{const ok=(!o.need||Object.entries(o.need).every(([k,q])=>have39(k)>=q))&&(!o.cost||S.money>=o.cost());
+let evRes39='',evCur39=null;
+const evDef39=()=>evCur39.T||EV39T[evCur39.type];
+function openEv39(o){evCur39=(o&&o.T)?o:ev39;evRes39='';gstate='ev39';unlock();sfx('pickup');renderEv39();show('ev39')}
+function renderEv39(){const T=evDef39();$('ev39Name').textContent=T.n();
+  const opts=T.opts.map((o,i)=>{const ok=(!o.need||Object.entries(o.need).every(([k,q])=>have39(k)>=q))&&(!o.cost||S.money>=o.cost())&&(!o.ok||o.ok());
     return `<button class="${ok?'primary':'small'}" data-a="ev39" data-i="${i}" ${ok?'':'disabled'}>${esc(o.t())}</button>`}).join('');
-  $('ev39Body').innerHTML=evRes39?`<div class="item"><p class="say6">${esc(evRes39)}</p></div><div class="btns6"><button class="primary" data-a="ev39x">${esc(L('Seguir camino'))}</button></div>`
-    :`<div class="item"><p class="say6">${esc(T.txt())}</p></div><div class="btns6" style="flex-direction:column;align-items:stretch;gap:.5rem">${opts}</div><p class="note">${esc(L('Plata ${m} · Esc para irte sin decidir',{m:fmt(S.money)}))}</p>`}
+  const para=t=>String(t).split('\n\n').map(x=>`<p class="say6">${esc(x)}</p>`).join('');
+  $('ev39Body').innerHTML=evRes39?`<div class="item">${para(evRes39)}</div><div class="btns6"><button class="primary" data-a="ev39x">${esc(L('Seguir camino'))}</button></div>`
+    :`<div class="item">${para(T.txt())}</div><div class="btns6" style="flex-direction:column;align-items:stretch;gap:.5rem">${opts}</div><p class="note">${esc(L('Plata ${m} · Esc para irte sin decidir',{m:fmt(S.money)}))}</p>`}
 OVS.push('ev39');
-$('ev39').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b||!ev39)return;
-  if(b.dataset.a==='ev39x'){evClear39();resume();pressed={};return}
-  if(b.dataset.a==='ev39'&&!ev39.done){const o=EV39T[ev39.type].opts[+b.dataset.i];if(!o)return;ev39.done=true;
-    try{evRes39=o.f(ev39)||''}catch(err){console.error('v39 opción',err);evRes39=L('Seguís tu camino.')}sfx('goal');gainXp(8);renderEv39()}});
-addEventListener('keydown',e=>{if(gstate!=='ev39')return;const k=e.key.toLowerCase();if(k==='escape'||k==='e'){e.stopImmediatePropagation();e.preventDefault();if(e.repeat)return;if(ev39&&ev39.done)evClear39();resume();pressed={}}},true);
+$('ev39').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b||!evCur39)return;
+  if(b.dataset.a==='ev39x'){if(evCur39===ev39)evClear39();evCur39=null;resume();pressed={};return}
+  if(b.dataset.a==='ev39'&&!evCur39.done){const o=evDef39().opts[+b.dataset.i];if(!o)return;evCur39.done=true;
+    try{evRes39=o.f(evCur39)||''}catch(err){console.error('v39 opción',err);evRes39=L('Seguís tu camino.')}sfx('goal');gainXp(8);renderEv39()}});
+addEventListener('keydown',e=>{if(gstate!=='ev39')return;const k=e.key.toLowerCase();if(k==='escape'||k==='e'){e.stopImmediatePropagation();e.preventDefault();if(e.repeat)return;if(evCur39&&evCur39.done&&evCur39===ev39)evClear39();evCur39=null;resume();pressed={}}},true);

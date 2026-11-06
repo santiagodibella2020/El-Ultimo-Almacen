@@ -705,6 +705,83 @@ Decidí qué hacer
 Seguir camino
 Plata ${m} · Esc para irte sin decidir
 Seguís tu camino.
+{n} te lleva aparte, con la voz temblorosa. «Tengo que contarte algo: escapé de una banda de la ruta. Si vienen a buscarme, no quiero que lastimen a nadie.»
+«Acá nadie entrega a nadie.»
+{n} respira hondo. «No me voy a olvidar de esto.»
+Pedirle que cuente todo lo que sabe
+{n} te marca en el mapa dónde vio a la banda. Se nota incómodo.
+{n} vio humo sobre la ruta y cree que es la banda. «Dame con qué defenderme o me voy esta noche.»
+Darle 20 balas
+{n} las guarda sin decir nada, pero se nota más firme.
+«Quedate tranquilo, los guardias se encargan.»
+{n} asiente. Quiere creerte.
+{n} no te cree del todo, pero se queda.
+Dejar que se vaya esa noche
+{n} se fue de noche. No volviste a saber nada más.
+{n} te espera en el patio con un mapa. «Los de la banda se fueron al sur. Esto era de su depósito: es tuyo.»
+Aceptás el mapa y el botín. {n} ya no mira por encima del hombro: este es su lugar.
+{n} dejó una nota sobre la mesa: «Gracias por el techo. No puedo quedarme.»
+Se fue antes del amanecer. Quizás en otro lugar encuentre paz.
+{n} te muestra una cinta de nena atada a la muñeca. «Perdí a mi hija en la ruta cuando empezó la bruma. Si ves algo...»
+«Voy a preguntar por ella en cada lugar.»
+{n} te agarra la mano sin decir nada.
+«Pasó mucho tiempo. Lo siento.»
+{n} asiente despacio y vuelve al trabajo.
+{n} te pide un día libre para buscar a su hija en la ciudad. «Vuelvo antes de que anochezca.»
+Dejar que vaya
+{n} vuelve de noche, con los pies hechos pedazos y con noticias de lugares que no conocías. Los marcaste en el mapa.
+«Esperá a que armemos una expedición.»
+{n} baja la cabeza. «Está bien. Esperemos.»
+{n} irrumpe corriendo: «¡La encontré! Está viva, en la colonia. Me la llevo, pero no quiero irme sin agradecerte.»
+Se despide con un abrazo largo y te deja todo lo que ahorró. Antes de irse te presenta a un amigo que busca refugio.
+{n} sigue sin noticias de su hija. «Pero no me olvido de que lo intentaste.»
+Se queda, más callado, pero con algo de esperanza.
+{n} ya no habla de su hija. Trabaja de sol a sol, sin levantar la vista.
+Algo se apagó en esa persona y no sabés cómo volver a encenderlo.
+{n} propone una comida para todos alrededor del fuego. «Hace mucho que nadie come sentado con otros.»
+Hacerla (4 latas)
+Comieron juntos, hablaron de antes y hasta hubo risas.
+«Ahora no, hay que ahorrar.»
+{n} asiente sin discutir.
+{n} quiere escribir en la pared del almacén los nombres de los que ya no están.
+Dejar que lo haga
+Entre todos fueron sumando nombres. Nadie dijo mucho, pero se notó.
+«Mejor mirar hacia adelante.»
+{n} guarda el carbón y no vuelve a tocar el tema.
+La gente empezó a llamar «la casa» al almacén. {n} lo escribió en el cartel de la entrada.
+Algo cambió: ya no es un lugar donde sobrevivir, sino un lugar donde vivir.
+{n} te agradece por lo que dejaste hacer. «Es un comienzo.»
+Se nota un poco más de calma entre la gente.
+{n} ya casi no habla con nadie. Dice que ya no hay nada que festejar.
+El silencio se instala en el patio.
+Escuchar lo que tiene para decir
+E · {n} quiere hablarte
+Es importante para {n}
+{n} quiere hablarte. Acercate y apretá E.
+Alguien a quien ayudaste dejó un paquete en la puerta del almacén.
+Corrió el rumor de que dejás gente tirada en la ruta. A la gente del almacén le pesa.
+La casa de todos
+El almacén dejó de ser un negocio y pasó a ser el centro de un pueblo. Hay calles, faroles, niños corriendo y gente que se acuerda de tu nombre. La bruma sigue ahí afuera, pero ya no manda.
+La fortaleza
+Levantaste muros altos y torres con guardias que no duermen. Adentro, nadie pasa hambre ni miedo. Afuera, la ruta se cerró para los que no tienen nada que ofrecer. Estás a salvo, y lo sabés.
+El camino a la costa
+Una noche la radio dijo tu nombre. Cargaste lo que pudiste, juntaste a los que quisieron seguirte y tomaste la ruta hacia la costa. El almacén quedó con la luz prendida por si alguien llega.
+Los que cuentan
+Fuiste juntando relatos: los Ibarra, la Piedra Verde, la caravana, la voz de la radio. Ahora, cada noche, alguien en el patio los cuenta de nuevo. Nadie va a olvidar lo que pasó, ni a quién le pasó.
+El último almacén
+Fueron pocos los que se quedaron, pero el almacén sigue abierto y con la persiana alta. Quizás el mundo no necesite más que eso: un lugar donde alguien te espera.
+Alguien de tu gente volvió a abrazar a su hija, y eso quedó escrito en el cartel de la entrada.
+La banda de la ruta nunca volvió: quien huía de ella encontró en tu patio un lugar donde quedarse.
+En la pared del almacén están los nombres de los que ya no están, y nadie los borra.
+En la ruta te recuerdan por haber ayudado cuando nadie lo hacía.
+En la ruta te recuerdan por haber seguido de largo. Hay puertas que no se abren para vos.
+Los vecinos de los pueblos te consideran uno de los suyos.
+Perdiste a {n} personas por el camino, y no se te olvida ninguna.
+Llegaste al día {d} con {n} personas a tu lado.
+Contar cómo termina tu historia
+La partida sigue después. Podés volver a contarla cuando quieras.
+Seguir jugando
+La historia sigue, mientras vos sigas.
 Terminal
 Puerto Escondido
 Carga: {v}
@@ -1345,7 +1422,6 @@ Cráter
 Subiste de nivel
 Elegí una mejora. Se acumulan si repetís.
 Respirá un poco
-Seguir jugando
 Guardar ahora
 Menú principal
 Salir del juego
