@@ -30,7 +30,7 @@ const vehCap=(v=truck)=>v.k==='pickup'?40+40*S.upg.caja:VEH[v.k].cap;
 const kgOf=o=>{let s=0;for(const k in o)if(ITEMS[k])s+=(o[k]||0)*ITEMS[k].w;return s};
 const invKg=()=>kgOf(S.inv)+S.weapons.reduce((s,w)=>s+WEAP[w].w,0)+Object.keys(AMMO_W).reduce((s,a)=>s+S.ammo[a]*AMMO_W[a],0);
 const overW=()=>invKg()>capKg();
-const wallMax=()=>[300,450,650][S.upg.muros];
+const wallMax=()=>[300,450,650][S.upg.muros]+(typeof wallBonus37==='function'?wallBonus37():0);
 function rollDemand(){const d={};IK.forEach(k=>d[k]=+(.75+R()*.6).toFixed(2));const pool=IK.filter(k=>!['madera','podrida','clavos','tela'].includes(k)&&ITEMS[k].cat!=='bag');const hot=pool[R()*pool.length|0];d[hot]=+(1.7+R()*.4).toFixed(2);S.demand=d;S.hot=hot}
 function genContracts(){
   S.contracts=S.contracts.filter(c=>!c.done&&!c.failed);
@@ -526,7 +526,7 @@ const PATH_IN=[{x:0,z:28},{x:0,z:-6.5},{x:0,z:-9.3},{x:CUST_SPOT.x,z:CUST_SPOT.z
 const PATH_OUT=()=>[{x:0,z:-9.3},{x:0,z:-6.5},{x:0,z:40}];
 function spawnCustomer(){const m=humanoid(['#4d6a7a','#7a5a4d','#5b6b45','#6a4d6a','#8a7a4a'][R()*5|0],'#c9a888',['#2f3a48','#3a3028','#2a2a2a'][R()*3|0],false);m.position.set(0,2,28);scene.add(m);customers.push({x:(R()-.5)*1.5,z:28,path:PATH_IN.slice(1),state:'in',t:0,mesh:m,anim:0,yaw:Math.PI})}
 function updateCustomers(dt,h,threat){
-  custT-=dt;if(custT<=0){custT=26/(1+S.rep*.07+S.upg.neon*.6)*(.6+R()*.8)*(CYCLE()/720*.6+.4);if(h>=7&&h<19&&!threat&&customers.length<4)spawnCustomer()}
+  custT-=dt;if(custT<=0){custT=26/(1+S.rep*.07+S.upg.neon*.6+(S.town37?(S.town37.b.mercado||0)*.5:0))*(.6+R()*.8)*(CYCLE()/720*.6+.4);if(h>=7&&h<19&&!threat&&customers.length<4)spawnCustomer()}
   for(let i=customers.length-1;i>=0;i--){const c=customers[i];
     if(threat&&c.state!=='out'){c.state='out';c.path=PATH_OUT()}
     if(c.state==='buy'){c.t-=dt;if(c.t<=0){customerBuy(c);c.state='out';c.path=PATH_OUT()}}

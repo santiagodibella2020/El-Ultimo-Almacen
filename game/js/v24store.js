@@ -48,7 +48,7 @@ const _spawnCustomer24=spawnCustomer;spawnCustomer=function(){_spawnCustomer24()
   const g=glbHuman24(cloth,skin,pants);
   if(g){g.position.copy(c.mesh.position);scene.remove(c.mesh);scene.add(g);c.mesh=g}
   else if(def.col){const u=c.mesh.userData;bx(.36,.12,.36,def.col,0,1.9,0,u.root||c.mesh)}}catch(e){console.error('cust24 spawn',e)}};
-const custCap24=()=>4+Math.min(3,Math.floor((S.rep||0)/4));
+const custCap24=()=>4+Math.min(3,Math.floor((S.rep||0)/4))+(typeof mktBonus37==='function'?mktBonus37():0);
 let cust24T=10;
 const _updateCustomers24=updateCustomers;updateCustomers=function(dt,h,threat){_updateCustomers24(dt,h,threat);
   try{for(const c of customers){if(c.k24==='apurado'&&c.state==='buy'&&c.t>.8)c.t=.8;const u=c.mesh.userData;
