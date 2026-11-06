@@ -870,5 +870,7 @@
 "Juntaste las tres grabaciones: sabés por qué se retira la bruma con el sol. Eso cambia cómo ves las noches.":"3つの録音を集めた。霧が太陽で退く理由がわかった。夜の見え方が変わる。",
 "{n} y su banda andan cerca del almacén esta noche. Las torretas ayudan.":"今夜、{n}と一味が倉庫の近くにいる。砲台が役に立つ。",
 "La banda de {n} se llevó ${m} de la caja.":"{n}の一味がレジから${m}を奪った。",
-"La banda de {n} se fue sin llevarse nada: las torretas la espantaron.":"{n}の一味は手ぶらで去った。砲台が追い払った。"
+"La banda de {n} se fue sin llevarse nada: las torretas la espantaron.":"{n}の一味は手ぶらで去った。砲台が追い払った。",
+"Los perros no paran de aullar. Algo grande se acerca.":"犬が吠え続けている。何か大きなものが近づいている。",
+"A lo lejos se oyen rugidos.":"遠くで咆哮が聞こえる。"
 }

@@ -870,5 +870,7 @@
 "Juntaste las tres grabaciones: sabés por qué se retira la bruma con el sol. Eso cambia cómo ves las noches.":"Tu as les trois enregistrements : tu sais pourquoi la brume se retire avec le soleil. Cela change ta vision des nuits.",
 "{n} y su banda andan cerca del almacén esta noche. Las torretas ayudan.":"{n} et sa bande rôdent près de l’entrepôt cette nuit. Les tourelles aident.",
 "La banda de {n} se llevó ${m} de la caja.":"La bande de {n} a pris ${m} dans la caisse.",
-"La banda de {n} se fue sin llevarse nada: las torretas la espantaron.":"La bande de {n} est repartie bredouille : les tourelles l’ont fait fuir."
+"La banda de {n} se fue sin llevarse nada: las torretas la espantaron.":"La bande de {n} est repartie bredouille : les tourelles l’ont fait fuir.",
+"Los perros no paran de aullar. Algo grande se acerca.":"Les chiens n’arrêtent pas de hurler. Quelque chose de gros approche.",
+"A lo lejos se oyen rugidos.":"On entend des rugissements au loin."
 }
