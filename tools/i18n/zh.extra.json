@@ -870,5 +870,7 @@
 "Juntaste las tres grabaciones: sabés por qué se retira la bruma con el sol. Eso cambia cómo ves las noches.":"你集齐了三段录音：你知道迷雾为何随阳光退去。这改变了你看待夜晚的方式。",
 "{n} y su banda andan cerca del almacén esta noche. Las torretas ayudan.":"今晚{n}和帮派就在仓库附近。炮塔能帮上忙。",
 "La banda de {n} se llevó ${m} de la caja.":"{n}的帮派从收银台拿走了${m}。",
-"La banda de {n} se fue sin llevarse nada: las torretas la espantaron.":"{n}的帮派空手而归：炮塔把他们吓跑了。"
+"La banda de {n} se fue sin llevarse nada: las torretas la espantaron.":"{n}的帮派空手而归：炮塔把他们吓跑了。",
+"Los perros no paran de aullar. Algo grande se acerca.":"狗叫个不停。有什么大东西正在逼近。",
+"A lo lejos se oyen rugidos.":"远处传来吼声。"
 }

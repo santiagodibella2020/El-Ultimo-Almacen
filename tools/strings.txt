@@ -827,6 +827,8 @@ Juntaste las tres grabaciones: sabés por qué se retira la bruma con el sol. Es
 {n} y su banda andan cerca del almacén esta noche. Las torretas ayudan.
 La banda de {n} se llevó ${m} de la caja.
 La banda de {n} se fue sin llevarse nada: las torretas la espantaron.
+Los perros no paran de aullar. Algo grande se acerca.
+A lo lejos se oyen rugidos.
 Terminal
 Puerto Escondido
 Carga: {v}

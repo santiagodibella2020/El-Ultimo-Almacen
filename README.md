@@ -2,7 +2,11 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.46.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.47.0.
+
+## Novedades de la 0.47
+- **Campamento de la banda con empalizada y portón**, e **invernadero** junto a la huerta (modelos de Hunyuan3D).
+- **Avisos de la gran horda**: la víspera y esa tarde se oyen rugidos lejanos y los perros aúllan.
 
 ## Novedades de la 0.46
 - **El pueblo con modelos propios**: el pozo, los puestos de mercado y las torres de vigilancia pasan a usar modelos de Hunyuan3D en lugar de cajas. La biblioteca de modelos suma portón, empalizada e invernadero (todavía sin colocar).
