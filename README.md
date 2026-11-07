@@ -2,7 +2,10 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.48.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.49.0.
+
+## Novedades de la 0.49
+- **Campo y calle** (modelos de Hunyuan3D): molinos de viento, silos, carretas, tranqueras, postes de luz, bancos, semáforos, cabinas telefónicas, hidrantes, buzones, barriles con fuego y pilas de neumáticos.
 
 ## Novedades de la 0.48
 - **Más vida en las rutas y los campamentos** (modelos de Hunyuan3D): patrulleros, colectivos, motos y bicicletas abandonados, casas de suburbio, sillones, camas, mesas, estanterías y heladeras tirados cerca de campamentos y estaciones, un generador con torre de luz y tanques de agua.
