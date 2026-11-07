@@ -2,7 +2,10 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.49.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.50.0.
+
+## Novedades de la 0.50
+- **Rendimiento**: los modelos de props (autos, casas, muebles, postes, etc.) se reparten en celdas y solo se dibujan los que están cerca de la cámara. Antes se dibujaban los de todo el mapa en cada cuadro: ahora van entre 200 mil y 800 mil triángulos de props en pantalla en lugar de 2,7 millones.
 
 ## Novedades de la 0.49
 - **Campo y calle** (modelos de Hunyuan3D): molinos de viento, silos, carretas, tranqueras, postes de luz, bancos, semáforos, cabinas telefónicas, hidrantes, buzones, barriles con fuego y pilas de neumáticos.
