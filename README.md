@@ -2,7 +2,12 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.50.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.51.0.
+
+## Novedades de la 0.51
+- **Modelos de Tripo** (IA): la pickup, el sedán, el colectivo, la casa de chapa, la torre de vigía, la empalizada, el portón, el pozo, los muebles (cama, sillón, mesa, estantería, archivo, heladera, mostrador, banco de trabajo, surtidor) y las armas tiradas tienen modelos nuevos y más detallados.
+- **Cosas nuevas en el mapa**: casas de dos plantas, contenedores marítimos, antenas, cementerios con lápidas y un altar, fogones, garrafas, barricadas de tablas, cajas fuertes, carteles, mochilas y cajones de verdura. También aparecen pistolas tiradas que se levantan con E.
+- **Más liviano**: los modelos de props se guardan sin coordenadas de textura y con el color en bytes, así que el juego pesa unos 2,6 MB menos aunque tenga 13 modelos más.
 
 ## Novedades de la 0.50
 - **Rendimiento**: los modelos de props (autos, casas, muebles, postes, etc.) se reparten en celdas y solo se dibujan los que están cerca de la cámara. Antes se dibujaban los de todo el mapa en cada cuadro: ahora van entre 200 mil y 800 mil triángulos de props en pantalla en lugar de 2,7 millones.

@@ -45,7 +45,7 @@ function apply41(){if(!world||!H32.ready)return;
       list.push({x,y:y-.1,z,ry,t:.85+R()*.15});solid32(x,z,(q?sz.z:sz.x)*.42,(q?sz.x:sz.z)*.42,y,3.4)}
     V41.casa_chapa=list;if(list.length)inst32(g,list)}
   // ----- armas tiradas -----
-  const guns=[['escopeta_doble',1.15,6],['rifle_caza',1.15,6],['hacha_bombero',.95,8],['machete',.65,8]];
+  const guns=[['escopeta_doble',1.15,6],['rifle_caza',1.15,6],['hacha_bombero',.95,8],['machete',.65,8],['pistola',.26,6]];
   for(const [key,L,n] of guns){if(!H32.geo[key]||!sites.length)continue;const list=[];
     for(let a=0;a<300&&list.length<n;a++){const s=sites[(R()*sites.length)|0],an=R()*6.283,d=s.r*(.2+R()*.6),x=s.x+Math.cos(an)*d,z=s.z+Math.sin(an)*d;
       if(!free32(x,z,.5))continue;list.push({x,y:terrainY(x,z)+.02,z,ry:R()*6.283,t:.85+R()*.2})}
