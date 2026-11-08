@@ -2,7 +2,7 @@
 /* v0.43: armas del mundo que se levantan y guía de los primeros días.
    - Las armas tiradas (escopeta, rifle, hacha, machete) se levantan con E; si ya tenés el arma te dan munición o la dejan en mejor estado.
    - Un cartelito en la esquina te va dando un objetivo a la vez (saquear, vender, construir, pasar la noche, sumar gente...), con premio al cumplirlo. */
-const WMAP43={escopeta_doble:'escopeta',rifle_caza:'rifle',hacha_bombero:'hacha',machete:'machete'};
+const WMAP43={escopeta_doble:'escopeta',rifle_caza:'rifle',hacha_bombero:'hacha',machete:'machete',pistola:'pistola'};
 const taken43=()=>S.taken43||(S.taken43=[]);
 function hideTaken43(){try{for(const k in WMAP43){const im=V41.im&&V41.im[k];if(!im)continue;const m=new THREE.Matrix4().makeScale(0,0,0);
   for(const t of taken43()){const [kk,i]=t.split(':');if(kk===k)im.setMatrixAt(+i,m)}im.instanceMatrix.needsUpdate=true}}catch(e){console.error('v43',e)}}
