@@ -12,7 +12,7 @@ REPLACE={'pickup_oxidada':'pickup_oxidada','sedan_abandonado':'sedan_abandonado'
   'cama_hierro':'cama_hierro','sofa_roto':'sofa_roto','mesa_sillas':'mesa_sillas','estanteria_madera':'estanteria_madera','archivo_metalico':'archivo_metalico',
   'heladera_oxidada':'heladera_oxidada','mostrador_caja':'mostrador_caja','banco_herramientas':'banco_herramientas','surtidor_nafta':'surtidor_amarillo',
   'tanque_gasolina':'bidon_rojo','escopeta_doble':'escopeta_doble','invernadero':'invernadero','rifle_caza':'rifle_caza','machete':'machete'}
-NEW=['casa_dos_plantas','contenedor_maritimo','antena','garrafa_gas','lapida','altar','fogon','barricada_tablas','caja_fuerte','cartel_poste','pistola','mochila','cajon_verduras','cajon_metal','botiquin','moto_tirada','zombi','zombi_grande']
+NEW=['casa_dos_plantas','contenedor_maritimo','antena','garrafa_gas','lapida','altar','fogon','barricada_tablas','caja_fuerte','cartel_poste','pistola','mochila','cajon_verduras','cajon_metal','botiquin','moto_tirada','zombi','zombi_grande','hormigonera','andamio','carro_mano']
 
 # Lectura directa del GLB: trimesh pasa los colores en unsigned short (los de Blender) a bytes cortándolos y quedan de colores al azar.
 DT={5120:np.int8,5121:np.uint8,5122:np.int16,5123:np.uint16,5125:np.uint32,5126:np.float32};NC={'SCALAR':1,'VEC2':2,'VEC3':3,'VEC4':4}
@@ -47,8 +47,9 @@ def main():
     out={}
     for k,v in d.items():
         old=load_b64(v)
-        if k in REPLACE:
-            m=load_f(os.path.join(lite,REPLACE[k]+'.glb'))
+        rk=REPLACE.get(k) or (k if os.path.exists(os.path.join(lite,k+'.glb')) else None)
+        if rk:
+            m=load_f(os.path.join(lite,rk+'.glb'))
             # si el lado largo cae en otro eje que el modelo viejo, se gira 90° para que el código que lo ubica siga valiendo
             if horiz(m)!=horiz(old):m.apply_transform(trimesh.transformations.rotation_matrix(np.pi/2,[0,1,0]))
             out[k]=enc(m);print('tripo',k,np.round(old.extents,2),'->',np.round(m.extents,2))

@@ -5,7 +5,7 @@
    - Botones justos: lo que no se puede hacer no muestra un botón apagado. Si era una compra, queda el precio.
      El saqueo se hace tocando la fila entera.
    - Panel del almacén de alto fijo (no salta al cambiar de pestaña) y todas las pestañas entran. */
-const GAME_V29='0.52.0';
+const GAME_V29='0.53.0';
 
 // ---------- Mochila en 3D ----------
 // m: modelo; tint: color por material del .glb; s: tamaño relativo.

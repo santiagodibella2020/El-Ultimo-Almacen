@@ -2,7 +2,10 @@
 
 Supervivencia en primera persona. Una bruma levantó a los muertos y a los dinosaurios, y vos tenés el último almacén abierto de la ruta. De día salís a saquear un pueblo entero mueble por mueble, cazar, talar y cumplir encargos. De noche defendés la empalizada de las hordas.
 
-Estado: **acceso anticipado (prototipo)**, versión 0.52.0.
+Estado: **acceso anticipado (prototipo)**, versión 0.53.0.
+
+## Novedades de la 0.53
+- **Segunda tanda de Tripo**: ambulancia, camión de basura, patrullero, tractor, molino, silo, tanque de agua, casa de suburbio, puesto de mercado, postes, semáforo, barriles, camilla, góndola y muchos props más tienen modelo nuevo. Aparecen hormigoneras, andamios y carros de mano. El archivo de modelos bajó a unos 12 MB.
 
 ## Novedades de la 0.52
 - **Lo que faltaba de Tripo**: el invernadero del campamento tiene modelo nuevo, y aparecen motos tiradas en la ruta, cajones de metal, botiquines y cuerpos de zombis caídos cerca de campamentos y estaciones.
