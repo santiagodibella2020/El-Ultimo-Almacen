@@ -11,10 +11,25 @@ REPLACE={'pickup_oxidada':'pickup_oxidada','sedan_abandonado':'sedan_abandonado'
   'torre_vigia':'torre_vigia','empalizada':'empalizada','porton_madera':'porton_madera','pozo_bomba':'pozo_bomba',
   'cama_hierro':'cama_hierro','sofa_roto':'sofa_roto','mesa_sillas':'mesa_sillas','estanteria_madera':'estanteria_madera','archivo_metalico':'archivo_metalico',
   'heladera_oxidada':'heladera_oxidada','mostrador_caja':'mostrador_caja','banco_herramientas':'banco_herramientas','surtidor_nafta':'surtidor_amarillo',
-  'tanque_gasolina':'bidon_rojo','escopeta_doble':'escopeta_doble','rifle_caza':'rifle_caza','machete':'machete'}
-NEW=['casa_dos_plantas','contenedor_maritimo','antena','garrafa_gas','lapida','altar','fogon','barricada_tablas','caja_fuerte','cartel_poste','pistola','mochila','cajon_verduras']
+  'tanque_gasolina':'bidon_rojo','escopeta_doble':'escopeta_doble','invernadero':'invernadero','rifle_caza':'rifle_caza','machete':'machete'}
+NEW=['casa_dos_plantas','contenedor_maritimo','antena','garrafa_gas','lapida','altar','fogon','barricada_tablas','caja_fuerte','cartel_poste','pistola','mochila','cajon_verduras','cajon_metal','botiquin','moto_tirada','zombi','zombi_grande']
 
-def load_b64(s):return trimesh.load(io.BytesIO(base64.b64decode(s)),file_type='glb',force='mesh',process=False)
+# Lectura directa del GLB: trimesh pasa los colores en unsigned short (los de Blender) a bytes cortándolos y quedan de colores al azar.
+DT={5120:np.int8,5121:np.uint8,5122:np.int16,5123:np.uint16,5125:np.uint32,5126:np.float32};NC={'SCALAR':1,'VEC2':2,'VEC3':3,'VEC4':4}
+def load_b64(s):
+    b=base64.b64decode(s);jl=int.from_bytes(b[12:16],'little');j=json.loads(b[20:20+jl]);bin_=b[20+jl+8:]
+    def acc(i):
+        a=j['accessors'][i];v=j['bufferViews'][a['bufferView']];n=NC[a['type']];dt=np.dtype(DT[a['componentType']])
+        x=np.frombuffer(bin_,dt,a['count']*n,v.get('byteOffset',0)+a.get('byteOffset',0)).reshape(-1,n) if n>1 else np.frombuffer(bin_,dt,a['count'],v.get('byteOffset',0)+a.get('byteOffset',0))
+        if a.get('normalized'):x=x.astype(np.float32)/np.iinfo(dt).max
+        return x
+    p=j['meshes'][0]['primitives'][0];at=p['attributes']
+    V=acc(at['POSITION']);F=acc(p['indices']).astype(np.int64).reshape(-1,3)
+    C=acc(at['COLOR_0'])[:,:3] if 'COLOR_0' in at else np.full((len(V),3),.6)
+    if C.dtype!=np.float32 and C.dtype!=np.float64:C=C.astype(np.float32)/255
+    m=trimesh.Trimesh(V.astype(np.float64),F,vertex_colors=(np.clip(C,0,1)*255).astype(np.uint8),process=False)
+    if 'NORMAL' in at:m.vertex_normals=acc(at['NORMAL'])
+    return m
 def load_f(p):return trimesh.load(p,force='mesh',process=False)
 def horiz(m):e=m.extents;return 'x' if e[0]>=e[2] else 'z'
 def enc(m):
@@ -26,8 +41,9 @@ def enc(m):
     return base64.b64encode(m2.export(file_type='glb',include_normals=True)).decode()
 
 def main():
-    lite=sys.argv[1]
-    src=open(JS,encoding='utf8').read();d=json.loads(src[src.index('{'):src.rindex('}')+1])
+    # 2.º argumento opcional: el glb32.js de Hunyuan de origen (por ejemplo el de la 0.50); si no, el actual
+    lite=sys.argv[1];base=sys.argv[2] if len(sys.argv)>2 else JS
+    src=open(base,encoding='utf8').read();d=json.loads(src[src.index('{'):src.rindex('}')+1])
     out={}
     for k,v in d.items():
         old=load_b64(v)
